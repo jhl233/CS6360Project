@@ -4,15 +4,15 @@ var productView = {};
 var testReactant = {"coeff":1, "K":1};
 var testProduct = {"coeff":2, "K":1, "Cl":1};
 
-$(document).ready(function() {
-    addReactantToView(testReactant);
-    addProductToView(testProduct);
-});
-
 function addReactantToView(reactant) {
     var width = $("#worktable").width();
     var height = $("#worktable").height();
+    var worktabley = $("#worktable").position().top;
+    console.log(worktabley);
     for (var elem in reactant) {
+
+
+
         if (elem !== "coeff") {
             // Append to existing list for the element 
             var x = Math.round(Math.random() * width * 0.5);
@@ -27,16 +27,17 @@ function addReactantToView(reactant) {
             }
             // Create a new list for the element
             else {
-		    console.log("moooooooo "+ elem);
+                console.log("moooooooo "+ elem);
                 id = elem + "0";
-                reactantView[elem] = [{"id":id, "x":x, "y":y}];
+                reactantView[elem] = [{"id":id, "x":x, "y":y }];
             }
-            var newImg = $("<img>", {id: id, src: "a"+elem+".svg"
-            var newDiv = "<div id=" + id + " class='reactantView'></div>";
-            $(newDiv).appendTo($("#worktable"));
-            $("#" + id).css("position", "relative");
-            $("#" + id).css("left", x + "px");
-            $("#" + id).css("bottom", y + "px");
+            img = "svg/" + currentState["svgmap"]["a" + elem];
+            console.log(x + " " + y);
+            var $newImg = $("<img>", {id: id, src: img});
+            $("#worktable").append($newImg);
+            $newImg.css("position", "absolute");
+            $newImg.css("left", x + "px");
+            $newImg.css("bottom", y + "px");
         }
     }
 }

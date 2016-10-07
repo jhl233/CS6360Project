@@ -19,6 +19,7 @@ var exampleLevel = {
 var currentState = {
     "reactants": {},
     "products": {},
+    "svgmap": {},
 }
 
 function initializeLevel(level) {
@@ -62,6 +63,7 @@ function initializeLevel(level) {
         $product.append($("<div>", {class: "product-badge", text: "0", id:productName+"ProductCoeff"}));
         $product.append($clickable);
     }
+    currentState["svgmap"] = level["svgmap"];
     console.log("Done!");
     console.log(currentState);
 }
