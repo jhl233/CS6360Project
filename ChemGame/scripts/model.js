@@ -85,6 +85,7 @@ function addProduct(productName) {
     currentState["products"][productName] += 1;
     var coeff = $("#" + productName + "ProductCoeff");
     coeff.text(parseInt(coeff.text()) + 1);
+    addProductToView(productName);
 }
 
 function nameToObj(name) {
