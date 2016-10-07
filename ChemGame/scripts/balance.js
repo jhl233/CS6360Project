@@ -34,16 +34,20 @@ function isBalanced(react, prod) {
     alert(text);*/
     
     // Check if number of reactants is equal to the number of productss
-    for (var key in reactantElements) {
-        if (productElements.hasOwnProperty(key) &&
-            reactantElements[key] === productElements[key]) {
+    for (var elem in reactantElements) {
+        if (productElements.hasOwnProperty(elem) &&
+            reactantElements[elem] === productElements[elem]) {
             numBalanced++;
         }
         numReactants++;
     }
     
+    allReactants = flatten(reactants);
+    allProducts = flatten(products);
+    
     // All elements are properly balanced
-    if (numBalanced === Object.keys(reactantElements).length) {
+    if (numBalanced === Object.keys(allReactants).length &&
+        numBalanced === Object.keys(allProducts).length) {
         return true;
     }
     
@@ -60,11 +64,11 @@ function reactantAdded(event) {
     // Check if balanced
     balanced = isBalanced(worktableReactants, worktableProducts);
     if (balanced) {
-        $("#finishButton").css({"background-color", "green"});
+        $("#finishButton").css("background-color", "green");
     }
 }
 
-function reactantRemoved(reactant) {
+function reactantRemoved(event) {
     // Check if balanced
 }
 
@@ -77,10 +81,10 @@ function productAdded(product) {
     // Check if balanced
     balanced = isBalanced(worktableReactants, worktableProducts);
     if (balanced) {
-        $("#finishButton").css({"background-color", "green"});
+        $("#finishButton").css("background-color", "green");
     }
 }
 
-function productRemoved(product) {
+function productRemoved(event) {
     // Check if balanced
 }

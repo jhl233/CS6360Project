@@ -9,9 +9,6 @@ var product1 = {"coeff":1, "H":2, "O":1};
 
 var products = [product0, product1];
 
-var previousStates = [];
-var currentState = [];
-
 worktableReactants = [];
 worktableProducts = [];
 

@@ -48,6 +48,21 @@ body {
     background-color:blue;  
     margin-left: 10px;
 }
+
+.reactantView {
+    width: 80px; 
+    height: 80px;
+    padding: 0.5em;
+    background-color:blueviolet;  
+}
+
+.productView {
+    width: 100px; 
+    height: 100px;
+    padding: 0.5em;
+    background-color:darkred;
+}
+
 #finishButton {
     background-color: red;
     color: white;
