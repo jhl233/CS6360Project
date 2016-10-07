@@ -14,16 +14,5 @@ worktableProducts = [];
 
 // For each reactant, create a div
 $(document).ready(function() {
-    for (var i = 0; i < reactants.length; i++) {
-        var id = "reactant" + i;
-        var newDiv = "<div id=" + id + " class='reactant' onclick='reactantAdded(event)'></div>";
-        $(newDiv).appendTo($("#input"));
-    }
-    
-     for (var i = 0; i < products.length; i++) {
-        var id = "product" + i;
-        var newDiv = "<div id=" + id + " class='product' onclick='productAdded(event)'></div>";
-        $(newDiv).appendTo($("#output"));
-    }
-    
+    initializeLevel(exampleLevel);
 });

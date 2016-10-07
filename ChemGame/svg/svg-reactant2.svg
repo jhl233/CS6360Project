@@ -1,0 +1,21 @@
+
+<svg width="150px" height="149px" viewBox="15 0 150 149" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="4.48170732" y="6.11650485" width="96.0365854" height="92.7669903" rx="15"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="96.0365854" height="92.7669903" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="reactant2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(90.179756, 74.500000) rotate(-45.000000) translate(-90.179756, -74.500000) translate(37.679756, 22.000000)">
+        <g id="Group-8">
+            <rect id="Rectangle-9" fill="#4A6278" x="0" y="0" width="105" height="105" rx="17"></rect>
+            <use id="Rectangle-9" stroke="#1E3951" mask="url(#mask-2)" stroke-width="6" fill="#2C4154" xlink:href="#path-1"></use>
+        </g>
+        <g id="egg" transform="translate(27.155172, 26.504854)">
+            <path d="M21.0318263,1.84946136 C16.2279019,3.61928428 11.5868126,6.7161123 11.5868126,6.7161123 C11.5868126,6.7161123 3.82741827,12.9642669 2.14179893,17.4227444 C-0.680429178,24.8875617 -0.440033202,23.79799 1.28316133,28.1293764 C4.49713305,36.2079499 7.15891361,36.810008 15.0213631,43.2159944 C20.8971154,48.0033052 21.8124953,50.3948166 28.7595648,50.5159708 C35.7653564,50.6381491 37.0456886,49.009051 42.9270853,43.7026595 C47.5639993,39.5190817 45.9370235,36.3481478 49.7961862,31.5360321 C51.0792742,29.9361079 51.5682608,28.923706 52.2356095,28.1293764 C52.9104703,27.3261054 53.7559467,26.736153 53.6600555,24.2360557 C53.4214517,18.0151236 52.3007831,15.1185302 51.5134614,9.63610287 C50.7981672,4.65523066 44.1924395,3.61443791 39.9218537,1.36279626 C34.9620852,-1.25221303 24.814278,0.455961167 21.0318263,1.84946136 Z" id="Path-4" stroke-opacity="0.684669384" stroke="#F9D010" stroke-width="4" fill="#FFFCC1"></path>
+            <ellipse id="Oval-2" fill="#FFD200" cx="31.1433319" cy="17.2551173" rx="11.5916077" ry="8.7599717"></ellipse>
+        </g>
+    </g>
+</svg>

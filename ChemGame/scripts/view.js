@@ -1,7 +1,6 @@
 var reactantView = {};
 var productView = {};
 
-/*
 var testReactant = {"coeff":1, "K":1};
 var testProduct = {"coeff":2, "K":1, "Cl":1};
 
@@ -9,7 +8,6 @@ $(document).ready(function() {
     addReactantToView(testReactant);
     addProductToView(testProduct);
 });
-*/
 
 function addReactantToView(reactant) {
     var width = $("#worktable").width();
@@ -21,16 +19,19 @@ function addReactantToView(reactant) {
             var y = Math.round(Math.random() * height);
             var id = 0;
             if (reactantView.hasOwnProperty(elem)) {
-                var prevElem = reactantView[elem].peek();
+		    console.log("yipeee");
+                var prevElem = reactantView[elem];
                 var prevIDNum = prevElem["id"].substr("reactant".length + elem.length);
                 id = "reactant" + elem + (prevIDNum + 1);
                 reactantView[elem].push({"id":id, "x":x, "y":y});
             }
             // Create a new list for the element
             else {
-                id = "reactant" + elem + 1;
+		    console.log("moooooooo "+ elem);
+                id = elem + "0";
                 reactantView[elem] = [{"id":id, "x":x, "y":y}];
             }
+            var newImg = $("<img>", {id: id, src: "a"+elem+".svg"
             var newDiv = "<div id=" + id + " class='reactantView'></div>";
             $(newDiv).appendTo($("#worktable"));
             $("#" + id).css("position", "relative");
