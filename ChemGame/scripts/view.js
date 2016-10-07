@@ -7,16 +7,15 @@ var testProduct = {"coeff":2, "K":1, "Cl":1};
 function addReactantToView(reactant) {
     var width = $("#worktable").width();
     var height = $("#worktable").height();
-    var worktabley = $("#worktable").position().top;
-    console.log(worktabley);
+    var worktabley = $("#worktable").position().top + 30;
+    console.log('worktabley ' + worktabley);
+    console.log('height ' + height);
     for (var elem in reactant) {
-
-
 
         if (elem !== "coeff") {
             // Append to existing list for the element 
             var x = Math.round(Math.random() * width * 0.5);
-            var y = Math.round(Math.random() * height);
+            var y = Math.round(Math.random() * (height - 100)) + worktabley;
             var id = 0;
             if (reactantView.hasOwnProperty(elem)) {
 		    console.log("yipeee");
@@ -29,7 +28,7 @@ function addReactantToView(reactant) {
             else {
                 console.log("moooooooo "+ elem);
                 id = elem + "0";
-                reactantView[elem] = [{"id":id, "x":x, "y":y }];
+                reactantView[elem] = [{"id":id, "x":x, "y":y}];
             }
             img = "svg/" + currentState["svgmap"]["a" + elem];
             console.log(x + " " + y);
@@ -37,7 +36,7 @@ function addReactantToView(reactant) {
             $("#worktable").append($newImg);
             $newImg.css("position", "absolute");
             $newImg.css("left", x + "px");
-            $newImg.css("bottom", y + "px");
+            $newImg.css("top", y + "px");
         }
     }
 }
