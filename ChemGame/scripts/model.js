@@ -72,13 +72,13 @@ function addReactant(reactantName) {
     currentState["reactants"][reactantName] += 1;
     var coeff = $("#" + reactantName + "ReactantCoeff");
     coeff.text(parseInt(coeff.text()) + 1);
-    console.log("called");
     var compound = nameToObj(reactantName);
     for (var elem in compound) {
         for (var i = 0; i < compound[elem]; i++) {
             addReactantToView(elem);
         }
     }
+    setTimeout(checkCollapsibles, 1000);
 }
 
 function addProduct(productName) {
@@ -86,6 +86,7 @@ function addProduct(productName) {
     var coeff = $("#" + productName + "ProductCoeff");
     coeff.text(parseInt(coeff.text()) + 1);
     addProductToView(productName);
+    setTimeout(checkCollapsibles, 1000);
 }
 
 function nameToObj(name) {

@@ -42,10 +42,8 @@ function addReactantToView(elem) {
     var width = $("#worktable").width();
     var height = $("#worktable").height();
     var worktabley = $("#worktable").position().top + 30;
-    console.log('worktabley ' + worktabley);
-    console.log('height ' + height);
 
-    var x = Math.round(Math.random() * width * 0.5);
+    var x = Math.round(Math.random() * width * 0.4);
     var y = Math.round(Math.random() * (height - 100)) + worktabley;
 
     // Each item in reactantView and productView need to have an
@@ -61,7 +59,6 @@ function addReactantToView(elem) {
     reactantView[elem]["elems"].push({"id":id, "x":x, "y":y});
 
     var img = "svg/" + currentState["svgmap"]["a" + elem];
-    console.log(x + " " + y);
     var $newImg = $("<img>", {id: id, src: img});
     $("#worktable").append($newImg);
     $newImg.css("position", "absolute");
@@ -74,10 +71,8 @@ function addProductToView(product) {
     var width = $("#worktable").width();
     var height = $("#worktable").height();
     var worktabley = $("#worktable").position().top + 30;
-    console.log('worktabley ' + worktabley);
-    console.log('height ' + height);
 
-    var x = width - Math.round(Math.random() * width * 0.5);
+    var x = width - Math.round(Math.random() * width * 0.4) - 100;
     var y = Math.round(Math.random() * (height - 100)) + worktabley;
 
     if (!productView.hasOwnProperty(product)) {
@@ -103,6 +98,71 @@ function addProductToView(product) {
     $newImg.css("position", "absolute");
     $newImg.css("left", x + "px");
     $newImg.css("top", y + "px");
+}
+
+// Can be called by either addProductToView or addReactantToView
+function checkCollapsibles() {
+    var reactantElems = {};
+    for (var elem in reactantView) {
+        console.log(elem + " has " + reactantView[elem]["elems"].length);
+        reactantElems[elem] = reactantView[elem]["elems"].length;
+    }
+
+    for (var product in productView) { // For each Chicken2Bacon3
+        var reqs = nameToObj(product);
+        console.log("Trying: " + product);
+        var enough = true;
+        for (var elemReq in reqs) { // For each Chicken-needs-3
+            if ((typeof reactantElems[elemReq] === "undefined") || (reactantElems[elemReq] < reqs[elemReq])) {
+                console.log("Not enough " + elemReq);
+                enough = false;
+                break;
+            }
+        }
+        if (!enough) {
+            continue;
+        }
+        console.log("there's enough here...");
+        // Let's assume that only one product is MADE at any time
+        //
+        var elemProductList = productView[product]["products"];
+        var freeProduct;
+        console.log(freeProduct);
+        for (var i = 0; i < elemProductList.length; i++) { // for each chicken2Bacon3{object}
+            console.log(elemProductList[i]);
+            if (elemProductList[i]["filled"]) {
+                continue;
+            } else {
+                freeProduct = elemProductList[i];
+            }
+        } 
+        if (typeof freeProduct === "undefined") {
+            console.log("Not enough free product :(");
+            continue;
+        }
+        
+        console.log("reaping!!!");
+        for (var elemReq in reqs) { // for each Chicken in Chicken-needs-3
+            console.log(elemReq);
+            for (var i = 0; i < reqs[elemReq]; i++) {
+                var freeElem = reactantView[elemReq]["elems"].pop();
+                var freeElemId = "#" + freeElem.id;
+                console.log("grabbing an element");
+                console.log(freeElem.id);
+                console.log(freeProduct.x);
+
+
+                var xf = freeProduct.x + (Math.random() * 40);
+                var yf = freeProduct.y + (Math.random() * 40);
+                $(freeElemId).css("left", xf + "px");
+                $(freeElemId).css("top", yf + "px");
+                $(freeElemId).css("z-index", "100");
+                freeProduct["elemIds"].push(freeElem.id);
+                console.log(productView);
+            }
+            freeProduct["filled"] = true;
+        }
+    }
 }
 
 function removeReactantFromView(reactant) {
