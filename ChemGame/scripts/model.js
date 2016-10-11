@@ -43,19 +43,11 @@ function initializeLevel(level) {
 
         var reactantSVG = level["svgmap"][reactant];
 
-<<<<<<< Updated upstream
-        $clickable = $("<img>", {class: "shadow pic", src: "svg/" + reactantSVG, "data-name": reactantName})
-        $clickable.click(function(event) {
-            addReactant($(event.target).data("name"));
-        });
-        $reactant.append($("<div>", {class: "shadow reactant-badge", text: "0", id: reactantName+"ReactantCoeff"}));
-=======
         $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactant})
         $clickable.click(function(event) {
             addReactant($(event.target).data("name"));
         });
         $reactant.append($("<div>", {class: "reactant-badge", text: "0", id: reactant+"ReactantCoeff"}));
->>>>>>> Stashed changes
         $reactant.append($clickable);
         $reactant.append($("<div>", {class: "reactant-minus-button", text: "-"}));
     }
@@ -70,19 +62,11 @@ function initializeLevel(level) {
 
         var productSVG = level["svgmap"][product];
 
-<<<<<<< Updated upstream
-        $clickable = $("<img>", {class: "shadow pic4", src: "svg/" + productSVG, "data-name": productName});
-        $clickable.click(function(event) {
-            addProduct($(event.target).data("name"));
-        });
-        $product.append($("<div>", {class: "shadow product-badge", text: "0", id:productName+"ProductCoeff"}));
-=======
         $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": product});
         $clickable.click(function(event) {
             addProduct($(event.target).data("name"));
         });
         $product.append($("<div>", {class: "product-badge", text: "0", id: product+"ProductCoeff"}));
->>>>>>> Stashed changes
         $product.append($clickable);
         $product.append($("<div>", {class: "product-minus-button", text: "-"}));
     }
