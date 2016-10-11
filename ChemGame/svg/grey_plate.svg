@@ -1,0 +1,15 @@
+
+<svg width="112px" height="112px" viewBox="45 3 112 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.2 (33826) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="55.591133" cy="54.7555556" rx="41.9211823" ry="41.9111111"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="83.8423645" height="83.8222222" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="rectant-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(101.248768, 59.477778) rotate(-180.000000) translate(-101.248768, -59.477778) translate(45.748768, 3.977778)">
+        <ellipse id="Oval-7" fill="#DFDEDE" cx="55.2561576" cy="55.2428829" rx="55.2561576" ry="55.2428829"></ellipse>
+        <use id="Oval-7" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" fill="#CCCBCB" xlink:href="#path-1"></use>
+    </g>
+</svg>
