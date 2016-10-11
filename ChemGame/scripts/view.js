@@ -64,7 +64,6 @@ function addReactantToView(elem) {
     $newImg.css("position", "absolute");
     $newImg.css("left", x + "px");
     $newImg.css("top", y + "px");
-
 }
 
 function addProductToView(product) {
