@@ -40,12 +40,13 @@ function initializeLevel(level) {
 
         var reactantSVG = level["svgmap"][reactantName];
 
-        $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactantName})
+        $clickable = $("<img>", {class: "shadow pic", src: "svg/" + reactantSVG, "data-name": reactantName})
         $clickable.click(function(event) {
             addReactant($(event.target).data("name"));
         });
-        $reactant.append($("<div>", {class: "reactant-badge", text: "0", id: reactantName+"ReactantCoeff"}));
+        $reactant.append($("<div>", {class: "shadow reactant-badge", text: "0", id: reactantName+"ReactantCoeff"}));
         $reactant.append($clickable);
+        $reactant.append($("<div>", {class: "reactant-minus-button", text: "-"}));
     }
     for (var i = 0; i < 2; i++) {
         var productName = level["products"][i];
@@ -56,12 +57,13 @@ function initializeLevel(level) {
 
         var productSVG = level["svgmap"][productName];
 
-        $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": productName});
+        $clickable = $("<img>", {class: "shadow pic4", src: "svg/" + productSVG, "data-name": productName});
         $clickable.click(function(event) {
             addProduct($(event.target).data("name"));
         });
-        $product.append($("<div>", {class: "product-badge", text: "0", id:productName+"ProductCoeff"}));
+        $product.append($("<div>", {class: "shadow product-badge", text: "0", id:productName+"ProductCoeff"}));
         $product.append($clickable);
+        $product.append($("<div>", {class: "product-minus-button", text: "-"}));
     }
     currentState["svgmap"] = level["svgmap"];
     console.log("Done!");
