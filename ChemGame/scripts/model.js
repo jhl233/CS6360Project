@@ -1,5 +1,4 @@
 
-
 /*
  *
  */
@@ -18,69 +17,79 @@ var stateModule = (function(viewModule, levelModule) {
     function initializeLevel(levelNum) {
         var level = levelModule.levels[levelNum];
 
-        for (var i = 0; i < 2; i++) {
-            var reactantName = level["reactants"][i];
-            var $reactant = $("<div>", {class: "bottom-box reactant-box-" + (i + 1)});
-            currentState["reactants"][reactantName] = 0;
+		var i = 1;
+		for (var reactant in level["reactants"]) {
 
-            $("#workbench").append($reactant);
+            var $reactant = $("<div>", {class: "bottom-box reactant-box-" + (i++)});
+            currentState["reactants"][reactant] = level["reactants"][reactant];
 
-            var reactantSVG = level["svgmap"][reactantName];
+            //$("#workbench").append($reactant);
 
-            $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactantName})
+            var reactantSVG = level["svgmap"][reactant];
+
+            $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactant})
             $clickable.click(function(event) {
                 addReactant($(event.target).data("name"));
             });
-            $reactant.append($("<div>", {class: "reactant-badge", text: "0", id: reactantName+"ReactantCoeff"}));
+            $reactant.append($("<div>", {class: "reactant-badge", text: "0", id: reactant+"ReactantCoeff"}));
             $reactant.append($clickable);
+			$reactant.append($("<div>", {class: "reactant-minus-button", text: "-"}));
         }
 
-        for (var i = 0; i < 2; i++) {
-            var productName = level["products"][i];
-            var $product = $("<div>", {class: "bottom-box product-box-" + (i + 1)});
-            currentState["products"][productName] = 0;
+		i = 1;
+		for (var product in level["products"]) {
+            var $product = $("<div>", {class: "bottom-box product-box-" + (i++)});
+            currentState["products"][product] = level["products"][product];
 
-            $("#workbench").append($product);
+            //$("#workbench").append($product);
 
-            var productSVG = level["svgmap"][productName];
+            var productSVG = level["svgmap"][product];
 
-            $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": productName});
+            $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": product});
             $clickable.click(function(event) {
                 addProduct($(event.target).data("name"));
             });
-            $product.append($("<div>", {class: "product-badge", text: "0", id:productName+"ProductCoeff"}));
-            $product.append($clickable);
-        }
-        currentState["svgmap"] = level["svgmap"];
-    }
-    function addReactant(reactantName) {
-        currentState["reactants"][reactantName] += 1;
-        var coeff = $("#" + reactantName + "ReactantCoeff");
-        coeff.text(parseInt(coeff.text()) + 1);
-        var compound = nameToObj(reactantName);
-        for (var elem in compound) {
-            for (var i = 0; i < compound[elem]; i++) {
-                addReactantToView(elem);
-            }
-        }
-        setTimeout(checkCollapsibles, 1000);
-    }
+		   	$product.append($("<div>", {class: "product-badge", text: "0", id:productName+"ProductCoeff"}));
+		   	$product.append($clickable);
+		   	$product.append($("<div>", {class: "product-minus-button", text: "-"}));
+	   	}
+	   	currentState["svgmap"] = level["svgmap"];
+   	}
 
-    function addProduct(productName) {
-        currentState["products"][productName] += 1;
-        var coeff = $("#" + productName + "ProductCoeff");
-        coeff.text(parseInt(coeff.text()) + 1);
-        addProductToView(productName);
-        setTimeout(checkCollapsibles, 1000);
-    }
+	function addReactant(reactant) {
+	   	currentState["reactants"][reactant] += 1;
+	   	var coeff = $("#" + reactant + "ReactantCoeff");
+	   	coeff.text(parseInt(coeff.text()) + 1);
+	   	var compound = nameToObj(reactant);
+	   	for (var elem in compound) {
+		   	for (var i = 0; i < compound[elem]; i++) {
+			   	addReactantToView(elem);
+		   	}
+	   	}
+	   	setTimeout(checkCollapsibles, 1000);
+	   	if (isBalanced(exampleLevel, currentState)) {
+		   	// TODO: Add overlay for game won
+		}	
+	}
 
-    function nameToObj(name) {
-        if (name.length == 0) {
-            console.log("Error calling nameToObj w empty string");
-        }
-        obj = {};
-        nameAcc = "";
-        for (var i = 0, len = name.length; i < len; i++) {
+	function addProduct(product) {
+	   	currentState["products"][product] += 1;
+	   	var coeff = $("#" + product + "ProductCoeff");
+	   	coeff.text(parseInt(coeff.text()) + 1);
+	   	addProductToView(product);
+	   	setTimeout(checkCollapsibles, 1000);
+	   	if (isBalanced(exampleLevel, currentState)) {
+		   	// TODO: Add overlay for game won
+		}
+   	}
+
+	function nameToObj(name) {
+	   	if (name.length == 0) {
+		   	console.log("Error calling nameToObj w empty string");
+	   	}
+	   	obj = {};
+	   	nameAcc = "";
+	   	for (var i = 0, len = name.length; i < len; i++) {
             // If it's a number
             if (!isNaN(name[i]*1)) {
             obj[nameAcc] = parseInt(name[i]); // Assume single digit vals

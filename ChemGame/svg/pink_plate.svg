@@ -1,0 +1,21 @@
+
+<svg width="111px" height="112px" viewBox="0 -1 111 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.2 (33826) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="55.135468" cy="55.1222222" rx="55.135468" ry="55.1222222"></ellipse>
+        <ellipse id="path-3" cx="55.591133" cy="54.6666667" rx="42.8325123" ry="42.8222222"></ellipse>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="85.6650246" height="85.6444444" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="the-party-icons-50" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -0.000000)">
+        <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <use id="Mask" fill="#F4D9D3" xlink:href="#path-1"></use>
+        <g id="Oval-7" mask="url(#mask-2)" stroke-width="2" stroke="#FFFFFF" fill="#EEC0B7">
+            <use mask="url(#mask-4)" xlink:href="#path-3"></use>
+        </g>
+    </g>
+</svg>
