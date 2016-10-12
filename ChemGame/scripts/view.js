@@ -171,3 +171,11 @@ function removeReactantFromView(reactant) {
 function removeProductFromView(product) {
     
 }
+
+function openOverlay() {
+    console.log("yoyoyo")
+    document.getElementById("winOverlay").style.width = "100%";
+}
+function closeOverlay() {
+    document.getElementById("winOverlay").style.width = "0%";
+    }

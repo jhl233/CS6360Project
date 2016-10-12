@@ -10,9 +10,16 @@
     <title>Chemistry Kitchen</title>
 </head>
 <body>
+    <div class="overlay" id="winOverlay">
+        <a href="" class="closebtn" onclick="closeOverlay()">&times;</a>
+        <div class="overlay-content">
+            <img src="img/chef2.png" class="overlay-img">
+            <div class="overlay-bubble">Great job! Click here to move on!</div>
+        </div>
+    </div>
     <div class="main">
         <div class="output">
-            <img id="chef" src="img/chef.png" alt="Chef">
+            <img id="chef" src="img/chef.png" alt="Chef" onclick="openOverlay()">
             <label id="hint">"You have too much food on your table!"</label>
             <label id="level">Level 3</label>
         </div>
@@ -20,4 +27,6 @@
         <div id="workbench"></div>
     </div>
 </body>
+<script>
+</script>
 </html>

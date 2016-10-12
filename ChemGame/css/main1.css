@@ -4,7 +4,6 @@
     font-family: sans-serif;
 }
 
-
 body{
     overflow: hidden;
     margin: 0px;
@@ -212,4 +211,60 @@ body{
     width: 30px;
     border-radius: 50px;
     border: solid 4px #343434;
+}
+.overlay {
+    height: 100%;
+    width: 0%;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    background-color: rgba(255,255,255,0.95); 
+    overflow-x: hidden; 
+/*    transition: 0.5s; */
+}
+.overlay-img{
+    position: absolute;
+    width: 13%;
+    top: 32%;
+    left: 15%;
+}
+.overlay-bubble{
+    position: absolute;
+    width: 50%;
+    height: 100px;
+    top: 38%;
+    left: 32%;
+    background-color: #45D0E2;
+    border-radius: 25px;
+    /* Great job! Click her: */
+    font-family: .SFNSText-Medium;
+    font-size: 30px;
+    color: #FFFFFF;
+    letter-spacing: -0.19px;
+    line-height: 100px;
+    text-align: center;   
+}
+.overlay-bubble:hover{
+    background-color: #00a1c2;
+}
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    display: block;
+}
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: 300;
+    color: #807e7e;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #343434;
 }
