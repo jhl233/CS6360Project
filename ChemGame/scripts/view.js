@@ -77,7 +77,13 @@ var viewModule = (function() {
             });
             $reactant.append($("<div>", {class: "reactant-badge", text: coeff, id: reactant+"ReactantCoeff"}));
             $reactant.append($clickable);
-			$reactant.append($("<div>", {class: "reactant-minus-button", text: "-"}));
+            
+            $minusButton = $("<div>", {class: "reactant-minus-button", text: "-", "data-name": reactant});
+            $minusButton.click(function(event) {
+                var removeReactant = callBacks["removeReactant"];
+                removeReactant($(event.target).data("name")); 
+            });
+            $reactant.append($minusButton);
         }
 
 		i = 1;
@@ -215,8 +221,11 @@ var viewModule = (function() {
         }
     }
     
-    function removeReactantFromView(reactant) {
-        
+    function removeReactantFromView(elem) {
+        reactantView[elem]["nextId"]--;
+        var element = reactantView[elem]["elems"].pop();
+        $("img#" + element["id"]).remove();
+        console.log('i tried to remove something, dang it');
     }
     
     function removeProductFromView(product) {
