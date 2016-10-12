@@ -40,6 +40,8 @@ var viewModule = (function() {
     // }
     var productView = {};
 
+	var svgMap = {};
+
     // initializeScreen
     // assumes [state] looks like:
     // {
@@ -56,8 +58,46 @@ var viewModule = (function() {
     //     ...
     //   },
     // }
-    function initializeScreen(state) {
-        
+    function initializeScreen(state, callBacks) {
+        svgMap = state["svgmap"];
+		var i = 1;
+		for (var reactant in state["reactants"]) {
+
+            var $reactant = $("<div>", {class: "bottom-box reactant-box-" + (i++)});
+            var coeff = state["reactants"][reactant];
+
+            $("#workbench").append($reactant);
+
+            var reactantSVG = svgMap[reactant];
+
+            $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactant})
+            $clickable.click(function(event) {
+				var addReactant = callBacks["addReactant"];
+                addReactant($(event.target).data("name"));
+            });
+            $reactant.append($("<div>", {class: "reactant-badge", text: coeff, id: reactant+"ReactantCoeff"}));
+            $reactant.append($clickable);
+			$reactant.append($("<div>", {class: "reactant-minus-button", text: "-"}));
+        }
+
+		i = 1;
+		for (var product in state["products"]) {
+            var $product = $("<div>", {class: "bottom-box product-box-" + (i++)});
+            var coeff = state["products"][product];
+
+            $("#workbench").append($product);
+
+            var productSVG = svgMap[product];
+
+            $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": product});
+            $clickable.click(function(event) {
+				var addProduct = callBacks["addProduct"];
+                addProduct($(event.target).data("name"));
+            });
+		   	$product.append($("<div>", {class: "product-badge", text: coeff, id:product+"ProductCoeff"}));
+		   	$product.append($clickable);
+		   	$product.append($("<div>", {class: "product-minus-button", text: "-"}));
+	   	}
     }
 
     function addReactantToView(elem) {
@@ -80,13 +120,14 @@ var viewModule = (function() {
         reactantView[elem]["nextId"]++;
         reactantView[elem]["elems"].push({"id":id, "x":x, "y":y});
 
-        var img = "svg/" + currentState["svgmap"]["a" + elem];
+        var img = "svg/" + svgMap["a" + elem];
         var $newImg = $("<img>", {id: id, src: img});
         $("#worktable").append($newImg);
         $newImg.css("position", "absolute");
         $newImg.css("left", x + "px");
         $newImg.css("top", y + "px");
 
+	   	setTimeout(checkCollapsibles, 1000);
     }
 
     function addProductToView(product) {
@@ -120,23 +161,21 @@ var viewModule = (function() {
         $newImg.css("position", "absolute");
         $newImg.css("left", x + "px");
         $newImg.css("top", y + "px");
+	   	setTimeout(checkCollapsibles, 1000);
     }
 
     // Can be called by either addProductToView or addReactantToView
     function checkCollapsibles() {
         var reactantElems = {};
         for (var elem in reactantView) {
-            console.log(elem + " has " + reactantView[elem]["elems"].length);
             reactantElems[elem] = reactantView[elem]["elems"].length;
         }
     
         for (var product in productView) { // For each Chicken2Bacon3
             var reqs = nameToObj(product);
-            console.log("Trying: " + product);
             var enough = true;
             for (var elemReq in reqs) { // For each Chicken-needs-3
                 if ((typeof reactantElems[elemReq] === "undefined") || (reactantElems[elemReq] < reqs[elemReq])) {
-                    console.log("Not enough " + elemReq);
                     enough = false;
                     break;
                 }
@@ -144,14 +183,11 @@ var viewModule = (function() {
             if (!enough) {
                 continue;
             }
-            console.log("there's enough here...");
             // Let's assume that only one product is MADE at any time
             //
             var elemProductList = productView[product]["products"];
             var freeProduct;
-            console.log(freeProduct);
             for (var i = 0; i < elemProductList.length; i++) { // for each chicken2Bacon3{object}
-                console.log(elemProductList[i]);
                 if (elemProductList[i]["filled"]) {
                     continue;
                 } else {
@@ -159,28 +195,20 @@ var viewModule = (function() {
                 }
             } 
             if (typeof freeProduct === "undefined") {
-                console.log("Not enough free product :(");
                 continue;
             }
             
-            console.log("reaping!!!");
             for (var elemReq in reqs) { // for each Chicken in Chicken-needs-3
-                console.log(elemReq);
                 for (var i = 0; i < reqs[elemReq]; i++) {
                     var freeElem = reactantView[elemReq]["elems"].pop();
                     var freeElemId = "#" + freeElem.id;
-                    console.log("grabbing an element");
-                    console.log(freeElem.id);
-                    console.log(freeProduct.x);
-    
     
                     var xf = freeProduct.x + (Math.random() * 40);
                     var yf = freeProduct.y + (Math.random() * 40);
                     $(freeElemId).css("left", xf + "px");
                     $(freeElemId).css("top", yf + "px");
-                    $(freeElemId).css("z-index", "100");
+                    $(freeElemId).css("z-index", "2");
                     freeProduct["elemIds"].push(freeElem.id);
-                    console.log(productView);
                 }
                 freeProduct["filled"] = true;
             }
@@ -195,10 +223,24 @@ var viewModule = (function() {
         
     }
 
-    return {
+	function openOverlay() {
+	   	console.log("yoyoyo")
+	   	setTimeout(function() {
+			document.getElementById("winOverlay").style.width = "100%";
+		}, 1000);
+   	}
+
+	function closeOverlay() {
+	   	document.getElementById("winOverlay").style.width = "0%";
+   	}
+
+	return {
+		initializeScreen: initializeScreen,
         addReactant: addReactantToView,
         addProduct: addProductToView,
         removeProduct: removeProductFromView,
         removeReactant: removeReactantFromView,
+		openOverlay: openOverlay,
+		closeOverlay: closeOverlay,
     };
 })();

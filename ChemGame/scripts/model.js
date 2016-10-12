@@ -10,50 +10,32 @@ var stateModule = (function(viewModule, levelModule) {
         "svgmap": {},
     };
 
+	var currentLevel = {};
+
     /* 
      * initializeLevel
      * given [levelNum], populates currentState
      * */
     function initializeLevel(levelNum) {
-        var level = levelModule.levels[levelNum];
+        currentLevel = levelModule.levels[levelNum];
 
 		var i = 1;
-		for (var reactant in level["reactants"]) {
-
-            var $reactant = $("<div>", {class: "bottom-box reactant-box-" + (i++)});
-            currentState["reactants"][reactant] = level["reactants"][reactant];
-
-            //$("#workbench").append($reactant);
-
-            var reactantSVG = level["svgmap"][reactant];
-
-            $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactant})
-            $clickable.click(function(event) {
-                addReactant($(event.target).data("name"));
-            });
-            $reactant.append($("<div>", {class: "reactant-badge", text: "0", id: reactant+"ReactantCoeff"}));
-            $reactant.append($clickable);
-			$reactant.append($("<div>", {class: "reactant-minus-button", text: "-"}));
+		for (var reactant in currentLevel["reactants"]) {
+            currentState["reactants"][reactant] = currentLevel["reactants"][reactant];
         }
 
 		i = 1;
-		for (var product in level["products"]) {
-            var $product = $("<div>", {class: "bottom-box product-box-" + (i++)});
-            currentState["products"][product] = level["products"][product];
-
-            //$("#workbench").append($product);
-
-            var productSVG = level["svgmap"][product];
-
-            $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": product});
-            $clickable.click(function(event) {
-                addProduct($(event.target).data("name"));
-            });
-		   	$product.append($("<div>", {class: "product-badge", text: "0", id:productName+"ProductCoeff"}));
-		   	$product.append($clickable);
-		   	$product.append($("<div>", {class: "product-minus-button", text: "-"}));
+		for (var product in currentLevel["products"]) {
+            currentState["products"][product] = currentLevel["products"][product];
 	   	}
-	   	currentState["svgmap"] = level["svgmap"];
+	   	currentState["svgmap"] = currentLevel["svgmap"];
+
+		var callBacks = {
+			addReactant: addReactant,
+			addProduct: addProduct,
+		};
+
+		viewModule.initializeScreen(currentState, callBacks);
    	}
 
 	function addReactant(reactant) {
@@ -63,12 +45,11 @@ var stateModule = (function(viewModule, levelModule) {
 	   	var compound = nameToObj(reactant);
 	   	for (var elem in compound) {
 		   	for (var i = 0; i < compound[elem]; i++) {
-			   	addReactantToView(elem);
+			   	viewModule.addReactant(elem);
 		   	}
 	   	}
-	   	setTimeout(checkCollapsibles, 1000);
-	   	if (isBalanced(exampleLevel, currentState)) {
-		   	// TODO: Add overlay for game won
+	   	if (isBalanced(currentLevel, currentState)) {
+			viewModule.openOverlay();
 		}	
 	}
 
@@ -76,40 +57,11 @@ var stateModule = (function(viewModule, levelModule) {
 	   	currentState["products"][product] += 1;
 	   	var coeff = $("#" + product + "ProductCoeff");
 	   	coeff.text(parseInt(coeff.text()) + 1);
-	   	addProductToView(product);
-	   	setTimeout(checkCollapsibles, 1000);
-	   	if (isBalanced(exampleLevel, currentState)) {
-		   	// TODO: Add overlay for game won
+	   	viewModule.addProduct(product);
+	   	if (isBalanced(currentLevel, currentState)) {
+			viewModule.openOverlay();
 		}
    	}
-
-	function nameToObj(name) {
-	   	if (name.length == 0) {
-		   	console.log("Error calling nameToObj w empty string");
-	   	}
-	   	obj = {};
-	   	nameAcc = "";
-	   	for (var i = 0, len = name.length; i < len; i++) {
-            // If it's a number
-            if (!isNaN(name[i]*1)) {
-            obj[nameAcc] = parseInt(name[i]); // Assume single digit vals
-                nameAcc = "";
-                // If it is lowercase, just keep building nameAcc
-            } else if (name[i].toLowerCase() === name[i]) {
-                nameAcc += name[i];
-            } else if (name[i].toUpperCase() === name[i]) {
-                if (nameAcc !== "") {
-                    obj[nameAcc] = 1;
-                }
-                nameAcc = name[i];
-            }
-        }
-        if (nameAcc !== "") {
-            obj[nameAcc] = 1;
-        }
-        return obj;
-    }
-
 
     return {
         initializeLevel: initializeLevel,

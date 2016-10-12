@@ -11,12 +11,12 @@ var levelModule = (function() {
         // Level 3
         {
             "reactants": {
-                "Chicken2Bacon": 1,
-                "Egg": 1,
+                "Chicken2Bacon": 0,
+                "Egg": 0,
             },
             "products": {
-                "Egg3Bacon4": 1,
-                "Chicken2": 1,
+                "Egg3Bacon4": 0,
+                "Chicken2": 0,
             },
             "svgmap": {
                 "Chicken2Bacon": "svg-reactant1.svg",
@@ -29,6 +29,8 @@ var levelModule = (function() {
             },
         },
     ];
+	console.log("Levels: ");
+	console.log(module.levels);
 
     return module;
 })();

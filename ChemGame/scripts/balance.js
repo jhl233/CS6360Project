@@ -17,7 +17,7 @@ function createArrayOfIndividualElements(compoundsWithCoeffs) {
             } else {
                 finalArray[elem] = coeff * elements[elem];
             }
-           console.log(elem + ": " + finalArray[elem]);
+           //console.log(elem + ": " + finalArray[elem]);
         } 
     }
     return finalArray;
@@ -29,9 +29,9 @@ function isBalanced(level, currentState) {
     numReactants = 0;
     
     // Flatten the arrays for easy searching
-    console.log("Flatten reactants from current state: ");
+    //console.log("Flatten reactants from current state: ");
     reactantElements = createArrayOfIndividualElements(currentState["reactants"]);
-    console.log("Flatten products from current state: ");
+    //console.log("Flatten products from current state: ");
     productElements = createArrayOfIndividualElements(currentState["products"]);
     
     // Check if number of reactants is equal to the number of productss
@@ -47,9 +47,9 @@ function isBalanced(level, currentState) {
     }
     
     // Flatten the level reactants and products to make sure all reactants and products were used
-    console.log("Flatten reactants from level: ");
+    //console.log("Flatten reactants from level: ");
     allReactants = createArrayOfIndividualElements(level["reactants"]);
-    console.log("Flatten products from level: ");
+    //console.log("Flatten products from level: ");
     allProducts = createArrayOfIndividualElements(level["products"]);
     
     // All elements are properly balanced
@@ -64,6 +64,32 @@ function isBalanced(level, currentState) {
     return false;
 }
 
+function nameToObj(name) {
+   	if (name.length == 0) {
+	   	console.log("Error calling nameToObj w empty string");
+   	}
+   	obj = {};
+   	nameAcc = "";
+   	for (var i = 0, len = name.length; i < len; i++) {
+	   	// If it's a number
+        if (!isNaN(name[i]*1)) {
+		   	obj[nameAcc] = parseInt(name[i]); // Assume single digit vals
+		   	nameAcc = "";
+		   	// If it is lowercase, just keep building nameAcc
+        } else if (name[i].toLowerCase() === name[i]) {
+		   	nameAcc += name[i];
+	   	} else if (name[i].toUpperCase() === name[i]) {
+		   	if (nameAcc !== "") {
+			   	obj[nameAcc] = 1;
+		   	}
+		   	nameAcc = name[i];
+	   	}
+   	}
+   	if (nameAcc !== "") {
+	   	obj[nameAcc] = 1;
+   	}
+   	return obj;
+}
 
 function reactantAdded(event) {
     $("#" + event.target.id).appendTo($("#worktable"));
