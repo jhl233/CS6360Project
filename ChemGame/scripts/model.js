@@ -66,28 +66,31 @@ var stateModule = (function(viewModule, levelModule) {
    	}
     
     function removeReactant(reactant) {
-        currentState["reactants"][reactant] -= 1;
-        var coeff = $("#" + reactant + "Reactantcoeff");
-        coeff.text(parseInt(coeff.text()) - 1);
-        var compound = nameToObj(reactant);
-        for (var elem in compound) {
-            for (var i = 0; i < compound[elem]; i++) {
-                viewModule.removeReactant(elem);
+        if (currentState["reactants"][reactant] > 0) {
+            currentState["reactants"][reactant] -= 1;
+            var coeff = $("#" + reactant + "ReactantCoeff");
+            coeff.text(parseInt(coeff.text()) - 1);
+            var compound = nameToObj(reactant);
+            for (var elem in compound) {
+                for (var i = 0; i < compound[elem]; i++) {
+                    viewModule.removeReactant(elem);
+                }
             }
-        }
-        if (isBalanced(currentLevel, currentState)) {
-            // TODO: Add overlay for game won
+            if (isBalanced(currentLevel, currentState)) {
+                viewModule.openOverlay();
+            }
         }
     }
 
     function removeProduct(product) {
-        currentState["products"][product] -= 1;
-        var coeff = $("#" + product + "ProductCoeff");
-        coeff.text(parseInt(coeff.text()) - 1);
-        var compound = nameToObj(product);
-        removeProductFromView(product);
-        if (isBalanced(exampleLevel, currentState)) {
-            // TODO: Add overlay for game won
+        if (currentState["products"][product] > 0) {
+            currentState["products"][product] -= 1;
+            var coeff = $("#" + product + "ProductCoeff");
+            coeff.text(parseInt(coeff.text()) - 1);
+            viewModule.removeProduct(product);
+            if (isBalanced(currentLevel, currentState)) {
+                viewModule.openOverlay();
+            }
         }
     }
 

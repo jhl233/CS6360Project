@@ -102,7 +102,13 @@ var viewModule = (function() {
             });
 		   	$product.append($("<div>", {class: "product-badge", text: coeff, id:product+"ProductCoeff"}));
 		   	$product.append($clickable);
-		   	$product.append($("<div>", {class: "product-minus-button", text: "-"}));
+            
+            $minusButton = $("<div>", {class: "product-minus-button", text: "-", "data-name": product});
+            $minusButton.click(function(event) {
+                var removeProduct = callBacks["removeProduct"];
+                removeProduct($(event.target).data("name")); 
+            });
+            $product.append($minusButton);
 	   	}
     }
 
@@ -222,14 +228,77 @@ var viewModule = (function() {
     }
     
     function removeReactantFromView(elem) {
-        reactantView[elem]["nextId"]--;
-        var element = reactantView[elem]["elems"].pop();
-        $("img#" + element["id"]).remove();
-        console.log('i tried to remove something, dang it');
+        // elem is still a free element
+        if (reactantView[elem]["elems"].length > 0) {
+            reactantView[elem]["nextId"]--;
+            var element = reactantView[elem]["elems"].pop();
+            $("img#" + element["id"]).remove();
+            
+        // otherwise elem is part of a product - 
+        // delete elem and make all other elements free
+        } else {
+            // Used to determine if a product that contains elem was found            
+            var found = false;
+            
+            // Iterate through each type of product
+            for (var productName in productView) {
+                
+                // Continue if the productName contains the element to be removed
+                // and products of that type are on the screen
+                if (productName.indexOf(elem) !== -1 && productView[productName]["products"].length > 0) {
+                    
+                    var i = 0;
+                    while (i < productView[productName]["products"].length && !found) {
+                        
+                        // Choose any product that is filled
+                        if (productView[productName]["products"][i]["filled"]) {
+                            found = true;
+                            productView[productName]["products"][i]["filled"] = false;
+                            var elementRemoved = false;
+                            
+                            // Remove the product's contents
+                            while (productView[productName]["products"][i]["elemIds"].length > 0) {
+                                var elemId = productView[productName]["products"][i]["elemIds"].pop();
+                                var indexOfFirstDigit = elemId.search(/\d/);
+                                var element = elemId.substr(0, indexOfFirstDigit);
+                                
+                                // Delete the element from the screen
+                                $("img#" + elemId).remove();
+                                
+                                // Check whether it was specifically elem that was removed
+                                if (!elementRemoved && element === elem) {
+                                    elementRemoved = true;
+                                // If not, make it a free element on the left-hand side of the screen
+                                } else {
+                                    addReactantToView(element);
+                                }
+                            }
+                        }
+                        // Continue searching if we have not found a filled product
+                        i++;
+                    }
+                }
+                // Stop iterating through the products if one has already been cleared of elements
+                if (found) {
+                    break;
+                }
+            }
+        }
     }
     
     function removeProductFromView(product) {
-        
+        productView[product]["nextId"]--;
+        var compound = productView[product]["products"].pop();
+        if (compound["filled"]) {
+            for (var i = 0; i < compound["elemIds"].length; i++) {
+                var elemId = compound["elemIds"][i];
+                $("img#" + elemId).remove();
+                var indexOfFirstDigit = elemId.search(/\d/);
+                var elem = elemId.substr(0, indexOfFirstDigit);
+                addReactantToView(elem);
+            }
+        }
+        $("img#" + compound["id"]).remove();
     }
 
 	function openOverlay() {
