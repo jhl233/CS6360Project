@@ -34,10 +34,12 @@ function isBalanced(level, currentState) {
     //console.log("Flatten products from current state: ");
     productElements = createArrayOfIndividualElements(currentState["products"]);
     
-    // Check if number of reactants is equal to the number of productss
+    // Check if number of reactants is equal to the number of products, 
+    // but that the trivial case where all elements = 0 does not count
     for (var elem in reactantElements) {
         if (productElements.hasOwnProperty(elem) &&
-            reactantElements[elem] === productElements[elem]) {
+            reactantElements[elem] === productElements[elem] &&
+            productElements[elem] !== 0) {
             console.log(elem + " was balanced.");
             numBalanced++;
         } else {
@@ -53,8 +55,9 @@ function isBalanced(level, currentState) {
     allProducts = createArrayOfIndividualElements(level["products"]);
     
     // All elements are properly balanced
-    //console.log("numBalanced = " + numBalanced + " length of level reactants = " + Object.keys(allReactants).length +
-    //            " length of level products = " + Object.keys(allProducts).length);
+    //console.log("numBalanced = " + numBalanced + 
+    //            "\nlength of level reactants = " + Object.keys(allReactants).length +
+    //            "\nlength of level products = " + Object.keys(allProducts).length);
     if (numBalanced === Object.keys(allReactants).length &&
         numBalanced === Object.keys(allProducts).length) {
         return true;
