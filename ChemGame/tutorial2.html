@@ -11,20 +11,23 @@
     <title>Chemistry Kitchen</title>
 </head>
 <body>
-    <div class="overlay" id="winOverlay">
+    <div class="overlay" id="tutorialOverlay2">
         <a href="" class="closebtn" onclick="closeOverlay()">&times;</a>
         <div class="overlay-content">
             <img src="img/chef2.png" class="overlay-img">
+            <div class="overlay-bubble">
+                The food in the pan on the left side is the ingredient provided to make food.
+            </div>
+            <div class="arrow" id="arrow1"></div>
+            <div class="arrow" id="arrow2"></div>
         </div>
     </div>
     <div class="main">
         <div class="output">
-            <img id="chef" src="img/chef.png" alt="Chef">
-            <label id="hint">Need a hint? (Unimplemented)</label>
-            <label id="level">Level 3</label>
         </div>
         <div id="worktable"></div>
-        <div id="workbench"></div>
+        <div id="workbench">
+        </div>
     </div>
 </body>
 <script>
