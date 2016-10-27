@@ -1,0 +1,27 @@
+
+<svg width="151px" height="150px" viewBox="60 0 151 150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="4.48170732" y="6.11650485" width="96.0365854" height="92.7669903" rx="15"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="96.0365854" height="92.7669903" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="rectants:H2O" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(60.593975, 0.264128)">
+        <g id="Group-8" transform="translate(74.838787, 74.355800) rotate(-45.000000) translate(-74.838787, -74.355800) translate(22.338787, 21.855800)">
+            <rect id="Rectangle-9" fill="#4A6378" x="0" y="0" width="105" height="105" rx="17"></rect>
+            <use id="Rectangle-9" stroke="#1E3851" mask="url(#mask-2)" stroke-width="6" fill="#2C4255" xlink:href="#path-1"></use>
+        </g>
+        <g id="Atom" transform="translate(46.000000, 45.000000)">
+            <circle id="Oval-4" fill="#999999" cx="30" cy="30" r="30"></circle>
+            <path d="M53.3450044,42.2749203 C53.2554689,48.5524878 44.7071625,48.2825285 33.2568601,41.6557352 C20.6091415,35.0110324 7.78767643,24.5024744 5.60602199,18.2004281" id="Oval-5" stroke-opacity="0.515228714" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="bevel" transform="translate(29.475513, 32.505317) scale(-1, 1) translate(-29.475513, -32.505317) "></path>
+            <path d="M5.84542603,17.5889957 C3.56591806,11.2869494 14.6390582,11.5977154 29.6218007,18.266897 C43.4407209,24.918169 53.88151,35.3859203 53.9066254,41.6634878" id="Oval-5" stroke-opacity="0.515228714" stroke="#FFFFFF" stroke-linecap="round"></path>
+            <text id="C" font-family=".SFNSText-Bold, .SF NS Text" font-size="40" font-weight="bold" letter-spacing="-1.2285713" fill="#FACC39">
+                <tspan x="14.9960214" y="43.995882">C</tspan>
+            </text>
+            <path d="M53.9317642,42.2749203 C53.8422287,48.5524878 45.2939223,48.2825285 33.8436199,41.6557352 C21.1959012,35.0110324 8.37443619,24.5024744 6.19278175,18.2004281" id="Oval-5" stroke-opacity="0.515228714" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="bevel"></path>
+            <path d="M5.84542603,17.5889957 C3.56591806,11.2869494 14.6390582,11.5977154 29.6218007,18.266897 C43.4407209,24.918169 53.88151,35.3859203 53.9066254,41.6634878" id="Oval-5" stroke-opacity="0.515228714" stroke="#FFFFFF" stroke-linecap="round" transform="translate(29.727017, 27.360080) scale(-1, 1) translate(-29.727017, -27.360080) "></path>
+        </g>
+    </g>
+</svg>
