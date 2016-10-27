@@ -216,11 +216,7 @@ body{
     height: 100%;
     width: 0%;
     position: fixed; 
-<<<<<<< Updated upstream
     z-index: 3; 
-=======
-    z-index: 100; 
->>>>>>> Stashed changes
     left: 0;
     top: 0;
     background-color: rgba(255,255,255,0.95); 
