@@ -68,7 +68,7 @@ var viewModule = (function() {
 
         var $userbar = $("<div>", {id:"output"});
         $userbar.append('<img id="chef" src="img/chef.png" alt="Chef">');
-        $userbar.append('<label id="hint">Need a hint? (unimplemented)</label>');
+        $userbar.append('<label id="hint" onclick="viewModule.showHint()">Need a hint? Click here!</label>');
         $userbar.append('<label id="level">Level ' + state['level'] + '</label>');
         $userbar.append($homeButton);
         
