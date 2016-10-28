@@ -98,19 +98,6 @@ body{
     margin-bottom: 20px;
 }
 
-#home
-{
-    position:absolute;
-    left:90%;
-    top:35%;
-}
-
-#home:hover
-{
-    
-    content:url(../svg/svg-home-icon-shadow.svg)
-}
-
 .bottom-box{
     height: 100%;
     text-align: center;
@@ -238,7 +225,6 @@ body{
 }
 .overlay-img{
     position: absolute;
-    height: 30%;
     top: 32%;
     left: 15%;
 }
@@ -251,7 +237,7 @@ body{
     border-radius: 25px;
     /* Great job! Click here: */
     font-family: .SFNSText-Medium;
-    font-size: 6em;
+    font-size: 30px;
     color: #FFFFFF;
     letter-spacing: -0.19px;
     text-align: left;  
@@ -285,19 +271,19 @@ body{
 #winOverlay .overlay-img{
     position: absolute;
     height: 18%;
-    top: 20%;
+    top: 19%;
     left: 20%;
 }
 #winOverlay .overlay-bubble{
     position: absolute;
     width: 60%;
     height: 20%;
-    top: 38%;
+    top: 37%;
     left: 18%;
     background-color: #45D0E2;
     border-radius: 25px;
     font-family: .SFNSText-Medium;
-    font-size: 30px;
+    font-size: 5em;
     color: #FFFFFF;
     line-height: 150px;
     letter-spacing: -0.19px;
@@ -308,9 +294,54 @@ body{
     color: #00a1c2;
     font-size: 1.5em;
     position: absolute;
-    top: 28%;
+    top: 27%;
     left: 33%;
 }
+
+#winOverlay .button-home-icon{
+    position: absolute;
+    left: 68.5%;
+    top: 70%;
+    width: 2.2%;
+}
+
+#winOverlay .button-home-text{
+    position: absolute;
+    left: 71.5%;
+    top: 71%;
+    color: #45d0e2;
+}
+
+#winOverlay .button-home-text:hover{
+    color: #00a1c2;
+}
+
+#winOverlay .button-replay-text:hover{
+    color: #00a1c2;
+}
+
+#winOverlay .button-replay{
+    display: block;
+}
+
+#winOverlay .button-replay:hover{
+    background-color: red;
+}
+
+#winOverlay .button-replay-icon{
+    position: absolute;
+    left: 78%;
+    top: 70.1%;
+    width: 1.7%;
+}
+
+#winOverlay .button-replay-text{
+    position: absolute;
+    left: 80.7%;
+    top:71%;
+    color: #45d0e2;
+}
+
 
 .index_mian{
     background-color: #f9f9f9;
@@ -394,9 +425,15 @@ body{
 #tutorialOverlay1{
     width: 100%;
 }
+#tutorialOverlay1 overlay-img{
+    height: 26%;
+}
 #tutorialOverlay2{
     width: 100%;
     height: 75%;
+}
+#tutorialOverlay2 overlay-img{
+    height: 30%;
 }
 /*Arrow animation*/
 .arrow{
