@@ -32,7 +32,7 @@ var levelModule = (function() {
                 "Brocolli": "l2/svg-reactant1-L2.svg",
                 "Bacon2": "l2/svg-reactant2-L2.svg",
                 "Brocolli1Bacon2": "l2/svg-product1-L2.svg",
-                "aBrocolli": "svg-egg.svg",
+                "aBrocolli": "l2/svg-broccoli.svg",
                 "aBacon": "svg-bacon.svg",
                 "Brocolli1Bacon2Plate": "pink_plate.svg",
             }
