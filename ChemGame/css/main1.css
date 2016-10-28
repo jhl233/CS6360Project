@@ -228,7 +228,6 @@ body{
 }
 .overlay {
     height: 100%;
-    width: 0%;
     position: fixed; 
     z-index: 3; 
     left: 0;
@@ -239,7 +238,7 @@ body{
 }
 .overlay-img{
     position: absolute;
-    width: 13%;
+    height: 30%;
     top: 32%;
     left: 15%;
 }
@@ -252,7 +251,7 @@ body{
     border-radius: 25px;
     /* Great job! Click her: */
     font-family: .SFNSText-Medium;
-    font-size: 30px;
+    font-size: 6em;
     color: #FFFFFF;
     letter-spacing: -0.19px;
     text-align: left;  
@@ -278,6 +277,39 @@ body{
 
 .overlay a:hover, .overlay a:focus {
     color: #343434;
+}
+#winOverlay{
+    width: 100%
+}
+
+#winOverlay .overlay-img{
+    position: absolute;
+    height: 18%;
+    top: 20%;
+    left: 20%;
+}
+#winOverlay .overlay-bubble{
+    position: absolute;
+    width: 60%;
+    height: 20%;
+    top: 38%;
+    left: 18%;
+    background-color: #45D0E2;
+    border-radius: 25px;
+    font-family: .SFNSText-Medium;
+    font-size: 30px;
+    color: #FFFFFF;
+    line-height: 150px;
+    letter-spacing: -0.19px;
+    text-align: center;  
+    padding: 30px 50px;
+} 
+#winOverlay .win_text{
+    color: #00a1c2;
+    font-size: 1.5em;
+    position: absolute;
+    top: 28%;
+    left: 33%;
 }
 
 .index_mian{
