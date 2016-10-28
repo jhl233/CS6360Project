@@ -26,6 +26,8 @@ var levelModule = (function() {
                 "aChicken":      "svg-chicken.svg",
                 "aBacon":        "svg-bacon.svg",
                 "aEgg":          "svg-egg.svg",
+                "Egg3Bacon4Plate": "grey_plate.svg",
+                "Chicken2Plate":   "pink_plate.svg"
             },
         },
     ];

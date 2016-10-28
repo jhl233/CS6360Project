@@ -394,3 +394,15 @@ body{
 #arrow4{
     left: 82.2%;
 }
+#home
+{
+    position:absolute;
+    left:90%;
+    top:35%;
+}
+
+#home:hover
+{
+    
+    content:url(../svg/svg-home-icon-shadow.svg)
+}

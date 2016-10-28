@@ -153,7 +153,7 @@ var viewModule = (function() {
         $newImg.css("left", x + "px");
         $newImg.css("top", y + "px");
 
-        setTimeout(checkCollapsibles, 1000);
+        checkCollapsibles();
     }
 
     function addProductToView(product) {
@@ -182,12 +182,13 @@ var viewModule = (function() {
             }
         );
 
-        var $newImg = $("<img>", {id: id, src: "svg/svg-pot.svg"});
+        var plate = svgMap[product + "Plate"];
+        var $newImg = $("<img>", {id: id, src: "svg/" + plate});
         $("#worktable").append($newImg);
         $newImg.css("position", "absolute");
         $newImg.css("left", x + "px");
         $newImg.css("top", y + "px");
-        setTimeout(checkCollapsibles, 1000);
+        checkCollapsibles();
     }
 
     // Can be called by either addProductToView or addReactantToView
@@ -230,16 +231,46 @@ var viewModule = (function() {
 
                     var xf = freeProduct.x + (Math.random() * 40);
                     var yf = freeProduct.y + (Math.random() * 40);
-                    $(freeElemId).css("left", xf + "px");
-                    $(freeElemId).css("top", yf + "px");
                     $(freeElemId).css("z-index", "2");
                     freeProduct["elemIds"].push(freeElem.id);
+                    $(freeElemId).animate({left: xf, top: yf});
                 }
                 freeProduct["filled"] = true;
             }
         }
     }
+    
+    function addReactantBackToWorktable(elem, prevPosition) {
+        var width = $("#worktable").width();
+        var height = $("#worktable").height();
+        var worktabley = $("#worktable").position().top + 30;
+    
+        var x = Math.round(Math.random() * width * 0.4);
+        var y = Math.round(Math.random() * (height - 100)) + worktabley;
+    
+        // Each item in reactantView and productView need to have an
+        // id and an x and a y coordinate
+        if (!reactantView.hasOwnProperty(elem)) {
+            reactantView[elem] = {
+                "nextId": 0,
+                "elems": [],
+            }
+        }
+        id = elem + reactantView[elem]["nextId"];
+        reactantView[elem]["nextId"]++;
+        reactantView[elem]["elems"].push({"id":id, "x":x, "y":y});
 
+        var img = "svg/" + svgMap["a" + elem];
+        var $newImg = $("<img>", {id: id, src: img});
+        $("#worktable").append($newImg);
+        $newImg.css("position", "absolute");
+        $newImg.css("left", prevPosition.left + "px");
+        $newImg.css("top", prevPosition.top + "px");
+        $newImg.animate({left: x, top: y});
+
+        checkCollapsibles();
+    }
+    
     function removeReactantFromView(elem) {
         // elem is still a free element
         if (reactantView[elem]["elems"].length > 0) {
@@ -273,7 +304,8 @@ var viewModule = (function() {
                                 var elemId = productView[productName]["products"][i]["elemIds"].pop();
                                 var indexOfFirstDigit = elemId.search(/\d/);
                                 var element = elemId.substr(0, indexOfFirstDigit);
-
+                                var prevPosition = $("#" + elemId).position();
+                                
                                 // Delete the element from the screen
                                 $("img#" + elemId).remove();
 
@@ -304,10 +336,12 @@ var viewModule = (function() {
         if (compound["filled"]) {
             for (var i = 0; i < compound["elemIds"].length; i++) {
                 var elemId = compound["elemIds"][i];
+                var prevPosition = $("img#" + elemId).position();
+                console.log("Previous Position: " + prevPosition);
                 $("img#" + elemId).remove();
                 var indexOfFirstDigit = elemId.search(/\d/);
                 var elem = elemId.substr(0, indexOfFirstDigit);
-                addReactantToView(elem);
+                addReactantBackToWorktable(elem, prevPosition);
             }
         }
         $("img#" + compound["id"]).remove();

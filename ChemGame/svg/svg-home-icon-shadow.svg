@@ -1,0 +1,11 @@
+
+<svg width="48px" height="45px" viewBox="-2 -3 48 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <polyline id="Shape" stroke="#45D0E2" stroke-width="3" points="6 14.5 6 40 18 40 18 30 26 30 26 40 38 40 38 14.5"></polyline>
+        <polyline id="Shape" stroke="#45D0E2" stroke-width="3" points="0 20 22 0 44 20"></polyline>
+        <rect id="Rectangle-path" stroke="#45D0E2" stroke-width="3" x="18" y="14" width="8" height="8"></rect>
+    </g>
+</svg>
