@@ -17,6 +17,9 @@ var stateModule = (function(viewModule, levelModule) {
      * */
     function initializeLevel(levelNum) {
         currentLevel = levelModule.levels[levelNum];
+        currentState["reactants"] = {};
+        currentState["products"] = {};
+        currentState["svgmap"] = {};
 
         var i = 1;
         for (var reactant in currentLevel["reactants"]) {
@@ -36,7 +39,9 @@ var stateModule = (function(viewModule, levelModule) {
             removeProduct: removeProduct,
         };
 
-        console.log(levelModule);
+        currentState["level"] = levelNum;
+
+        console.log(currentState);
         viewModule.initializeScreen(currentState, callBacks);
     }
 
@@ -51,7 +56,11 @@ var stateModule = (function(viewModule, levelModule) {
             }
         }
         if (isBalanced(currentLevel, currentState)) {
-            viewModule.openOverlay();
+            setTimeout(function(){
+                viewModule.nextLevel(function() {
+                    initializeLevel(currentState["level"]+1);
+                });
+            } , 750);
         }    
     }
 
@@ -61,7 +70,11 @@ var stateModule = (function(viewModule, levelModule) {
         coeff.text(parseInt(coeff.text()) + 1);
         viewModule.addProduct(product);
         if (isBalanced(currentLevel, currentState)) {
-            viewModule.openOverlay();
+            setTimeout(function() {
+                viewModule.nextLevel(function() {
+                    initializeLevel(currentState["level"]+1);
+                });
+            }, 750);
         }
     }
 
@@ -77,7 +90,11 @@ var stateModule = (function(viewModule, levelModule) {
                 }
             }
             if (isBalanced(currentLevel, currentState)) {
-                viewModule.openOverlay();
+                setTimeout(function() {
+                    viewModule.nextLevel(function() {
+                        initializeLevel(currentState["level"]+1);
+                    });
+                }, 750);
             }
         }
     }
@@ -89,7 +106,11 @@ var stateModule = (function(viewModule, levelModule) {
             coeff.text(parseInt(coeff.text()) - 1);
             viewModule.removeProduct(product);
             if (isBalanced(currentLevel, currentState)) {
-                viewModule.openOverlay();
+                setTimeout(function() {
+                    viewModule.nextLevel(function() {
+                        initializeLevel(currentState["level"]+1);
+                    });
+                }, 750);
             }
         }
     }

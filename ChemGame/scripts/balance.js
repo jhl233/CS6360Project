@@ -88,7 +88,7 @@ function nameToObj(name) {
 		   	nameAcc = name[i];
 	   	}
    	}
-   	if (nameAcc !== "") {
+   	if ((nameAcc !== "") && (nameAcc !== "r") && (nameAcc !== "p")) {
 	   	obj[nameAcc] = 1;
    	}
    	return obj;

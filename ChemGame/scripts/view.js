@@ -45,6 +45,7 @@ var viewModule = (function() {
     // initializeScreen
     // assumes [state] looks like:
     // {
+    //   "level": 5,
     //   "reactants": {
     //     "Chicken2Bacon": 1,
     //     ...
@@ -61,10 +62,16 @@ var viewModule = (function() {
     function initializeScreen(state, callBacks) {
         svgMap = state["svgmap"];
 
+        var $homeButton = $("<div>", {id:"home"});
+        $homeButton.append("<img src='svg/svg-home-icon.svg' alt='Home'>");
+        $homeButton.click(homeScreen);
+
         var $userbar = $("<div>", {id:"output"});
         $userbar.append('<img id="chef" src="img/chef.png" alt="Chef">');
         $userbar.append('<label id="hint">Need a hint? (unimplemented)</label>');
-        $userbar.append('<label id="level">Level 3</label>');
+        $userbar.append('<label id="level">Level ' + state['level'] + '</label>');
+        $userbar.append($homeButton);
+        
         var $worktable = $("<div>", {id:"worktable"});
         var $workbench= $("<div>", {id:"workbench"});
 
@@ -347,11 +354,34 @@ var viewModule = (function() {
         $("img#" + compound["id"]).remove();
     }
 
-    function openOverlay() {
-        console.log("yoyoyo")
-        setTimeout(function() {
-            document.getElementById("winOverlay").style.width = "100%";
-        }, 1000);
+    function nextLevel(initializeNext) {
+
+        $homeSpan = $("<span>", {class:"button-home"});
+        $homeSpan.append("<img class='button-home-icon' src='svg/svg-home-icon-shadow.svg'>");
+        $homeSpan.append("<span class='button-home-text'>Home</span>");
+
+        $replaySpan = $("<span>", {class:"button-replay"});
+        $replaySpan.append("<img class='button-replay-icon' src='svg/svg-replay.svg'>");
+        $replaySpan.append("<span class='button-replay-text'>Replay</span>");
+
+        $nextSpan = $("<div>", {class:"overlay-bubble shadow"});
+        $nextSpan.append("<p>Click here to go to the next level</p>");
+
+        $overlay = $("<div>", {class:'overlay', id:'winOverlay'});
+
+        $overlay.append("<img src='img/chef2.png' class='overlay-img'>");
+        $overlay.append($("<div>", {
+            class:'win_text',
+            text:'Great job! You made all the food!'
+        }));
+        $nextSpan.click(function() {
+            $overlay.remove();
+            $("#worktable").empty();
+            $(document.body).empty();
+            initializeNext();
+        });
+        $overlay.append($nextSpan);
+        $(document.body).append($overlay);
     }
 
     function closeOverlay(overlayID) {
@@ -380,7 +410,7 @@ var viewModule = (function() {
         addProduct: addProductToView,
         removeProduct: removeProductFromView,
         removeReactant: removeReactantFromView,
-		openOverlay: openOverlay,
+		nextLevel: nextLevel,
 		closeOverlay: closeOverlay,
         showHint: showHint,
         resetHint: resetHint,
