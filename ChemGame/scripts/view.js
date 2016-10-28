@@ -40,7 +40,7 @@ var viewModule = (function() {
     // }
     var productView = {};
 
-	var svgMap = {};
+    var svgMap = {};
 
     // initializeScreen
     // assumes [state] looks like:
@@ -60,8 +60,22 @@ var viewModule = (function() {
     // }
     function initializeScreen(state, callBacks) {
         svgMap = state["svgmap"];
-		var i = 1;
-		for (var reactant in state["reactants"]) {
+
+        var $userbar = $("<div>", {id:"output"});
+        $userbar.append('<img id="chef" src="img/chef.png" alt="Chef">');
+        $userbar.append('<label id="hint">Need a hint? (unimplemented)</label>');
+        $userbar.append('<label id="level">Level 3</label>');
+        var $worktable = $("<div>", {id:"worktable"});
+        var $workbench= $("<div>", {id:"workbench"});
+
+        var $main = $("<div>", {id:"main"});
+        $($main).append($userbar);
+        $($main).append($worktable);
+        $($main).append($workbench);
+        $(document.body).append($main);
+
+        var i = 1;
+        for (var reactant in state["reactants"]) {
 
             var $reactant = $("<div>", {class: "bottom-box reactant-box-" + (i++)});
             var coeff = state["reactants"][reactant];
@@ -72,12 +86,12 @@ var viewModule = (function() {
 
             $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactant})
             $clickable.click(function(event) {
-				var addReactant = callBacks["addReactant"];
+                var addReactant = callBacks["addReactant"];
                 addReactant($(event.target).data("name"));
             });
             $reactant.append($("<div>", {class: "reactant-badge", text: coeff, id: reactant+"ReactantCoeff"}));
             $reactant.append($clickable);
-            
+
             $minusButton = $("<div>", {class: "reactant-minus-button", text: "-", "data-name": reactant});
             $minusButton.click(function(event) {
                 var removeReactant = callBacks["removeReactant"];
@@ -86,8 +100,8 @@ var viewModule = (function() {
             $reactant.append($minusButton);
         }
 
-		i = 1;
-		for (var product in state["products"]) {
+        i = 1;
+        for (var product in state["products"]) {
             var $product = $("<div>", {class: "bottom-box product-box-" + (i++)});
             var coeff = state["products"][product];
 
@@ -97,29 +111,29 @@ var viewModule = (function() {
 
             $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": product});
             $clickable.click(function(event) {
-				var addProduct = callBacks["addProduct"];
+                var addProduct = callBacks["addProduct"];
                 addProduct($(event.target).data("name"));
             });
-		   	$product.append($("<div>", {class: "product-badge", text: coeff, id:product+"ProductCoeff"}));
-		   	$product.append($clickable);
-            
+            $product.append($("<div>", {class: "product-badge", text: coeff, id:product+"ProductCoeff"}));
+            $product.append($clickable);
+
             $minusButton = $("<div>", {class: "product-minus-button", text: "-", "data-name": product});
             $minusButton.click(function(event) {
                 var removeProduct = callBacks["removeProduct"];
                 removeProduct($(event.target).data("name")); 
             });
             $product.append($minusButton);
-	   	}
+        }
     }
 
     function addReactantToView(elem) {
         var width = $("#worktable").width();
         var height = $("#worktable").height();
         var worktabley = $("#worktable").position().top + 30;
-    
+
         var x = Math.round(Math.random() * width * 0.4);
         var y = Math.round(Math.random() * (height - 100)) + worktabley;
-    
+
         // Each item in reactantView and productView need to have an
         // id and an x and a y coordinate
         if (!reactantView.hasOwnProperty(elem)) {
@@ -139,7 +153,7 @@ var viewModule = (function() {
         $newImg.css("left", x + "px");
         $newImg.css("top", y + "px");
 
-	   	setTimeout(checkCollapsibles, 1000);
+        setTimeout(checkCollapsibles, 1000);
     }
 
     function addProductToView(product) {
@@ -173,7 +187,7 @@ var viewModule = (function() {
         $newImg.css("position", "absolute");
         $newImg.css("left", x + "px");
         $newImg.css("top", y + "px");
-	   	setTimeout(checkCollapsibles, 1000);
+        setTimeout(checkCollapsibles, 1000);
     }
 
     // Can be called by either addProductToView or addReactantToView
@@ -182,7 +196,7 @@ var viewModule = (function() {
         for (var elem in reactantView) {
             reactantElems[elem] = reactantView[elem]["elems"].length;
         }
-    
+
         for (var product in productView) { // For each Chicken2Bacon3
             var reqs = nameToObj(product);
             var enough = true;
@@ -196,7 +210,6 @@ var viewModule = (function() {
                 continue;
             }
             // Let's assume that only one product is MADE at any time
-            //
             var elemProductList = productView[product]["products"];
             var freeProduct;
             for (var i = 0; i < elemProductList.length; i++) { // for each chicken2Bacon3{object}
@@ -209,12 +222,12 @@ var viewModule = (function() {
             if (typeof freeProduct === "undefined") {
                 continue;
             }
-            
+
             for (var elemReq in reqs) { // for each Chicken in Chicken-needs-3
                 for (var i = 0; i < reqs[elemReq]; i++) {
                     var freeElem = reactantView[elemReq]["elems"].pop();
                     var freeElemId = "#" + freeElem.id;
-    
+
                     var xf = freeProduct.x + (Math.random() * 40);
                     var yf = freeProduct.y + (Math.random() * 40);
                     $(freeElemId).css("left", xf + "px");
@@ -226,14 +239,14 @@ var viewModule = (function() {
             }
         }
     }
-    
+
     function removeReactantFromView(elem) {
         // elem is still a free element
         if (reactantView[elem]["elems"].length > 0) {
             reactantView[elem]["nextId"]--;
             var element = reactantView[elem]["elems"].pop();
             $("img#" + element["id"]).remove();
-            
+
         // otherwise elem is part of a product - 
         // delete elem and make all other elements free
         } else {
@@ -246,29 +259,28 @@ var viewModule = (function() {
                 // Continue if the productName contains the element to be removed
                 // and products of that type are on the screen
                 if (productName.indexOf(elem) !== -1 && productView[productName]["products"].length > 0) {
-                    
                     var i = 0;
                     while (i < productView[productName]["products"].length && !found) {
-                        
+
                         // Choose any product that is filled
                         if (productView[productName]["products"][i]["filled"]) {
                             found = true;
                             productView[productName]["products"][i]["filled"] = false;
                             var elementRemoved = false;
-                            
+
                             // Remove the product's contents
                             while (productView[productName]["products"][i]["elemIds"].length > 0) {
                                 var elemId = productView[productName]["products"][i]["elemIds"].pop();
                                 var indexOfFirstDigit = elemId.search(/\d/);
                                 var element = elemId.substr(0, indexOfFirstDigit);
-                                
+
                                 // Delete the element from the screen
                                 $("img#" + elemId).remove();
-                                
+
                                 // Check whether it was specifically elem that was removed
                                 if (!elementRemoved && element === elem) {
                                     elementRemoved = true;
-                                // If not, make it a free element on the left-hand side of the screen
+                                    // If not, make it a free element on the left-hand side of the screen
                                 } else {
                                     addReactantToView(element);
                                 }
@@ -285,7 +297,7 @@ var viewModule = (function() {
             }
         }
     }
-    
+
     function removeProductFromView(product) {
         productView[product]["nextId"]--;
         var compound = productView[product]["products"].pop();
@@ -301,24 +313,24 @@ var viewModule = (function() {
         $("img#" + compound["id"]).remove();
     }
 
-	function openOverlay() {
-	   	console.log("yoyoyo")
-	   	setTimeout(function() {
-			document.getElementById("winOverlay").style.width = "100%";
-		}, 1000);
-   	}
+    function openOverlay() {
+        console.log("yoyoyo")
+        setTimeout(function() {
+            document.getElementById("winOverlay").style.width = "100%";
+        }, 1000);
+    }
 
-	function closeOverlay() {
-	   	document.getElementById("winOverlay").style.width = "0%";
-   	}
+    function closeOverlay(overlayID) {
+        $(overlayID).remove();
+    }
 
-	return {
-		initializeScreen: initializeScreen,
+    return {
+        initializeScreen: initializeScreen,
         addReactant: addReactantToView,
         addProduct: addProductToView,
         removeProduct: removeProductFromView,
         removeReactant: removeReactantFromView,
-		openOverlay: openOverlay,
-		closeOverlay: closeOverlay,
+        openOverlay: openOverlay,
+        closeOverlay: closeOverlay,
     };
 })();
