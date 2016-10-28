@@ -31,7 +31,7 @@ function showLevels() {
     var $levelBox = $("<div>", {class: "level_box"});
     $levelBox.append("<div class='pot_box shadow'>Lv.1</div>");
     $levelBox.append("<div class='pot_box shadow'>Lv.2</div>");
-    $levelBox.append("<div class='pot_box shadow'>Lv.3</div>");
+    $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(3)'>Lv.3</div>");
     $levelBox.append("<div class='pot_box shadow'>Lv.4</div>");
     $levelBox.append("<div class='pot_box shadow'>Lv.5</div>");
     $levelBox.append("<div class='pot_box shadow'>Lv.6</div>");
