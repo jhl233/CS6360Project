@@ -358,7 +358,6 @@ var viewModule = (function() {
         $(overlayID).remove();
     }
 
-<<<<<<< HEAD
     function showHint() {
         var hint = stateModule.specifyHint();
         $("#hint").html(hint);
@@ -377,22 +376,13 @@ var viewModule = (function() {
     
 	return {
 		initializeScreen: initializeScreen,
-=======
-    return {
-        initializeScreen: initializeScreen,
->>>>>>> origin/master
         addReactant: addReactantToView,
         addProduct: addProductToView,
         removeProduct: removeProductFromView,
         removeReactant: removeReactantFromView,
-<<<<<<< HEAD
 		openOverlay: openOverlay,
 		closeOverlay: closeOverlay,
         showHint: showHint,
         resetHint: resetHint,
-=======
-        openOverlay: openOverlay,
-        closeOverlay: closeOverlay,
->>>>>>> origin/master
     };
 })();
