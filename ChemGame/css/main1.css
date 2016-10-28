@@ -249,7 +249,7 @@ body{
     left: 32%;
     background-color: #45D0E2;
     border-radius: 25px;
-    /* Great job! Click her: */
+    /* Great job! Click here: */
     font-family: .SFNSText-Medium;
     font-size: 6em;
     color: #FFFFFF;
@@ -279,7 +279,7 @@ body{
     color: #343434;
 }
 #winOverlay{
-    width: 100%
+    width: 0%
 }
 
 #winOverlay .overlay-img{

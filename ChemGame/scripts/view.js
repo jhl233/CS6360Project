@@ -168,7 +168,8 @@ var viewModule = (function() {
             }
         );
 
-        var $newImg = $("<img>", {id: id, src: "svg/svg-pot.svg"});
+        var plate = svgMap[product + "Plate"];
+        var $newImg = $("<img>", {id: id, src: "svg/" + plate});
         $("#worktable").append($newImg);
         $newImg.css("position", "absolute");
         $newImg.css("left", x + "px");
