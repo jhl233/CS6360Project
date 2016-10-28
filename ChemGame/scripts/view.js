@@ -347,6 +347,22 @@ var viewModule = (function() {
 	   	document.getElementById("winOverlay").style.width = "0%";
    	}
 
+    function showHint() {
+        var hint = stateModule.specifyHint();
+        $("#hint").html(hint);
+    }
+    
+    function resetHint() {
+        $("#hint").html("Need a hint? Click here!");
+    }
+    
+    $(document).click(function(e) {
+        var target = e.target;
+        if (!$(target).is("#hint")) {
+            resetHint();
+        }
+    });
+    
 	return {
 		initializeScreen: initializeScreen,
         addReactant: addReactantToView,
@@ -355,5 +371,7 @@ var viewModule = (function() {
         removeReactant: removeReactantFromView,
 		openOverlay: openOverlay,
 		closeOverlay: closeOverlay,
+        showHint: showHint,
+        resetHint: resetHint,
     };
 })();

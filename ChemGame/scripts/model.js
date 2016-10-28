@@ -92,12 +92,49 @@ var stateModule = (function(viewModule, levelModule) {
             }
         }
     }
+    
+     function specifyHint() {
+         // Check for case with no reactants
+         var noReactants = true;
+         for (var reactant in currentState["reactants"]) {
+             if (currentState["reactants"][reactant] !== 0) {
+                 noReactants = false;
+             }
+         }
+         
+         if (noReactants) {
+             return "Try adding a bundle of ingredients to the worktable!";
+         }
+         
+         // Check for case with no products
+         var noProducts = true;
+         for (var product in currentState["products"]) {
+             if (currentState["products"][product] !== 0) {
+                 noProducts = false;
+             }
+         }
+         
+         if (noProducts) {
+             return "Try making more dishes!";
+         }
+         
+         // Give a message about balancing a particular element
+         reactantElements = createArrayOfIndividualElements(currentState["reactants"]);
+         productElements = createArrayOfIndividualElements(currentState["products"]);
+         for (var elem in reactantElements) {
+             if (productElements.hasOwnProperty(elem) &&
+                reactantElements[elem] !== productElements[elem]) {
+                return "Try to get the same number of " + elem.toLowerCase() + " on the left and right!";
+             }
+         }
+    }
 
     return {
         initializeLevel: initializeLevel,
         addReactant: addReactant,
         addProduct: addProduct,
         removeReactant: removeReactant,
-        removeProduct: removeProduct
+        removeProduct: removeProduct,
+        specifyHint: specifyHint,
     };
 })(viewModule, levelModule);
