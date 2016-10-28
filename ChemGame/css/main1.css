@@ -98,6 +98,19 @@ body{
     margin-bottom: 20px;
 }
 
+#home
+{
+    position:absolute;
+    left:90%;
+    top:35%;
+}
+
+#home:hover
+{
+    
+    content:url(../svg/svg-home-icon-shadow.svg)
+}
+
 .bottom-box{
     height: 100%;
     text-align: center;

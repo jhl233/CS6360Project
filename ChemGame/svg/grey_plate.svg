@@ -1,0 +1,13 @@
+
+<svg width="111px" height="111px" viewBox="0 0 111 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="55.591133" cy="54.7555556" rx="41.9211823" ry="41.9111111"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="83.8423645" height="83.8222222" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <ellipse id="Oval-7" stroke="none" fill="#DFDEDE" fill-rule="evenodd" cx="55.2561576" cy="55.2428829" rx="55.2561576" ry="55.2428829"></ellipse>
+    <use id="Oval-7" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" fill="#CCCBCB" fill-rule="evenodd" xlink:href="#path-1"></use>
+</svg>
