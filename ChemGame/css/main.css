@@ -95,9 +95,11 @@ body{
 #workbench
 {
     height:25%;
-    background-color:#F9F9F9;
     position: relative;
     margin-bottom: 20px;
+    background-image: url(../img/shelf.svg);
+    background-repeat: no-repeat;
+    background-position: 10%;
 }
 
 .bottom-box{
@@ -430,3 +432,4 @@ body{
 .button-home-icon {
     
 }
+
