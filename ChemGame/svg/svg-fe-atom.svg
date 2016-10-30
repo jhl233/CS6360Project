@@ -1,0 +1,17 @@
+<svg width="55px" height="54px" viewBox="47 48 55 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Atom" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(47.500000, 48.000000)">
+        <circle id="Oval-4" fill="#FAA027" cx="27" cy="27" r="27"></circle>
+        <path d="M48.0105042,38.0474282 C47.9299223,43.6972391 40.2364465,43.4542757 29.9311743,37.4901617 C18.5482275,31.5099291 7.008909,22.052227 5.04542,16.3803853" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" transform="translate(26.527962, 29.254785) scale(-1, 1) translate(-26.527962, -29.254785) "></path>
+        <path d="M5.26088342,15.8300961 C3.20932625,10.1582545 13.1751524,10.4379439 26.6596206,16.4402073 C39.0966488,22.4263521 48.493359,31.8473282 48.5159628,37.4971391" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF"></path>
+        <g id="Fe" transform="translate(14.000000, 11.000000)" font-size="24" font-family=".SFNSText-Bold, .SF NS Text" fill="#4A4A4A" font-weight="bold">
+            <text>
+                <tspan x="0.0964192" y="23.0962938">Fe</tspan>
+            </text>
+        </g>
+        <path d="M48.5385878,38.0474282 C48.4580058,43.6972391 40.7645301,43.4542757 30.4592579,37.4901617 C19.0763111,31.5099291 7.53699257,22.052227 5.57350358,16.3803853" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF"></path>
+        <path d="M5.26088245,15.8300961 C3.20932528,10.1582545 13.1751514,10.4379439 26.6596196,16.4402073 C39.0966478,22.4263521 48.493358,31.8473282 48.5159618,37.4971391" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" transform="translate(26.754315, 24.624072) scale(-1, 1) translate(-26.754315, -24.624072) "></path>
+    </g>
+</svg>
