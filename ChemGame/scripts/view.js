@@ -357,12 +357,12 @@ var viewModule = (function() {
     function nextLevel(initializeNext) {
 
         $homeSpan = $("<span>", {class:"button-home"});
-        $homeSpan.append("<img class='button-home-icon' src='svg/svg-home-icon-shadow.svg'>");
-        $homeSpan.append("<span class='button-home-text'>Home</span>");
+        $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon-shadow.svg'>");
+        $homeSpan.append("<span class='button-text'>Home</span>");
 
         $replaySpan = $("<span>", {class:"button-replay"});
-        $replaySpan.append("<img class='button-replay-icon' src='svg/svg-replay.svg'>");
-        $replaySpan.append("<span class='button-replay-text'>Replay</span>");
+        $replaySpan.append("<img class='button-icon' src='svg/svg-replay.svg'>");
+        $replaySpan.append("<span class='button-text'>Replay</span>");
 
         $nextSpan = $("<div>", {class:"overlay-bubble shadow"});
         $nextSpan.append("<p>Click here to go to the next level</p>");
@@ -380,7 +380,15 @@ var viewModule = (function() {
             $(document.body).empty();
             initializeNext();
         });
+        $replaySpan.click(function(){
+           $overlay.remove();
+            $("#worktable").empty();
+            $(document.body).empty();
+            initializeLevel(currentState["level"]);
+        });
         $overlay.append($nextSpan);
+        $overlay.append($replaySpan);
+        $overlay.append($homeSpan);
         $(document.body).append($overlay);
     }
 

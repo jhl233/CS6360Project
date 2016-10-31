@@ -238,6 +238,8 @@ body{
     overflow-x: hidden; 
 /*    transition: 0.5s; */
 }
+
+
 .overlay-img{
     position: absolute;
     width: 13%;
@@ -281,6 +283,56 @@ body{
 
 .overlay a:hover, .overlay a:focus {
     color: #343434;
+}
+
+/* Win Overlay */
+
+#winOverlay .overlay-bubble{
+    width: 60%;
+    top: 32%;
+    left: 15%;
+    height: 18%;
+    text-align: center;
+}
+#winOverlay .overlay-img{
+    position: absolute;
+    width: 10%;
+    top: 14%;
+    left: 15.1%;
+}
+
+#winOverlay .win_text {
+    font: sans-serif;
+    font-size: 1.6em;
+    color: #00a1c2;
+    position: absolute;
+    top: 23%;
+    left: 28%;   
+}
+
+#winOverlay .button-home{
+    position: relative;
+    top: 62%;
+    left: 69%;
+}
+#winOverlay .button-replay{
+    position: relative;
+    top: 62%;
+    left: 65%;
+}
+#winOverlay .button-icon {
+    width: 30px;
+}
+#winOverlay .button-text{
+    position: relative;
+    color: #45d0e2;
+    line-height: 30px;
+    margin-left: 15px;
+    padding-bottom: 10px;
+    bottom: 5px;
+}
+#winOverlay .button-text:hover{
+    color: #00a1c2;
 }
 
 .index_main{
@@ -420,16 +472,4 @@ body{
     content:url(../svg/svg-home-icon-shadow.svg);
 }
 
-/* Win Overlay */
-.win_text {
-    font: sans-serif;
-    font-size: 2em;
-    position: absolute;
-    top: 26%;
-    left: 32%;   
-}
-
-.button-home-icon {
-    
-}
 
