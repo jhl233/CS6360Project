@@ -11,6 +11,13 @@ var stateModule = (function(viewModule, levelModule) {
 
     var currentLevel = {};
 
+    var callBacks = {
+        addReactant: addReactant,
+        addProduct: addProduct,
+        removeReactant: removeReactant,
+        removeProduct: removeProduct,
+    };
+
     /* 
      * initializeLevel
      * given [levelNum], populates currentState
@@ -32,13 +39,6 @@ var stateModule = (function(viewModule, levelModule) {
         }
         currentState["svgmap"] = currentLevel["svgmap"];
 
-        var callBacks = {
-            addReactant: addReactant,
-            addProduct: addProduct,
-            removeReactant: removeReactant,
-            removeProduct: removeProduct,
-        };
-
         currentState["level"] = levelNum;
 
         console.log(currentState);
@@ -57,7 +57,7 @@ var stateModule = (function(viewModule, levelModule) {
         }
         if (isBalanced(currentLevel, currentState)) {
             setTimeout(function(){
-                viewModule.nextLevel(function() {
+                viewModule.nextLevel(currentState, callBacks, function() {
                     initializeLevel(currentState["level"]+1);
                 });
             } , 750);
@@ -71,7 +71,7 @@ var stateModule = (function(viewModule, levelModule) {
         viewModule.addProduct(product);
         if (isBalanced(currentLevel, currentState)) {
             setTimeout(function() {
-                viewModule.nextLevel(function() {
+                viewModule.nextLevel(currentState, callBacks, function() {
                     initializeLevel(currentState["level"]+1);
                 });
             }, 750);
@@ -91,7 +91,7 @@ var stateModule = (function(viewModule, levelModule) {
             }
             if (isBalanced(currentLevel, currentState)) {
                 setTimeout(function() {
-                    viewModule.nextLevel(function() {
+                    viewModule.nextLevel(currentState, callBacks, function() {
                         initializeLevel(currentState["level"]+1);
                     });
                 }, 750);
@@ -107,7 +107,7 @@ var stateModule = (function(viewModule, levelModule) {
             viewModule.removeProduct(product);
             if (isBalanced(currentLevel, currentState)) {
                 setTimeout(function() {
-                    viewModule.nextLevel(function() {
+                    viewModule.nextLevel(currentState, callBacks, function() {
                         initializeLevel(currentState["level"]+1);
                     });
                 }, 750);

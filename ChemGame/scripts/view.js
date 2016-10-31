@@ -81,55 +81,69 @@ var viewModule = (function() {
         $($main).append($workbench);
         $(document.body).append($main);
 
+        showReactantsAndProductsBench(state, callBacks, "#workbench", true);
+    }
+    
+    function showReactantsAndProductsBench(state, callBacks, locationID, clickable) {
+        svgMap = state["svgmap"];
+        
         var i = 1;
         for (var reactant in state["reactants"]) {
 
             var $reactant = $("<div>", {class: "bottom-box reactant-box-" + (i++)});
             var coeff = state["reactants"][reactant];
 
-            $("#workbench").append($reactant);
+            console.log("Reactant - " + reactant + ": " + coeff);
+            $(locationID).append($reactant);
 
             var reactantSVG = svgMap[reactant];
 
-            $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactant})
-            $clickable.click(function(event) {
-                var addReactant = callBacks["addReactant"];
-                addReactant($(event.target).data("name"));
-            });
-            $reactant.append($("<div>", {class: "reactant-badge", text: coeff, id: reactant+"ReactantCoeff"}));
+            $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactant});
+            $reactant.append($("<div>", {class: "reactant-badge", text: coeff, id:reactant+"ReactantCoeff"}));
             $reactant.append($clickable);
+            
+            if (clickable) {
+                $clickable.click(function(event) {
+                    var addReactant = callBacks["addReactant"];
+                    addReactant($(event.target).data("name"));
+                });
 
-            $minusButton = $("<div>", {class: "reactant-minus-button", text: "-", "data-name": reactant});
-            $minusButton.click(function(event) {
-                var removeReactant = callBacks["removeReactant"];
-                removeReactant($(event.target).data("name")); 
-            });
-            $reactant.append($minusButton);
+                $minusButton = $("<div>", {class: "reactant-minus-button", text: "-", "data-name": reactant});
+                $minusButton.click(function(event) {
+                    var removeReactant = callBacks["removeReactant"];
+                    removeReactant($(event.target).data("name")); 
+                });
+                $reactant.append($minusButton);
+            }
         }
 
         i = 1;
         for (var product in state["products"]) {
             var $product = $("<div>", {class: "bottom-box product-box-" + (i++)});
             var coeff = state["products"][product];
-
-            $("#workbench").append($product);
+            
+            console.log("Product - " + product + ": " + coeff);
+            $(locationID).append($product);
 
             var productSVG = svgMap[product];
 
             $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": product});
-            $clickable.click(function(event) {
-                var addProduct = callBacks["addProduct"];
-                addProduct($(event.target).data("name"));
-            });
             $product.append($("<div>", {class: "product-badge", text: coeff, id:product+"ProductCoeff"}));
             $product.append($clickable);
 
-            $minusButton = $("<div>", {class: "product-minus-button", text: "-", "data-name": product});
-            $minusButton.click(function(event) {
-                var removeProduct = callBacks["removeProduct"];
-                removeProduct($(event.target).data("name")); 
-            });
-            $product.append($minusButton);
+            if (clickable) {
+                $clickable.click(function(event) {
+                    var addProduct = callBacks["addProduct"];
+                    addProduct($(event.target).data("name"));
+                });
+
+                $minusButton = $("<div>", {class: "product-minus-button", text: "-", "data-name": product});
+                $minusButton.click(function(event) {
+                    var removeProduct = callBacks["removeProduct"];
+                    removeProduct($(event.target).data("name")); 
+                });
+                $product.append($minusButton);
+            }
         }
     }
 
@@ -354,7 +368,7 @@ var viewModule = (function() {
         $("img#" + compound["id"]).remove();
     }
 
-    function nextLevel(initializeNext) {
+    function nextLevel(state, callBacks, initializeNext) {
 
         $homeSpan = $("<span>", {class:"button-home"});
         $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon-shadow.svg'>");
@@ -365,7 +379,10 @@ var viewModule = (function() {
         $replaySpan.append("<span class='button-text'>Replay</span>");
 
         $nextSpan = $("<div>", {class:"overlay-bubble shadow"});
-        $nextSpan.append("<p>Click here to go to the next level</p>");
+        
+        $nextSpan.append("<p>Click here to go to the next level!</p>");
+        
+        showReactantsAndProductsBench(state, callBacks, $nextSpan, false);
 
         $overlay = $("<div>", {class:'overlay', id:'winOverlay'});
 
@@ -384,8 +401,15 @@ var viewModule = (function() {
            $overlay.remove();
             $("#worktable").empty();
             $(document.body).empty();
-            initializeLevel(currentState["level"]);
+            stateModule.initializeLevel(state["level"]);
         });
+        $homeSpan.click(function() {
+           $overlay.remove();
+            $("#worktable").empty();
+            $(document.body).empty();
+            homeScreen();
+        });
+        
         $overlay.append($nextSpan);
         $overlay.append($replaySpan);
         $overlay.append($homeSpan);
