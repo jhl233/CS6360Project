@@ -501,4 +501,16 @@ body{
     content:url(../svg/svg-home-icon-shadow.svg);
 }
 
+#reset
+{
+    position: absolute;
+    left:94%;
+    top:35%;
+}
+
+#reset:hover
+{
+    cursor: pointer;
+    /*content: url(../svg/svg-reset-icon-shadow.svg);*/
+}
 
