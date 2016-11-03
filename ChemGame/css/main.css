@@ -111,14 +111,22 @@ body{
 .reactant-box-1{
     position: absolute;
     left: 12%;
-    top: 10%;
+    top: 12%;
     cursor: pointer;
+}
+#winOverlay .reactant-box-1{
+    top: 15%;
+    width: 15%;
 }
 .reactant-box-2{
     position: absolute;
     left: 32%;
     top: 10%;
     cursor: pointer;
+}
+#winOverlay .reactant-box-2{
+    top: 15%;
+    width: 15%;
 }
 .product-box-1{
     position: absolute;
@@ -144,9 +152,15 @@ body{
     text-align: center;
     line-height: 35px;
     font-weight: 700;
-    font-size: 1.3em;
+    font-size: 1.1em;
     border-radius: 20%;
     cursor: default;
+}
+#winOverlay .reactant-badge{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 32px;
 }
 .product-badge{
     position: absolute;
@@ -158,11 +172,14 @@ body{
     text-align: center;
     line-height: 35px;
     font-weight: 700;
-    font-size: 1.3em;
+    font-size: 1.1em;
     background-image: url(../svg/svg-badge.svg);
     cursor: default;
 }
-
+#winOverlay .product-badge{
+    font-size: 20px;
+    top: 15%
+}
 .shadow{
     cursor: hand;
     cursor: pointer;
@@ -296,17 +313,20 @@ body{
 /* Win Overlay */
 
 #winOverlay .overlay-bubble{
-    width: 60%;
+    width: 80%;
     top: 32%;
-    left: 15%;
-    height: 18%;
+    left: 6%;
+    height: 20%;
     text-align: center;
+}
+#winOverlay .overlay-bubble product-badge{
+    font-size: 10px;
 }
 #winOverlay .overlay-img{
     position: absolute;
     width: 10%;
     top: 14%;
-    left: 15.1%;
+    left: 8%;
 }
 
 #winOverlay .win_text {
@@ -315,17 +335,17 @@ body{
     color: #00a1c2;
     position: absolute;
     top: 23%;
-    left: 28%;   
+    left: 20%;   
 }
 
 #winOverlay .button-home{
     position: relative;
-    top: 62%;
+    top: 67%;
     left: 69%;
 }
 #winOverlay .button-replay{
     position: relative;
-    top: 62%;
+    top: 67%;
     left: 65%;
 }
 #winOverlay .button-icon {

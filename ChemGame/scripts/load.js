@@ -63,7 +63,7 @@ function showTutorial1() {
 
     $(document.body).append($overlay);
 
-    stateModule.initializeLevel(3);
+    stateModule.initializeLevel(6);
 }
 
 function showTutorial2() {
