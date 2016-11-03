@@ -65,7 +65,7 @@ var viewModule = (function() {
         var $homeButton = $("<div>", {id:"home"});
         $homeButton.append("<img src='svg/svg-home-icon.svg' alt='Home'>");
         $homeButton.click(homeScreen);
-
+       
         var $userbar = $("<div>", {id:"output"});
         $userbar.append('<img id="chef" src="img/chef.png" alt="Chef">');
         $userbar.append('<label id="hint" onclick="viewModule.showHint()">Need a hint? Click here!</label>');
@@ -98,7 +98,7 @@ var viewModule = (function() {
 
             var reactantSVG = svgMap[reactant];
 
-            $clickable = $("<img>", {class: "pic", src: "svg/" + reactantSVG, "data-name": reactant});
+            $clickable = $("<img>", {class: "pic shadow", src: "svg/" + reactantSVG, "data-name": reactant});
             $reactant.append($("<div>", {class: "reactant-badge", text: coeff, id:reactant+"ReactantCoeff"}));
             $reactant.append($clickable);
             
@@ -127,7 +127,7 @@ var viewModule = (function() {
 
             var productSVG = svgMap[product];
 
-            $clickable = $("<img>", {class: "pic4", src: "svg/" + productSVG, "data-name": product});
+            $clickable = $("<img>", {class: "pic4 shadow", src: "svg/" + productSVG, "data-name": product});
             $product.append($("<div>", {class: "product-badge", text: coeff, id:product+"ProductCoeff"}));
             $product.append($clickable);
 
@@ -261,6 +261,11 @@ var viewModule = (function() {
                 }
                 freeProduct["filled"] = true;
             }
+        }
+        
+        for (var i = 0; i < 3; i++) {
+            if (i == 0) var charlie = "lol";
+            console.log(charlie);
         }
     }
     

@@ -29,12 +29,12 @@ function showLevels() {
     $levelMain.append("<p>Choose a level to start from!</p>");
 
     var $levelBox = $("<div>", {class: "level_box"});
-    $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(1)'>Lv.1</div>");
-    $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(2)'>Lv.2</div>");
-    $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(3)'>Lv.3</div>");
-    $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(4)'>Lv.4</div>");
-    $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(5)'>Lv.5</div>");
-    $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(6)'>Lv.6</div>");
+    
+    var numLevels = 7;
+    for (var i = 1; i <= numLevels; i++) {
+         $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(" 
+                          + i + ")'>Lv." + i + "</div>");
+    }
 
     $(document.body).append($levelMain);
     $(document.body).append($levelBox);
