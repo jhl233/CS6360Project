@@ -1,0 +1,47 @@
+
+<svg width="152px" height="152px" viewBox="60 -1 152 152" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="4.48170732" y="6.11650485" width="96.0365854" height="92.7669903" rx="15"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="96.0365854" height="92.7669903" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="rectants:H2O" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(60.593975, 0.264128)">
+        <g id="Group-8" transform="translate(74.838787, 74.355800) rotate(-45.000000) translate(-74.838787, -74.355800) translate(22.338787, 21.855800)">
+            <rect id="Rectangle-9" fill="#4A6378" x="1.42108547e-13" y="1.42108547e-13" width="105" height="105" rx="17"></rect>
+            <use id="Rectangle-9" stroke="#1E3851" mask="url(#mask-2)" stroke-width="6" fill="#2C4255" xlink:href="#path-1"></use>
+        </g>
+        <g id="Atom" transform="translate(55.906025, 76.735872)">
+            <circle id="Oval-4" fill="#FACC39" cx="19" cy="19" r="19"></circle>
+            <path d="M33.7851695,26.7741162 C33.7284637,30.749909 28.3145363,30.5789347 21.0626781,26.3819656 C13.0524563,22.1736538 4.93219508,15.5182338 3.5504806,11.5269378" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B" stroke-linecap="square" stroke-linejoin="bevel" transform="translate(18.667825, 20.586701) scale(-1, 1) translate(-18.667825, -20.586701) "></path>
+            <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B" stroke-linecap="round"></path>
+            <text id="O" font-family=".SFNSText-Bold, .SF NS Text" font-size="24" font-weight="bold" letter-spacing="-0.737142801" fill="#4A4A4A">
+                <tspan x="9.80859132" y="27.6307253">O</tspan>
+            </text>
+            <path d="M34.156784,26.7741162 C34.1000782,30.749909 28.6861508,30.5789347 21.4342926,26.3819656 C13.4240708,22.1736538 5.30380959,15.5182338 3.92209511,11.5269378" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B" stroke-linecap="square" stroke-linejoin="bevel"></path>
+            <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B" stroke-linecap="round" transform="translate(18.827111, 17.328051) scale(-1, 1) translate(-18.827111, -17.328051) "></path>
+        </g>
+        <g id="Atom" transform="translate(78.406025, 40.735872)">
+            <circle id="Oval-4" fill="#74CB91" cx="19" cy="19" r="19"></circle>
+            <path d="M33.7851695,26.7741162 C33.7284637,30.749909 28.3145363,30.5789347 21.0626781,26.3819656 C13.0524563,22.1736538 4.93219508,15.5182338 3.5504806,11.5269378" id="Oval-5" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="bevel" transform="translate(18.667825, 20.586701) scale(-1, 1) translate(-18.667825, -20.586701) "></path>
+            <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke="#FFFFFF" stroke-linecap="round"></path>
+            <text id="H" font-family=".SFNSText-Bold, .SF NS Text" font-size="24" font-weight="bold" letter-spacing="-0.737142801" fill="#4A4A4A">
+                <tspan x="9.80859132" y="27.6307253">H</tspan>
+            </text>
+            <path d="M34.156784,26.7741162 C34.1000782,30.749909 28.6861508,30.5789347 21.4342926,26.3819656 C13.4240708,22.1736538 5.30380959,15.5182338 3.92209511,11.5269378" id="Oval-5" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="bevel"></path>
+            <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke="#FFFFFF" stroke-linecap="round" transform="translate(18.827111, 17.328051) scale(-1, 1) translate(-18.827111, -17.328051) "></path>
+        </g>
+        <g id="Atom" transform="translate(35.406025, 40.735872)">
+            <circle id="Oval-4" fill="#74CB91" cx="19" cy="19" r="19"></circle>
+            <path d="M33.7851695,26.7741162 C33.7284637,30.749909 28.3145363,30.5789347 21.0626781,26.3819656 C13.0524563,22.1736538 4.93219508,15.5182338 3.5504806,11.5269378" id="Oval-5" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="bevel" transform="translate(18.667825, 20.586701) scale(-1, 1) translate(-18.667825, -20.586701) "></path>
+            <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke="#FFFFFF" stroke-linecap="round"></path>
+            <text id="H" font-family=".SFNSText-Bold, .SF NS Text" font-size="24" font-weight="bold" letter-spacing="-0.737142801" fill="#4A4A4A">
+                <tspan x="9.80859132" y="27.6307253">H</tspan>
+            </text>
+            <path d="M34.156784,26.7741162 C34.1000782,30.749909 28.6861508,30.5789347 21.4342926,26.3819656 C13.4240708,22.1736538 5.30380959,15.5182338 3.92209511,11.5269378" id="Oval-5" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="bevel"></path>
+            <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke="#FFFFFF" stroke-linecap="round" transform="translate(18.827111, 17.328051) scale(-1, 1) translate(-18.827111, -17.328051) "></path>
+        </g>
+    </g>
+</svg>
