@@ -215,14 +215,17 @@ var viewModule = (function() {
     // Can be called by either addProductToView or addReactantToView
     function checkCollapsibles() {
         var reactantElems = {};
+        // reactantElems contains the number of existing free elements of each
         for (var elem in reactantView) {
             reactantElems[elem] = reactantView[elem]["elems"].length;
         }
 
-        for (var product in productView) { // For each Chicken2Bacon3
+        // iterate across each product
+        for (var product in productView) {
             var reqs = nameToObj(product);
             var enough = true;
-            for (var elemReq in reqs) { // For each Chicken-needs-3
+            // iterate across each element in product formula
+            for (var elemReq in reqs) { 
                 if ((typeof reactantElems[elemReq] === "undefined") || (reactantElems[elemReq] < reqs[elemReq])) {
                     enough = false;
                     break;
@@ -233,7 +236,7 @@ var viewModule = (function() {
             }
             // Let's assume that only one product is MADE at any time
             var elemProductList = productView[product]["products"];
-            var freeProduct;
+            var freeProduct = null;
             for (var i = 0; i < elemProductList.length; i++) { // for each chicken2Bacon3{object}
                 if (elemProductList[i]["filled"]) {
                     continue;
@@ -241,7 +244,7 @@ var viewModule = (function() {
                     freeProduct = elemProductList[i];
                 }
             } 
-            if (typeof freeProduct === "undefined") {
+            if (freeProduct == null) {
                 continue;
             }
 
