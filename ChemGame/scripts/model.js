@@ -17,16 +17,23 @@ var stateModule = (function(viewModule, levelModule) {
         removeReactant: removeReactant,
         removeProduct: removeProduct,
     };
+    
+    var isTutorialLevel = false;
 
+    function getCurrentLevel() {
+        return currentState["level"];
+    }
     /* 
      * initializeLevel
      * given [levelNum], populates currentState
      * */
-    function initializeLevel(levelNum) {
+    function initializeLevel(levelNum, isTutorial = false) {
         currentLevel = levelModule.levels[levelNum];
         currentState["reactants"] = {};
         currentState["products"] = {};
         currentState["svgmap"] = {};
+        
+        isTutorialLevel = isTutorial;
 
         var i = 1;
         for (var reactant in currentLevel["reactants"]) {
@@ -44,6 +51,16 @@ var stateModule = (function(viewModule, levelModule) {
         console.log(currentState);
         viewModule.initializeScreen(currentState, callBacks);
     }
+    
+    function checkWin() {
+        if (!isTutorialLevel && isBalanced(currentLevel, currentState)) {
+            setTimeout(function(){
+                viewModule.nextLevel(currentState, callBacks, function() {
+                    initializeLevel(currentState["level"]+1);
+                });
+            } , 750);
+        }    
+    }
 
     function addReactant(reactant) {
         currentState["reactants"][reactant] += 1;
@@ -55,13 +72,7 @@ var stateModule = (function(viewModule, levelModule) {
                 viewModule.addReactant(elem);
             }
         }
-        if (isBalanced(currentLevel, currentState)) {
-            setTimeout(function(){
-                viewModule.nextLevel(currentState, callBacks, function() {
-                    initializeLevel(currentState["level"]+1);
-                });
-            } , 750);
-        }    
+        checkWin();
     }
 
     function addProduct(product) {
@@ -69,13 +80,7 @@ var stateModule = (function(viewModule, levelModule) {
         var coeff = $("#" + product + "ProductCoeff");
         coeff.text(parseInt(coeff.text()) + 1);
         viewModule.addProduct(product);
-        if (isBalanced(currentLevel, currentState)) {
-            setTimeout(function() {
-                viewModule.nextLevel(currentState, callBacks, function() {
-                    initializeLevel(currentState["level"]+1);
-                });
-            }, 750);
-        }
+        checkWin();
     }
 
     function removeReactant(reactant) {
@@ -89,13 +94,7 @@ var stateModule = (function(viewModule, levelModule) {
                     viewModule.removeReactant(elem);
                 }
             }
-            if (isBalanced(currentLevel, currentState)) {
-                setTimeout(function() {
-                    viewModule.nextLevel(currentState, callBacks, function() {
-                        initializeLevel(currentState["level"]+1);
-                    });
-                }, 750);
-            }
+            checkWin();
         }
     }
 
@@ -105,13 +104,7 @@ var stateModule = (function(viewModule, levelModule) {
             var coeff = $("#" + product + "ProductCoeff");
             coeff.text(parseInt(coeff.text()) - 1);
             viewModule.removeProduct(product);
-            if (isBalanced(currentLevel, currentState)) {
-                setTimeout(function() {
-                    viewModule.nextLevel(currentState, callBacks, function() {
-                        initializeLevel(currentState["level"]+1);
-                    });
-                }, 750);
-            }
+            checkWin();
         }
     }
     
@@ -152,6 +145,7 @@ var stateModule = (function(viewModule, levelModule) {
     }
 
     return {
+        getCurrentLevel: getCurrentLevel,
         initializeLevel: initializeLevel,
         addReactant: addReactant,
         addProduct: addProduct,
