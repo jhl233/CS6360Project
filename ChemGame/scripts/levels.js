@@ -4,7 +4,7 @@ var levelModule = (function() {
     module.levels = [
         // Level 0
         {},
-        // Level 1
+        // Bacon2 --> Bacon2
         {
             "reactants":{
                 "Bacon2r": 0
@@ -19,7 +19,7 @@ var levelModule = (function() {
                 "Bacon2pPlate": "grey_plate.svg"
             }
         },
-        // Level 2
+        // Broccoli + Bacon2 --> BroccoliBacon2
         {
             "reactants": {
                 "Broccoli": 0,
@@ -37,7 +37,7 @@ var levelModule = (function() {
                 "Broccoli1Bacon2Plate": "pink_plate.svg",
             }
         },
-        // Level 3
+        // O2 --> O2
         {
           "reactants": {
               "Oxygen2r": 0
@@ -52,7 +52,7 @@ var levelModule = (function() {
               "Oxygen2pPlate": "grey_plate.svg"
           }
         },
-        // Level 4
+        // Carbon + Bacon2 --> CarbonBacon2
         {
             "reactants": {
                 "Carbon": 0,
@@ -70,7 +70,7 @@ var levelModule = (function() {
                 "CarbonBacon2Plate": "grey_plate.svg"
             }
         },
-        // Level 5
+        // C + O2 --> CO2
         {
             "reactants": {
                 "Carbon": 0,
@@ -86,28 +86,6 @@ var levelModule = (function() {
                 "aCarbon":            "svg-c-atom.svg",
                 "aOxygen":            "svg-o-atom.svg",
                 "CarbonOxygen2Plate": "grey_plate.svg"
-            }
-        },
-        // Level 6
-        {
-            "reactants": {
-                "Chicken2Bacon": 0,
-                "Egg": 0
-            },
-            "products": {
-                "Egg3Bacon4": 0,
-                "Chicken2": 0
-            },
-            "svgmap": {
-                "Chicken2Bacon":   "svg-reactant1.svg",
-                "Egg":             "svg-reactant2.svg",
-                "Egg3Bacon4":      "svg-product1.svg",
-                "Chicken2":        "svg-product2.svg",
-                "aChicken":        "svg-chicken.svg",
-                "aBacon":          "svg-bacon.svg",
-                "aEgg":            "svg-egg.svg",
-                "Egg3Bacon4Plate": "grey_plate.svg",
-                "Chicken2Plate":   "pink_plate.svg"
             }
         },
         //O2->O3 Carrot
@@ -392,6 +370,28 @@ var levelModule = (function() {
                 "aHydrogen":        "l6/svg-atom-H.svg",
                 "SodiumOxygenHydrogenPlate": "grey_plate.svg",
                 "Hydrogen2Plate":   "pink_plate.svg"
+            }
+        },
+        // Chicken2Bacon + Egg --> Egg3Bacon4 + Chicken2
+        {
+            "reactants": {
+                "Chicken2Bacon": 0,
+                "Egg": 0
+            },
+            "products": {
+                "Egg3Bacon4": 0,
+                "Chicken2": 0
+            },
+            "svgmap": {
+                "Chicken2Bacon":   "svg-reactant1.svg",
+                "Egg":             "svg-reactant2.svg",
+                "Egg3Bacon4":      "svg-product1.svg",
+                "Chicken2":        "svg-product2.svg",
+                "aChicken":        "svg-chicken.svg",
+                "aBacon":          "svg-bacon.svg",
+                "aEgg":            "svg-egg.svg",
+                "Egg3Bacon4Plate": "grey_plate.svg",
+                "Chicken2Plate":   "pink_plate.svg"
             }
         },
     ];
