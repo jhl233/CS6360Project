@@ -20,6 +20,9 @@ var stateModule = (function(viewModule, levelModule) {
     
     var isTutorialLevel = false;
 
+    function getCurrentLevel() {
+        return currentState["level"];
+    }
     /* 
      * initializeLevel
      * given [levelNum], populates currentState
@@ -142,6 +145,7 @@ var stateModule = (function(viewModule, levelModule) {
     }
 
     return {
+        getCurrentLevel: getCurrentLevel,
         initializeLevel: initializeLevel,
         addReactant: addReactant,
         addProduct: addProduct,

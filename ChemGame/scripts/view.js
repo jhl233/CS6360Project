@@ -450,8 +450,15 @@ var viewModule = (function() {
     
     $(document).click(function(e) {
         var target = e.target;
-        if (!$(target).is("#hint")) {
-            resetHint();
+        
+        // Show hints automatically for beginning levels
+        if (stateModule.getCurrentLevel() < 4) {
+            showHint();
+        // Otherwise, if not clicking on hint box, then reset it
+        } else {
+            if (!$(target).is("#hint")) {
+                resetHint();
+            }
         }
     });
     
