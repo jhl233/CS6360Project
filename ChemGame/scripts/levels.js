@@ -110,6 +110,55 @@ var levelModule = (function() {
                 "Chicken2Plate":   "pink_plate.svg"
             }
         },
+        //O2->O3 Carrot
+        {
+            "reactants": {
+                "Carrot2": 0,
+            },
+            "products": {
+                "Carrot3": 0,
+            },
+            "svgmap": {
+                "Carrot2":  "svg-reactant-carrot.svg",
+                "Carrot3":  "svg-product-carrot3.svg",
+                "aCarrot":            "svg-carrot.svg",
+                "Carrot3Plate":  "grey_plate.svg",
+            }
+        },
+        //O2->O3 Atom
+        {
+            "reactants": {
+                "Oxygen2": 0,
+            },
+            "products": {
+                "Oxygen3": 0,
+            },
+            "svgmap": {
+                "Oxygen2":  "l2/svg-reactant2-L2-alien.svg",
+                "Oxygen3":  "svg-product-O3.svg",
+                "aOxygen":            "svg-o-atom.svg",
+                "Oxygen3Plate":  "grey_plate.svg",
+            }
+        },
+        {
+            "reactants": {
+                "KClO3": 0,
+            },
+            "products": {
+                "KCl": 0,
+                "O2": 0
+            },
+            "svgmap": {
+                "KClO3":  "svg-reactant-KClO3.svg",
+                "KCl":  "svg-product-KCl.svg",
+                "O2":  "svg-product-O2.svg",
+                "aO":  "svg-o-atom.svg",
+                "aK": "svg-k-atom.svg",
+                "aCl": "svg-Cl-atom.svg",
+                "KClPlate":  "grey_plate.svg",
+                "O2Plate":  "pink_plate.svg",
+            }
+        },
     ];
 	console.log("Levels: ");
 	console.log(module.levels);
