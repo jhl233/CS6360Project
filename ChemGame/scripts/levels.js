@@ -110,6 +110,75 @@ var levelModule = (function() {
                 "Chicken2Plate":   "pink_plate.svg"
             }
         },
+        
+ // Level 6 - v2
+        {
+            "reactants": {
+                "Chicken2Bacon": 0,
+                "Iron": 0
+            },
+            "products": {
+                "Iron3Bacon4": 0,
+                "Chicken2": 0
+            },
+            "svgmap": {
+                "Chicken2Bacon":   "l7/v2/svg-reactant-H2O.svg",
+                "Iron":             "l7/v2/svg-reactant-Fe.svg",
+                "Iron3Bacon4":      "l7/v2/svg-product-Fe3O4.svg",
+                "Chicken2":        "l7/v2/svg-product-H2.svg",
+                "aChicken":        "svg-chicken.svg",
+                "aBacon":          "svg-bacon.svg",
+                "aIron":            "svg-fe-atom.svg",
+                "Iron3Bacon4Plate": "grey_plate.svg",
+                "Chicken2Plate":   "pink_plate.svg"
+            }
+        },
+        
+         // Level 6 - v3
+        {
+            "reactants": {
+                "Hydrogen2Bacon": 0,
+                "Iron": 0
+            },
+            "products": {
+                "Iron3Bacon4": 0,
+                "Hydrogen2": 0
+            },
+            "svgmap": {
+                "Hydrogen2Bacon":   "l7/v3/svg-reactant-H2O.svg",
+                "Iron":             "l7/v3/svg-reactant-Fe.svg",
+                "Iron3Bacon4":      "l7/v3/svg-product-Fe3O4.svg",
+                "Hydrogen2":        "l7/v3/svg-product-H2.svg",
+                "aHydrogen":        "svg-atom-H.svg",
+                "aBacon":          "svg-bacon.svg",
+                "aIron":            "svg-fe-atom.svg",
+                "Iron3Bacon4Plate": "grey_plate.svg",
+                "Hydrogen2Plate":   "pink_plate.svg"
+            }
+        },
+        
+         // Level 6 - v4
+        {
+            "reactants": {
+                "Hydrogen2Oxygen": 0,
+                "Iron": 0
+            },
+            "products": {
+                "Iron3Oxygen4": 0,
+                "Hydrogen2": 0
+            },
+            "svgmap": {
+                "Hydrogen2Oxygen":   "l7/v4/svg-reactant-H2O.svg",
+                "Iron":             "l7/v4/svg-reactant-Fe.svg",
+                "Iron3Oxygen4":      "l7/v4/svg-product-Fe3O4.svg",
+                "Hydrogen2":        "l7/v4/svg-product-H2.svg",
+                "aHydrogen":        "svg-atom-H.svg",
+                "aOxygen":          "svg-o-atom.svg",
+                "aIron":            "svg-fe-atom.svg",
+                "Iron3Oxygen4Plate": "grey_plate.svg",
+                "Hydrogen2Plate":   "pink_plate.svg"
+            }
+        },
         //O2->O3 Carrot
         {
             "reactants": {

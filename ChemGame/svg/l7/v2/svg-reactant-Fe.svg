@@ -1,0 +1,29 @@
+
+<svg width="151px" height="151px" viewBox="62 -1 151 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="4.48170732" y="6.11650485" width="96.0365854" height="92.7669903" rx="15"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="96.0365854" height="92.7669903" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Group-5" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(62.000000, 0.000000)">
+        <g id="reactant2" transform="translate(75.179756, 74.500000) rotate(-45.000000) translate(-75.179756, -74.500000) translate(22.679756, 22.000000)">
+            <g id="Group-8" transform="translate(0.000000, 0.000000)">
+                <rect id="Rectangle-9" fill="#4A6278" x="0" y="0" width="105" height="105" rx="17"></rect>
+                <use id="Rectangle-9" stroke="#1E3951" mask="url(#mask-2)" stroke-width="6" fill="#2C4154" xlink:href="#path-1"></use>
+            </g>
+        </g>
+        <g id="Atom" transform="translate(47.500000, 48.000000)">
+            <circle id="Oval-4" fill="#FAA027" cx="27" cy="27" r="27"></circle>
+            <path d="M48.010504,38.0474282 C47.9299221,43.6972391 40.2364463,43.4542757 29.9311741,37.4901617 C18.5482273,31.5099291 7.00890879,22.052227 5.04541979,16.3803853" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="bevel" transform="translate(26.527962, 29.254785) scale(-1, 1) translate(-26.527962, -29.254785) "></path>
+            <path d="M5.26088342,15.8300961 C3.20932625,10.1582545 13.1751524,10.4379439 26.6596206,16.4402073 C39.0966488,22.4263521 48.493359,31.8473282 48.5159628,37.4971391" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" stroke-linecap="round"></path>
+            <text id="Fe" font-family=".SFNSText-Bold, .SF NS Text" font-size="24" font-weight="bold" letter-spacing="-0.737142801" fill="#4A4A4A">
+                <tspan x="14.0964192" y="34.0962938">Fe</tspan>
+            </text>
+            <path d="M48.5385878,38.0474282 C48.4580058,43.6972391 40.7645301,43.4542757 30.4592579,37.4901617 C19.0763111,31.5099291 7.53699257,22.052227 5.57350358,16.3803853" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" stroke-linecap="square" stroke-linejoin="bevel"></path>
+            <path d="M5.26088342,15.8300961 C3.20932625,10.1582545 13.1751524,10.4379439 26.6596206,16.4402073 C39.0966488,22.4263521 48.493359,31.8473282 48.5159628,37.4971391" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" stroke-linecap="round" transform="translate(26.754315, 24.624072) scale(-1, 1) translate(-26.754315, -24.624072) "></path>
+        </g>
+    </g>
+</svg>

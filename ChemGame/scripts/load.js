@@ -31,7 +31,7 @@ function showLevels() {
     var $levelBox = $("<div>", {class: "level_box"});
     
 
-    var numLevels = 20;
+    var numLevels = 30;
     for (var i = 1; i <= numLevels; i++) {
          $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(" 
                           + i + ")'>Lv." + i + "</div>");
