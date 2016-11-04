@@ -65,12 +65,23 @@ var viewModule = (function() {
         var $homeButton = $("<div>", {id:"home"});
         $homeButton.append("<img src='svg/svg-home-icon.svg' alt='Home'>");
         $homeButton.click(homeScreen);
+
+        var $resetButton = $("<div>", {id:"reset"});
+        $resetButton.append("<img src='svg/svg-replay.svg' alt='Reset'>");
+        //$resetButton.append("<img class='button-icon' src='svg/svg-replay.svg'>");
+        //$resetButton.append("<span class='button-text'>Reset</span>");
+        $resetButton.click(function(){
+            $("#worktable").empty();
+            $(document.body).empty();
+            stateModule.initializeLevel(state["level"]);
+        });
        
         var $userbar = $("<div>", {id:"output"});
         $userbar.append('<img id="chef" src="img/chef.png" alt="Chef">');
         $userbar.append('<label id="hint" onclick="viewModule.showHint()">Need a hint? Click here!</label>');
         $userbar.append('<label id="level">Level ' + state['level'] + '</label>');
         $userbar.append($homeButton);
+        $userbar.append($resetButton);
         
         var $worktable = $("<div>", {id:"worktable"});
         var $workbench= $("<div>", {id:"workbench"});
