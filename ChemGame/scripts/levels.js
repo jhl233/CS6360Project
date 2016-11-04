@@ -110,7 +110,6 @@ var levelModule = (function() {
                 "Chicken2Plate":   "pink_plate.svg"
             }
         },
-<<<<<<< HEAD
         //O2->O3 Carrot
         {
             "reactants": {
@@ -158,7 +157,8 @@ var levelModule = (function() {
                 "aCl": "svg-Cl-atom.svg",
                 "KClPlate":  "grey_plate.svg",
                 "O2Plate":  "pink_plate.svg",
-=======
+            }
+        },
         
         // Na+H2O->NaOH+H2: v1
         {
@@ -248,7 +248,6 @@ var levelModule = (function() {
                 "aHydrogen":        "l6/svg-atom-H.svg",
                 "SodiumOxygenHydrogenPlate": "grey_plate.svg",
                 "Hydrogen2Plate":   "pink_plate.svg"
->>>>>>> origin/master
             }
         },
     ];
