@@ -4,6 +4,7 @@ var levelModule = (function() {
     module.levels = [
         // Level 0
         {},
+        // Level 1
         // Bacon2 --> Bacon2
         {
             "reactants":{
@@ -19,6 +20,7 @@ var levelModule = (function() {
                 "Bacon2pPlate": "grey_plate.svg"
             }
         },
+        // Level 2
         // Broccoli + Bacon2 --> BroccoliBacon2
         {
             "reactants": {
@@ -37,6 +39,7 @@ var levelModule = (function() {
                 "Broccoli1Bacon2Plate": "pink_plate.svg",
             }
         },
+        // Level 3
         // O2 --> O2
         {
           "reactants": {
@@ -52,6 +55,7 @@ var levelModule = (function() {
               "Oxygen2pPlate": "grey_plate.svg"
           }
         },
+        // Level 4
         // Carbon + Bacon2 --> CarbonBacon2
         {
             "reactants": {
@@ -70,6 +74,7 @@ var levelModule = (function() {
                 "CarbonBacon2Plate": "grey_plate.svg"
             }
         },
+        // Level 5
         // C + O2 --> CO2
         {
             "reactants": {
@@ -111,7 +116,8 @@ var levelModule = (function() {
             }
         },
         
- // Level 6 - v2
+        // Level 7
+        // (6, v2)
         {
             "reactants": {
                 "Chicken2Bacon": 0,
@@ -134,7 +140,8 @@ var levelModule = (function() {
             }
         },
         
-         // Level 6 - v3
+         // Level 8 
+         // (6 - v3)
         {
             "reactants": {
                 "Hydrogen2Bacon": 0,
@@ -157,7 +164,8 @@ var levelModule = (function() {
             }
         },
         
-         // Level 6 - v4
+         // Level 9
+         // (6 - v4)
         {
             "reactants": {
                 "Hydrogen2Oxygen": 0,
@@ -179,6 +187,7 @@ var levelModule = (function() {
                 "Hydrogen2Plate":   "pink_plate.svg"
             }
         },
+        // Level 10
         //O2->O3 Carrot
         {
             "reactants": {
@@ -194,6 +203,7 @@ var levelModule = (function() {
                 "Carrot3Plate":  "grey_plate.svg",
             }
         },
+        // Level 11
         //O2->O3 Atom
         {
             "reactants": {
@@ -209,6 +219,7 @@ var levelModule = (function() {
                 "Oxygen3Plate":  "grey_plate.svg",
             }
         },
+        // Level 12
         //KClO3 -> KCl + O2
         {
             "reactants": {
@@ -229,6 +240,7 @@ var levelModule = (function() {
                 "Carrot2Plate":  "pink_plate.svg",
             }
         },
+        // Level 13
         //KClO3 -> KCl + O2
         {
             "reactants": {
@@ -250,6 +262,7 @@ var levelModule = (function() {
             }
         },
         
+        // Level 14
         // FeCl3+MgO->Fe2O3+MgCl2: v1
         {
             "reactants": {
@@ -273,8 +286,8 @@ var levelModule = (function() {
                 "BreadCarrot2Plate":   "pink_plate.svg"
             }
         },
-        
-        
+         
+        // Level 15
         // FeCl3+MgO->Fe2O3+MgCl2: v2
         {
             "reactants": {
@@ -299,6 +312,7 @@ var levelModule = (function() {
             }
         },
         
+        // Level 16
          // FeCl3+MgO->Fe2O3+MgCl2: v3
         {
             "reactants": {
@@ -323,6 +337,7 @@ var levelModule = (function() {
             }
         },
         
+        // Level 17
         // FeCl3+MgO->Fe2O3+MgCl2: v4
         {
             "reactants": {
@@ -347,6 +362,7 @@ var levelModule = (function() {
             }
         },
         
+        // Level 18
         // FeCl3+MgO->Fe2O3+MgCl2: v5
         {
             "reactants": {
@@ -371,8 +387,7 @@ var levelModule = (function() {
             }
         },
         
-        
-        
+        // Level 19
         // Na+H2O->NaOH+H2: v1
         {
             "reactants": {
@@ -396,6 +411,7 @@ var levelModule = (function() {
             }
         },
         
+        // Level 20
         // Na+H2O->NaOH+H2: v2
         {
             "reactants": {
@@ -419,6 +435,7 @@ var levelModule = (function() {
             }
         },
         
+        // Level 21
          // Na+H2O->NaOH+H2: v3
         {
             "reactants": {
@@ -442,6 +459,7 @@ var levelModule = (function() {
             }
         },
         
+        // Level 22
         {
             "reactants": {
                 "Hydrogen2Oxygen": 0,
@@ -463,6 +481,7 @@ var levelModule = (function() {
                 "Hydrogen2Plate":   "pink_plate.svg"
             }
         },
+        // Level 23
         // Chicken2Bacon + Egg --> Egg3Bacon4 + Chicken2
         {
             "reactants": {
