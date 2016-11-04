@@ -1,0 +1,50 @@
+
+<svg width="112px" height="112px" viewBox="259 0 112 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="55.135468" cy="55.1222222" rx="55.135468" ry="55.1222222"></ellipse>
+        <ellipse id="path-3" cx="55.591133" cy="54.6666667" rx="42.8325123" ry="42.8222222"></ellipse>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="85.6650246" height="85.6444444" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-5">
+            <stop stop-color="#B28E60" offset="0%"></stop>
+            <stop stop-color="#D2B48C" offset="100%"></stop>
+        </linearGradient>
+        <path d="M45.4589727,50.0595477 L45.4589727,82.8474079 L88.4589727,82.8474079 L88.4589727,50.0595477 C88.4586345,50.032313 88.4589727,50.005047 88.4589727,49.9777504 C88.4589727,45.3724269 78.8330948,41.6390746 66.9589727,41.6390746 C55.0848506,41.6390746 45.4589727,45.3724269 45.4589727,49.9777504 C45.4589727,50.005047 45.4593109,50.032313 45.4599857,50.0595477 Z" id="path-6"></path>
+        <mask id="mask-7" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="43" height="41.2083333" fill="white">
+            <use xlink:href="#path-6"></use>
+        </mask>
+    </defs>
+    <g id="rectant-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(315.000000, 56.477778) rotate(-180.000000) translate(-315.000000, -56.477778) translate(259.000000, 0.977778)">
+        <g id="the-party-icons-50" transform="translate(1.000000, 0.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#F4D9D3" xlink:href="#path-1"></use>
+            <g id="Oval-7" mask="url(#mask-2)" stroke-width="2" stroke="#FFFFFF" fill="#EEC0B7">
+                <use mask="url(#mask-4)" xlink:href="#path-3"></use>
+            </g>
+        </g>
+        <g id="svg-carrot" transform="translate(26.476893, 62.978723) scale(-1, -1) rotate(5.000000) translate(-26.476893, -62.978723) translate(2.476893, 40.000000)">
+            <g id="Group-11" transform="translate(23.826859, 23.088812) rotate(-40.000000) translate(-23.826859, -23.088812) translate(3.401327, 11.344131)">
+                <path d="M29.9206161,12.3987681 C29.9206161,12.3987681 31.2922098,2.24522893 18.5749446,6.24482737 C5.85767928,10.2444258 1.51694916,16.1929121 1.51694916,16.1929121 C-1.00707411,18.6609343 -0.262135653,21.2996967 3.22059932,21.9201848 C3.22059932,21.9201848 9.23599213,24.0098936 21.64435,22.3357776 C34.052708,20.6616616 29.9206161,12.3987681 29.9206161,12.3987681 L29.9206161,12.3987681 Z" id="Path-9" fill="#F46C2F"></path>
+                <path d="M8.94339733,10.8367761 C8.94339733,10.8367761 11.8274836,12.5612495 10.924479,17.6785624" id="Path-10" stroke="#C44815" stroke-width="5"></path>
+                <path d="M16.5624343,7.26076292 C16.5624343,7.26076292 21.6129135,9.57023709 20.157425,15.7544132" id="Path-11" stroke="#C44815" stroke-width="5"></path>
+                <path d="M31.6548946,12.7807342 C31.6548946,12.7807342 27.6564267,6.62626196 31.9750361,1.27956935 C36.9405293,6.62626196 31.6548946,12.7807342 31.6548946,12.7807342 L31.6548946,12.7807342 Z" id="Path-12" fill="#6FA942" transform="translate(32.035431, 7.030152) rotate(30.000000) translate(-32.035431, -7.030152) "></path>
+                <path d="M33.8879223,18.9653536 C33.8879223,18.9653536 29.8894545,12.8108814 34.2080639,7.46418876 C39.1735571,12.8108814 33.8879223,18.9653536 33.8879223,18.9653536 L33.8879223,18.9653536 Z" id="Path-12" fill="#6FA942" transform="translate(34.268459, 13.214771) rotate(102.000000) translate(-34.268459, -13.214771) "></path>
+            </g>
+        </g>
+        <g id="svg-carrot" transform="translate(39.476893, 28.978723) scale(-1, -1) rotate(5.000000) translate(-39.476893, -28.978723) translate(15.476893, 6.000000)">
+            <g id="Group-11" transform="translate(23.826859, 23.088812) rotate(-40.000000) translate(-23.826859, -23.088812) translate(3.401327, 11.344131)">
+                <path d="M29.9206161,12.3987681 C29.9206161,12.3987681 31.2922098,2.24522893 18.5749446,6.24482737 C5.85767928,10.2444258 1.51694916,16.1929121 1.51694916,16.1929121 C-1.00707411,18.6609343 -0.262135653,21.2996967 3.22059932,21.9201848 C3.22059932,21.9201848 9.23599213,24.0098936 21.64435,22.3357776 C34.052708,20.6616616 29.9206161,12.3987681 29.9206161,12.3987681 L29.9206161,12.3987681 Z" id="Path-9" fill="#F46C2F"></path>
+                <path d="M8.94339733,10.8367761 C8.94339733,10.8367761 11.8274836,12.5612495 10.924479,17.6785624" id="Path-10" stroke="#C44815" stroke-width="5"></path>
+                <path d="M16.5624343,7.26076292 C16.5624343,7.26076292 21.6129135,9.57023709 20.157425,15.7544132" id="Path-11" stroke="#C44815" stroke-width="5"></path>
+                <path d="M31.6548946,12.7807342 C31.6548946,12.7807342 27.6564267,6.62626196 31.9750361,1.27956935 C36.9405293,6.62626196 31.6548946,12.7807342 31.6548946,12.7807342 L31.6548946,12.7807342 Z" id="Path-12" fill="#6FA942" transform="translate(32.035431, 7.030152) rotate(30.000000) translate(-32.035431, -7.030152) "></path>
+                <path d="M33.8879223,18.9653536 C33.8879223,18.9653536 29.8894545,12.8108814 34.2080639,7.46418876 C39.1735571,12.8108814 33.8879223,18.9653536 33.8879223,18.9653536 L33.8879223,18.9653536 Z" id="Path-12" fill="#6FA942" transform="translate(34.268459, 13.214771) rotate(102.000000) translate(-34.268459, -13.214771) "></path>
+            </g>
+        </g>
+        <use id="Combined-Shape" stroke-opacity="0.472203351" stroke="#8B572A" mask="url(#mask-7)" stroke-width="10" fill="url(#linearGradient-5)" transform="translate(66.958973, 62.243241) scale(-1, -1) rotate(31.000000) translate(-66.958973, -62.243241) " xlink:href="#path-6"></use>
+    </g>
+</svg>

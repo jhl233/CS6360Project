@@ -1,0 +1,16 @@
+
+<svg width="49px" height="48px" viewBox="41 44 49 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Atom" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(41.500000, 44.000000)">
+        <circle id="Oval-4" fill="#FAFAFA" cx="24" cy="24" r="24"></circle>
+        <path d="M42.6760035,33.8199362 C42.6043752,38.8419903 35.76573,38.6260228 26.6054881,33.3245882 C16.4873132,28.0088259 6.23014115,19.6019795 4.48481759,14.5603425" id="Oval-5" stroke="#4CBDD4" stroke-linecap="square" stroke-linejoin="bevel" transform="translate(23.580411, 26.004254) scale(-1, 1) translate(-23.580411, -26.004254) "></path>
+        <path d="M4.67634082,14.0711966 C2.85273445,9.02955955 11.7112466,9.27817235 23.6974405,14.6135176 C34.7525767,19.9345352 43.105208,28.3087362 43.1253003,33.3307903" id="Oval-5" stroke="#4CBDD4" stroke-linecap="round"></path>
+        <text id="Mg" font-family=".SFNSText-Bold, .SF NS Text" font-size="18" font-weight="bold" letter-spacing="-0.552857101" fill="#4A4A4A">
+            <tspan x="10.7523727" y="30.8633723">Mg</tspan>
+        </text>
+        <path d="M43.1454114,33.8199362 C43.073783,38.8419903 36.2351378,38.6260228 27.0748959,33.3245882 C16.956721,28.0088259 6.69954895,19.6019795 4.9542254,14.5603425" id="Oval-5" stroke="#4CBDD4" stroke-linecap="square" stroke-linejoin="bevel"></path>
+        <path d="M4.67634082,14.0711966 C2.85273445,9.02955955 11.7112466,9.27817235 23.6974405,14.6135176 C34.7525767,19.9345352 43.105208,28.3087362 43.1253003,33.3307903" id="Oval-5" stroke="#4CBDD4" stroke-linecap="round" transform="translate(23.781614, 21.888064) scale(-1, 1) translate(-23.781614, -21.888064) "></path>
+    </g>
+</svg>

@@ -181,6 +181,129 @@ var levelModule = (function() {
             }
         },
         
+        // FeCl3+MgO->Fe2O3+MgCl2: v1
+        {
+            "reactants": {
+                "EggCarrot3": 0,
+                "BreadBacon": 0
+            },
+            "products": {
+                "Egg2Bacon3": 0,
+                "BreadCarrot2": 0
+            },
+            "svgmap": {
+                "EggCarrot3":   "l5/v1/svg-reactant-FeCl3.svg",
+                "BreadBacon":             "l5/v1/svg-reactant-MgO.svg",
+                "Egg2Bacon3":      "l5/v1/svg-product-Fe2O3.svg",
+                "BreadCarrot2":        "l5/v1/svg-product-MgCl2.svg",
+                "aBread":        "svg-bread.svg",
+                "aBacon":          "svg-bacon.svg",
+                "aCarrot":        "svg-carrot.svg",
+                "aEgg": "svg-egg.svg",
+                "Egg2Bacon3Plate": "grey_plate.svg",
+                "BreadCarrot2Plate":   "pink_plate.svg"
+            }
+        },
+        
+        
+        // FeCl3+MgO->Fe2O3+MgCl2: v2
+        {
+            "reactants": {
+                "EggCarrot3": 0,
+                "MagnesiumBacon": 0
+            },
+            "products": {
+                "Egg2Bacon3": 0,
+                "MagnesiumCarrot2": 0
+            },
+            "svgmap": {
+                "EggCarrot3":   "l5/v2/svg-reactant-FeCl3.svg",
+                "MagnesiumBacon":             "l5/v2/svg-reactant-MgO.svg",
+                "Egg2Bacon3":      "l5/v2/svg-product-Fe2O3.svg",
+                "MagnesiumCarrot2":        "l5/v2/svg-product-MgCl2.svg",
+                "aMagnesium":        "svg-atom-Mg.svg",
+                "aBacon":          "svg-bacon.svg",
+                "aCarrot":        "svg-carrot.svg",
+                "aEgg": "svg-egg.svg",
+                "Egg2Bacon3Plate": "grey_plate.svg",
+                "MagnesiumCarrot2Plate":   "pink_plate.svg"
+            }
+        },
+        
+         // FeCl3+MgO->Fe2O3+MgCl2: v3
+        {
+            "reactants": {
+                "EggCarrot3": 0,
+                "MagnesiumOxygen": 0
+            },
+            "products": {
+                "Egg2Oxygen3": 0,
+                "MagnesiumCarrot2": 0
+            },
+            "svgmap": {
+                "EggCarrot3":   "l5/v3/svg-reactant-FeCl3.svg",
+                "MagnesiumOxygen":             "l5/v3/svg-reactant-MgO.svg",
+                "Egg2Oxygen3":      "l5/v3/svg-product-Fe2O3.svg",
+                "MagnesiumCarrot2":        "l5/v3/svg-product-MgCl2.svg",
+                "aMagnesium":        "svg-atom-Mg.svg",
+                "aOxygen":          "svg-o-atom.svg",
+                "aCarrot":        "svg-carrot.svg",
+                "aEgg": "svg-egg.svg",
+                "Egg2Oxygen3Plate": "grey_plate.svg",
+                "MagnesiumCarrot2Plate":   "pink_plate.svg"
+            }
+        },
+        
+        // FeCl3+MgO->Fe2O3+MgCl2: v4
+        {
+            "reactants": {
+                "IronCarrot3": 0,
+                "MagnesiumOxygen": 0
+            },
+            "products": {
+                "Iron2Oxygen3": 0,
+                "MagnesiumCarrot2": 0
+            },
+            "svgmap": {
+                "IronCarrot3":   "l5/v4/svg-reactant-FeCl3.svg",
+                "MagnesiumOxygen":             "l5/v4/svg-reactant-MgO.svg",
+                "Iron2Oxygen3":      "l5/v4/svg-product-Fe2O3.svg",
+                "MagnesiumCarrot2":        "l5/v4/svg-product-MgCl2.svg",
+                "aMagnesium":        "svg-atom-Mg.svg",
+                "aOxygen":          "svg-o-atom.svg",
+                "aCarrot":        "svg-carrot.svg",
+                "aIron": "svg-fe-atom.svg",
+                "Iron2Oxygen3Plate": "grey_plate.svg",
+                "MagnesiumCarrot2Plate":   "pink_plate.svg"
+            }
+        },
+        
+        // FeCl3+MgO->Fe2O3+MgCl2: v5
+        {
+            "reactants": {
+                "IronChlorine3": 0,
+                "MagnesiumOxygen": 0
+            },
+            "products": {
+                "Iron2Oxygen3": 0,
+                "MagnesiumChlorine2": 0
+            },
+            "svgmap": {
+                "IronChlorine3":   "l5/v5/svg-reactant-FeCl3.svg",
+                "MagnesiumOxygen":             "l5/v5/svg-reactant-MgO.svg",
+                "Iron2Oxygen3":      "l5/v5/svg-product-Fe2O3.svg",
+                "MagnesiumChlorine2":        "l5/v5/svg-product-MgCl2.svg",
+                "aMagnesium":        "svg-atom-Mg.svg",
+                "aOxygen":          "svg-o-atom.svg",
+                "aChlorine":        "svg-Cl-atom.svg",
+                "aIron": "svg-fe-atom.svg",
+                "Iron2Oxygen3Plate": "grey_plate.svg",
+                "MagnesiumChlorine2Plate":   "pink_plate.svg"
+            }
+        },
+        
+        
+        
         // Na+H2O->NaOH+H2: v1
         {
             "reactants": {

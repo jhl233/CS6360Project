@@ -1,0 +1,16 @@
+
+<svg width="59px" height="59px" viewBox="46 45 59 59" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#B28E60" offset="0%"></stop>
+            <stop stop-color="#D2B48C" offset="100%"></stop>
+        </linearGradient>
+        <path d="M53.5410273,62.550843 L53.5410273,95.3387032 L96.5410273,95.3387032 L96.5410273,62.550843 C96.5406891,62.5236082 96.5410273,62.4963423 96.5410273,62.4690457 C96.5410273,57.8637222 86.9151494,54.1303699 75.0410273,54.1303699 C63.1669052,54.1303699 53.5410273,57.8637222 53.5410273,62.4690457 C53.5410273,62.4963423 53.5413655,62.5236082 53.5420403,62.550843 Z" id="path-2"></path>
+        <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="43" height="41.2083333" fill="white">
+            <use xlink:href="#path-2"></use>
+        </mask>
+    </defs>
+    <use id="Combined-Shape" stroke-opacity="0.472203351" stroke="#8B572A" mask="url(#mask-3)" stroke-width="10" fill="url(#linearGradient-1)" fill-rule="evenodd" transform="translate(75.041027, 74.734537) rotate(31.000000) translate(-75.041027, -74.734537) " xlink:href="#path-2"></use>
+</svg>
