@@ -262,14 +262,14 @@ body{
     position: absolute;
     width: 13%;
     top: 32%;
-    left: 15%;
+    left: 7%;
 }
 
 .overlay-bubble{
     position: absolute;
     width: 60%;
     top: 34%;
-    left: 32%;
+    left: 22%;
     background-color: #45D0E2;
     border-radius: 25px;
     /* Great job! Click her: */
@@ -501,16 +501,4 @@ body{
     content:url(../svg/svg-home-icon-shadow.svg);
 }
 
-#reset
-{
-    position: absolute;
-    left:94%;
-    top:35%;
-}
-
-#reset:hover
-{
-    cursor: pointer;
-    /*content: url(../svg/svg-reset-icon-shadow.svg);*/
-}
 

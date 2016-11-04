@@ -140,6 +140,27 @@ var levelModule = (function() {
                 "Oxygen3Plate":  "grey_plate.svg",
             }
         },
+        //KClO3 -> KCl + O2
+        {
+            "reactants": {
+                "BroccoliEggCarrot3": 0,
+            },
+            "products": {
+                "BroccoliEgg": 0,
+                "Carrot2": 0
+            },
+            "svgmap": {
+                "BroccoliEggCarrot3":  "svg-reactant-BroccoliEggCarrot3.svg",
+                "BroccoliEgg":  "svg-product-BroccoliEgg.svg",
+                "Carrot2":  "svg-product-Carrot2.svg",
+                "aCarrot":  "svg-carrot.svg",
+                "aEgg": "svg-egg.svg",
+                "aBroccoli": "l2/svg-broccoli.svg",
+                "BroccoliEggPlate":  "grey_plate.svg",
+                "Carrot2Plate":  "pink_plate.svg",
+            }
+        },
+        //KClO3 -> KCl + O2
         {
             "reactants": {
                 "KClO3": 0,
