@@ -109,20 +109,76 @@ var viewModule = (function() {
 
             var reactantSVG = svgMap[reactant];
 
-            $clickable = $("<img>", {class: "pic shadow", src: "svg/" + reactantSVG, "data-name": reactant});
-            $reactant.append($("<div>", {class: "reactant-badge", text: coeff, id:reactant+"ReactantCoeff"}));
+            // Add reactant images and coefficient badges
+            $clickable = 
+                $("<img>", 
+                {
+                    class: "pic shadow", 
+                    src: "svg/" + reactantSVG, 
+                    "data-name": reactant
+                }
+            );
+            
             $reactant.append($clickable);
             
+            $reactant.append(
+                $("<input>", 
+                {
+                    id:reactant+"ReactantCoeff", 
+                    class: "reactant-badge", 
+                    type: "text", 
+                    value: coeff, 
+                    readonly: true,
+                    "data-name": reactant
+                })
+            );
+            
+            // Make the coefficient badge take input when clicked
+            //var previousValue = 0;
+            $("#" + reactant + "ReactantCoeff").dblclick(function(event) {
+                $(this).prop("readonly", false);
+                $(this).data('val', $(this).val());
+            });
+            
+            // Modifies amount of reactant if user clicks outside  
+            // of coefficient badge or hits enter
+            $("#" + reactant + "ReactantCoeff").change(function(event) {
+                var previousValue = $(this).data('val');
+                var currentValue = $(this).val();
+                if (!$.isNumeric(currentValue)) {
+                    $(this).val(previousValue);
+                    $("#hint").html("You must type in a number!");
+                } else if (currentValue < 0) {
+                    $(this).val(previousValue);
+                    $("#hint").html("You cannot type in a negative amount!");
+                } else {
+                    var modifyReactant = callBacks["modifyReactant"];
+                    modifyReactant($(event.target).data("name"));
+                    $(this).prop("readonly", true);
+                } 
+            });
+
+            
+            // Make reactant and product icons clickable in typical game mode.
+            // Otherwise, do not make clickable for winOverlay.
             if (clickable) {
                 $clickable.click(function(event) {
                     var addReactant = callBacks["addReactant"];
-                    addReactant($(event.target).data("name"));
+                    var reactant = $(event.target).data("name");
+                    addReactant(reactant, 1);
+                    var coeff = $("#" + reactant + "ReactantCoeff");
+                    coeff.val(parseInt(coeff.val()) + 1);
                 });
 
                 $minusButton = $("<div>", {class: "reactant-minus-button", text: "-", "data-name": reactant});
                 $minusButton.click(function(event) {
                     var removeReactant = callBacks["removeReactant"];
-                    removeReactant($(event.target).data("name")); 
+                    var reactant = $(event.target).data("name");
+                    removeReactant(reactant, 1); 
+                    var coeff = $("#" + reactant + "ReactantCoeff");
+                    if (coeff.val() > 0) {
+                        coeff.val(parseInt(coeff.val()) - 1);
+                    }
                 });
                 $reactant.append($minusButton);
             }
@@ -138,20 +194,72 @@ var viewModule = (function() {
 
             var productSVG = svgMap[product];
 
-            $clickable = $("<img>", {class: "pic4 shadow", src: "svg/" + productSVG, "data-name": product});
-            $product.append($("<div>", {class: "product-badge", text: coeff, id:product+"ProductCoeff"}));
+            $clickable = 
+                $("<img>", 
+                {
+                    class: "pic4 shadow", 
+                    src: "svg/" + productSVG, 
+                    "data-name": product
+                }
+            );
+
             $product.append($clickable);
+            
+            $product.append(
+                $("<input>", 
+                {
+                    id: product+"ProductCoeff", 
+                    class: "product-badge", 
+                    type: "text", 
+                    value: coeff, 
+                    readonly: true,
+                    "data-name": product
+                })
+            );
+            
+            // Make the coefficient badge take input when clicked
+            $("#"+product+"ProductCoeff").dblclick(function(event) {
+               $(this).prop("readonly", false);
+               $(this).data('val', $(this).val());
+            });
+            
+            
+            // Modifies amount of reactant if user clicks outside  
+            // of coefficient badge or hits enter
+            $("#"+product+"ProductCoeff").change(function(event) {
+                var previousValue = $(this).data('val');
+                var currentValue = $(this).val();
+                if (!$.isNumeric(currentValue)) {
+                    $(this).val(previousValue);
+                    $("#hint").html("You must type in a number!");
+                } else if (currentValue < 0) {
+                    $(this).val(previousValue);
+                    $("#hint").html("You cannot type in a negative amount!");
+                } else {
+                    var modifyProduct = callBacks["modifyProduct"];
+                    modifyProduct($(event.target).data("name"));
+                    $("#"+product+"ProductCoeff").prop("readonly", true);
+                }
+            });
 
             if (clickable) {
                 $clickable.click(function(event) {
                     var addProduct = callBacks["addProduct"];
-                    addProduct($(event.target).data("name"));
+                    var product = $(event.target).data("name");
+                    addProduct(product, 1);
+                    var coeff = $("#" + product + "ProductCoeff");
+                    coeff.val(parseInt(coeff.val()) + 1);
                 });
 
                 $minusButton = $("<div>", {class: "product-minus-button", text: "-", "data-name": product});
                 $minusButton.click(function(event) {
                     var removeProduct = callBacks["removeProduct"];
-                    removeProduct($(event.target).data("name")); 
+                    var product = $(event.target).data("name");
+                    removeProduct(product, 1); 
+                    var coeff = $("#" + product + "ProductCoeff");
+                    if (coeff.val() > 0) {
+                        coeff.val(parseInt(coeff.val()) - 1);
+                    }
                 });
                 $product.append($minusButton);
             }

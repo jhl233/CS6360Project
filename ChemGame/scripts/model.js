@@ -16,6 +16,8 @@ var stateModule = (function(viewModule, levelModule) {
         addProduct: addProduct,
         removeReactant: removeReactant,
         removeProduct: removeProduct,
+        modifyReactant: modifyReactant,
+        modifyProduct: modifyProduct,
     };
     
     var isTutorialLevel = false;
@@ -61,54 +63,81 @@ var stateModule = (function(viewModule, levelModule) {
             } , 750);
         }    
     }
-
-    function addReactant(reactant) {
-        currentState["reactants"][reactant] += 1;
-        var coeff = $("#" + reactant + "ReactantCoeff");
-        coeff.text(parseInt(coeff.text()) + 1);
+    
+    function addReactant(reactant, numTimes) {
+        currentState["reactants"][reactant] += numTimes;
         var compound = nameToObj(reactant);
-        for (var elem in compound) {
-            for (var i = 0; i < compound[elem]; i++) {
-                viewModule.addReactant(elem);
+        for (var k = 0; k < numTimes; k++) {
+            for (var elem in compound) {
+                for (var i = 0; i < compound[elem]; i++) {
+                    viewModule.addReactant(elem);
+                }
             }
         }
         checkWin();
     }
 
-    function addProduct(product) {
-        currentState["products"][product] += 1;
-        var coeff = $("#" + product + "ProductCoeff");
-        coeff.text(parseInt(coeff.text()) + 1);
-        viewModule.addProduct(product);
+    function addProduct(product, numTimes) {
+        currentState["products"][product] += numTimes;
+        for (var k = 0; k < numTimes; k++) {
+            viewModule.addProduct(product);
+        }
         checkWin();
     }
-
-    function removeReactant(reactant) {
-        if (currentState["reactants"][reactant] > 0) {
-            currentState["reactants"][reactant] -= 1;
-            var coeff = $("#" + reactant + "ReactantCoeff");
-            coeff.text(parseInt(coeff.text()) - 1);
+    
+    /* Precondition: It is possible to remove the reactant numTimes. */
+     function removeReactant(reactant, numTimes) {
+        if (currentState["reactants"][reactant] - numTimes >= 0) {
+            currentState["reactants"][reactant] -= numTimes;
             var compound = nameToObj(reactant);
-            for (var elem in compound) {
-                for (var i = 0; i < compound[elem]; i++) {
-                    viewModule.removeReactant(elem);
+            for (var k = 0; k < numTimes; k++) {
+                for (var elem in compound) {
+                    for (var i = 0; i < compound[elem]; i++) {
+                        viewModule.removeReactant(elem);
+                    }
                 }
             }
             checkWin();
         }
     }
 
-    function removeProduct(product) {
-        if (currentState["products"][product] > 0) {
-            currentState["products"][product] -= 1;
-            var coeff = $("#" + product + "ProductCoeff");
-            coeff.text(parseInt(coeff.text()) - 1);
-            viewModule.removeProduct(product);
+    function removeProduct(product, numTimes) {
+        if (currentState["products"][product] - numTimes >= 0) {
+            currentState["products"][product] -= numTimes;
+            for (var k = 0; k < numTimes; k++) {
+                viewModule.removeProduct(product);
+            }
             checkWin();
         }
     }
     
-     function specifyHint() {
+    /* Adds or removes any number of reactants, depending  
+     * on what was typed in coefficient badge. 
+     */
+    function modifyReactant(reactant) {
+        var val = $("#" + reactant + "ReactantCoeff").val();
+        var difference = val - currentState["reactants"][reactant];
+        if (difference > 0) {
+            addReactant(reactant, difference);
+        } else if (difference < 0) {
+            removeReactant(reactant, -difference);
+        }
+    }
+    
+    /* Adds or removes any number of products, depending  
+     * on what was typed in coefficient badge. 
+     */
+    function modifyProduct(product) {
+        var val = $("#" + product + "ProductCoeff").val();
+        var difference = val - currentState["products"][product];
+        if (difference > 0) {
+            addProduct(product, difference);
+        } else if (difference < 0) {
+            removeProduct(product, -difference);
+        }
+    }
+    
+    function specifyHint() {
          // Check for case with no reactants
          var noReactants = true;
          for (var reactant in currentState["reactants"]) {
@@ -151,6 +180,7 @@ var stateModule = (function(viewModule, levelModule) {
         addProduct: addProduct,
         removeReactant: removeReactant,
         removeProduct: removeProduct,
+        modifyReactant: modifyReactant,
         specifyHint: specifyHint,
     };
 })(viewModule, levelModule);
