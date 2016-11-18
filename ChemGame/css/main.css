@@ -534,5 +534,5 @@ body{
 #reset:hover
 {
     cursor: pointer;
-    /*content: url(../svg/svg-reset-icon-shadow.svg);*/
+    content:url(../svg/svg-replay-shadow.svg);
 }
