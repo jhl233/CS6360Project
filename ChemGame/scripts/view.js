@@ -117,7 +117,6 @@ var viewModule = (function() {
             $clickable = 
                 $("<img>", 
                 {
-                    class: "pic shadow", 
                     src: "svg/" + reactantSVG, 
                     "data-name": reactant
                 }
@@ -132,7 +131,6 @@ var viewModule = (function() {
                     class: "reactant-badge", 
                     type: "text", 
                     value: coeff, 
-                    readonly: true,
                     "data-name": reactant
                 })
             );
@@ -140,6 +138,11 @@ var viewModule = (function() {
             // Make reactant and product icons clickable in typical game mode.
             // Otherwise, do not make clickable for winOverlay.
             if (clickable) {
+                $("#" + reactant + "ReactantCoeff").prop("readonly", true);
+                
+                // Add the shadow to make the image look clickable!
+                $clickable.addClass("pic shadow"); 
+                
                 $clickable.click(function(event) {
                     var addReactant = callBacks["addReactant"];
                     var reactant = $(event.target).data("name");
@@ -166,7 +169,6 @@ var viewModule = (function() {
                 // Make the coefficient badge take input when clicked
                 //var previousValue = 0;
                 $("#" + reactant + "ReactantCoeff").click(function(event) {
-                    $(this).prop("readonly", false);
                     $(this).data('val', $(this).val());
                 });
 
@@ -184,7 +186,6 @@ var viewModule = (function() {
                     } else {
                         var modifyReactant = callBacks["modifyReactant"];
                         modifyReactant($(event.target).data("name"));
-                        $(this).prop("readonly", true);
                     } 
                 });
             }
@@ -203,7 +204,6 @@ var viewModule = (function() {
             $clickable = 
                 $("<img>", 
                 {
-                    class: "pic4 shadow", 
                     src: "svg/" + productSVG, 
                     "data-name": product
                 }
@@ -218,13 +218,17 @@ var viewModule = (function() {
                     class: "product-badge", 
                     type: "text", 
                     value: coeff, 
-                    readonly: true,
                     "data-name": product
                 })
             );
             
            
             if (clickable) {
+                $("#" + product + "ProductCoeff").prop("readonly", true);
+                
+                // Add the shadow to make the image look clickable!
+                $clickable.addClass("pic4 shadow"); 
+                
                 $clickable.click(function(event) {
                     var addProduct = callBacks["addProduct"];
                     var product = $(event.target).data("name");
@@ -250,7 +254,6 @@ var viewModule = (function() {
             } else {
                  // Make the coefficient badge take input when clicked
                 $("#"+product+"ProductCoeff").click(function(event) {
-                   $(this).prop("readonly", false);
                    $(this).data('val', $(this).val());
                 });
 
@@ -269,7 +272,6 @@ var viewModule = (function() {
                     } else {
                         var modifyProduct = callBacks["modifyProduct"];
                         modifyProduct($(event.target).data("name"));
-                        $("#"+product+"ProductCoeff").prop("readonly", true);
                     }
                 });
             }
@@ -311,8 +313,8 @@ var viewModule = (function() {
         var height = $("#worktable").height();
         var worktabley = $("#worktable").position().top + 30;
 
-        var x = width - Math.round(Math.random() * width * 0.4) - 100;
-        var y = Math.round(Math.random() * (height - 100)) + worktabley;
+        var x = width - Math.round(Math.random() * width * 0.4) - 150;
+        var y = Math.round(Math.random() * (height - 150)) + worktabley;
 
         if (!productView.hasOwnProperty(product)) {
             productView[product] = {
