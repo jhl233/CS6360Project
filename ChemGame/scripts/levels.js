@@ -18,6 +18,12 @@ var levelModule = (function() {
                 "Bacon2p": "l1/svg-product1-L1.svg",
                 "aBacon": "svg-bacon.svg",
                 "Bacon2pPlate": "grey_plate.svg"
+            },
+            
+            "names":
+            {
+                "reactant1":"Two bacon",
+                "product1":"Two bacon"
             }
         },
         // Level 2
@@ -37,6 +43,12 @@ var levelModule = (function() {
                 "aBroccoli": "l2/svg-broccoli.svg",
                 "aBacon": "svg-bacon.svg",
                 "Broccoli1Bacon2Plate": "pink_plate.svg",
+            }, 
+            "names":
+            {   
+                "reactant1":"Broccoli",
+                "reactant2":"Two bacon",
+                "product1":"Broccoli and two bacon slices"
             }
         },
         // Level 3
@@ -53,7 +65,12 @@ var levelModule = (function() {
               "Oxygen2p":      "l1/svg-product1-L1-alien.svg",
               "aOxygen":       "svg-o-atom.svg",
               "Oxygen2pPlate": "grey_plate.svg"
-          }
+          },
+            "names":
+            {   
+                "reactant1":"Oxygen",
+                "product1":"Ozone"
+            }
         },
         // Level 4
         // Carbon + Bacon2 --> CarbonBacon2
@@ -72,6 +89,12 @@ var levelModule = (function() {
                 "aCarbon":           "svg-c-atom.svg",
                 "aBacon":            "svg-bacon.svg",
                 "CarbonBacon2Plate": "grey_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Carbon",
+                "reactant2":"Two bacon",
+                "product1":"Carbon and two bacon slices"
             }
         },
         // Level 5
@@ -91,6 +114,12 @@ var levelModule = (function() {
                 "aCarbon":            "svg-c-atom.svg",
                 "aOxygen":            "svg-o-atom.svg",
                 "CarbonOxygen2Plate": "grey_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Carbon",
+                "reactant2":"Oxygen",
+                "product1":"Carbon dioxide"
             }
         },
         // Level 6
@@ -113,6 +142,13 @@ var levelModule = (function() {
                 "aEgg":            "svg-egg.svg",
                 "Egg3Bacon4Plate": "grey_plate.svg",
                 "Chicken2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two chicken and bacon",
+                "reactant2":"Egg",
+                "product1":"Three eggs and four bacon slices",
+                "product2":"Two chicken"
             }
         },
         
@@ -137,6 +173,13 @@ var levelModule = (function() {
                 "aIron":            "svg-fe-atom.svg",
                 "Iron3Bacon4Plate": "grey_plate.svg",
                 "Chicken2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two chicken and bacon",
+                "reactant2":"Iron",
+                "product1":"Three iron and four bacon slices",
+                "product2":"Two chicken"
             }
         },
         
@@ -161,6 +204,13 @@ var levelModule = (function() {
                 "aIron":            "svg-fe-atom.svg",
                 "Iron3Bacon4Plate": "grey_plate.svg",
                 "Hydrogen2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two chicken and bacon",
+                "reactant2":"Egg",
+                "product1":"Three eggs and four bacon slices",
+                "product2":"Two chicken"
             }
         },
         
@@ -185,6 +235,13 @@ var levelModule = (function() {
                 "aIron":            "svg-fe-atom.svg",
                 "Iron3Oxygen4Plate": "grey_plate.svg",
                 "Hydrogen2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Chicken and two bacon slices",
+                "reactant2":"Egg",
+                "product1":"Three eggs and four bacon slices",
+                "product2":"Two chicken"
             }
         },
         // Level 10
@@ -200,7 +257,12 @@ var levelModule = (function() {
                 "Carrot2":  "svg-reactant-carrot.svg",
                 "Carrot3":  "svg-product-carrot3.svg",
                 "aCarrot":            "svg-carrot.svg",
-                "Carrot3Plate":  "grey_plate.svg",
+                "Carrot3Plate":  "grey_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two carrots",
+                "product1":"Three carrots"
             }
         },
         // Level 11
@@ -217,6 +279,11 @@ var levelModule = (function() {
                 "Oxygen3":  "svg-product-O3.svg",
                 "aOxygen":            "svg-o-atom.svg",
                 "Oxygen3Plate":  "grey_plate.svg",
+            },
+            "names":
+            {   
+                "reactant1":"Oxygen",
+                "product1":"Ozone"
             }
         },
         // Level 12
@@ -238,6 +305,12 @@ var levelModule = (function() {
                 "aBroccoli": "l2/svg-broccoli.svg",
                 "BroccoliEggPlate":  "grey_plate.svg",
                 "Carrot2Plate":  "pink_plate.svg",
+            },
+            "names":
+            {   
+                "reactant1":"Broccoli, egg and three carrots",
+                "product1":"Broccoli and egg",
+                "product2":"Two carrots"
             }
         },
         // Level 13
@@ -259,6 +332,12 @@ var levelModule = (function() {
                 "aCl": "svg-Cl-atom.svg",
                 "KClPlate":  "grey_plate.svg",
                 "O2Plate":  "pink_plate.svg",
+            },
+            "names":
+            {   
+                "reactant1":"Potassium Chlorate",
+                "product1":"Potassium Chloride",
+                "product2":"Oxygen"
             }
         },
         
@@ -284,6 +363,13 @@ var levelModule = (function() {
                 "aEgg": "svg-egg.svg",
                 "Egg2Bacon3Plate": "grey_plate.svg",
                 "BreadCarrot2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Egg and three carrots",
+                "reactant2":"Bread and bacon",
+                "product1":"Two eggs and three slices of bacon",
+                "product2":"Bread and two carrots"
             }
         },
          
@@ -309,6 +395,13 @@ var levelModule = (function() {
                 "aEgg": "svg-egg.svg",
                 "Egg2Bacon3Plate": "grey_plate.svg",
                 "MagnesiumCarrot2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Egg and three carrots",
+                "reactant2":"Magnesium and bacon",
+                "product1":"Two eggs and three slices of bacon",
+                "product2":"Magnesium and two carrots"
             }
         },
         
@@ -334,6 +427,13 @@ var levelModule = (function() {
                 "aEgg": "svg-egg.svg",
                 "Egg2Oxygen3Plate": "grey_plate.svg",
                 "MagnesiumCarrot2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Egg and three carrots",
+                "reactant2":"Magnesium Oxide",
+                "product1":"Two eggs and three oxygen",
+                "product2":"Magnesium and two carrots"
             }
         },
         
@@ -359,6 +459,13 @@ var levelModule = (function() {
                 "aIron": "svg-fe-atom.svg",
                 "Iron2Oxygen3Plate": "grey_plate.svg",
                 "MagnesiumCarrot2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Iron and three carrots",
+                "reactant2":"Magnesium Oxide",
+                "product1":"Ferric Oxide",
+                "product2":"Magnesium and two carrots"
             }
         },
         
@@ -384,6 +491,13 @@ var levelModule = (function() {
                 "aIron": "svg-fe-atom.svg",
                 "Iron2Oxygen3Plate": "grey_plate.svg",
                 "MagnesiumChlorine2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Ferric Chloride",
+                "reactant2":"Magnesium Oxide",
+                "product1":"Ferric Oxide",
+                "product2":"Magnesium Chloride"
             }
         },
         
@@ -408,6 +522,13 @@ var levelModule = (function() {
                 "aChicken":        "svg-chicken.svg",
                 "BreadBaconChickenPlate": "grey_plate.svg",
                 "Chicken2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two chicken and bacon",
+                "reactant2":"Bread",
+                "product1":"Bread, bacon and chicken",
+                "product2":"Two chicken"
             }
         },
         
@@ -432,6 +553,13 @@ var levelModule = (function() {
                 "aChicken":        "svg-chicken.svg",
                 "SodiumBaconChickenPlate": "grey_plate.svg",
                 "Chicken2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two chicken and bacon",
+                "reactant2":"Sodium",
+                "product1":"Sodium, bacon and chicken",
+                "product2":"Two chickens"
             }
         },
         
@@ -456,6 +584,13 @@ var levelModule = (function() {
                 "aChicken":        "svg-chicken.svg",
                 "SodiumOxygenChickenPlate": "grey_plate.svg",
                 "Chicken2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two chicken and oxygen",
+                "reactant2":"Sodium",
+                "product1":"Sodium, oxygen and chicken",
+                "product2":"Two chickens"
             }
         },
         
@@ -479,6 +614,13 @@ var levelModule = (function() {
                 "aHydrogen":        "l6/svg-atom-H.svg",
                 "SodiumOxygenHydrogenPlate": "grey_plate.svg",
                 "Hydrogen2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Hydrogen dioxide",
+                "reactant2":"Sodium",
+                "product1":"Sodium hydroxide",
+                "product2":"Hydrogen"
             }
         },
         // Level 23
@@ -502,6 +644,42 @@ var levelModule = (function() {
                 "aEgg":            "svg-egg.svg",
                 "Egg3Bacon4Plate": "grey_plate.svg",
                 "Chicken2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two chicken and bacon",
+                "reactant2":"Egg",
+                "product1":"Three eggs and four slices of bacon",
+                "product2":"Two chickens"
+            }
+        },
+        
+        {
+            "reactants": {
+                "Chicken2Bacon": 0,
+                "Iron": 0
+            },
+            "products": {
+                "Iron3Bacon4": 0,
+                "Chicken2": 0
+            },
+            "svgmap": {
+                "Chicken2Bacon":   "l7/v2/svg-reactant-H2O.svg",
+                "Iron":             "l7/v2/svg-reactant-Fe.svg",
+                "Iron3Bacon4":      "l7/v2/svg-product-Fe3O4.svg",
+                "Chicken2":        "l7/v2/svg-product-H2.svg",
+                "aChicken":        "svg-chicken.svg",
+                "aBacon":          "svg-bacon.svg",
+                "aIron":            "svg-fe-atom.svg",
+                "Iron3Bacon4Plate": "grey_plate.svg",
+                "Chicken2Plate":   "pink_plate.svg"
+            },
+            "names":
+            {   
+                "reactant1":"Two chicken and bacon",
+                "reactant2":"Iron",
+                "product1":"Three iron and four slices of bacon",
+                "product2":"Two chickens"
             }
         },
     ];

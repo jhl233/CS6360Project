@@ -181,6 +181,10 @@ var viewModule = (function() {
                     }
                 });
                 $reactant.append($minusButton);
+                
+                 $foodLabel = $("<div>", {class: "reactant-label", text: "", "data-name": reactant});
+                
+                $reactant.append($foodLabel);
             }
         }
 
@@ -262,6 +266,10 @@ var viewModule = (function() {
                     }
                 });
                 $product.append($minusButton);
+                
+                $foodLabel = $("<div>", {class: "product-label", text: "", "data-name": product});
+                
+                $product.append($foodLabel);
             }
         }
     }
