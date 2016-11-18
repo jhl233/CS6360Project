@@ -166,6 +166,11 @@ var stateModule = (function(viewModule, levelModule) {
          if (noProducts) {
              return "Try making more dishes!";
          }
+        
+        var divisor = checkOverbalanced(currentState);
+        if (divisor > 1) {
+            return "You have " + divisor + " times the amount of food needed! Try simplifying this.";
+        }
          
          // Give a message about balancing a particular element
          reactantElements = createArrayOfIndividualElements(currentState["reactants"]);

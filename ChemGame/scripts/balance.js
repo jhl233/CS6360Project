@@ -60,11 +60,46 @@ function isBalanced(level, currentState) {
     //            "\nlength of level products = " + Object.keys(allProducts).length);
     if (numBalanced === Object.keys(allReactants).length &&
         numBalanced === Object.keys(allProducts).length) {
-        return true;
+        
+        // Check for overbalancing
+        var divisor = checkOverbalanced(currentState);
+        if (divisor == 1) {
+            return true;
+        }
     }
     
     // >= 1 elements were not properly balanced
     return false;
+}
+
+/* Checks whether the coefficients of the balanced equation all 
+ * share a common divisor. The equation is not considered
+ * properly balanced if the divisor is greater than 1.
+ */
+function checkOverbalanced(currentState) {
+    var coefficients = [];
+    for (var reactant in currentState["reactants"]) {
+        coefficients.push(currentState["reactants"][reactant]);
+    }
+    for (var product in currentState["products"]) {
+        coefficients.push(currentState["products"][product]);
+    }
+    temp = coefficients[0];
+    for (var i = 1; i < coefficients.length; i++) {
+        temp = gcd(temp, coefficients[i]);
+    }
+    return temp;
+}
+
+
+/* Computes the greatest common divisor of two integers
+ * Precondition: Input values x and y are positive integers 
+ */
+function gcd(x, y) {
+    if (y == 0) {
+        return x;
+    }
+    return gcd(y, x % y);
 }
 
 function nameToObj(name) {
@@ -92,38 +127,4 @@ function nameToObj(name) {
 	   	obj[nameAcc] = 1;
    	}
    	return obj;
-}
-
-function reactantAdded(event) {
-    $("#" + event.target.id).appendTo($("#worktable"));
-    
-    // Extract reactant's location in array
-    var id = event.target.id.substr(8);
-    worktableReactants.push(reactants[id]);
-    // Check if balanced
-    balanced = isBalanced(worktableReactants, worktableProducts);
-    if (balanced) {
-        $("#finishButton").css("background-color", "green");
-    }
-}
-
-function reactantRemoved(event) {
-    // Check if balanced
-}
-
-function productAdded(product) {
-    $("#" + event.target.id).appendTo($("#worktable"));
-    
-    // Extract reactant's location in array
-    var id = event.target.id.substr(7);
-    worktableProducts.push(products[id]);
-    // Check if balanced
-    balanced = isBalanced(worktableReactants, worktableProducts);
-    if (balanced) {
-        $("#finishButton").css("background-color", "green");
-    }
-}
-
-function productRemoved(event) {
-    // Check if balanced
 }
