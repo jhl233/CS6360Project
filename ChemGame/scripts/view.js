@@ -490,7 +490,7 @@ var viewModule = (function(tutorialModule) {
                                     elementRemoved = true;
                                     // If not, make it a free element on the left-hand side of the screen
                                 } else {
-                                    addReactantToView(element);
+                                    addReactantBackToWorktable(element, prevPosition);
                                 }
                             }
                         }
