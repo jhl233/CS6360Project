@@ -1,7 +1,7 @@
 /*
  *
  */
-var viewModule = (function() {
+var viewModule = (function(tutorialModule) {
 
     // reactantView looks like:
     //    {
@@ -62,6 +62,21 @@ var viewModule = (function() {
     function initializeScreen(state, callBacks) {
         svgMap = state["svgmap"];
 
+        /*<div id='home'>
+            <img src='svg/svg-home-icon.svg' alt='Home'>
+        </div>
+        <div id='reset'>
+            <img src='svg/svg-replay.svg' alt='Reset'>
+        </div>
+        <div id='output'>
+            <img id='chef' src='img/chef.png' alt='Chef'>
+            <label id='hint' onClick='viewModule.showHint()'>
+                Need a hint?
+            </label>
+            <label id='level'>Level
+        </div>*/
+        
+
         var $homeButton = $("<div>", {id:"home"});
         $homeButton.append("<img src='svg/svg-home-icon.svg' alt='Home'>");
         $homeButton.click(homeScreen);
@@ -93,6 +108,7 @@ var viewModule = (function() {
         $(document.body).append($main);
 
         showReactantsAndProductsBench(state, callBacks, "#workbench", true);
+        tutorialModule.checkTutorials(state["level"]);
     }
     
     function showReactantsAndProductsBench(state, callBacks, locationID, clickable) {
@@ -113,6 +129,7 @@ var viewModule = (function() {
             $clickable = 
                 $("<img>", 
                 {
+                    id: reactant+"-action",
                     class: "pic shadow", 
                     src: "svg/" + reactantSVG, 
                     "data-name": reactant
@@ -182,7 +199,7 @@ var viewModule = (function() {
                 });
                 $reactant.append($minusButton);
                 
-                 $foodLabel = $("<div>", {class: "reactant-label", text: "", "data-name": reactant});
+                $foodLabel = $("<div>", {class: "reactant-label", text: "", "data-name": reactant, "pointer-events": "none"});
                 
                 $reactant.append($foodLabel);
             }
@@ -201,6 +218,7 @@ var viewModule = (function() {
             $clickable = 
                 $("<img>", 
                 {
+                    id: product + "-action",
                     class: "pic4 shadow", 
                     src: "svg/" + productSVG, 
                     "data-name": product
@@ -388,11 +406,6 @@ var viewModule = (function() {
                 }
                 freeProduct["filled"] = true;
             }
-        }
-        
-        for (var i = 0; i < 3; i++) {
-            if (i == 0) var charlie = "lol";
-            console.log(charlie);
         }
     }
     
@@ -589,4 +602,4 @@ var viewModule = (function() {
         showHint: showHint,
         resetHint: resetHint,
     };
-})();
+})(tutorialModule);
