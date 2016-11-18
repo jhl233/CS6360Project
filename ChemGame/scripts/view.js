@@ -92,7 +92,11 @@ var viewModule = (function() {
         $($main).append($workbench);
         $(document.body).append($main);
 
-        showReactantsAndProductsBench(state, callBacks, "#workbench", true);
+        var clickable = true;
+        if (state['level'] >= 14) {
+            clickable = false;
+        }
+        showReactantsAndProductsBench(state, callBacks, "#workbench", clickable);
     }
     
     function showReactantsAndProductsBench(state, callBacks, locationID, clickable) {
@@ -133,32 +137,6 @@ var viewModule = (function() {
                 })
             );
             
-            // Make the coefficient badge take input when clicked
-            //var previousValue = 0;
-            $("#" + reactant + "ReactantCoeff").dblclick(function(event) {
-                $(this).prop("readonly", false);
-                $(this).data('val', $(this).val());
-            });
-            
-            // Modifies amount of reactant if user clicks outside  
-            // of coefficient badge or hits enter
-            $("#" + reactant + "ReactantCoeff").change(function(event) {
-                var previousValue = $(this).data('val');
-                var currentValue = $(this).val();
-                if (!$.isNumeric(currentValue)) {
-                    $(this).val(previousValue);
-                    $("#hint").html("You must type in a number!");
-                } else if (currentValue < 0) {
-                    $(this).val(previousValue);
-                    $("#hint").html("You cannot type in a negative amount!");
-                } else {
-                    var modifyReactant = callBacks["modifyReactant"];
-                    modifyReactant($(event.target).data("name"));
-                    $(this).prop("readonly", true);
-                } 
-            });
-
-            
             // Make reactant and product icons clickable in typical game mode.
             // Otherwise, do not make clickable for winOverlay.
             if (clickable) {
@@ -181,11 +159,35 @@ var viewModule = (function() {
                     }
                 });
                 $reactant.append($minusButton);
-                
-                 $foodLabel = $("<div>", {class: "reactant-label", text: "", "data-name": reactant});
-                
-                $reactant.append($foodLabel);
+
+            } else {
+                // Make the coefficient badge take input when clicked
+                //var previousValue = 0;
+                $("#" + reactant + "ReactantCoeff").click(function(event) {
+                    $(this).prop("readonly", false);
+                    $(this).data('val', $(this).val());
+                });
+
+                // Modifies amount of reactant if user clicks outside  
+                // of coefficient badge or hits enter
+                $("#" + reactant + "ReactantCoeff").change(function(event) {
+                    var previousValue = $(this).data('val');
+                    var currentValue = $(this).val();
+                    if (!$.isNumeric(currentValue)) {
+                        $(this).val(previousValue);
+                        $("#hint").html("You must type in a number!");
+                    } else if (currentValue < 0) {
+                        $(this).val(previousValue);
+                        $("#hint").html("You cannot type in a negative amount!");
+                    } else {
+                        var modifyReactant = callBacks["modifyReactant"];
+                        modifyReactant($(event.target).data("name"));
+                        $(this).prop("readonly", true);
+                    } 
+                });
             }
+            $foodLabel = $("<div>", {class: "reactant-label", text: "", "data-name": reactant});
+            $reactant.append($foodLabel);
         }
 
         i = 1;
@@ -268,7 +270,6 @@ var viewModule = (function() {
                 $product.append($minusButton);
                 
                 $foodLabel = $("<div>", {class: "product-label", text: "", "data-name": product});
-                
                 $product.append($foodLabel);
             }
         }
