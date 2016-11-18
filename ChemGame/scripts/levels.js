@@ -22,8 +22,8 @@ var levelModule = (function() {
             
             "names":
             {
-                "reactant1":"Two bacon",
-                "product1":"Two bacon"
+                "Bacon2r":"Two Bacon",
+                "Bacon2p":"Two Bacon"
             }
         },
         // Level 2
@@ -46,9 +46,9 @@ var levelModule = (function() {
             }, 
             "names":
             {   
-                "reactant1":"Broccoli",
-                "reactant2":"Two bacon",
-                "product1":"Broccoli and two bacon slices"
+                "Broccoli":"Broccoli",
+                "Bacon2":"Two Bacon",
+                "Broccoli1Bacon2":"Broccoli and Two Bacon Slices"
             }
         },
         // Level 3
@@ -68,8 +68,8 @@ var levelModule = (function() {
           },
             "names":
             {   
-                "reactant1":"Oxygen",
-                "product1":"Ozone"
+                "Oxygen2r":"Oxygen",
+                "Oxygen2p":"Ozone"
             }
         },
         // Level 4
@@ -92,9 +92,9 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Carbon",
-                "reactant2":"Two bacon",
-                "product1":"Carbon and two bacon slices"
+                "Carbon":"Carbon",
+                "Bacon2":"Two Bacon",
+                "CarbonBacon2":"Carbon and Two Bacon Slices"
             }
         },
         // Level 5
@@ -117,9 +117,9 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Carbon",
-                "reactant2":"Oxygen",
-                "product1":"Carbon dioxide"
+                "Carbon":"Carbon",
+                "Oxygen2":"Oxygen",
+                "CarbonOxygen2":"Carbon Dioxide"
             }
         },
         // Level 6
@@ -145,10 +145,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two chicken and bacon",
-                "reactant2":"Egg",
-                "product1":"Three eggs and four bacon slices",
-                "product2":"Two chicken"
+                "Chicken2Bacon":"Two chicken and bacon",
+                "Egg":"Egg",
+                "Egg3Bacon4":"Three eggs and four bacon slices",
+                "Chicken2":"Two chicken"
             }
         },
         
@@ -176,10 +176,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two chicken and bacon",
-                "reactant2":"Iron",
-                "product1":"Three iron and four bacon slices",
-                "product2":"Two chicken"
+                "Chicken2Bacon":"Two chicken and bacon",
+                "Iron":"Iron",
+                "Iron3Bacon4":"Three iron and four bacon slices",
+                "Chicken2":"Two chicken"
             }
         },
         
@@ -207,10 +207,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two chicken and bacon",
-                "reactant2":"Egg",
-                "product1":"Three eggs and four bacon slices",
-                "product2":"Two chicken"
+                "Hydrogen2Bacon":"Two hydrogen and bacon",
+                "Iron":"Iron",
+                "Iron3Bacon4":"Three iron and four bacon slices",
+                "Hydrogen2":"Two hydrogen"
             }
         },
         
@@ -238,10 +238,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Chicken and two bacon slices",
-                "reactant2":"Egg",
-                "product1":"Three eggs and four bacon slices",
-                "product2":"Two chicken"
+                "Hydrogen2Oxygen":"Water",
+                "Iron":"Iron",
+                "Iron3Oxygen4":"Magnetite",
+                "Hydrogen2":"Hydrogen"
             }
         },
         // Level 10
@@ -261,8 +261,8 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two carrots",
-                "product1":"Three carrots"
+                "Carrot2":"Two carrots",
+                "Carrot3":"Three carrots"
             }
         },
         // Level 11
@@ -282,8 +282,8 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Oxygen",
-                "product1":"Ozone"
+                "Oxygen2":"Oxygen",
+                "Oxygen3":"Ozone"
             }
         },
         // Level 12
@@ -308,9 +308,9 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Broccoli, egg and three carrots",
-                "product1":"Broccoli and egg",
-                "product2":"Two carrots"
+                "BroccoliEggCarrot3":"Broccoli, egg and three carrots",
+                "BroccoliEgg":"Broccoli and egg",
+                "Carrot2":"Two carrots"
             }
         },
         // Level 13
@@ -335,9 +335,9 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Potassium Chlorate",
-                "product1":"Potassium Chloride",
-                "product2":"Oxygen"
+                "KClO3":"Potassium Chlorate",
+                "KCl":"Potassium Chloride",
+                "O2":"Oxygen"
             }
         },
         
@@ -366,10 +366,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Egg and three carrots",
-                "reactant2":"Bread and bacon",
-                "product1":"Two eggs and three slices of bacon",
-                "product2":"Bread and two carrots"
+                "EggCarrot3":"Egg and three carrots",
+                "BreadBacon":"Bread and bacon",
+                "Egg2Bacon3":"Two eggs and three slices of bacon",
+                "BreadCarrot2":"Bread and two carrots"
             }
         },
          
@@ -398,10 +398,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Egg and three carrots",
-                "reactant2":"Magnesium and bacon",
-                "product1":"Two eggs and three slices of bacon",
-                "product2":"Magnesium and two carrots"
+                "EggCarrot3":"Egg and three carrots",
+                "MagnesiumBacon":"Magnesium and bacon",
+                "Egg2Bacon3":"Two eggs and three slices of bacon",
+                "MagnesiumCarrot2":"Magnesium and two carrots"
             }
         },
         
@@ -430,10 +430,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Egg and three carrots",
-                "reactant2":"Magnesium Oxide",
-                "product1":"Two eggs and three oxygen",
-                "product2":"Magnesium and two carrots"
+                "EggCarrot3":"Egg and three carrots",
+                "MagnesiumOxygen":"Magnesium Oxide",
+                "Egg2Oxygen3":"Two eggs and three oxygen",
+                "MagnesiumCarrot2":"Magnesium and two carrots"
             }
         },
         
@@ -462,10 +462,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Iron and three carrots",
-                "reactant2":"Magnesium Oxide",
-                "product1":"Ferric Oxide",
-                "product2":"Magnesium and two carrots"
+                "IronCarrot3":"Iron and three carrots",
+                "MagnesiumOxygen":"Magnesium Oxide",
+                "Iron2Oxygen3":"Ferric Oxide",
+                "MagnesiumCarrot2":"Magnesium and two carrots"
             }
         },
         
@@ -494,10 +494,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Ferric Chloride",
-                "reactant2":"Magnesium Oxide",
-                "product1":"Ferric Oxide",
-                "product2":"Magnesium Chloride"
+                "IronChlorine3":"Ferric Chloride",
+                "MagnesiumOxygen":"Magnesium Oxide",
+                "Iron2Oxygen3":"Ferric Oxide",
+                "MagnesiumChlorine2":"Magnesium Chloride"
             }
         },
         
@@ -525,10 +525,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two chicken and bacon",
-                "reactant2":"Bread",
-                "product1":"Bread, bacon and chicken",
-                "product2":"Two chicken"
+                "Chicken2Bacon":"Two chicken and bacon",
+                "Bread":"Bread",
+                "BreadBaconChicken":"Bread, bacon and chicken",
+                "Chicken2":"Two chicken"
             }
         },
         
@@ -556,10 +556,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two chicken and bacon",
-                "reactant2":"Sodium",
-                "product1":"Sodium, bacon and chicken",
-                "product2":"Two chickens"
+                "Chicken2Bacon":"Two chicken and bacon",
+                "Sodium":"Sodium",
+                "SodiumBaconChicken":"Sodium, bacon and chicken",
+                "Chicken2":"Two chickens"
             }
         },
         
@@ -587,10 +587,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two chicken and oxygen",
-                "reactant2":"Sodium",
-                "product1":"Sodium, oxygen and chicken",
-                "product2":"Two chickens"
+                "Chicken2Oxygen":"Two chicken and oxygen",
+                "Sodium":"Sodium",
+                "SodiumOxygenChicken":"Sodium, oxygen and chicken",
+                "Chicken2":"Two chickens"
             }
         },
         
@@ -617,10 +617,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Hydrogen dioxide",
-                "reactant2":"Sodium",
-                "product1":"Sodium hydroxide",
-                "product2":"Hydrogen"
+                "Hydrogen2Oxygen":"Hydrogen dioxide",
+                "Sodium":"Sodium",
+                "SodiumOxygenHydrogen":"Sodium hydroxide",
+                "Hydrogen2":"Hydrogen"
             }
         },
         // Level 23
@@ -647,10 +647,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two chicken and bacon",
-                "reactant2":"Egg",
-                "product1":"Three eggs and four slices of bacon",
-                "product2":"Two chickens"
+                "Chicken2Bacon":"Two chicken and bacon",
+                "Egg":"Egg",
+                "Egg3Bacon4":"Three eggs and four slices of bacon",
+                "Chicken2":"Two chickens"
             }
         },
         
@@ -676,10 +676,10 @@ var levelModule = (function() {
             },
             "names":
             {   
-                "reactant1":"Two chicken and bacon",
-                "reactant2":"Iron",
-                "product1":"Three iron and four slices of bacon",
-                "product2":"Two chickens"
+                "Chicken2Bacon":"Two chicken and bacon",
+                "Iron":"Iron",
+                "Iron3Bacon4":"Three iron and four slices of bacon",
+                "Chicken2":"Two chickens"
             }
         },
     ];
