@@ -294,7 +294,7 @@ var viewModule = (function(tutorialModule) {
         }
     }
 
-    function addReactantToView(elem) {
+    function addReactantToView(elem, reactant = "") {
         var width = $("#worktable").width();
         var height = $("#worktable").height();
         var worktabley = $("#worktable").position().top + 30;
@@ -318,9 +318,11 @@ var viewModule = (function(tutorialModule) {
         var $newImg = $("<img>", {id: id, src: img});
         $("#worktable").append($newImg);
         $newImg.css("position", "absolute");
-        $newImg.css("left", x + "px");
-        $newImg.css("top", y + "px");
-
+        var xi = $("#" + reactant + "-action").offset().left;
+        var yi = $("#" + reactant + "-action").offset().top;
+        $newImg.css("left", xi + "px");
+        $newImg.css("top",  yi + "px");
+        $newImg.animate({left: x, top: y});
         checkCollapsibles();
     }
 
@@ -354,8 +356,11 @@ var viewModule = (function(tutorialModule) {
         var $newImg = $("<img>", {id: id, src: "svg/" + plate});
         $("#worktable").append($newImg);
         $newImg.css("position", "absolute");
-        $newImg.css("left", x + "px");
-        $newImg.css("top", y + "px");
+        var xi = $("#" + product+"-action").offset().left;
+        var yi = $("#" + product+"-action").offset().top;
+        $newImg.css("left", xi + "px");
+        $newImg.css("top",  yi + "px");
+        $newImg.animate({left: x, top: y});
         checkCollapsibles();
     }
 

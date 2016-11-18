@@ -65,7 +65,7 @@ var stateModule = (function(viewModule, levelModule) {
                 viewModule.nextLevel(currentState, callBacks, function() {
                     initializeLevel(currentState["level"]+1);
                 });
-            } , 750);
+            } , 2000);
         }    
     }
     
@@ -75,7 +75,7 @@ var stateModule = (function(viewModule, levelModule) {
         for (var k = 0; k < numTimes; k++) {
             for (var elem in compound) {
                 for (var i = 0; i < compound[elem]; i++) {
-                    viewModule.addReactant(elem);
+                    viewModule.addReactant(elem, reactant);
                 }
             }
         }

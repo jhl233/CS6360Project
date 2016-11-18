@@ -6,7 +6,9 @@ var tutorialModule = (function() {
     }
 
     function checkTutorials(levelNum) {
-        addTutorialElements[levelNum]();
+        if (addTutorialElements[levelNum]) {
+            addTutorialElements[levelNum]();
+        }
     }
 
     function level1() {
