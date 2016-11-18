@@ -7,6 +7,7 @@ var stateModule = (function(viewModule, levelModule) {
         "reactants": {},
         "products": {},
         "svgmap": {},
+        "names": {},
     };
 
     var currentLevel = {};
@@ -34,20 +35,24 @@ var stateModule = (function(viewModule, levelModule) {
         currentState["reactants"] = {};
         currentState["products"] = {};
         currentState["svgmap"] = {};
+        currentState["names"] = {};
         
         isTutorialLevel = isTutorial;
 
         var i = 1;
         for (var reactant in currentLevel["reactants"]) {
             currentState["reactants"][reactant] = currentLevel["reactants"][reactant];
+            currentState["names"][reactant] = currentLevel["names"][reactant];
         }
 
         i = 1;
         for (var product in currentLevel["products"]) {
             currentState["products"][product] = currentLevel["products"][product];
+            currentState["names"][product] = currentLevel["names"][product];
         }
+        
         currentState["svgmap"] = currentLevel["svgmap"];
-
+        
         currentState["level"] = levelNum;
 
         console.log(currentState);
@@ -161,6 +166,11 @@ var stateModule = (function(viewModule, levelModule) {
          if (noProducts) {
              return "Try making more dishes!";
          }
+        
+        var divisor = checkOverbalanced(currentState);
+        if (divisor > 1) {
+            return "You have " + divisor + " times the amount of food needed! Try simplifying this.";
+        }
          
          // Give a message about balancing a particular element
          reactantElements = createArrayOfIndividualElements(currentState["reactants"]);

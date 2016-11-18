@@ -51,7 +51,7 @@ var tutorialModule = (function() {
         $("#Bacon2r-action").css("pointer-events", "all");
         $("#Bacon2r-action").click(function(){
             $(".overlay").width("0%");
-            setTimeout(level1_4, 3000);
+            setTimeout(level1_4, 2000);
         });
     }
 

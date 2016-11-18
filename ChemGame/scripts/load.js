@@ -6,13 +6,13 @@ function homeScreen() {
     $(document.body).empty();
     var $tutorialButton = $("<button>", {
         class:"index_button tutorial shadow",
-        text:"Tutorial",
-        onClick:"showTutorial1()"
+        text:"Start",
+        onClick:"stateModule.initializeLevel(1)"
     });
 
     var $startButton = $("<button>", {
         class:"index_button start shadow",
-        text:"Start",
+        text:"Levels",
         onClick: "showLevels()"
     });
 

@@ -106,8 +106,11 @@ var viewModule = (function(tutorialModule) {
         $($main).append($worktable);
         $($main).append($workbench);
         $(document.body).append($main);
-
-        showReactantsAndProductsBench(state, callBacks, "#workbench", true);
+        var clickable = true;
+        if (state['level'] >= 14) {
+            clickable = false;
+        }
+        showReactantsAndProductsBench(state, callBacks, "#workbench", clickable);
         tutorialModule.checkTutorials(state["level"]);
     }
     
@@ -150,32 +153,6 @@ var viewModule = (function(tutorialModule) {
                 })
             );
             
-            // Make the coefficient badge take input when clicked
-            //var previousValue = 0;
-            $("#" + reactant + "ReactantCoeff").dblclick(function(event) {
-                $(this).prop("readonly", false);
-                $(this).data('val', $(this).val());
-            });
-            
-            // Modifies amount of reactant if user clicks outside  
-            // of coefficient badge or hits enter
-            $("#" + reactant + "ReactantCoeff").change(function(event) {
-                var previousValue = $(this).data('val');
-                var currentValue = $(this).val();
-                if (!$.isNumeric(currentValue)) {
-                    $(this).val(previousValue);
-                    $("#hint").html("You must type in a number!");
-                } else if (currentValue < 0) {
-                    $(this).val(previousValue);
-                    $("#hint").html("You cannot type in a negative amount!");
-                } else {
-                    var modifyReactant = callBacks["modifyReactant"];
-                    modifyReactant($(event.target).data("name"));
-                    $(this).prop("readonly", true);
-                } 
-            });
-
-            
             // Make reactant and product icons clickable in typical game mode.
             // Otherwise, do not make clickable for winOverlay.
             if (clickable) {
@@ -198,10 +175,33 @@ var viewModule = (function(tutorialModule) {
                     }
                 });
                 $reactant.append($minusButton);
-                
-                $foodLabel = $("<div>", {class: "reactant-label", text: "", "data-name": reactant, "pointer-events": "none"});
-                
+                $foodLabel = $("<div>", {class: "reactant-label", text: state["names"][reactant], "data-name": reactant, "pointer-events": "none"});
                 $reactant.append($foodLabel);
+            } else {
+                // Make the coefficient badge take input when clicked
+                //var previousValue = 0;
+                $("#" + reactant + "ReactantCoeff").click(function(event) {
+                    $(this).prop("readonly", false);
+                    $(this).data('val', $(this).val());
+                });
+
+                // Modifies amount of reactant if user clicks outside  
+                // of coefficient badge or hits enter
+                $("#" + reactant + "ReactantCoeff").change(function(event) {
+                    var previousValue = $(this).data('val');
+                    var currentValue = $(this).val();
+                    if (!$.isNumeric(currentValue)) {
+                        $(this).val(previousValue);
+                        $("#hint").html("You must type in a number!");
+                    } else if (currentValue < 0) {
+                        $(this).val(previousValue);
+                        $("#hint").html("You cannot type in a negative amount!");
+                    } else {
+                        var modifyReactant = callBacks["modifyReactant"];
+                        modifyReactant($(event.target).data("name"));
+                        $(this).prop("readonly", true);
+                    } 
+                });
             }
         }
 
@@ -239,31 +239,7 @@ var viewModule = (function(tutorialModule) {
                 })
             );
             
-            // Make the coefficient badge take input when clicked
-            $("#"+product+"ProductCoeff").dblclick(function(event) {
-               $(this).prop("readonly", false);
-               $(this).data('val', $(this).val());
-            });
-            
-            
-            // Modifies amount of reactant if user clicks outside  
-            // of coefficient badge or hits enter
-            $("#"+product+"ProductCoeff").change(function(event) {
-                var previousValue = $(this).data('val');
-                var currentValue = $(this).val();
-                if (!$.isNumeric(currentValue)) {
-                    $(this).val(previousValue);
-                    $("#hint").html("You must type in a number!");
-                } else if (currentValue < 0) {
-                    $(this).val(previousValue);
-                    $("#hint").html("You cannot type in a negative amount!");
-                } else {
-                    var modifyProduct = callBacks["modifyProduct"];
-                    modifyProduct($(event.target).data("name"));
-                    $("#"+product+"ProductCoeff").prop("readonly", true);
-                }
-            });
-
+           
             if (clickable) {
                 $clickable.click(function(event) {
                     var addProduct = callBacks["addProduct"];
@@ -285,9 +261,33 @@ var viewModule = (function(tutorialModule) {
                 });
                 $product.append($minusButton);
                 
-                $foodLabel = $("<div>", {class: "product-label", text: "", "data-name": product});
-                
+                $foodLabel = $("<div>", {class: "product-label", text: state["names"][product], "data-name": product});
                 $product.append($foodLabel);
+            } else {
+                 // Make the coefficient badge take input when clicked
+                $("#"+product+"ProductCoeff").click(function(event) {
+                   $(this).prop("readonly", false);
+                   $(this).data('val', $(this).val());
+                });
+
+
+                // Modifies amount of reactant if user clicks outside  
+                // of coefficient badge or hits enter
+                $("#"+product+"ProductCoeff").change(function(event) {
+                    var previousValue = $(this).data('val');
+                    var currentValue = $(this).val();
+                    if (!$.isNumeric(currentValue)) {
+                        $(this).val(previousValue);
+                        $("#hint").html("You must type in a number!");
+                    } else if (currentValue < 0) {
+                        $(this).val(previousValue);
+                        $("#hint").html("You cannot type in a negative amount!");
+                    } else {
+                        var modifyProduct = callBacks["modifyProduct"];
+                        modifyProduct($(event.target).data("name"));
+                        $("#"+product+"ProductCoeff").prop("readonly", true);
+                    }
+                });
             }
         }
     }
@@ -519,7 +519,7 @@ var viewModule = (function(tutorialModule) {
     function nextLevel(state, callBacks, initializeNext) {
 
         $homeSpan = $("<span>", {class:"button-home"});
-        $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon-shadow.svg'>");
+        $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon.svg'>");
         $homeSpan.append("<span class='button-text'>Home</span>");
 
         $replaySpan = $("<span>", {class:"button-replay"});
