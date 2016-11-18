@@ -508,7 +508,7 @@ var viewModule = (function() {
     function nextLevel(state, callBacks, initializeNext) {
 
         $homeSpan = $("<span>", {class:"button-home"});
-        $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon-shadow.svg'>");
+        $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon.svg'>");
         $homeSpan.append("<span class='button-text'>Home</span>");
 
         $replaySpan = $("<span>", {class:"button-replay"});
