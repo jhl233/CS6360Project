@@ -4,6 +4,9 @@
     font-family: sans-serif;
 }
 input,button,select,textarea{outline:none}
+input{
+    border: none;
+}
 body{
     background-color: #f9f9f9;
     overflow: hidden;
@@ -49,7 +52,7 @@ body{
 #hint
 {
     position:absolute;
-    left:12%;
+    left:15%;
     top:35%;
     font-family: sans-serif;
     font-size: 20px;
@@ -258,26 +261,25 @@ body{
 }
 
 .reactant-label {
-    height:36px;
-    width:119px;
     position:absolute;
     left:10%;
     top:60%;
-    border: solid 4px #4990E2;
+    border: solid 4px #9b9b9b;
     border-radius: 10px;
     background-color: white;
+    color: dimgray;
+    padding: 2px 10px 2px 10px;
 }
 
 .product-label {
-    height:36px;
-    width:119px;
     position:absolute;
     left:0%;
     top:49%;
-    border: solid 4px #4990E2;
+    border: solid 4px #9b9b9b;
     border-radius: 10px;
     background-color: white;
-    
+    color: dimgray;
+    padding: 2px 10px 2px 10px;
 }
 
 
@@ -535,4 +537,8 @@ body{
 {
     cursor: pointer;
     content:url(../svg/svg-replay-shadow.svg);
+}
+
+.checkbutton{
+    
 }

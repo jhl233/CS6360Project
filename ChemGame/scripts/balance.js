@@ -23,7 +23,9 @@ function createArrayOfIndividualElements(compoundsWithCoeffs) {
     return finalArray;
 }
 
-/* Checks if chemical equation is balanced */
+/* Checks if chemical equation is balanced.
+ * Returns gcd of coefficients if equation is balanced, returns -1 otherwise. 
+ */
 function isBalanced(level, currentState) {
     numBalanced = 0;
     numReactants = 0;
@@ -62,14 +64,11 @@ function isBalanced(level, currentState) {
         numBalanced === Object.keys(allProducts).length) {
         
         // Check for overbalancing
-        var divisor = checkOverbalanced(currentState);
-        if (divisor == 1) {
-            return true;
-        }
+        return checkOverbalanced(currentState); // returns an integer (1 = balanced)
     }
     
     // >= 1 elements were not properly balanced
-    return false;
+    return -1;
 }
 
 /* Checks whether the coefficients of the balanced equation all 

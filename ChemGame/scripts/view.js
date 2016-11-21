@@ -107,14 +107,23 @@ var viewModule = (function(tutorialModule) {
         $($main).append($workbench);
         $(document.body).append($main);
         var clickable = true;
-        if (state['level'] >= 14) {
+        var typable = false;
+        if (state['level'] >= 11) {
             clickable = false;
+            typable = true;
         }
-        showReactantsAndProductsBench(state, callBacks, "#workbench", clickable);
+        if (state['level'] >= 19) {
+            $worktable.append('<div class="checkbutton">Check</div>');
+        }
+        showReactantsAndProductsBench(state, callBacks, "#workbench", clickable, typable);
         tutorialModule.checkTutorials(state["level"]);
     }
     
-    function showReactantsAndProductsBench(state, callBacks, locationID, clickable) {
+    /* Shows the reactants and products at the bottom of the screen.
+     * Each level is either clickable or typable, not both.
+     * No clicking and no typing is allowed on the winOverlay screen.
+     */
+    function showReactantsAndProductsBench(state, callBacks, locationID, clickable, typable) {
         svgMap = state["svgmap"];
         
         var i = 1;
@@ -180,19 +189,22 @@ var viewModule = (function(tutorialModule) {
                 $reactant.append($minusButton);
                 $foodLabel = $("<div>", {class: "reactant-label", text: state["names"][reactant], "data-name": reactant, "pointer-events": "none"});
                 $reactant.append($foodLabel);
-            } else {
+            } else if (typable) {
                 // Make the coefficient badge take input when clicked
                 //var previousValue = 0;
                 $("#" + reactant + "ReactantCoeff").click(function(event) {
                     $(this).data('val', $(this).val());
+                    $(this).val(''); // Clear the box of text to start typing
                 });
 
                 // Modifies amount of reactant if user clicks outside  
                 // of coefficient badge or hits enter
-                $("#" + reactant + "ReactantCoeff").change(function(event) {
+                $("#" + reactant + "ReactantCoeff").bind('blur change', function(event) {
                     var previousValue = $(this).data('val');
                     var currentValue = $(this).val();
-                    if (!$.isNumeric(currentValue)) {
+                    if (currentValue === '') {
+                        $(this).val(previousValue);
+                    } else if (!$.isNumeric(currentValue)) {
                         $(this).val(previousValue);
                         $("#hint").html("You must type in a number!");
                     } else if (currentValue < 0) {
@@ -203,7 +215,11 @@ var viewModule = (function(tutorialModule) {
                         modifyReactant($(event.target).data("name"));
                     } 
                 });
+                
+                $foodLabel = $("<div>", {class: "reactant-label", text: state["names"][reactant], "data-name": reactant, "pointer-events": "none"});
+                $reactant.append($foodLabel);
             }
+           
         }
 
         i = 1;
@@ -267,7 +283,7 @@ var viewModule = (function(tutorialModule) {
                 
                 $foodLabel = $("<div>", {class: "product-label", text: state["names"][product], "data-name": product});
                 $product.append($foodLabel);
-            } else {
+            } else if (typable) {
                  // Make the coefficient badge take input when clicked
                 $("#"+product+"ProductCoeff").click(function(event) {
                    $(this).data('val', $(this).val());
@@ -290,6 +306,9 @@ var viewModule = (function(tutorialModule) {
                         modifyProduct($(event.target).data("name"));
                     }
                 });
+                
+                $foodLabel = $("<div>", {class: "product-label", text: state["names"][product], "data-name": product});
+                $product.append($foodLabel);
             }
         }
     }
@@ -537,7 +556,7 @@ var viewModule = (function(tutorialModule) {
         
         $nextSpan.append("<p>Click here to go to the next level!</p>");
         
-        showReactantsAndProductsBench(state, callBacks, $nextSpan, false);
+        showReactantsAndProductsBench(state, callBacks, $nextSpan, false, false);
 
         $overlay = $("<div>", {class:'overlay', id:'winOverlay'});
 
