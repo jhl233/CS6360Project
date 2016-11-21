@@ -60,6 +60,8 @@ var viewModule = (function(tutorialModule) {
     //   },
     // }
     function initializeScreen(state, callBacks) {
+        reactantView = {};
+        productView = {};
         svgMap = state["svgmap"];
 
         /*<div id='home'>
@@ -287,6 +289,7 @@ var viewModule = (function(tutorialModule) {
                  // Make the coefficient badge take input when clicked
                 $("#"+product+"ProductCoeff").click(function(event) {
                    $(this).data('val', $(this).val());
+                   $(this).val(''); // Clear the box of text to start typing
                 });
 
 
@@ -295,7 +298,9 @@ var viewModule = (function(tutorialModule) {
                 $("#"+product+"ProductCoeff").change(function(event) {
                     var previousValue = $(this).data('val');
                     var currentValue = $(this).val();
-                    if (!$.isNumeric(currentValue)) {
+                    if (currentValue === '') {
+                        $(this).val(previousValue);
+                    } else if (!$.isNumeric(currentValue)) {
                         $(this).val(previousValue);
                         $("#hint").html("You must type in a number!");
                     } else if (currentValue < 0) {
@@ -341,8 +346,10 @@ var viewModule = (function(tutorialModule) {
         var yi = $("#" + reactant + "-action").offset().top;
         $newImg.css("left", xi + "px");
         $newImg.css("top",  yi + "px");
-        $newImg.animate({left: x, top: y});
-        checkCollapsibles();
+        $newImg.animate({left: x, top: y}, function() {
+            checkCollapsibles();
+            stateModule.checkWin();
+        });
     }
 
     function addProductToView(product) {
@@ -379,8 +386,10 @@ var viewModule = (function(tutorialModule) {
         var yi = $("#" + product+"-action").offset().top;
         $newImg.css("left", xi + "px");
         $newImg.css("top",  yi + "px");
-        $newImg.animate({left: x, top: y});
-        checkCollapsibles();
+        $newImg.animate({left: x, top: y}, function() {
+            checkCollapsibles();
+            stateModule.checkWin();
+        });
     }
 
     // Can be called by either addProductToView or addReactantToView
@@ -461,9 +470,10 @@ var viewModule = (function(tutorialModule) {
         $newImg.css("position", "absolute");
         $newImg.css("left", prevPosition.left + "px");
         $newImg.css("top", prevPosition.top + "px");
-        $newImg.animate({left: x, top: y});
-
-        checkCollapsibles();
+        $newImg.animate({left: x, top: y}, function() {
+            checkCollapsibles();
+            stateModule.checkWin();
+        });
     }
     
     function removeReactantFromView(elem) {

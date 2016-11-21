@@ -79,7 +79,7 @@ var stateModule = (function(viewModule, levelModule) {
                 }
             }
         }
-        checkWin();
+        //checkWin();
     }
 
     function addProduct(product, numTimes) {
@@ -87,7 +87,7 @@ var stateModule = (function(viewModule, levelModule) {
         for (var k = 0; k < numTimes; k++) {
             viewModule.addProduct(product);
         }
-        checkWin();
+        //checkWin();
     }
     
     /* Precondition: It is possible to remove the reactant numTimes. */
@@ -102,7 +102,7 @@ var stateModule = (function(viewModule, levelModule) {
                     }
                 }
             }
-            checkWin();
+            //checkWin();
         }
     }
 
@@ -112,7 +112,7 @@ var stateModule = (function(viewModule, levelModule) {
             for (var k = 0; k < numTimes; k++) {
                 viewModule.removeProduct(product);
             }
-            checkWin();
+            //checkWin();
         }
     }
     
@@ -176,6 +176,7 @@ var stateModule = (function(viewModule, levelModule) {
     return {
         getCurrentLevel: getCurrentLevel,
         initializeLevel: initializeLevel,
+        checkWin: checkWin,
         addReactant: addReactant,
         addProduct: addProduct,
         removeReactant: removeReactant,
