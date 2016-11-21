@@ -223,6 +223,7 @@ var levelModule = (function() {
         },
         
         //level 9
+        // KClO3 -> KCl + O2
         {
             "reactants": {
                 "KClO3": 0,
@@ -517,6 +518,28 @@ var levelModule = (function() {
         //check from now on
         //level 19
         //H2 + O2 -> H2O
+        {
+            "reactants":{
+                "H2":0,
+                "O2": 0,
+            },
+            "products":{
+                "H2O": 0,
+            },
+            "svgmap":{
+                "H2": "svg-reactant-H2.svg",
+                "O2": "svg-O2.svg",
+                "H2O": "svg-product-H2O.svg",
+                "aH": "svg-atom-H.svg",
+                "aO": "svg-o-atom.svg",
+                "H2OPlate":   "pink_plate.svg",
+            },
+            "names":{
+                "H2": "H2",
+                "O2": "O2",
+                "H2O": "H2O",
+            },
+        },
         
         //level 20
         //C2H2 + O2 -> CO2 + H2O
