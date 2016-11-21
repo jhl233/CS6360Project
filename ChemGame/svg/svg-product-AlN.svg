@@ -1,0 +1,31 @@
+<svg width="129px" height="111px" viewBox="12789 1357 129 111" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="42.591133" cy="42.7555556" rx="41.9211823" ry="41.9111111"></ellipse>
+        <rect id="path-3" x="0" y="23" width="129" height="65" rx="13"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="129" height="65" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+    </defs>
+    <g id="Group-35" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(12789.000000, 1357.000000)">
+        <g id="grey_plate" transform="translate(9.000000, 0.000000)">
+            <g id="Created-with-Sketch.">
+                <ellipse id="Oval-7" fill="#DFDEDE" cx="55.2561576" cy="55.2428829" rx="55.2561576" ry="55.2428829"></ellipse>
+                <g id="Oval-7-Clipped" transform="translate(13.000000, 12.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <g id="Oval-7" mask="url(#mask-2)" stroke="#FFFFFF" stroke-width="2" fill="#CCCBCB">
+                        <ellipse id="path-1" cx="42.591133" cy="42.7555556" rx="41.9211823" ry="41.9111111"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <use id="Rectangle-18" stroke="#979797" mask="url(#mask-4)" stroke-width="10" fill="#FFFFFF" xlink:href="#path-3"></use>
+        <text id="AlN" font-family="OpenSans-Extrabold, Open Sans" font-size="28" font-weight="600" letter-spacing="0.571666658" fill="#1D1D1D">
+            <tspan x="37" y="64">AlN</tspan>
+        </text>
+    </g>
+</svg>

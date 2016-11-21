@@ -108,14 +108,18 @@ var viewModule = (function(tutorialModule) {
         $(document.body).append($main);
         var clickable = true;
         var typable = false;
+        var needsCheck = false;
         if (state['level'] >= 11) {
             clickable = false;
             typable = true;
         }
         if (state['level'] >= 19) {
-            $worktable.append('<div class="checkbutton shadow">Check</div>');
+            var $checkbutton = $("<div>", {id: "checkbutton", class:"shadow", text:"Check"});
+            $checkbutton.click(function() {showCheck(callBacks);});
+            $worktable.append($checkbutton);
+            needsCheck = true;
         }
-        showReactantsAndProductsBench(state, callBacks, "#workbench", clickable, typable);
+        showReactantsAndProductsBench(state, callBacks, "#workbench", clickable, typable, needsCheck);
         tutorialModule.checkTutorials(state["level"]);
     }
     
@@ -123,7 +127,7 @@ var viewModule = (function(tutorialModule) {
      * Each level is either clickable or typable, not both.
      * No clicking and no typing is allowed on the winOverlay screen.
      */
-    function showReactantsAndProductsBench(state, callBacks, locationID, clickable, typable) {
+    function showReactantsAndProductsBench(state, callBacks, locationID, clickable, typable, needsCheck) {
         svgMap = state["svgmap"];
         
         var i = 1;
@@ -159,6 +163,11 @@ var viewModule = (function(tutorialModule) {
                     "data-name": reactant
                 })
             );
+
+            reactantView[reactant] = {
+                "nextId": 0,
+                "elems": [],
+            }
             
             // Make reactant and product icons clickable in typical game mode.
             // Otherwise, do not make clickable for winOverlay.
@@ -197,7 +206,8 @@ var viewModule = (function(tutorialModule) {
                     $(this).val(''); // Clear the box of text to start typing
                 });
 
-                $("#" + reactant + "ReactantCoeff").css("cursor", "none");
+                $("#" + reactant + "-action").css("cursor", "default");
+                $("#" + reactant + "ReactantCoeff").css("cursor", "pointer");
 
                 // Modifies amount of reactant if user clicks outside  
                 // of coefficient badge or hits enter
@@ -212,7 +222,7 @@ var viewModule = (function(tutorialModule) {
                     } else if (currentValue < 0) {
                         $(this).val(previousValue);
                         $("#hint").html("You cannot type in a negative amount!");
-                    } else {
+                    } else if (!needsCheck) {
                         var modifyReactant = callBacks["modifyReactant"];
                         modifyReactant($(event.target).data("name"));
                     } 
@@ -221,8 +231,6 @@ var viewModule = (function(tutorialModule) {
                 $foodLabel = $("<div>", {class: "reactant-label", text: state["names"][reactant], "data-name": reactant, "pointer-events": "none"});
                 $reactant.append($foodLabel);
             }
-
-           
         }
 
         i = 1;
@@ -256,7 +264,13 @@ var viewModule = (function(tutorialModule) {
                     "data-name": product
                 })
             );
-            
+
+            /*
+            productView[product] = {
+                "nextId": 0,
+                "elems": [],
+            }
+            */
            
             if (clickable) {
                 $("#" + product + "ProductCoeff").prop("readonly", true);
@@ -291,7 +305,8 @@ var viewModule = (function(tutorialModule) {
                 $("#"+product+"ProductCoeff").click(function(event) {
                    $(this).data('val', $(this).val());
                 });
-
+                $("#" + reactant + "-action").css("cursor", "default");
+                $("#" + reactant + "ProductCoeff").css("cursor", "pointer");
 
                 // Modifies amount of reactant if user clicks outside  
                 // of coefficient badge or hits enter
@@ -304,7 +319,7 @@ var viewModule = (function(tutorialModule) {
                     } else if (currentValue < 0) {
                         $(this).val(previousValue);
                         $("#hint").html("You cannot type in a negative amount!");
-                    } else {
+                    } else if (!needsCheck) {
                         var modifyProduct = callBacks["modifyProduct"];
                         modifyProduct($(event.target).data("name"));
                     }
@@ -356,7 +371,9 @@ var viewModule = (function(tutorialModule) {
         var x = width - Math.round(Math.random() * width * 0.4) - 150;
         var y = Math.round(Math.random() * (height - 150)) + worktabley;
 
+        console.log(product);
         if (!productView.hasOwnProperty(product)) {
+            console.log("This should never happen");
             productView[product] = {
                 "nextId": 0,
                 "products": [],
@@ -421,6 +438,8 @@ var viewModule = (function(tutorialModule) {
             if (freeProduct == null) {
                 continue;
             }
+
+            console.log("MATCHED!!!!!!!!!!!!!!")
 
             for (var elemReq in reqs) { // for each Chicken in Chicken-needs-3
                 for (var i = 0; i < reqs[elemReq]; i++) {
@@ -591,6 +610,19 @@ var viewModule = (function(tutorialModule) {
         $overlay.append($replaySpan);
         $overlay.append($homeSpan);
         $(document.body).append($overlay);
+    }
+
+    function showCheck(callBacks) {
+        for (elem in reactantView) {
+            console.log(elem);
+            var modifyReactant = callBacks["modifyReactant"];
+            modifyReactant(elem);
+        }
+        for (elem in productView) {
+            console.log(elem);
+            var modifyProduct = callBacks["modifyProduct"];
+            modifyProduct(elem);
+        }
     }
 
     function closeOverlay(overlayID) {

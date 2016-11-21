@@ -72,21 +72,40 @@ var stateModule = (function(viewModule, levelModule) {
     function addReactant(reactant, numTimes) {
         currentState["reactants"][reactant] += numTimes;
         var compound = nameToObj(reactant);
-        for (var k = 0; k < numTimes; k++) {
+        //Add once for greater sense of responsiveness
+        for (var elem in compound) {
+            for (var i = 0; i < compound[elem]; i++) {
+                viewModule.addReactant(elem, reactant);
+            }
+        }
+        numTimes--;
+        var addRIntervalID = setInterval(function(){
+            if (numTimes == 0) {
+                clearInterval(addRIntervalID);
+                return;
+            }
             for (var elem in compound) {
                 for (var i = 0; i < compound[elem]; i++) {
                     viewModule.addReactant(elem, reactant);
                 }
             }
-        }
+            numTimes--;
+        }, 1000);
         checkWin();
     }
 
     function addProduct(product, numTimes) {
         currentState["products"][product] += numTimes;
-        for (var k = 0; k < numTimes; k++) {
+        viewModule.addProduct(product);
+        numTimes--;
+        var addPIntervalID = setInterval(function(){
+            if (numTimes == 0) {
+                clearInterval(addPIntervalID);
+                return;
+            }
             viewModule.addProduct(product);
-        }
+            numTimes--;
+        }, 1000);
         checkWin();
     }
     

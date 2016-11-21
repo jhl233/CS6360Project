@@ -1,0 +1,72 @@
+<svg width="126px" height="127px" viewBox="11981 841 126 127" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="62.5862069" cy="62.5711712" rx="62.5862069" ry="62.5711712"></ellipse>
+        <ellipse id="path-3" cx="49.1034483" cy="49.0540541" rx="48.6206897" ry="48.609009"></ellipse>
+    </defs>
+    <g id="svg-product1-L2-complete-alien" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(11981.000000, 841.000000)">
+        <g id="Created-with-Sketch.">
+            <g id="Product" transform="translate(0.000000, 0.980011)">
+                <g id="the-party-icons-50">
+                    <g id="Mask" fill="#F4D9D3">
+                        <ellipse id="path-1" cx="62.5862069" cy="62.5711712" rx="62.5862069" ry="62.5711712"></ellipse>
+                    </g>
+                    <g id="Oval-7-Clipped">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="path-1" fill="#DFDEDE" xlink:href="#path-1"></use>
+                        <g id="Oval-7" mask="url(#mask-2)">
+                            <g transform="translate(14.000000, 13.000000)" id="Clipped">
+                                <g>
+                                    <mask id="mask-4" fill="white">
+                                        <use xlink:href="#path-3"></use>
+                                    </mask>
+                                    <g id="path-3"></g>
+                                    <ellipse id="path-3" stroke="#FFFFFF" stroke-width="2" fill="#CCCBCB" mask="url(#mask-4)" cx="49.1034483" cy="49.0540541" rx="48.6206897" ry="48.609009"></ellipse>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="Atom" transform="translate(19.000000, 26.000000)">
+                    <circle id="Oval-4" fill="#999999" cx="30" cy="30" r="30"></circle>
+                    <path d="M53.345004,42.2749203 C53.2554685,48.5524878 44.7071621,48.2825285 33.2568597,41.6557352 C20.6091411,35.0110324 7.78767604,24.5024744 5.6060216,18.2004281" id="Oval-5" stroke-opacity="0.515228714" stroke="#FFFFFF" transform="translate(29.475513, 32.505317) scale(-1, 1) translate(-29.475513, -32.505317) "></path>
+                    <path d="M5.84542603,17.5889957 C3.56591806,11.2869494 14.6390582,11.5977154 29.6218007,18.266897 C43.4407209,24.918169 53.88151,35.3859203 53.9066254,41.6634878" id="Oval-5" stroke-opacity="0.515228714" stroke="#FFFFFF"></path>
+                    <g id="C" transform="translate(14.000000, 4.000000)" font-size="40" font-family=".SFNSText-Bold, .SF NS Text" fill="#FACC39" font-weight="bold">
+                        <text>
+                            <tspan x="0.9960214" y="39.995882">C</tspan>
+                        </text>
+                    </g>
+                    <path d="M53.9317642,42.2749203 C53.8422287,48.5524878 45.2939223,48.2825285 33.8436199,41.6557352 C21.1959012,35.0110324 8.37443619,24.5024744 6.19278175,18.2004281" id="Oval-5" stroke-opacity="0.515228714" stroke="#FFFFFF"></path>
+                    <path d="M5.84542555,17.5865024 C3.56591758,11.2838035 14.6390577,11.5946017 29.6218002,18.2644739 C43.4407204,24.9164348 53.8815095,35.3852701 53.9066249,41.6634878" id="Oval-5" stroke-opacity="0.515228714" stroke="#FFFFFF" transform="translate(29.727017, 27.358599) scale(-1, 1) translate(-29.727017, -27.358599) "></path>
+                </g>
+                <g id="Atom" transform="translate(79.000000, 19.019989)">
+                    <circle id="Oval-4" fill="#FACC39" cx="17.5" cy="19.5" r="17.5"></circle>
+                    <path d="M31.1179185,26.6603702 C31.0656894,30.3222846 26.0791774,30.1648083 19.3998343,26.2991789 C12.0219984,22.4231022 4.54281045,16.2931101 3.2701787,12.6169164" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B" transform="translate(17.194049, 20.961435) scale(-1, 1) translate(-17.194049, -20.961435) "></path>
+                    <path d="M3.40983185,12.2602475 C2.08011887,8.58405384 8.53945063,8.765334 17.2793837,12.6556899 C25.3404205,16.5355986 31.4308808,22.6417868 31.4455315,26.3037012" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B"></path>
+                    <g id="O" transform="translate(5.000000, 0.000000)" font-size="32" font-family=".SFNSText-Bold, .SF NS Text" fill="#4A4A4A" font-weight="bold">
+                        <text>
+                            <tspan x="0.19212358" y="31.5809312">O</tspan>
+                        </text>
+                    </g>
+                    <path d="M31.4601958,26.6603702 C31.4079667,30.3222846 26.4214547,30.1648083 19.7421116,26.2991789 C12.3642757,22.4231022 4.88508778,16.2931101 3.61245602,12.6169164" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B"></path>
+                    <path d="M3.40983172,12.2602475 C2.08011874,8.58405384 8.5394505,8.765334 17.2793836,12.6556899 C25.3404204,16.5355986 31.4308807,22.6417868 31.4455314,26.3037012" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B" transform="translate(17.340760, 17.960047) scale(-1, 1) translate(-17.340760, -17.960047) "></path>
+                </g>
+                <g id="Atom" transform="translate(65.000000, 75.019989)">
+                    <circle id="Oval-4" fill="#FACC39" cx="17.5" cy="19.5" r="17.5"></circle>
+                    <path d="M31.1179185,26.6603702 C31.0656894,30.3222846 26.0791774,30.1648083 19.3998343,26.2991789 C12.0219984,22.4231022 4.54281045,16.2931101 3.2701787,12.6169164" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B" transform="translate(17.194049, 20.961435) scale(-1, 1) translate(-17.194049, -20.961435) "></path>
+                    <path d="M3.40983185,12.2602475 C2.08011887,8.58405384 8.53945063,8.765334 17.2793837,12.6556899 C25.3404205,16.5355986 31.4308808,22.6417868 31.4455315,26.3037012" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B"></path>
+                    <g id="O" transform="translate(5.000000, 0.000000)" font-size="32" font-family=".SFNSText-Bold, .SF NS Text" fill="#4A4A4A" font-weight="bold">
+                        <text>
+                            <tspan x="0.19212358" y="31.5809312">O</tspan>
+                        </text>
+                    </g>
+                    <path d="M31.4601958,26.6603702 C31.4079667,30.3222846 26.4214547,30.1648083 19.7421116,26.2991789 C12.3642757,22.4231022 4.88508778,16.2931101 3.61245602,12.6169164" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B"></path>
+                    <path d="M3.40983172,12.2602475 C2.08011874,8.58405384 8.5394505,8.765334 17.2793836,12.6556899 C25.3404204,16.5355986 31.4308807,22.6417868 31.4455314,26.3037012" id="Oval-5" stroke-opacity="0.8" stroke="#9B9B9B" transform="translate(17.340760, 17.960047) scale(-1, 1) translate(-17.340760, -17.960047) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

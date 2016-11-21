@@ -6,6 +6,7 @@
 input,button,select,textarea{outline:none}
 input{
     border: none;
+    background: none;
 }
 body{
     background-color: #f9f9f9;
@@ -440,13 +441,13 @@ body{
 .level_main p{
     position: absolute;
     left: 15%;
-    top: 100px;
+    top: 80px;
     font-size: 1.7em;
     color: #00a1c2;
 }
 .level_box{
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 15%;
     width: 70%;
 }
@@ -539,16 +540,32 @@ body{
     content:url(../svg/svg-replay-shadow.svg);
 }
 
-.checkbutton{
-    position:absolute;
-    cursor: pointer;
-    background-color: yellow;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
-    padding: 3px;
-    width: 60%;
-    font-size:6em;
+#checkbutton{
+    background: #FFD926;
+    border: 10px solid #535353;
+    border-radius: 30px;
+    position: absolute;
+    z-index: 2;
     top: 30%;
-    left: 15%;
+    left: 35%;
+    width: 30%;
+    height: 100px;
+    font-family: OpenSans-Extrabold;
+    font-size: 48px;
+    text-align: center;
+    line-height: 100px;
+    color: #535353;
+    letter-spacing: 0.98px;
+}
+#checkbutton:hover{
+    background-color: #F5B523;
+}
+.checktext{
+    font-family: OpenSans-Extrabold;
+    font-size: 64px;
+    color: #FFFFFF;
+    letter-spacing: 1.3px;
+    top: 30%;
+    left: 35%;
+    width: 30%;
 }
