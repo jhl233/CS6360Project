@@ -60,12 +60,12 @@ var stateModule = (function(viewModule, levelModule) {
     }
     
     function checkWin() {
-        if (!isTutorialLevel && isBalanced(currentLevel, currentState)) {
+        if (!isTutorialLevel && isBalanced(currentLevel, currentState) == 1) {
             setTimeout(function(){
                 viewModule.nextLevel(currentState, callBacks, function() {
                     initializeLevel(currentState["level"]+1);
                 });
-            } , 2000);
+            } , 1000);
         }    
     }
     
@@ -144,41 +144,31 @@ var stateModule = (function(viewModule, levelModule) {
     
     function specifyHint() {
          // Check for case with no reactants
-         var noReactants = true;
-         for (var reactant in currentState["reactants"]) {
-             if (currentState["reactants"][reactant] !== 0) {
-                 noReactants = false;
+        for (var reactant in currentState["reactants"]) {
+             if (currentState["reactants"][reactant] === 0) {
+                return "Try making more " + currentState["names"][reactant];
              }
-         }
-         
-         if (noReactants) {
-             return "Try adding a bundle of ingredients to the worktable!";
-         }
-         
-         // Check for case with no products
-         var noProducts = true;
-         for (var product in currentState["products"]) {
-             if (currentState["products"][product] !== 0) {
-                 noProducts = false;
-             }
-         }
-         
-         if (noProducts) {
-             return "Try making more dishes!";
-         }
+        }
         
-        var divisor = checkOverbalanced(currentState);
-        if (divisor > 1) {
-            return "You have " + divisor + " times the amount of food needed! Try simplifying this.";
+         // Check for case with no products
+        for (var product in currentState["products"]) {
+            if (currentState["products"][product] === 0) {
+                return "Try making more " + currentState["names"][product];
+            }
+        }
+        
+        var factor = isBalanced(currentLevel, currentState);
+        if (factor > 1) {
+            return "You have " + factor + " times the amount of food needed! Try simplifying this.";
         }
          
          // Give a message about balancing a particular element
          reactantElements = createArrayOfIndividualElements(currentState["reactants"]);
          productElements = createArrayOfIndividualElements(currentState["products"]);
          for (var elem in reactantElements) {
-             if (productElements.hasOwnProperty(elem) &&
-                reactantElements[elem] !== productElements[elem]) {
-                return "Try to get the same number of " + elem.toLowerCase() + " on the left and right!";
+             var elemDisp = elem.toLowerCase();
+             if (productElements.hasOwnProperty(elem) && reactantElements[elem] !== productElements[elem]) {
+                 return "Try increasing or decreasing the amount of " + elemDisp + "!";
              }
          }
     }
