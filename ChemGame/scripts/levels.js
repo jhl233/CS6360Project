@@ -543,15 +543,121 @@ var levelModule = (function() {
         
         //level 20
         //C2H2 + O2 -> CO2 + H2O
+        {
+            "reactants":{
+                "C2H2":0,
+                "O2": 0,
+            },
+            "products":{
+                "H2O": 0,
+                "CO2": 0,
+            },
+            "svgmap":{
+                "C2H2": "svg-reactant-C2H2.svg",
+                "O2": "svg-O2.svg",
+                "H2O": "svg-product-H2O.svg",
+                "CO2":"svg-product-CO2.svg",
+                "aC":"svg-c-atom.svg",
+                "aH": "svg-atom-H.svg",
+                "aO": "svg-o-atom.svg",
+                "H2OPlate":   "pink_plate.svg",
+                "CO2Plate": "grey_plate.svg"
+            },
+            "names":{
+                "C2H2": "C2H2",
+                "O2": "O2",
+                "H2O": "H2O",
+                "CO2":"CO2"
+            },
+        },
         
         //level 21
         //NH3 + F2 -> NH4F + NF3
-        
+          {
+            "reactants":{
+                "NH3": 0,
+                "F2": 0
+            },
+            "products":{
+                "NH4F": 0,
+                "NF3": 0
+            },
+            "svgmap":{
+                "NH3": "svg-reactant-NH3.svg",
+                "F2": "svg-reactant-F2.svg",
+                "NH4F": "svg-product-NH4F.svg",
+                "NF3": "svg-product-NF3.svg",
+                "aN": "svg-N-atom.svg",
+                "aH": "svg-atom-H.svg",
+                "aF": "svg-F-atom.svg",
+                "NH4F2Plate": "grey_plate.svg",
+                "NF3Plate": "pink_plate.svg"
+            }, 
+            "names":{
+                "NH3": "NH3",
+                "F2": "F2",
+                "NH4F": "NH4F",
+                "NF3": "NF3",
+            }
+        },
         //level 22
-        //Fe2O3 + -> Fe + CO2
-        
+        //Fe2O3 + C -> Fe + CO2
+                {
+            "reactants":{
+                "Fe2O3":0,
+                "C": 0,
+            },
+            "products":{
+                "Fe": 0,
+                "CO2": 0,
+            },
+            "svgmap":{
+                "Fe2O3": "svg-reactant-Fe2O3.svg",
+                "C": "svg-reactant-C.svg",
+                "Fe": "svg-product-Fe.svg",
+                "CO2":"svg-product-CO2.svg",
+                "aFe":"svg-fe-atom.svg",
+                "aO": "svg-o-atom.svg",
+                "aC": "svg-c-atom.svg",
+                "FePlate":   "pink_plate.svg",
+                "CO2Plate": "grey_plate.svg"
+            },
+            "names":{
+                "Fe2O3": "C2H2",
+                "C": "O2",
+                "Fe": "H2O",
+                "CO2":"CO2"
+            },
+        },
         //level 23
         //AlCl3 + Ca3N2 -> AlN + CaCl2
+                        {
+            "reactants":{
+                "AlCl3":0,
+                "Ca3N2": 0,
+            },
+            "products":{
+                "AlN": 0,
+                "CaCl2": 0,
+            },
+            "svgmap":{
+                "AlCl3": "svg-reactant-AlCl3.svg",
+                "Ca3N2": "svg-reactant-Ca3N2.svg",
+                "AlN": "svg-product-AlN.svg",
+                "CaCl2":"svg-product-CaCl2.svg",
+                "aFe":"svg-fe-atom.svg",
+                "aO": "svg-o-atom.svg",
+                "aC": "svg-c-atom.svg",
+                "AlNPlate":   "pink_plate.svg",
+                "CaCl2Plate": "grey_plate.svg"
+            },
+            "names":{
+                "AlCl3": "AlCl3",
+                "Ca3N2": "Ca3N2",
+                "AlN": "AlN",
+                "CaCl2":"CaCl2"
+            },
+        },
     ];
 	console.log("Levels: ");
 	console.log(module.levels);

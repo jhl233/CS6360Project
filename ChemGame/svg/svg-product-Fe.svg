@@ -1,0 +1,53 @@
+
+<svg width="112px" height="112px" viewBox="12302 1433 112 112" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="55.135468" cy="55.1222222" rx="55.135468" ry="55.1222222"></ellipse>
+        <ellipse id="path-3" cx="43.591133" cy="43.6666667" rx="42.8325123" ry="42.8222222"></ellipse>
+    </defs>
+    <g id="Group-33" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(12303.000000, 1433.000000)">
+        <g id="rectant-2" transform="translate(55.500000, 55.500000) rotate(180.000000) translate(-55.500000, -55.500000) ">
+            <g id="the-party-icons-50">
+                <g id="Mask" fill="#F4D9D3">
+                    <ellipse id="path-1" cx="55.135468" cy="55.1222222" rx="55.135468" ry="55.1222222"></ellipse>
+                </g>
+                <g id="Oval-7-Clipped">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <g id="Oval-7" mask="url(#mask-2)">
+                        <g transform="translate(12.000000, 11.000000)" id="Clipped">
+                            <g>
+                                <mask id="mask-4" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <g id="path-3"></g>
+                                <ellipse id="path-3" stroke="#FFFFFF" stroke-width="2" fill="#EEC0B7" mask="url(#mask-4)" cx="43.591133" cy="43.6666667" rx="42.8325123" ry="42.8222222"></ellipse>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="svg-fe-atom" transform="translate(30.000000, 29.000000)">
+            <g id="Created-with-Sketch.">
+                <g id="Atom" transform="translate(0.500000, 0.000000)">
+                    <circle id="Oval-4" fill="#FAA027" cx="27" cy="27" r="27"></circle>
+                    <path d="M48.010504,38.0474282 C47.9299221,43.6972391 40.2364463,43.4542757 29.9311741,37.4901617 C18.5482273,31.5099291 7.0089088,22.052227 5.0454198,16.3803853" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" transform="translate(26.527962, 29.254785) scale(-1, 1) translate(-26.527962, -29.254785) "></path>
+                    <path d="M5.26088342,15.8300961 C3.20932625,10.1582545 13.1751524,10.4379439 26.6596206,16.4402073 C39.0966488,22.4263521 48.493359,31.8473282 48.5159628,37.4971391" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF"></path>
+                    <g id="Fe" transform="translate(14.000000, 11.000000)" font-size="24" font-family=".SFNSText-Bold, .SF NS Text" fill="#4A4A4A" font-weight="bold">
+                        <g id="Group">
+                            <text id="Fe">
+                                <tspan x="0.0964192" y="23.0962938">Fe</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <path d="M48.5385878,38.0474282 C48.4580058,43.6972391 40.7645301,43.4542757 30.4592579,37.4901617 C19.0763111,31.5099291 7.53699257,22.052227 5.57350358,16.3803853" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF"></path>
+                    <path d="M5.26088345,15.8300961 C3.20932628,10.1582545 13.1751524,10.4379439 26.6596206,16.4402073 C39.0966488,22.4263521 48.493359,31.8473282 48.5159628,37.4971391" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" transform="translate(26.754316, 24.624072) scale(-1, 1) translate(-26.754316, -24.624072) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
