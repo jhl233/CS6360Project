@@ -55,7 +55,7 @@ var stateModule = (function(viewModule, levelModule) {
         
         currentState["level"] = levelNum;
 
-        console.log(currentState);
+
         viewModule.initializeScreen(currentState, callBacks);
     }
     
@@ -82,6 +82,7 @@ var stateModule = (function(viewModule, levelModule) {
         var addRIntervalID = setInterval(function(){
             if (numTimes == 0) {
                 clearInterval(addRIntervalID);
+                checkWin();
                 return;
             }
             for (var elem in compound) {
@@ -91,7 +92,6 @@ var stateModule = (function(viewModule, levelModule) {
             }
             numTimes--;
         }, 1000);
-        checkWin();
     }
 
     function addProduct(product, numTimes) {
@@ -101,12 +101,12 @@ var stateModule = (function(viewModule, levelModule) {
         var addPIntervalID = setInterval(function(){
             if (numTimes == 0) {
                 clearInterval(addPIntervalID);
+                checkWin();
                 return;
             }
             viewModule.addProduct(product);
             numTimes--;
         }, 1000);
-        checkWin();
     }
     
     /* Precondition: It is possible to remove the reactant numTimes. */
@@ -121,7 +121,7 @@ var stateModule = (function(viewModule, levelModule) {
                     }
                 }
             }
-            checkWin();
+            //checkWin();
         }
     }
 
@@ -131,7 +131,7 @@ var stateModule = (function(viewModule, levelModule) {
             for (var k = 0; k < numTimes; k++) {
                 viewModule.removeProduct(product);
             }
-            checkWin();
+            //checkWin();
         }
     }
     
@@ -195,6 +195,7 @@ var stateModule = (function(viewModule, levelModule) {
     return {
         getCurrentLevel: getCurrentLevel,
         initializeLevel: initializeLevel,
+        checkWin: checkWin,
         addReactant: addReactant,
         addProduct: addProduct,
         removeReactant: removeReactant,

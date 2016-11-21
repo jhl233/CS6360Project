@@ -17,7 +17,7 @@ function createArrayOfIndividualElements(compoundsWithCoeffs) {
             } else {
                 finalArray[elem] = coeff * elements[elem];
             }
-           //console.log(elem + ": " + finalArray[elem]);
+
         } 
     }
     return finalArray;
@@ -31,9 +31,9 @@ function isBalanced(level, currentState) {
     numReactants = 0;
     
     // Flatten the arrays for easy searching
-    //console.log("Flatten reactants from current state: ");
+
     reactantElements = createArrayOfIndividualElements(currentState["reactants"]);
-    //console.log("Flatten products from current state: ");
+
     productElements = createArrayOfIndividualElements(currentState["products"]);
     
     // Check if number of reactants is equal to the number of products, 
@@ -42,22 +42,22 @@ function isBalanced(level, currentState) {
         if (productElements.hasOwnProperty(elem) &&
             reactantElements[elem] === productElements[elem] &&
             productElements[elem] !== 0) {
-            console.log(elem + " was balanced.");
+
             numBalanced++;
         } else {
-            console.log(elem + " was not balanced.");
+
         }
         numReactants++;
     }
     
     // Flatten the level reactants and products to make sure all reactants and products were used
-    //console.log("Flatten reactants from level: ");
+
     allReactants = createArrayOfIndividualElements(level["reactants"]);
-    //console.log("Flatten products from level: ");
+
     allProducts = createArrayOfIndividualElements(level["products"]);
     
     // All elements are properly balanced
-    //console.log("numBalanced = " + numBalanced + 
+
     //            "\nlength of level reactants = " + Object.keys(allReactants).length +
     //            "\nlength of level products = " + Object.keys(allProducts).length);
     if (numBalanced === Object.keys(allReactants).length &&
@@ -102,9 +102,6 @@ function gcd(x, y) {
 }
 
 function nameToObj(name) {
-   	if (name.length == 0) {
-	   	console.log("Error calling nameToObj w empty string");
-   	}
    	obj = {};
    	nameAcc = "";
    	for (var i = 0, len = name.length; i < len; i++) {

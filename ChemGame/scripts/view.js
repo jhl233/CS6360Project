@@ -60,6 +60,8 @@ var viewModule = (function(tutorialModule) {
     //   },
     // }
     function initializeScreen(state, callBacks) {
+        reactantView = {};
+        productView = {};
         svgMap = state["svgmap"];
 
         /*<div id='home'>
@@ -136,7 +138,7 @@ var viewModule = (function(tutorialModule) {
             var $reactant = $("<div>", {class: "bottom-box reactant-box-" + (i++)});
             var coeff = state["reactants"][reactant];
 
-            console.log("Reactant - " + reactant + ": " + coeff);
+
             $(locationID).append($reactant);
 
             var reactantSVG = svgMap[reactant];
@@ -238,7 +240,7 @@ var viewModule = (function(tutorialModule) {
             var $product = $("<div>", {class: "bottom-box product-box-" + (i++)});
             var coeff = state["products"][product];
             
-            console.log("Product - " + product + ": " + coeff);
+
             $(locationID).append($product);
 
             var productSVG = svgMap[product];
@@ -265,12 +267,10 @@ var viewModule = (function(tutorialModule) {
                 })
             );
 
-            /*
             productView[product] = {
                 "nextId": 0,
-                "elems": [],
+                "products": [],
             }
-            */
            
             if (clickable) {
                 $("#" + product + "ProductCoeff").prop("readonly", true);
@@ -304,6 +304,7 @@ var viewModule = (function(tutorialModule) {
                  // Make the coefficient badge take input when clicked
                 $("#"+product+"ProductCoeff").click(function(event) {
                    $(this).data('val', $(this).val());
+                   $(this).val(''); // Clear the box of text to start typing
                 });
                 $("#" + reactant + "-action").css("cursor", "default");
                 $("#" + reactant + "ProductCoeff").css("cursor", "pointer");
@@ -313,7 +314,9 @@ var viewModule = (function(tutorialModule) {
                 $("#"+product+"ProductCoeff").change(function(event) {
                     var previousValue = $(this).data('val');
                     var currentValue = $(this).val();
-                    if (!$.isNumeric(currentValue)) {
+                    if (currentValue === '') {
+                        $(this).val(previousValue);
+                    } else if (!$.isNumeric(currentValue)) {
                         $(this).val(previousValue);
                         $("#hint").html("You must type in a number!");
                     } else if (currentValue < 0) {
@@ -359,8 +362,10 @@ var viewModule = (function(tutorialModule) {
         var yi = $("#" + reactant + "-action").offset().top;
         $newImg.css("left", xi + "px");
         $newImg.css("top",  yi + "px");
-        $newImg.animate({left: x, top: y});
-        checkCollapsibles();
+        $newImg.animate({left: x, top: y}, function() {
+            checkCollapsibles();
+            //stateModule.checkWin();
+        });
     }
 
     function addProductToView(product) {
@@ -371,9 +376,9 @@ var viewModule = (function(tutorialModule) {
         var x = width - Math.round(Math.random() * width * 0.4) - 150;
         var y = Math.round(Math.random() * (height - 150)) + worktabley;
 
-        console.log(product);
+
         if (!productView.hasOwnProperty(product)) {
-            console.log("This should never happen");
+
             productView[product] = {
                 "nextId": 0,
                 "products": [],
@@ -399,8 +404,10 @@ var viewModule = (function(tutorialModule) {
         var yi = $("#" + product+"-action").offset().top;
         $newImg.css("left", xi + "px");
         $newImg.css("top",  yi + "px");
-        $newImg.animate({left: x, top: y});
-        checkCollapsibles();
+        $newImg.animate({left: x, top: y}, function() {
+            checkCollapsibles();
+            //stateModule.checkWin();
+        });
     }
 
     // Can be called by either addProductToView or addReactantToView
@@ -439,10 +446,11 @@ var viewModule = (function(tutorialModule) {
                 continue;
             }
 
-            console.log("MATCHED!!!!!!!!!!!!!!")
+
 
             for (var elemReq in reqs) { // for each Chicken in Chicken-needs-3
                 for (var i = 0; i < reqs[elemReq]; i++) {
+                    console.log(elemReq + " " + reactantView[elemReq]["elems"]);
                     var freeElem = reactantView[elemReq]["elems"].pop();
                     var freeElemId = "#" + freeElem.id;
 
@@ -483,9 +491,10 @@ var viewModule = (function(tutorialModule) {
         $newImg.css("position", "absolute");
         $newImg.css("left", prevPosition.left + "px");
         $newImg.css("top", prevPosition.top + "px");
-        $newImg.animate({left: x, top: y});
-
-        checkCollapsibles();
+        $newImg.animate({left: x, top: y}, function() {
+            checkCollapsibles();
+            //stateModule.checkWin();
+        });
     }
     
     function removeReactantFromView(elem) {
@@ -554,7 +563,7 @@ var viewModule = (function(tutorialModule) {
             for (var i = 0; i < compound["elemIds"].length; i++) {
                 var elemId = compound["elemIds"][i];
                 var prevPosition = $("img#" + elemId).position();
-                console.log("Previous Position: " + prevPosition);
+
                 $("img#" + elemId).remove();
                 var indexOfFirstDigit = elemId.search(/\d/);
                 var elem = elemId.substr(0, indexOfFirstDigit);
@@ -614,12 +623,12 @@ var viewModule = (function(tutorialModule) {
 
     function showCheck(callBacks) {
         for (elem in reactantView) {
-            console.log(elem);
+
             var modifyReactant = callBacks["modifyReactant"];
             modifyReactant(elem);
         }
         for (elem in productView) {
-            console.log(elem);
+
             var modifyProduct = callBacks["modifyProduct"];
             modifyProduct(elem);
         }
