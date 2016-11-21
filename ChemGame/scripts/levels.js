@@ -23,7 +23,7 @@ var levelModule = (function() {
             "names":
             {
                 "Bacon2r":"2 Slices of Bacon",
-                "Bacon2p":"2 Slices of Bacon"
+                "Bacon2p":"Bacon Twins"
             }
         },
         // Level 2

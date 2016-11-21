@@ -35,9 +35,9 @@ var tutorialModule = (function() {
     }
 
     function level1_2() {
-        $("#tutorial").text("They say a journey of a miles begins with a single step. Your first step is to create a very simple dish called: '2 Slices of Bacon'");
+        $("#tutorial").text("They say a journey of a miles begins with a single step. Your first step is to create the very simple dish on the right called: 'Bacon Twins'");
         $("#tutorialOverlay1").height("65%");
-        $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow3"}));
+        //$(".overlay-content").append($("<div>", {class:"arrow", id:"arrow3"}));
         $("#tutorial").off("click");
         $(".reactant-box-1").css("pointer-events", "none");
         $(".product-box-1").css("pointer-events", "none");
@@ -53,7 +53,7 @@ var tutorialModule = (function() {
         $("#Bacon2r-action").css("pointer-events", "all");
         $("#Bacon2r-action").click(function(){
             $(".overlay").width("0%");
-            setTimeout(level1_4, 2000);
+            setTimeout(level1_4, 1000);
         });
     }
 
