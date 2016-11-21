@@ -1,0 +1,106 @@
+
+<svg width="151px" height="151px" viewBox="11940 1003 151 151" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.48170732" y="0.11650485" width="96.0365854" height="92.7669903" rx="15"></rect>
+    </defs>
+    <g id="Group-25" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(11941.000000, 1003.000000)">
+        <g id="Group-8" transform="translate(74.500000, 74.500000) rotate(-45.000000) translate(-74.500000, -74.500000) translate(22.000000, 22.000000)">
+            <rect id="Rectangle-9" fill="#4A6278" x="-7.27595761e-12" y="7.27595761e-12" width="105" height="105" rx="17"></rect>
+            <g id="Rectangle-9-Clipped" transform="translate(4.000000, 6.000000)">
+                <g>
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="path-1"></g>
+                    <g id="Rectangle-9" mask="url(#mask-2)" stroke="#1E3951" stroke-width="6" fill="#2C4154">
+                        <rect id="path-1" x="0.48170732" y="0.11650485" width="96.0365854" height="92.7669903" rx="15"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="svg-fe-atom" transform="translate(50.000000, 19.000000)">
+            <g id="Created-with-Sketch.">
+                <g id="Atom" transform="translate(0.463636, 0.000000)">
+                    <ellipse id="Oval-4" fill="#A054E2" cx="25.0363636" cy="25" rx="25.0363636" ry="25"></ellipse>
+                    <path d="M44.518831,35.2291002 C44.4441096,40.4604066 37.3101593,40.2354405 27.7543614,34.7131127 C17.1992653,29.1758603 6.49916998,20.4187287 4.67848018,15.1670234" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" transform="translate(24.598656, 27.087764) scale(-1, 1) translate(-24.598656, -27.087764) "></path>
+                    <path d="M4.87827372,14.6574964 C2.9759207,9.4057912 12.2169595,9.66476287 24.7207391,15.2224142 C36.2532562,20.7651408 44.9665693,29.4882669 44.9875291,34.7195732" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF"></path>
+                    <g id="Fe" transform="translate(14.836364, 8.333333)" font-size="28" font-family=".SFNSText-Bold, .SF NS Text" fill="#FFFFFF" font-weight="bold">
+                        <g id="Group">
+                            <text id="N">
+                                <tspan x="0.0894068945" y="27.0891609">N</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <path d="M45.0085087,35.2291002 C44.9337872,40.4604066 37.799837,40.2354405 28.2440391,34.7131127 C17.688943,29.1758603 6.98884766,20.4187287 5.16815787,15.1670234" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF"></path>
+                    <path d="M4.87827375,14.6574964 C2.97592074,9.4057912 12.2169595,9.66476287 24.7207391,15.2224142 C36.2532562,20.7651408 44.9665693,29.4882669 44.9875291,34.7195732" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" transform="translate(24.808547, 22.800067) scale(-1, 1) translate(-24.808547, -22.800067) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="svg-atom-H" transform="translate(20.000000, 55.000000)">
+            <g id="Created-with-Sketch.">
+                <g id="Atom">
+                    <circle id="Oval-4" fill="#74CB91" cx="19" cy="19" r="19"></circle>
+                    <path d="M33.7851694,26.7741162 C33.7284636,30.749909 28.3145362,30.5789347 21.062678,26.3819656 C13.0524562,22.1736538 4.93219498,15.5182338 3.5504805,11.5269378" id="Oval-5" stroke="#FFFFFF" transform="translate(18.667825, 20.586701) scale(-1, 1) translate(-18.667825, -20.586701) "></path>
+                    <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke="#FFFFFF"></path>
+                    <g id="H" transform="translate(9.000000, 4.000000)" font-size="24" font-family=".SFNSText-Bold, .SF NS Text" fill="#4A4A4A" font-weight="bold">
+                        <text>
+                            <tspan x="0.80859132" y="23.6307253">H</tspan>
+                        </text>
+                    </g>
+                    <path d="M34.156784,26.7741162 C34.1000782,30.749909 28.6861508,30.5789347 21.4342926,26.3819656 C13.4240708,22.1736538 5.30380959,15.5182338 3.92209511,11.5269378" id="Oval-5" stroke="#FFFFFF"></path>
+                    <path d="M3.70210337,11.1396973 C2.25841499,7.14840131 9.27140376,7.34521977 18.760474,11.5690348 C27.5124568,15.781507 34.1249565,22.4110828 34.1408629,26.3868756" id="Oval-5" stroke="#FFFFFF" transform="translate(18.827111, 17.328051) scale(-1, 1) translate(-18.827111, -17.328051) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="svg-atom-H" transform="translate(20.000000, 55.000000)">
+            <g id="Created-with-Sketch.">
+                <g id="Atom">
+                    <circle id="Oval-4" fill="#74CB91" cx="19" cy="19" r="19"></circle>
+                    <path d="M33.7851694,26.7741162 C33.7284636,30.749909 28.3145362,30.5789347 21.062678,26.3819656 C13.0524562,22.1736538 4.93219498,15.5182338 3.5504805,11.5269378" id="Oval-5" stroke="#FFFFFF" transform="translate(18.667825, 20.586701) scale(-1, 1) translate(-18.667825, -20.586701) "></path>
+                    <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke="#FFFFFF"></path>
+                    <g id="H" transform="translate(9.000000, 4.000000)" font-size="24" font-family=".SFNSText-Bold, .SF NS Text" fill="#4A4A4A" font-weight="bold">
+                        <text>
+                            <tspan x="0.80859132" y="23.6307253">H</tspan>
+                        </text>
+                    </g>
+                    <path d="M34.156784,26.7741162 C34.1000782,30.749909 28.6861508,30.5789347 21.4342926,26.3819656 C13.4240708,22.1736538 5.30380959,15.5182338 3.92209511,11.5269378" id="Oval-5" stroke="#FFFFFF"></path>
+                    <path d="M3.70210337,11.1396973 C2.25841499,7.14840131 9.27140376,7.34521977 18.760474,11.5690348 C27.5124568,15.781507 34.1249565,22.4110828 34.1408629,26.3868756" id="Oval-5" stroke="#FFFFFF" transform="translate(18.827111, 17.328051) scale(-1, 1) translate(-18.827111, -17.328051) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="svg-atom-H" transform="translate(56.000000, 85.000000)">
+            <g id="Created-with-Sketch.">
+                <g id="Atom">
+                    <circle id="Oval-4" fill="#74CB91" cx="19" cy="19" r="19"></circle>
+                    <path d="M33.7851694,26.7741162 C33.7284636,30.749909 28.3145362,30.5789347 21.062678,26.3819656 C13.0524562,22.1736538 4.93219498,15.5182338 3.5504805,11.5269378" id="Oval-5" stroke="#FFFFFF" transform="translate(18.667825, 20.586701) scale(-1, 1) translate(-18.667825, -20.586701) "></path>
+                    <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke="#FFFFFF"></path>
+                    <g id="H" transform="translate(9.000000, 4.000000)" font-size="24" font-family=".SFNSText-Bold, .SF NS Text" fill="#4A4A4A" font-weight="bold">
+                        <text>
+                            <tspan x="0.80859132" y="23.6307253">H</tspan>
+                        </text>
+                    </g>
+                    <path d="M34.156784,26.7741162 C34.1000782,30.749909 28.6861508,30.5789347 21.4342926,26.3819656 C13.4240708,22.1736538 5.30380959,15.5182338 3.92209511,11.5269378" id="Oval-5" stroke="#FFFFFF"></path>
+                    <path d="M3.70210337,11.1396973 C2.25841499,7.14840131 9.27140376,7.34521977 18.760474,11.5690348 C27.5124568,15.781507 34.1249565,22.4110828 34.1408629,26.3868756" id="Oval-5" stroke="#FFFFFF" transform="translate(18.827111, 17.328051) scale(-1, 1) translate(-18.827111, -17.328051) "></path>
+                </g>
+            </g>
+        </g>
+        <g id="svg-atom-H" transform="translate(90.000000, 57.000000)">
+            <g id="Created-with-Sketch.">
+                <g id="Atom">
+                    <circle id="Oval-4" fill="#74CB91" cx="19" cy="19" r="19"></circle>
+                    <path d="M33.7851694,26.7741162 C33.7284636,30.749909 28.3145362,30.5789347 21.062678,26.3819656 C13.0524562,22.1736538 4.93219498,15.5182338 3.5504805,11.5269378" id="Oval-5" stroke="#FFFFFF" transform="translate(18.667825, 20.586701) scale(-1, 1) translate(-18.667825, -20.586701) "></path>
+                    <path d="M3.70210315,11.1396973 C2.25841477,7.14840131 9.27140354,7.34521977 18.7604738,11.5690348 C27.5124566,15.781507 34.1249563,22.4110828 34.1408627,26.3868756" id="Oval-5" stroke="#FFFFFF"></path>
+                    <g id="H" transform="translate(9.000000, 4.000000)" font-size="24" font-family=".SFNSText-Bold, .SF NS Text" fill="#4A4A4A" font-weight="bold">
+                        <text>
+                            <tspan x="0.80859132" y="23.6307253">H</tspan>
+                        </text>
+                    </g>
+                    <path d="M34.156784,26.7741162 C34.1000782,30.749909 28.6861508,30.5789347 21.4342926,26.3819656 C13.4240708,22.1736538 5.30380959,15.5182338 3.92209511,11.5269378" id="Oval-5" stroke="#FFFFFF"></path>
+                    <path d="M3.70210337,11.1396973 C2.25841499,7.14840131 9.27140376,7.34521977 18.760474,11.5690348 C27.5124568,15.781507 34.1249565,22.4110828 34.1408629,26.3868756" id="Oval-5" stroke="#FFFFFF" transform="translate(18.827111, 17.328051) scale(-1, 1) translate(-18.827111, -17.328051) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg width="52px" height="50px" viewBox="0 0 52 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Created-with-Sketch." stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Atom" transform="translate(0.463636, 0.000000)">
+            <ellipse id="Oval-4" fill="#A054E2" cx="25.0363636" cy="25" rx="25.0363636" ry="25"></ellipse>
+            <path d="M44.518831,35.2291002 C44.4441096,40.4604066 37.3101593,40.2354405 27.7543614,34.7131127 C17.1992653,29.1758603 6.49916998,20.4187287 4.67848018,15.1670234" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" transform="translate(24.598656, 27.087764) scale(-1, 1) translate(-24.598656, -27.087764) "></path>
+            <path d="M4.87827372,14.6574964 C2.9759207,9.4057912 12.2169595,9.66476287 24.7207391,15.2224142 C36.2532562,20.7651408 44.9665693,29.4882669 44.9875291,34.7195732" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF"></path>
+            <g id="Fe" transform="translate(14.836364, 8.333333)" font-size="28" font-family=".SFNSText-Bold, .SF NS Text" fill="#FFFFFF" font-weight="bold">
+                <g id="Group">
+                    <text id="N">
+                        <tspan x="0.0894068945" y="27.0891609">N</tspan>
+                    </text>
+                </g>
+            </g>
+            <path d="M45.0085087,35.2291002 C44.9337872,40.4604066 37.799837,40.2354405 28.2440391,34.7131127 C17.688943,29.1758603 6.98884766,20.4187287 5.16815787,15.1670234" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF"></path>
+            <path d="M4.87827375,14.6574964 C2.97592074,9.4057912 12.2169595,9.66476287 24.7207391,15.2224142 C36.2532562,20.7651408 44.9665693,29.4882669 44.9875291,34.7195732" id="Oval-5" stroke-opacity="0.416808197" stroke="#FFFFFF" transform="translate(24.808547, 22.800067) scale(-1, 1) translate(-24.808547, -22.800067) "></path>
+        </g>
+    </g>
+</svg>

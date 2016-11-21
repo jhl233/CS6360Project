@@ -108,7 +108,7 @@ var viewModule = (function(tutorialModule) {
         $(document.body).append($main);
         var clickable = true;
         var typable = false;
-        if (state['level'] >= 14) {
+        if (state['level'] >= 11) {
             clickable = false;
             typable = true;
         }
