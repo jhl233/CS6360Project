@@ -113,7 +113,7 @@ var viewModule = (function(tutorialModule) {
             typable = true;
         }
         if (state['level'] >= 19) {
-            $worktable.append('<div class="checkbutton">Check</div>');
+            $worktable.append('<div class="checkbutton shadow">Check</div>');
         }
         showReactantsAndProductsBench(state, callBacks, "#workbench", clickable, typable);
         tutorialModule.checkTutorials(state["level"]);
@@ -197,6 +197,8 @@ var viewModule = (function(tutorialModule) {
                     $(this).val(''); // Clear the box of text to start typing
                 });
 
+                $("#" + reactant + "ReactantCoeff").css("cursor", "none");
+
                 // Modifies amount of reactant if user clicks outside  
                 // of coefficient badge or hits enter
                 $("#" + reactant + "ReactantCoeff").bind('blur change', function(event) {
@@ -219,6 +221,7 @@ var viewModule = (function(tutorialModule) {
                 $foodLabel = $("<div>", {class: "reactant-label", text: state["names"][reactant], "data-name": reactant, "pointer-events": "none"});
                 $reactant.append($foodLabel);
             }
+
            
         }
 

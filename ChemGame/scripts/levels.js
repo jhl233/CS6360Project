@@ -47,7 +47,7 @@ var levelModule = (function() {
             "names":
             {   
                 "Broccoli":"Broccoli",
-                "Bacon2":"Two Bacon",
+                "Bacon2":"2 Slices of Bacon",
                 "Broccoli1Bacon2":"'Healthy' Bacon"
             }
         },
@@ -73,8 +73,8 @@ var levelModule = (function() {
             "names":
             {   
                 "Carbon":"Carbon",
-                "Bacon2":"Two Bacon",
-                "CarbonBacon2":"Carbon and Two Bacon Slices"
+                "Bacon2":"2 Slices of Bacon",
+                "CarbonBacon2":"Carbon and Bacon Twins"
             }
         },
         

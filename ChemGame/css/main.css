@@ -540,5 +540,15 @@ body{
 }
 
 .checkbutton{
-    
+    position:absolute;
+    cursor: pointer;
+    background-color: yellow;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    padding: 3px;
+    width: 60%;
+    font-size:6em;
+    top: 30%;
+    left: 15%;
 }

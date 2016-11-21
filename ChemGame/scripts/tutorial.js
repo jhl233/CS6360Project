@@ -59,7 +59,7 @@ var tutorialModule = (function() {
 
     function level1_4() {
         $(".overlay").width("100%");
-        $(".overlay-bubble").text("Looks like you've got enough bacon to make '2 Slices of Bacon'. Click the plate here to send it out to the customers!");
+        $(".overlay-bubble").text("Looks like you've got enough bacon to make 'Bacon Twins'. Click the plate here to send it out to the customers!");
         $("#arrow1").remove();
         $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow3"}));
         $("#Bacon2r-action").css("pointer-events","none");
@@ -73,7 +73,7 @@ var tutorialModule = (function() {
         var $overlayBubble = $("<div>", {
             id: "tutorial",
             class:"overlay-bubble shadow",
-            text:"Good job with the '2 Slices of Bacon'! Not everyone makes it this far, but I can tell you've got potential. For this next order, you'll need to use two ingredients to make a new dish, '2 Slices of Bacon with Broccoli', aka 'Healthy Bacon'"});
+            text:"Good job with the 'Bacon Twins'! Not everyone makes it this far, but I can tell you've got potential. For this next order, you'll need to use two ingredients to make a new dish, 'Bacon Twins w/ Broccoli', aka 'Healthy Bacon'"});
         var $overlayContent = $("<div>", {
             class:"overlay-content",
         });
