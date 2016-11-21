@@ -107,7 +107,7 @@ var viewModule = (function(tutorialModule) {
         $($main).append($workbench);
         $(document.body).append($main);
         var clickable = true;
-        if (state['level'] >= 14) {
+        if (state['level'] >= 11) {
             clickable = false;
         }
         showReactantsAndProductsBench(state, callBacks, "#workbench", clickable);
