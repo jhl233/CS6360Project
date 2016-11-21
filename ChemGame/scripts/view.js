@@ -113,7 +113,7 @@ var viewModule = (function(tutorialModule) {
             typable = true;
         }
         if (state['level'] >= 19) {
-            $worktable.append('<div class="checkbutton">Check</div>');
+            $worktable.append('<div id="checkbutton">Check</div>');
         }
         showReactantsAndProductsBench(state, callBacks, "#workbench", clickable, typable);
         tutorialModule.checkTutorials(state["level"]);
