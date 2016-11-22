@@ -7,7 +7,7 @@ var levelModule = (function() {
         // Level 1
         // Bacon2 --> Bacon2
         {
-            "reactants": {
+            "reactants":{
                 "Bacon2r": 0
             },
             "products": {
@@ -20,8 +20,9 @@ var levelModule = (function() {
                 "Bacon2pPlate": "grey_plate.svg"
             },
             
-            "names": {
-                "Bacon2r": "Bacon",
+            "names":
+            {
+                "Bacon2r": "2 Slices of Bacon",
                 "Bacon2p": "Bacon Twins"
             }
         },
@@ -43,9 +44,10 @@ var levelModule = (function() {
                 "aBacon":               "svg-bacon.svg",
                 "Broccoli1Bacon2Plate": "pink_plate.svg",
             }, 
-            "names": {   
+            "names":
+            {   
                 "Broccoli":       "Broccoli",
-                "Bacon2":         "Bacon",
+                "Bacon2":         "2 Slices of Bacon",
                 "Broccoli1Bacon2":"'Healthy' Bacon"
             }
         },
@@ -68,9 +70,10 @@ var levelModule = (function() {
                 "aBacon":            "svg-bacon.svg",
                 "CarbonBacon2Plate": "grey_plate.svg"
             },
-            "names": {   
+            "names":
+            {   
                 "Carbon":       "Carbon",
-                "Bacon2":       "Bacon",
+                "Bacon2":       "2 Slices of Bacon",
                 "CarbonBacon2": "Carbonated Bacon"
             }
         },
@@ -90,9 +93,10 @@ var levelModule = (function() {
                 "aCarrot":      "svg-carrot.svg",
                 "Carrot3Plate": "grey_plate.svg"
             },
-            "names": {   
-                "Carrot2": "Carrot Snack",
-                "Carrot3": "Carrot Meal"
+            "names":
+            {   
+                "Carrot2": "Carrot Twins",
+                "Carrot3": "Carrot Triplets"
             }
         },
 
@@ -116,10 +120,11 @@ var levelModule = (function() {
                 "BroccoliEggPlate":   "grey_plate.svg",
                 "Carrot2Plate":       "pink_plate.svg",
             },
-            "names": {   
-                "BroccoliEggCarrot3": "Broccoli, Egg, and Carrots",
-                "BroccoliEgg":        "Broccoli Scrambled Egg",
-                "Carrot2":            "Carrot Meal"
+            "names":
+            {   
+                "BroccoliEggCarrot3": "Broccoli, egg and three carrots",
+                "BroccoliEgg":        "Broccoli and egg",
+                "Carrot2":            "Two carrots"
             }
         },
         
@@ -145,11 +150,12 @@ var levelModule = (function() {
                 "BreadBaconChickenPlate": "grey_plate.svg",
                 "Chicken2Plate":          "pink_plate.svg"
             },
-            "names": {   
-                "Chicken2Bacon":     "Chicken and Bacon",
+            "names":
+            {   
+                "Chicken2Bacon":     "Two chicken and bacon",
                 "Bread":             "Bread",
-                "BreadBaconChicken": "Hearty Meal",
-                "Chicken2":          "Roasted Chicken"
+                "BreadBaconChicken": "Bread, bacon and chicken",
+                "Chicken2":          "Two chicken"
             }
         },
         
@@ -176,11 +182,12 @@ var levelModule = (function() {
                 "Egg2Bacon3Plate":   "grey_plate.svg",
                 "BreadCarrot2Plate": "pink_plate.svg"
             },
-            "names": {   
-                "EggCarrot3":   "Egg and Carrots",
-                "BreadBacon":   "Bread and Bacon",
-                "Egg2Bacon3":   "English Breakfast",
-                "BreadCarrot2": "Toasty Bread and Carrot Sticks"
+            "names":
+            {   
+                "EggCarrot3":   "Egg and three carrots",
+                "BreadBacon":   "Bread and bacon",
+                "Egg2Bacon3":   "Two eggs and three slices of bacon",
+                "BreadCarrot2": "Bread and two carrots"
             }
         },
         
@@ -206,11 +213,12 @@ var levelModule = (function() {
                 "SodiumBaconChickenPlate": "grey_plate.svg",
                 "Chicken2Plate":           "pink_plate.svg"
             },
-            "names": {   
-                "Chicken2Bacon":      "Chicken and Bacon",
+            "names":
+            {   
+                "Chicken2Bacon":      "Two chicken and bacon",
                 "Sodium":             "Sodium",
-                "SodiumBaconChicken": "Salted Meat",
-                "Chicken2":           "Roasted Chicken"
+                "SodiumBaconChicken": "Sodium, bacon and chicken",
+                "Chicken2":           "Two chickens"
             }
         },
         
@@ -234,7 +242,8 @@ var levelModule = (function() {
                 "KClPlate":  "grey_plate.svg",
                 "O2Plate":   "pink_plate.svg",
             },
-            "names": {   
+            "names":
+            {   
                 "KClO3": "Potassium Chlorate",
                 "KCl":   "Potassium Chloride",
                 "O2":    "Oxygen"
@@ -264,11 +273,12 @@ var levelModule = (function() {
                 "Egg2Bacon3Plate":       "grey_plate.svg",
                 "MagnesiumCarrot2Plate": "pink_plate.svg"
             },
-            "names": {   
-                "EggCarrot3":       "Egg and Carrots",
-                "MagnesiumBacon":   "Magnesium and Bacon",
-                "Egg2Bacon3":       "English Breakfast",
-                "MagnesiumCarrot2": "Magnesium Carrot Sticks"
+            "names":
+            {   
+                "EggCarrot3":       "Egg and three carrots",
+                "MagnesiumBacon":   "Magnesium and bacon",
+                "Egg2Bacon3":       "Two eggs and three slices of bacon",
+                "MagnesiumCarrot2": "Magnesium and two carrots"
             }
         },
         
@@ -288,7 +298,8 @@ var levelModule = (function() {
                 "aCarrot":      "svg-carrot.svg",
                 "Carrot3Plate": "grey_plate.svg"
             },
-            "names": {   
+            "names":
+            {   
                 "Carrot2": "Carrot Twins",
                 "Carrot3": "Carrot Triplets"
             }
@@ -297,14 +308,14 @@ var levelModule = (function() {
         //level 12
         // Broccoli2 + O2 -> Broccoli2O
         {
-            "reactants": {
+            "reactants":{
                 "Broccoli2":0,
                 "O2": 0,
             },
-            "products": {
+            "products":{
                 "Broccoli2O": 0,
             },
-            "svgmap": {
+            "svgmap":{
                 "Broccoli2":       "svg-broccoli2.svg",
                 "O2":              "svg-O2.svg",
                 "Broccoli2O":      "svg-broccoli2O.svg",
@@ -312,10 +323,10 @@ var levelModule = (function() {
                 "aO":              "svg-O-atom.svg",
                 "Broccoli2OPlate": "pink_plate.svg",
             },
-            "names": {
-                "Broccoli2":  "Broccoli",
-                "O2":         "Oxygen",
-                "Broccoli2O": "Oxygenated Broccoli"
+            "names":{
+                "Broccoli2":0,
+                "O2": 0,
+                "Broccoli2O": 0
             },
         },
         
@@ -342,11 +353,12 @@ var levelModule = (function() {
                 "Iron2Oxygen3Plate":     "grey_plate.svg",
                 "MagnesiumCarrot2Plate": "pink_plate.svg"
             },
-            "names": {   
-                "IronCarrot3":      "Iron and Carrots",
+            "names":
+            {   
+                "IronCarrot3":      "Iron and three carrots",
                 "MagnesiumOxygen":  "Magnesium Oxide",
                 "Iron2Oxygen3":     "Ferric Oxide",
-                "MagnesiumCarrot2": "Magnesium Carrot Sticks"
+                "MagnesiumCarrot2": "Magnesium and two carrots"
             }
         },
         //level 14
@@ -371,11 +383,12 @@ var levelModule = (function() {
                 "Egg3Bacon4Plate": "grey_plate.svg",
                 "Chicken2Plate":   "pink_plate.svg"
             },
-            "names": {   
-                "Chicken2Bacon": "Chicken and Bacon",
+            "names":
+            {   
+                "Chicken2Bacon": "Two chicken and bacon",
                 "Egg":           "Egg",
-                "Egg3Bacon4":    "Hearty English Breakfast",
-                "Chicken2":      "Roasted Chicken"
+                "Egg3Bacon4":    "Three eggs and four bacon slices",
+                "Chicken2":      "Two chicken"
             }
         },
         
@@ -401,11 +414,12 @@ var levelModule = (function() {
                 "BreadBaconChickenPlate": "grey_plate.svg",
                 "Chicken2Plate":          "pink_plate.svg"
             },
-            "names": {   
-                "Chicken2Bacon":     "Chicken and Bacon",
+            "names":
+            {   
+                "Chicken2Bacon":     "Two chicken and bacon",
                 "Bread":             "Bread",
-                "BreadBaconChicken": "Hearty Meal",
-                "Chicken2":          "Roasted Chicken"
+                "BreadBaconChicken": "Bread, bacon and chicken",
+                "Chicken2":          "Two chicken"
             }
         },
         
@@ -432,55 +446,57 @@ var levelModule = (function() {
                 "Egg2Oxygen3Plate":      "grey_plate.svg",
                 "MagnesiumCarrot2Plate": "pink_plate.svg"
             },
-            "names": {   
-                "EggCarrot3":       "Egg and Carrots",
+            "names":
+            {   
+                "EggCarrot3":       "Egg and three carrots",
                 "MagnesiumOxygen":  "Magnesium Oxide",
-                "Egg2Oxygen3":      "Oxygenated Egg",
-                "MagnesiumCarrot2": "Magnesium Carrot Sticks"
+                "Egg2Oxygen3":      "Two eggs and three oxygen",
+                "MagnesiumCarrot2": "Magnesium and two carrots"
             }
         },
         //level 17 
-        // H2O + Fe -> Fe3O4 + H2
+        // Chicken2Bacon + Iron -> Iron3Bacon4 + Chicken2
         {
             "reactants": {
-                "H2O": 0,
-                "Fe": 0
+                "Hydrogen2Oxygen": 0,
+                "Iron": 0
             },
             "products": {
-                "Fe3O4": 0,
-                "H2": 0
+                "Iron3Oxygen4": 0,
+                "Hydrogen2": 0
             },
             "svgmap": {
-                "H2O":        "l7/v4/svg-reactant-H2O.svg",
-                "Fe":         "l7/v4/svg-reactant-Fe.svg",
-                "Fe3O4":      "l7/v4/svg-product-Fe3O4.svg",
-                "H2":         "l7/v4/svg-product-H2.svg",
-                "aH":         "svg-atom-H.svg",
-                "aO":         "svg-o-atom.svg",
-                "aFe":        "svg-fe-atom.svg",
-                "Fe3O4Plate": "grey_plate.svg",
-                "H2Plate":    "pink_plate.svg"
+                "Hydrogen2Oxygen":   "l7/v4/svg-reactant-H2O.svg",
+                "Iron":              "l7/v4/svg-reactant-Fe.svg",
+                "Iron3Oxygen4":      "l7/v4/svg-product-Fe3O4.svg",
+                "Hydrogen2":         "l7/v4/svg-product-H2.svg",
+                "aHydrogen":         "svg-atom-H.svg",
+                "aOxygen":           "svg-o-atom.svg",
+                "aIron":             "svg-fe-atom.svg",
+                "Iron3Oxygen4Plate": "grey_plate.svg",
+                "Hydrogen2Plate":    "pink_plate.svg"
             },
-            "names": {   
-                "H2O":   "H2O",
-                "Fe":    "Fe",
-                "Fe3O4": "Fe3O4",
-                "H2":    "H2"
+            "names":
+            {   
+                "Hydrogen2Oxygen": "Water",
+                "Iron":            "Iron",
+                "Iron3Oxygen4":    "Magnetite",
+                "Hydrogen2":       "Hydrogen"
             }
         },
         
         //level 18
         //NH3 + N2O -> N2 + H2O
         {
-            "reactants": {
+            "reactants":{
                 "NH3": 0,
                 "N2O": 0
             },
-            "products": {
+            "products":{
                 "N2": 0,
                 "H2O": 0
             },
-            "svgmap": {
+            "svgmap":{
                 "NH3":      "svg-reactant-NH3.svg",
                 "N2O":      "svg-reactant-N2O.svg",
                 "N2":       "svg-N2.svg",
@@ -491,7 +507,7 @@ var levelModule = (function() {
                 "N2Plate":  "grey_plate.svg",
                 "H2OPlate": "pink_plate.svg"
             }, 
-            "names": {
+            "names":{
                 "NH3": "NH3",
                 "N2O": "N2O",
                 "N2":  "N2",
@@ -503,14 +519,14 @@ var levelModule = (function() {
         //level 19
         //H2 + O2 -> H2O
         {
-            "reactants": {
+            "reactants":{
                 "H2":0,
                 "O2": 0,
             },
-            "products": {
+            "products":{
                 "H2O": 0,
             },
-            "svgmap": {
+            "svgmap":{
                 "H2":       "svg-reactant-H2.svg",
                 "O2":       "svg-O2.svg",
                 "H2O":      "svg-product-H2O.svg",
@@ -518,7 +534,7 @@ var levelModule = (function() {
                 "aO":       "svg-o-atom.svg",
                 "H2OPlate": "pink_plate.svg",
             },
-            "names": {
+            "names":{
                 "H2":  "H2",
                 "O2":  "O2",
                 "H2O": "H2O",
@@ -528,15 +544,15 @@ var levelModule = (function() {
         //level 20
         //C2H2 + O2 -> CO2 + H2O
         {
-            "reactants": {
+            "reactants":{
                 "C2H2":0,
                 "O2": 0,
             },
-            "products": {
+            "products":{
                 "H2O": 0,
                 "CO2": 0,
             },
-            "svgmap": {
+            "svgmap":{
                 "C2H2":     "svg-reactant-C2H2.svg",
                 "O2":       "svg-O2.svg",
                 "H2O":      "svg-product-H2O.svg",
@@ -547,7 +563,7 @@ var levelModule = (function() {
                 "H2OPlate": "pink_plate.svg",
                 "CO2Plate": "grey_plate.svg"
             },
-            "names": {
+            "names":{
                 "C2H2": "C2H2",
                 "O2":   "O2",
                 "H2O":  "H2O",
@@ -557,16 +573,16 @@ var levelModule = (function() {
         
         //level 21
         //NH3 + F2 -> NH4F + NF3
-        {
-            "reactants": {
+          {
+            "reactants":{
                 "NH3": 0,
                 "F2": 0
             },
-            "products": {
+            "products":{
                 "NH4F": 0,
                 "NF3": 0
             },
-            "svgmap": {
+            "svgmap":{
                 "NH3":        "svg-reactant-NH3.svg",
                 "F2":         "svg-reactant-F2.svg",
                 "NH4F":       "svg-product-NH4F.svg",
@@ -577,7 +593,7 @@ var levelModule = (function() {
                 "NH4F2Plate": "grey_plate.svg",
                 "NF3Plate":   "pink_plate.svg"
             }, 
-            "names": {
+            "names":{
                 "NH3":  "NH3",
                 "F2":   "F2",
                 "NH4F": "NH4F",
@@ -586,16 +602,16 @@ var levelModule = (function() {
         },
         //level 22
         //Fe2O3 + C -> Fe + CO2
-        {
-            "reactants": {
+                {
+            "reactants":{
                 "Fe2O3":0,
                 "C": 0,
             },
-            "products": {
+            "products":{
                 "Fe": 0,
                 "CO2": 0,
             },
-            "svgmap": {
+            "svgmap":{
                 "Fe2O3":    "svg-reactant-Fe2O3.svg",
                 "C":        "svg-reactant-C.svg",
                 "Fe":       "svg-product-Fe.svg",
@@ -606,41 +622,40 @@ var levelModule = (function() {
                 "FePlate":  "pink_plate.svg",
                 "CO2Plate": "grey_plate.svg"
             },
-            "names": {
-                "Fe2O3": "Fe2O3",
-                "C":     "C",
-                "Fe":    "Fe",
+            "names":{
+                "Fe2O3": "C2H2",
+                "C":     "O2",
+                "Fe":    "H2O",
                 "CO2":   "CO2"
             },
         },
         //level 23
         //AlCl3 + Ca3N2 -> AlN + CaCl2
-        {
-            "reactants": {
+                        {
+            "reactants":{
                 "AlCl3":0,
                 "Ca3N2": 0,
             },
-            "products": {
+            "products":{
                 "AlN": 0,
                 "CaCl2": 0,
             },
-            "svgmap": {
+            "svgmap":{
                 "AlCl3":      "svg-reactant-AlCl3.svg",
                 "Ca3N2":      "svg-reactant-Ca3N2.svg",
                 "AlN":        "svg-product-AlN.svg",
                 "CaCl2":      "svg-product-CaCl2.svg",
-                "aAl":        "svg-fe-atom.svg",
-                "aCl":        "svg-Cl-atom.svg",
-                "aCa":        "svg-c-atom.svg",
-                "aN":         "svg-N-atom.svg",
+                "aFe":        "svg-fe-atom.svg",
+                "aO":         "svg-o-atom.svg",
+                "aC":         "svg-c-atom.svg",
                 "AlNPlate":   "pink_plate.svg",
                 "CaCl2Plate": "grey_plate.svg"
             },
-            "names": {
-                "AlCl3": "1 Al and 3 Cl",
-                "Ca3N2": "3 Ca and 2 N",
-                "AlN":   "1 Al and 1 N",
-                "CaCl2": "1 Ca and 2 Cl"
+            "names":{
+                "AlCl3": "AlCl3",
+                "Ca3N2": "Ca3N2",
+                "AlN":   "AlN",
+                "CaCl2": "CaCl2"
             },
         },
     ];

@@ -95,7 +95,15 @@ var viewModule = (function(tutorialModule) {
        
         var $userbar = $("<div>", {id:"output"});
         $userbar.append('<img id="chef" src="img/chef.png" alt="Chef">');
-        $userbar.append('<label id="hint" onclick="viewModule.showHint()">Need a hint? Click here!</label>');
+        $userbar.append('<label id="hint" onclick="viewModule.showHint()"></label>');
+        
+        // Run this only after the auto-tutorial is removed from the hints box
+        if (state["level"] >= 4) {
+            $(document).ready(function() {
+               $("#hint").html(state["initMessage"]); 
+            });
+        }
+        
         $userbar.append('<label id="level">Level ' + state['level'] + '</label>');
         $userbar.append($homeButton);
         $userbar.append($resetButton);
@@ -364,7 +372,6 @@ var viewModule = (function(tutorialModule) {
         $newImg.css("top",  yi + "px");
         $newImg.animate({left: x, top: y}, function() {
             checkCollapsibles();
-            //stateModule.checkWin();
         });
     }
 
@@ -406,7 +413,6 @@ var viewModule = (function(tutorialModule) {
         $newImg.css("top",  yi + "px");
         $newImg.animate({left: x, top: y}, function() {
             checkCollapsibles();
-            //stateModule.checkWin();
         });
     }
 
@@ -493,7 +499,6 @@ var viewModule = (function(tutorialModule) {
         $newImg.css("top", prevPosition.top + "px");
         $newImg.animate({left: x, top: y}, function() {
             checkCollapsibles();
-            //stateModule.checkWin();
         });
     }
     

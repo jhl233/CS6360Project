@@ -26,6 +26,38 @@ var stateModule = (function(viewModule, levelModule) {
     function getCurrentLevel() {
         return currentState["level"];
     }
+    
+    function getInitMessage(levelNum) {
+        msg = "";
+        switch (levelNum) {
+            case 4: msg = "Try doubling the odd number of carrots in Carrot Meal to make it even!"; break;
+            case 5: msg = "Double the odd number of carrots in Broccoli, Egg, and Carrots to make it even!"; break;
+            case 6: msg = "Great! Just focus on making one dish at a time!"; break;
+            case 7: msg = "You've got the hang of this! Keep going!"; break;
+            case 8: msg = "Have you ever tried Na? It's so yummy!"; break;
+            case 9: msg = "Yay, let's make more food! It tastes like air!"; break;
+            case 10: msg = "We aliens love Mg. Eat just a little bit for a healthy body!"; break;
+            case 11: msg = "Click on the number boxes, type in a number, and hit enter!"; break;
+            case 12: msg = "Keep typing in numbers to make my favorite foods!"; break;
+            case 13: msg = "Just like before, focus on making one dish at a time!"; break;
+            case 14: msg = "Can you make a Hearty English Breakfast like Chef Charlie?"; break;
+            case 15: msg = "You'll be a master chef soon!"; break;
+            case 16: msg = "Time for me to get some practice!"; break;
+            case 17: msg = "It's all me! Let's make the O and plate it first!"; break;
+            case 18: msg = "Hm... This time, let's work on figuring out the H first."; break;
+            case 19: msg = "Hit 'Check' when you are done!"; break;
+            case 20: msg = "Can we make C first this time?"; break;
+            case 21: msg = "F is great for strong, healthy teeth!"; break;
+            case 22: msg = "Hey, we can balance the odd and even O's again!"; break;
+            case 23: msg = "Mmm, time to make the comfort foods of home!"; break;
+            case 24: msg = ""; break;
+            case 25: msg = ""; break;
+            default: msg = "Need a hint? Click here!"; break;
+        }
+        return msg;
+        
+    }
+    
     /* 
      * initializeLevel
      * given [levelNum], populates currentState
@@ -36,6 +68,7 @@ var stateModule = (function(viewModule, levelModule) {
         currentState["products"] = {};
         currentState["svgmap"] = {};
         currentState["names"] = {};
+        currentState["initMessage"] = getInitMessage(levelNum);
         
         isTutorialLevel = isTutorial;
 
@@ -127,11 +160,21 @@ var stateModule = (function(viewModule, levelModule) {
 
     function removeProduct(product, numTimes) {
         if (currentState["products"][product] - numTimes >= 0) {
-            currentState["products"][product] -= numTimes;
-            for (var k = 0; k < numTimes; k++) {
+           /* for (var k = 0; k < numTimes; k++) {
+                currentState["products"][product]--;
+                console.log("amount of " + product + ": " + currentState["products"][product]);
                 viewModule.removeProduct(product);
-            }
-            //checkWin();
+            }*/
+            var removePIntervalID = setInterval(function(){
+                if (numTimes == 0) {
+                    clearInterval(removePIntervalID);
+                    checkWin();
+                    return;
+                }
+                currentState["products"][product]--;
+                viewModule.removeProduct(product);
+                numTimes--;
+            }, 1000);
         }
     }
     
