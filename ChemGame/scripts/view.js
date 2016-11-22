@@ -94,7 +94,7 @@ var viewModule = (function(tutorialModule) {
         });
        
         var $userbar = $("<div>", {id:"output"});
-        $userbar.append('<img id="chef" src="img/chef.png" alt="Chef">');
+        $userbar.append('<img id="chef" src="img/' + state["svgmap"]["chef"] + '" alt="Chef">');
         $userbar.append('<label id="hint" onclick="viewModule.showHint()"></label>');
         
         // Run this only after the auto-tutorial is removed from the hints box

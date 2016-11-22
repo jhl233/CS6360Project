@@ -17,9 +17,9 @@ var levelModule = (function() {
                 "Bacon2r":      "l1/svg-reactant1-L1.svg",
                 "Bacon2p":      "l1/svg-product1-L1.svg",
                 "aBacon":       "svg-bacon.svg",
-                "Bacon2pPlate": "grey_plate.svg"
+                "Bacon2pPlate": "grey_plate.svg",
+                "chef":         "chef.png",
             },
-            
             "names": {
                 "Bacon2r": "Bacon",
                 "Bacon2p": "Bacon Twins"
@@ -42,6 +42,7 @@ var levelModule = (function() {
                 "aBroccoli":            "l2/svg-broccoli.svg",
                 "aBacon":               "svg-bacon.svg",
                 "Broccoli1Bacon2Plate": "pink_plate.svg",
+                "chef":                 "chef.png",
             }, 
             "names": {   
                 "Broccoli":       "Broccoli",
@@ -66,7 +67,8 @@ var levelModule = (function() {
                 "CarbonBacon2":      "l2/svg-product1-L2-incomplete-alien.svg",
                 "aCarbon":           "svg-c-atom.svg",
                 "aBacon":            "svg-bacon.svg",
-                "CarbonBacon2Plate": "grey_plate.svg"
+                "CarbonBacon2Plate": "grey_plate.svg",
+                "chef":              "alien&chef.png",
             },
             "names": {   
                 "Carbon":       "Carbon",
@@ -88,7 +90,8 @@ var levelModule = (function() {
                 "Carrot2":      "svg-reactant-carrot.svg",
                 "Carrot3":      "svg-product-carrot3.svg",
                 "aCarrot":      "svg-carrot.svg",
-                "Carrot3Plate": "grey_plate.svg"
+                "Carrot3Plate": "grey_plate.svg",
+                "chef":         "alien&chef.png",
             },
             "names": {   
                 "Carrot2": "Carrot Snack",
@@ -115,6 +118,7 @@ var levelModule = (function() {
                 "aBroccoli":          "l2/svg-broccoli.svg",
                 "BroccoliEggPlate":   "grey_plate.svg",
                 "Carrot2Plate":       "pink_plate.svg",
+                "chef":               "alien&chef.png",
             },
             "names": {   
                 "BroccoliEggCarrot3": "Broccoli, Egg, and Carrots",
@@ -143,7 +147,8 @@ var levelModule = (function() {
                 "aBacon":                 "svg-bacon.svg",
                 "aChicken":               "svg-chicken.svg",
                 "BreadBaconChickenPlate": "grey_plate.svg",
-                "Chicken2Plate":          "pink_plate.svg"
+                "Chicken2Plate":          "pink_plate.svg",
+                "chef":                   "alien&chef.png",
             },
             "names": {   
                 "Chicken2Bacon":     "Chicken and Bacon",
@@ -174,7 +179,8 @@ var levelModule = (function() {
                 "aCarrot":           "svg-carrot.svg",
                 "aEgg":              "svg-egg.svg",
                 "Egg2Bacon3Plate":   "grey_plate.svg",
-                "BreadCarrot2Plate": "pink_plate.svg"
+                "BreadCarrot2Plate": "pink_plate.svg",
+                "chef":              "alien&chef.png",
             },
             "names": {   
                 "EggCarrot3":   "Egg and Carrots",
@@ -204,7 +210,8 @@ var levelModule = (function() {
                 "aBacon":                  "svg-bacon.svg",
                 "aChicken":                "svg-chicken.svg",
                 "SodiumBaconChickenPlate": "grey_plate.svg",
-                "Chicken2Plate":           "pink_plate.svg"
+                "Chicken2Plate":           "pink_plate.svg",
+                "chef":                    "chef&alien.png",
             },
             "names": {   
                 "Chicken2Bacon":      "Chicken and Bacon",
@@ -233,6 +240,7 @@ var levelModule = (function() {
                 "aCl":       "svg-Cl-atom.svg",
                 "KClPlate":  "grey_plate.svg",
                 "O2Plate":   "pink_plate.svg",
+                "chef":      "chef&alien.png",
             },
             "names": {   
                 "KClO3": "Potassium Chlorate",
@@ -262,7 +270,8 @@ var levelModule = (function() {
                 "aCarrot":               "svg-carrot.svg",
                 "aEgg":                  "svg-egg.svg",
                 "Egg2Bacon3Plate":       "grey_plate.svg",
-                "MagnesiumCarrot2Plate": "pink_plate.svg"
+                "MagnesiumCarrot2Plate": "pink_plate.svg",
+                "chef":                  "chef&alien.png",
             },
             "names": {   
                 "EggCarrot3":       "Egg and Carrots",
@@ -286,7 +295,8 @@ var levelModule = (function() {
                 "Carrot2":      "svg-reactant-carrot.svg",
                 "Carrot3":      "svg-product-carrot3.svg",
                 "aCarrot":      "svg-carrot.svg",
-                "Carrot3Plate": "grey_plate.svg"
+                "Carrot3Plate": "grey_plate.svg",
+                "chef":         "chef&alien.png",
             },
             "names": {   
                 "Carrot2": "Carrot Twins",
@@ -311,6 +321,7 @@ var levelModule = (function() {
                 "aBroccoli":       "l2/svg-broccoli.svg",
                 "aO":              "svg-O-atom.svg",
                 "Broccoli2OPlate": "pink_plate.svg",
+                "chef":            "chef&alien.png",
             },
             "names": {
                 "Broccoli2":  "Broccoli",
@@ -340,7 +351,8 @@ var levelModule = (function() {
                 "aCarrot":               "svg-carrot.svg",
                 "aIron":                 "svg-fe-atom.svg",
                 "Iron2Oxygen3Plate":     "grey_plate.svg",
-                "MagnesiumCarrot2Plate": "pink_plate.svg"
+                "MagnesiumCarrot2Plate": "pink_plate.svg",
+                "chef":                  "chef&alien.png",
             },
             "names": {   
                 "IronCarrot3":      "Iron and Carrots",
@@ -369,7 +381,8 @@ var levelModule = (function() {
                 "aBacon":          "svg-bacon.svg",
                 "aEgg":            "svg-egg.svg",
                 "Egg3Bacon4Plate": "grey_plate.svg",
-                "Chicken2Plate":   "pink_plate.svg"
+                "Chicken2Plate":   "pink_plate.svg",
+                "chef":            "chef&alien.png",
             },
             "names": {   
                 "Chicken2Bacon": "Chicken and Bacon",
@@ -399,7 +412,8 @@ var levelModule = (function() {
                 "aBacon":                 "svg-bacon.svg",
                 "aChicken":               "svg-chicken.svg",
                 "BreadBaconChickenPlate": "grey_plate.svg",
-                "Chicken2Plate":          "pink_plate.svg"
+                "Chicken2Plate":          "pink_plate.svg",
+                "chef":                   "chef&alien.png",
             },
             "names": {   
                 "Chicken2Bacon":     "Chicken and Bacon",
@@ -430,7 +444,8 @@ var levelModule = (function() {
                 "aCarrot":               "svg-carrot.svg",
                 "aEgg":                  "svg-egg.svg",
                 "Egg2Oxygen3Plate":      "grey_plate.svg",
-                "MagnesiumCarrot2Plate": "pink_plate.svg"
+                "MagnesiumCarrot2Plate": "pink_plate.svg",
+                "chef":                  "chef&alien.png",
             },
             "names": {   
                 "EggCarrot3":       "Egg and Carrots",
@@ -459,7 +474,8 @@ var levelModule = (function() {
                 "aO":         "svg-o-atom.svg",
                 "aFe":        "svg-fe-atom.svg",
                 "Fe3O4Plate": "grey_plate.svg",
-                "H2Plate":    "pink_plate.svg"
+                "H2Plate":    "pink_plate.svg",
+                "chef":       "alien.png",
             },
             "names": {   
                 "H2O":   "H2O",
@@ -489,7 +505,8 @@ var levelModule = (function() {
                 "aH":       "svg-atom-H.svg",
                 "aO":       "svg-o-atom.svg",
                 "N2Plate":  "grey_plate.svg",
-                "H2OPlate": "pink_plate.svg"
+                "H2OPlate": "pink_plate.svg",
+                "chef":     "alien.png",
             }, 
             "names": {
                 "NH3": "NH3",
@@ -517,6 +534,7 @@ var levelModule = (function() {
                 "aH":       "svg-atom-H.svg",
                 "aO":       "svg-o-atom.svg",
                 "H2OPlate": "pink_plate.svg",
+                "chef":     "alien.png",
             },
             "names": {
                 "H2":  "H2",
@@ -545,7 +563,8 @@ var levelModule = (function() {
                 "aH":       "svg-atom-H.svg",
                 "aO":       "svg-o-atom.svg",
                 "H2OPlate": "pink_plate.svg",
-                "CO2Plate": "grey_plate.svg"
+                "CO2Plate": "grey_plate.svg",
+                "chef":     "alien.png",
             },
             "names": {
                 "C2H2": "C2H2",
@@ -575,7 +594,8 @@ var levelModule = (function() {
                 "aH":         "svg-atom-H.svg",
                 "aF":         "svg-F-atom.svg",
                 "NH4F2Plate": "grey_plate.svg",
-                "NF3Plate":   "pink_plate.svg"
+                "NF3Plate":   "pink_plate.svg",
+                "chef":       "alien.png",
             }, 
             "names": {
                 "NH3":  "NH3",
@@ -604,7 +624,8 @@ var levelModule = (function() {
                 "aO":       "svg-o-atom.svg",
                 "aC":       "svg-c-atom.svg",
                 "FePlate":  "pink_plate.svg",
-                "CO2Plate": "grey_plate.svg"
+                "CO2Plate": "grey_plate.svg",
+                "chef":     "alien.png",
             },
             "names": {
                 "Fe2O3": "Fe2O3",
@@ -634,7 +655,8 @@ var levelModule = (function() {
                 "aCa":        "svg-c-atom.svg",
                 "aN":         "svg-N-atom.svg",
                 "AlNPlate":   "pink_plate.svg",
-                "CaCl2Plate": "grey_plate.svg"
+                "CaCl2Plate": "grey_plate.svg",
+                "chef":       "alien.png",
             },
             "names": {
                 "AlCl3": "1 Al and 3 Cl",
