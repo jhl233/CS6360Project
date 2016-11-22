@@ -569,3 +569,55 @@ body{
     left: 35%;
     width: 30%;
 }
+
+.test{
+    margin-top: 11%;
+    margin-left: 30%;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+.test-text{
+    position: absolute;
+    text-align: center;
+    left: 30%;
+    top: 9%;
+    font-size: 24px;
+    font-weight:600;
+    color: #0EA6C5;
+}
+
+.test input{
+    background-color: #ddd;
+    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.test fieldset{
+    border: none;
+    display: block;
+    height: 10%;
+}
+
+.test .test-submit{
+    position: absolute;
+    top: 85%;
+    left: 30%;
+    width: 30%;
+    height: 60px;
+    padding: 10px 20px;
+    background-color: #45D0E2;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 15px;
+}
+.test .test-submit:hover{
+    background-color: #0EA6C5;
+}
