@@ -195,7 +195,13 @@ var viewModule = (function(tutorialModule) {
                     coeff.val(parseInt(coeff.val()) + 1);
                 });
 
-                $minusButton = $("<div>", {class: "reactant-minus-button", text: "-", "data-name": reactant});
+                $minusButton = $("<div>", {
+                    id: reactant + "-minus",
+                    class: "reactant-minus-button", 
+                    text: "-", 
+                    "data-name": reactant
+                });
+                
                 $minusButton.click(function(event) {
                     var removeReactant = callBacks["removeReactant"];
                     var reactant = $(event.target).data("name");
@@ -294,7 +300,13 @@ var viewModule = (function(tutorialModule) {
                     coeff.val(parseInt(coeff.val()) + 1);
                 });
 
-                $minusButton = $("<div>", {class: "product-minus-button", text: "-", "data-name": product});
+                $minusButton = $("<div>", {
+                    id: product + "-minus",
+                    class: "product-minus-button", 
+                    text: "-", 
+                    "data-name": product
+                });
+                
                 $minusButton.click(function(event) {
                     var removeProduct = callBacks["removeProduct"];
                     var product = $(event.target).data("name");
