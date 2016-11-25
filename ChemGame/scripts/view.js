@@ -382,9 +382,14 @@ var viewModule = (function(tutorialModule) {
         var yi = $("#" + reactant + "-action").offset().top;
         $newImg.css("left", xi + "px");
         $newImg.css("top",  yi + "px");
-        $newImg.animate({left: x, top: y}, function() {
-            checkCollapsibles();
-        });
+        $newImg.animate(
+            {left: x, top: y}, 
+            {
+                duration: 300,
+                complete: function() {
+                    checkCollapsibles();
+                }
+            });
     }
 
     function addProductToView(product) {
@@ -423,9 +428,14 @@ var viewModule = (function(tutorialModule) {
         var yi = $("#" + product+"-action").offset().top;
         $newImg.css("left", xi + "px");
         $newImg.css("top",  yi + "px");
-        $newImg.animate({left: x, top: y}, function() {
-            checkCollapsibles();
-        });
+        $newImg.animate(
+            {left: x, top: y}, 
+            {
+                duration: 300,
+                complete: function() {
+                    checkCollapsibles();
+                }
+            });
     }
 
     // Can be called by either addProductToView or addReactantToView
@@ -464,22 +474,20 @@ var viewModule = (function(tutorialModule) {
                 continue;
             }
 
-
-
             for (var elemReq in reqs) { // for each Chicken in Chicken-needs-3
                 for (var i = 0; i < reqs[elemReq]; i++) {
                     console.log(elemReq + " " + reactantView[elemReq]["elems"]);
                     var freeElem = reactantView[elemReq]["elems"].pop();
                     var freeElemId = "#" + freeElem.id;
-
+                    
                     var xf = freeProduct.x + (Math.random() * 40);
                     var yf = freeProduct.y + (Math.random() * 40);
                     $(freeElemId).css("z-index", "2");
                     freeProduct["elemIds"].push(freeElem.id);
-                    $(freeElemId).animate({left: xf, top: yf});
+                    $(freeElemId).animate({left: xf, top: yf}, {duration: 300});
                 }
-                freeProduct["filled"] = true;
             }
+            freeProduct["filled"] = true;
         }
     }
     
@@ -509,17 +517,45 @@ var viewModule = (function(tutorialModule) {
         $newImg.css("position", "absolute");
         $newImg.css("left", prevPosition.left + "px");
         $newImg.css("top", prevPosition.top + "px");
-        $newImg.animate({left: x, top: y}, function() {
-            checkCollapsibles();
-        });
+        $newImg.animate(
+            {left: x, top: y},
+            {
+                duration: 300,
+                complete: function() {
+                    checkCollapsibles();
+                }
+            });
     }
     
-    function removeReactantFromView(elem) {
+    function addReactantBackToPlate(elemId, reactant) {
+         var xi = $("#" + reactant+"-action").offset().left +
+                     $("#" + reactant+"-action").width() / 2 - 
+                     $("img#" + elemId).width() / 2;
+            
+            var yi = $("#" + reactant+"-action").offset().top + 
+                     $("#" + reactant+"-action").height() / 2 - 
+                     $("img#" + elemId).height() / 2;
+            
+            $("img#" + elemId).css("z-index", "2");
+            
+            $("img#" + elemId).animate(
+                {left: xi, top: yi}, 
+                {
+                    duration: 300,
+                    complete: function() {
+                        $("img#" + elemId).remove();
+                    }
+                });
+    }
+    
+    function removeReactantFromView(elem, reactant) {
         // elem is still a free element
         if (reactantView[elem]["elems"].length > 0) {
             reactantView[elem]["nextId"]--;
             var element = reactantView[elem]["elems"].pop();
-            $("img#" + element["id"]).remove();
+            
+            // Send reactant to center of reactant plate
+            addReactantBackToPlate(element["id"], reactant);
 
         // otherwise elem is part of a product - 
         // delete elem and make all other elements free
@@ -540,7 +576,7 @@ var viewModule = (function(tutorialModule) {
                         if (productView[productName]["products"][i]["filled"]) {
                             found = true;
                             productView[productName]["products"][i]["filled"] = false;
-                            var elementRemoved = false;
+                            //var elementRemoved = false;
 
                             // Remove the product's contents
                             while (productView[productName]["products"][i]["elemIds"].length > 0) {
@@ -548,17 +584,19 @@ var viewModule = (function(tutorialModule) {
                                 var indexOfFirstDigit = elemId.search(/\d/);
                                 var element = elemId.substr(0, indexOfFirstDigit);
                                 var prevPosition = $("#" + elemId).position();
-                                
-                                // Delete the element from the screen
-                                $("img#" + elemId).remove();
 
+                                //$("img#" + elemId).remove();
                                 // Check whether it was specifically elem that was removed
-                                if (!elementRemoved && element === elem) {
-                                    elementRemoved = true;
-                                    // If not, make it a free element on the left-hand side of the screen
-                                } else {
+                                //if (!elementRemoved && element === elem) {                              
+                                //    elementRemoved = true;
+                                //    addReactantBackToPlate(elemId, reactant);
+
+                                // If not, make it a free element on the left-hand side of the screen
+                               // } else {
+                                    // Delete the element from the screen
+                                    $("img#" + elemId).remove(); // remove from product plate
                                     addReactantBackToWorktable(element, prevPosition);
-                                }
+                                //}
                             }
                         }
                         // Continue searching if we have not found a filled product
@@ -567,12 +605,31 @@ var viewModule = (function(tutorialModule) {
                 }
                 // Stop iterating through the products if one has already been cleared of elements
                 if (found) {
+                    reactantView[elem]["nextId"]--;
+                    var element = reactantView[elem]["elems"].pop();
+
+                    // Send reactant to center of reactant plate
+                    addReactantBackToPlate(element["id"], reactant);
+
                     break;
                 }
             }
         }
     }
 
+    function addProductBackToPlate(id, product) {
+        var xi = $("#" + product+"-action").offset().left;
+        var yi = $("#" + product+"-action").offset().top;
+        $("img#" + id).animate(
+        {left: xi, top: yi}, 
+        {
+            duration: 300,
+            complete: function() {
+                $("img#" + id).remove();
+            }
+        });
+    }
+    
     function removeProductFromView(product) {
         productView[product]["nextId"]--;
         var compound = productView[product]["products"].pop();
@@ -587,7 +644,9 @@ var viewModule = (function(tutorialModule) {
                 addReactantBackToWorktable(elem, prevPosition);
             }
         }
-        $("img#" + compound["id"]).remove();
+        
+        // Remove plate
+        addProductBackToPlate(compound["id"], product);
     }
 
     function nextLevel(state, callBacks, initializeNext) {

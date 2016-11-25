@@ -102,7 +102,7 @@ var tutorialModule = (function() {
         $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow1"}));
         $("#tutorial").off("click");
         
-        // TODO: When subtracting items, add animation to remove it
+        // TODO: Prevent all buttons other than remove button from being clicked
         var nextLevelHandler = function(e) {
             if ($(e.target).is("#Broccoli-minus")) {
                 $(".overlay").width("0%");

@@ -150,7 +150,8 @@ var stateModule = (function(viewModule, levelModule) {
             for (var k = 0; k < numTimes; k++) {
                 for (var elem in compound) {
                     for (var i = 0; i < compound[elem]; i++) {
-                        viewModule.removeReactant(elem);
+                        console.log("k: " + k + " i: " + i);
+                        viewModule.removeReactant(elem, reactant);
                     }
                 }
             }
@@ -160,11 +161,12 @@ var stateModule = (function(viewModule, levelModule) {
 
     function removeProduct(product, numTimes) {
         if (currentState["products"][product] - numTimes >= 0) {
-           /* for (var k = 0; k < numTimes; k++) {
+           for (var k = 0; k < numTimes; k++) {
                 currentState["products"][product]--;
                 console.log("amount of " + product + ": " + currentState["products"][product]);
                 viewModule.removeProduct(product);
-            }*/
+            }
+            /*
             var removePIntervalID = setInterval(function(){
                 if (numTimes == 0) {
                     clearInterval(removePIntervalID);
@@ -175,6 +177,7 @@ var stateModule = (function(viewModule, levelModule) {
                 viewModule.removeProduct(product);
                 numTimes--;
             }, 1000);
+            */
         }
     }
     
