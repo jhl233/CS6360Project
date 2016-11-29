@@ -130,7 +130,9 @@ var viewModule = (function(tutorialModule) {
             needsCheck = true;
         }
         showReactantsAndProductsBench(state, callBacks, "#workbench", clickable, typable, needsCheck);
+       
         tutorialModule.checkTutorials(state["level"]);
+
     }
     
     /* Shows the reactants and products at the bottom of the screen.
@@ -227,7 +229,7 @@ var viewModule = (function(tutorialModule) {
 
                 // Modifies amount of reactant if user clicks outside  
                 // of coefficient badge or hits enter
-                $("#" + reactant + "ReactantCoeff").bind('blur change', function(event) {
+                var reactantBadgeHandler = function(event) {
                     var previousValue = $(this).data('val');
                     var currentValue = $(this).val();
                     if (currentValue === '') {
@@ -242,8 +244,10 @@ var viewModule = (function(tutorialModule) {
                         var modifyReactant = callBacks["modifyReactant"];
                         modifyReactant($(event.target).data("name"));
                     } 
-                });
+                };
                 
+                $("#" + reactant + "ReactantCoeff").bind("blur change", reactantBadgeHandler);
+
                 $foodLabel = $("<div>", {class: "reactant-label", text: state["names"][reactant], "data-name": reactant, "pointer-events": "none"});
                 $reactant.append($foodLabel);
             }
@@ -326,12 +330,12 @@ var viewModule = (function(tutorialModule) {
                    $(this).data('val', $(this).val());
                    $(this).val(''); // Clear the box of text to start typing
                 });
-                $("#" + reactant + "-action").css("cursor", "default");
-                $("#" + reactant + "ProductCoeff").css("cursor", "pointer");
+                $("#" + product + "-action").css("cursor", "default");
+                $("#" + product + "ProductCoeff").css("cursor", "pointer");
 
                 // Modifies amount of reactant if user clicks outside  
                 // of coefficient badge or hits enter
-                $("#"+product+"ProductCoeff").change(function(event) {
+                function productBadgeHandler(event) {
                     var previousValue = $(this).data('val');
                     var currentValue = $(this).val();
                     if (currentValue === '') {
@@ -346,7 +350,9 @@ var viewModule = (function(tutorialModule) {
                         var modifyProduct = callBacks["modifyProduct"];
                         modifyProduct($(event.target).data("name"));
                     }
-                });
+                }
+                
+                $("#"+product+"ProductCoeff").bind("blur change", productBadgeHandler);
                 
                 $foodLabel = $("<div>", {class: "product-label", text: state["names"][product], "data-name": product});
                 $product.append($foodLabel);
@@ -743,6 +749,7 @@ var viewModule = (function(tutorialModule) {
         addProduct: addProductToView,
         removeProduct: removeProductFromView,
         removeReactant: removeReactantFromView,
+        showReactantsAndProductsBench: showReactantsAndProductsBench,
 		nextLevel: nextLevel,
 		closeOverlay: closeOverlay,
         showHint: showHint,

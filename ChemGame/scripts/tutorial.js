@@ -4,6 +4,8 @@ var tutorialModule = (function() {
         1: level1,
         2: level2,
         3: level3,
+        11: level11,
+        12: level12,
     }
 
     function checkTutorials(levelNum) {
@@ -147,26 +149,138 @@ var tutorialModule = (function() {
     
     function level3_2() {
         $("#chefPic").attr("src", "img/alien.png");
-        
         $("#tutorial").text("Hi! I am so excited to work with you and Chef Charlie to learn to become a master chef! After I get my chef certification here, I hope to open my own restaurant some day!");
-        
         $("#tutorial").click(level3_3);
     }
     
     function level3_3() {
         $("#chefPic").attr("src", "img/chef.png");
-        
         $("#tutorial").text("Don't be surprised if you start to see foods that you've never seen before. I'll make sure Yummy only adds foods that are safe for both humans and aliens.");
-        
         $("#tutorial").click(level3_4);
     }
     
     function level3_4() {
         $("#chefPic").attr("src", "img/alien&chef.png");
-        
         $("#tutorial").text("Let's get started!");
-        
         $("#tutorial").click(function() {$(".overlay").width('0%');});
+    }
+    
+    function level11() {
+        var $overlayBubble = $("<div>", {
+           id: "tutorial",
+           class: "overlay-bubble shadow",
+           text: "Oh no! Our clicky button technology stopped working, so we cannot simply click on the plates anymore! What do we do???" 
+        });
+        var $overlayContent = $("<div>", {
+           class: "overlay-content", 
+        });
+        $overlayBubble.click(level11_2);
+        $overlayContent.append("<img id='chefPic' src='img/alien.png' class='overlay-img'>");
+        $overlayContent.append($overlayBubble);
+    
+        $closeButton = $("<a id='closebtn'>&times;</a>");
+        $closeButton.click(homeScreen);
+    
+        var $overlay = $("<div>", {class: "overlay", id:"tutorialOverlay1"});
+        $overlay.append($closeButton);
+        $overlay.append($overlayContent);
+    
+        $(document.body).append($overlay);
+    }
+    
+    function level11_2() {
+        $("#chefPic").attr("src", "img/chef2.png");
+        $("#tutorial").text("That's ok, we can be flexible. ...How about typing?");
+        $("#tutorial").click(level11_3);
+    }
+    
+    function level11_3() {
+        $("#chefPic").attr("src", "img/alien.png");
+        $("#tutorial").text("Isn't that harder?");
+        $("#tutorial").click(level11_4);
+    }
+    
+    function level11_4() {
+        $("#chefPic").attr("src", "img/chef2.png");
+        $("#tutorial").text("I have faith that you can do it. You just have to think a bit harder before you type something to match the food to the plates.");
+        $("#tutorial").click(level11_5);
+    }
+    
+    function level11_5() {
+        $("#chefPic").attr("src", "img/alien.png");
+        $("#tutorial").text("I'll be brave!");
+        $("#tutorial").click(level11_6);
+    }
+    
+    function level11_6() {
+        $("#chefPic").attr("src", "img/chef2.png");
+        $("#tutorial").text("That's the spirit! Remember the Carrot Triplets and how we had to double the number of plates? Let's do that now by clicking on the number box next to Carrot Triplets. Type a 2 into the box and either press Enter or click outside the box.");
+        $("#tutorialOverlay1").height("65%");
+        $("#arrow6").remove(); // In case someone left the page and came back, need to refresh
+        $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow6"}));
+        
+        $.fx.off = true;
+        $("#tutorial").css("pointer-events", "none");
+        $(".reactant-badge").prop("disabled", true);
+        $(".reactant-badge").css("cursor", "default");
+        var typingHandler = function(e) {
+            if ($(e.target).is(".product-badge") && $(".product-badge").val() == 2) {
+                $("#arrow6").remove();
+                $.fx.off = false;
+                $(".reactant-badge").prop("disabled", false);
+                $(".reactant-badge").css("cursor", "pointer");
+                $(".overlay").width("0%");
+                $(".product-badge").unbind("blur change", typingHandler);
+                setTimeout(level11_7, 2000);
+            }
+        }
+        $(".product-badge").bind("blur change", typingHandler);
+    }
+    
+    function level11_7() {
+        $(".overlay").width("100%");
+        $("#chefPic").attr("src", "img/chef2.png");
+        $("#tutorial").text("Now let's add 3 Carrot Twin bundles to match the total number of carrots for the plates. Go ahead and type a 3 in the number box for Carrot Twins. Then press Enter or click outside the box.");
+        $("#arrow5").remove(); // In case someone left the page and came back, need to refresh
+        $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow5"}));
+        
+        $.fx.off = true;
+        $(".product-badge").prop("disabled", true);
+        $(".product-badge").css("cursor", "default");
+        var typingHandler = function(e) {
+            if ($(e.target).is(".reactant-badge") && $(".reactant-badge").val() == 3) {
+                $("#arrow5").remove();
+                $.fx.off = false;
+                $(".product-badge").prop("disabled", false);
+                $(".product-badge").css("cursor", "pointer");
+                $(".overlay").width("0%");
+                $(".reactant-badge").unbind("blur change", typingHandler);
+            }
+        }
+        $(".reactant-badge").bind("blur change", typingHandler);
+    }
+    
+    function level12() {
+        var $overlayBubble = $("<div>", {
+           id: "tutorial",
+           class: "overlay-bubble shadow",
+           text: "You're awesome! Please keep using our new typing technology from now on!" 
+        });
+        var $overlayContent = $("<div>", {
+           class: "overlay-content", 
+        });
+        $overlayBubble.click(function() {$(".overlay").width("0%");});
+        $overlayContent.append("<img id='chefPic' src='img/chef2.png' class='overlay-img'>");
+        $overlayContent.append($overlayBubble);
+    
+        $closeButton = $("<a id='closebtn'>&times;</a>");
+        $closeButton.click(homeScreen);
+    
+        var $overlay = $("<div>", {class: "overlay", id:"tutorialOverlay1"});
+        $overlay.append($closeButton);
+        $overlay.append($overlayContent);
+    
+        $(document.body).append($overlay);
     }
 
     return {

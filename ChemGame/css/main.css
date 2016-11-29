@@ -270,6 +270,7 @@ body{
     background-color: white;
     color: dimgray;
     padding: 2px 10px 2px 10px;
+    cursor: default;
 }
 
 .product-label {
@@ -281,6 +282,7 @@ body{
     background-color: white;
     color: dimgray;
     padding: 2px 10px 2px 10px;
+    cursor: default;
 }
 
 
@@ -480,7 +482,7 @@ body{
     background-image: url(../svg/arrow.svg);
     background-repeat: no-repeat;
     height: 45px;
-    width:45px;
+    width: 45px;
     position: absolute;
     display: inline-block;
     -webkit-animation-name: arrow_animation; /* Safari 4.0 - 8.0 */
@@ -513,6 +515,12 @@ body{
 }
 #arrow4{
     left: 82.2%;
+}
+#arrow5{
+    left: 8%;
+}
+#arrow6{
+    left: 53.9%;
 }
 #home
 {
