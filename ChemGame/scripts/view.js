@@ -90,7 +90,8 @@ var viewModule = (function(tutorialModule) {
         $resetButton.click(function(){
             $("#worktable").empty();
             $(document.body).empty();
-            stateModule.initializeLevel(state["level"]);
+            var initializeLevel = callBacks["initializeLevel"];
+            initializeLevel(state["level"]);
         });
        
         var $userbar = $("<div>", {id:"output"});
@@ -395,7 +396,8 @@ var viewModule = (function(tutorialModule) {
                 complete: function() {
                     checkCollapsibles();
                 }
-            });
+            }
+        );
     }
 
     function addProductToView(product) {
@@ -688,7 +690,8 @@ var viewModule = (function(tutorialModule) {
            $overlay.remove();
             $("#worktable").empty();
             $(document.body).empty();
-            stateModule.initializeLevel(state["level"]);
+            var initializeLevel = callBacks["initializeLevel"];
+            initializeLevel(state["level"]);
         });
         $homeSpan.click(function() {
            $overlay.remove();
