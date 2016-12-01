@@ -12,14 +12,48 @@ $(document).ready(function() {
             console.log(session_id);
         },
         error: function() {
+            console.log("fix this");
             alert("noo");
         },
     });
-    showPretest();
+    showSurvey();
 });
 
-function showPretest() {
-    
+function submitSurvey() {
+    alert("no");
+    console.log("hayy");
+}
+
+function showSurvey() {
+    $(document.body).empty();
+
+    var $survey = $("<div>");
+    $survey.append("<img src='img/chef&alien.png' id='surveyChef'>");
+    $survey.append("<p id='surveyP' class='survey-text1'>Before we begin, help us out by telling us a bit about yourself.</p>");
+
+    var $q1 = $("<div>", {class:"q1"});
+    $q1.append("<div class='questiontext' id='ques1'><label>Q1. What grade are you in?</label></div>");
+    $q1.append(" <div class='questiontext' id='ques1'> \
+                    <label>Q1. What grade are you in?</label> \
+                </div> \
+                <select id='grade' onchange='' size='1'> \
+                    <option value='6'>6th</option> \
+                    <option value='7'>7th</option> \
+                    <option value='8'>8th</option> \
+                    <option value='9'>9th</option> \
+                    <option value='10'>10th</option> \
+                    <option value='11'>11th</option> \
+                    <option value='12'>12th</option> \
+                    <option value='NA'>Not Applicable</option> \
+                </select> \
+                 <div class='reason'> \
+                     <label>If not applicable, specify why.</label> \
+                     <textarea></textarea> \
+                 </div>");
+    $(document.body).append($q1);
+
+    $(document.body).append($survey);
+       
 }
 
 function homeScreen() {
