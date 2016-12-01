@@ -77,7 +77,7 @@ var viewModule = (function(tutorialModule) {
             </label>
             <label id='level'>Level
         </div>*/
-        
+        $(document.body).css("overflow", "hidden");
 
         var $homeButton = $("<div>", {id:"home"});
         $homeButton.append("<img src='svg/svg-home-icon.svg' alt='Home'>");
@@ -659,7 +659,9 @@ var viewModule = (function(tutorialModule) {
     }
 
     function nextLevel(state, callBacks, initializeNext) {
-
+        // Unlock the next level
+        unlocked++;
+        
         $homeSpan = $("<span>", {class:"button-home"});
         $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon.svg'>");
         $homeSpan.append("<span class='button-text'>Home</span>");

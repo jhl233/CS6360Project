@@ -1,5 +1,6 @@
 var session_id = "";
 var user_id = "";
+var unlocked = 1;
 
 $(document).ready(function() {
     $.ajax({
@@ -79,16 +80,20 @@ function homeScreen() {
 
 function showLevels() {
     $(document.body).empty();
+    $(document.body).css("overflow", "scroll");
     var $levelMain = $("<div>", {class: "level_main"});
     $levelMain.append("<p>Choose a level to start from!</p>");
 
     var $levelBox = $("<div>", {class: "level_box"});
     
-
-    var numLevels = 25;
-    for (var i = 1; i <= numLevels; i++) {
-         $levelBox.append("<div class='pot_box shadow' onClick='stateModule.initializeLevel(" 
+    for (var i = 1; i <= unlocked; i++) {
+        $levelBox.append("<div class='pot_box_unlocked shadow' onClick='stateModule.initializeLevel(" 
                           + i + ")'>Lv." + i + "</div>");
+    }
+    
+    var numLevels = 25;
+    for (var i = unlocked+1; i <= numLevels; i++) {
+        $levelBox.append("<div class='pot_box'>Lv." + i + "</div>");
     }
 
     $(document.body).append($levelMain);
