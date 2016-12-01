@@ -27,6 +27,7 @@ function homeScreen() {
 
 function showLevels() {
     $(document.body).empty();
+    $(document.body).css("overflow", "scroll");
     var $levelMain = $("<div>", {class: "level_main"});
     $levelMain.append("<p>Choose a level to start from!</p>");
 
@@ -39,7 +40,7 @@ function showLevels() {
     
     var numLevels = 25;
     for (var i = unlocked+1; i <= numLevels; i++) {
-        $levelBox.append("<div class='pot_box'>Lv." + i + "</div>")
+        $levelBox.append("<div class='pot_box'>Lv." + i + "</div>");
     }
 
     $(document.body).append($levelMain);
