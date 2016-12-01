@@ -101,6 +101,7 @@ var tutorialModule = (function() {
         $("#Broccoli-action").trigger("click");
         
         $("#tutorial").text("If you accidentally add too much of an item, you can hit the red minus sign to remove it. Go ahead and try it!");
+        $("#arrow5").remove();
         $("#tutorialOverlay1").height("65%");
         $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow5"}));
         $("#tutorial").off("click");
@@ -112,6 +113,7 @@ var tutorialModule = (function() {
         // TODO: Prevent all buttons other than remove button from being clicked
         var nextLevelHandler = function(e) {
             if ($(e.target).is("#Broccoli-minus")) {
+                $("#arrow5").remove();
                 $(".overlay").width("0%");
                 setTimeout(level2_3, 1000);
             }
@@ -122,7 +124,6 @@ var tutorialModule = (function() {
     
     function level2_3() {
         $(document).off("click.nextLevelHandler");
-        $("#arrow1").remove();
         $("#tutorial").text("Great, let's get started then!");
         $(".reactant-box-1").css("pointer-events", "all");
         $(".reactant-box-2").css("pointer-events", "all");
