@@ -1,6 +1,26 @@
+var session_id = "";
+var user_id = "";
+
 $(document).ready(function() {
-    homeScreen();
+    $.ajax({
+        url:"http://gdiac.cs.cornell.edu/cs6360/fall2016/page_load.php?game_id=2&client_timestamp=0",
+        dataType: "jsonp",
+
+        success: function(data) {
+            session_id = data["session_id"];
+            user_id = data["user_id"];
+            console.log(session_id);
+        },
+        error: function() {
+            alert("noo");
+        },
+    });
+    showPretest();
 });
+
+function showPretest() {
+    
+}
 
 function homeScreen() {
     $(document.body).empty();

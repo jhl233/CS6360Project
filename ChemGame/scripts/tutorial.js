@@ -102,7 +102,7 @@ var tutorialModule = (function() {
         
         $("#tutorial").text("If you accidentally add too much of an item, you can hit the red minus sign to remove it. Go ahead and try it!");
         $("#tutorialOverlay1").height("65%");
-        $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow1"}));
+        $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow5"}));
         $("#tutorial").off("click");
         $(".reactant-box-1").css("pointer-events", "none");
         $(".reactant-box-2").css("pointer-events", "none");
