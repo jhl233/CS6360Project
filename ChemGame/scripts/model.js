@@ -154,12 +154,12 @@ var stateModule = (function(viewModule, levelModule) {
     /* Precondition: It is possible to remove the reactant numTimes. */
      function removeReactant(reactant, numTimes) {
         if (currentState["reactants"][reactant] - numTimes >= 0) {
-            currentState["reactants"][reactant] -= numTimes;
+            //currentState["reactants"][reactant] -= numTimes;
             var compound = nameToObj(reactant);
             for (var k = 0; k < numTimes; k++) {
+                currentState["reactants"][reactant]--;
                 for (var elem in compound) {
                     for (var i = 0; i < compound[elem]; i++) {
-                        console.log("k: " + k + " i: " + i);
                         viewModule.removeReactant(elem, reactant);
                     }
                 }
@@ -172,21 +172,8 @@ var stateModule = (function(viewModule, levelModule) {
         if (currentState["products"][product] - numTimes >= 0) {
            for (var k = 0; k < numTimes; k++) {
                 currentState["products"][product]--;
-                console.log("amount of " + product + ": " + currentState["products"][product]);
                 viewModule.removeProduct(product);
             }
-            /*
-            var removePIntervalID = setInterval(function(){
-                if (numTimes == 0) {
-                    clearInterval(removePIntervalID);
-                    checkWin();
-                    return;
-                }
-                currentState["products"][product]--;
-                viewModule.removeProduct(product);
-                numTimes--;
-            }, 1000);
-            */
             checkWin();
         }
     }

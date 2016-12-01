@@ -659,7 +659,9 @@ var viewModule = (function(tutorialModule) {
     }
 
     function nextLevel(state, callBacks, initializeNext) {
-
+        // Unlock the next level
+        unlocked++;
+        
         $homeSpan = $("<span>", {class:"button-home"});
         $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon.svg'>");
         $homeSpan.append("<span class='button-text'>Home</span>");

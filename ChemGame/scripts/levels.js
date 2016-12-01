@@ -67,7 +67,7 @@ var levelModule = (function() {
                 "CarbonBacon2":      "l2/svg-product1-L2-incomplete-alien.svg",
                 "aCarbon":           "svg-c-atom.svg",
                 "aBacon":            "svg-bacon.svg",
-                "CarbonBacon2Plate": "grey_plate.svg",
+                "CarbonBacon2Plate": "pink_plate.svg",
                 "chef":              "alien&chef.png",
             },
             "names": {   
