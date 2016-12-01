@@ -595,6 +595,7 @@ body{
     color: #0EA6C5;
 }
 
+
 .test input{
     background-color: #ddd;
     border-radius: 5px;
@@ -629,3 +630,328 @@ body{
 .test .test-submit:hover{
     background-color: #0EA6C5;
 }
+
+.survey-text1{
+    position: absolute;
+    text-align: center;
+    left: 23%;
+    top: 9%;
+    font-size: 24px;
+    font-weight:600;
+    color: #0EA6C5;
+}
+
+.btn {
+  display:block;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid #45D0E2;
+  
+}
+
+.options
+{
+    position:relative;
+    top:250px;
+    left:150px;
+    
+}
+.test-submit1{
+    position:absolute;
+    top: 0px;
+    left: 30%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 3px solid #45D0E2;
+}
+.test-submit1:hover{
+    background-color: #45D0E2;
+}
+
+
+.test-submit2{
+    position: absolute;
+    top: 6px;
+    left: 34%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 3px solid #45D0E2;
+}
+.test-submit2:hover{
+    background-color: #45D0E2;
+}
+
+
+.test-submit3{
+    position: absolute;
+    top: 9px;
+    left: 37.2%;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 3px solid #45D0E2;
+}
+.test-submit3:hover{
+    background-color: #45D0E2;
+}
+
+.test-submit4{
+    position: absolute;
+    top: 6px;
+    left: 39.8%;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 3px solid #45D0E2;
+}
+.test-submit4:hover{
+    background-color: #45D0E2;
+}
+
+
+.test-submit5{
+    position:absolute;
+    top: 0px;
+    left: 43%;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 3px solid #45D0E2;
+}
+.test-submit5:hover{
+    background-color: #45D0E2;
+}
+
+.details
+{
+    position:relative;
+    top:310px;
+    left:475px;
+    display: inline;
+}
+
+.details div
+{
+    display: inline-block;
+    font-size: 12px;
+    width: 100px;
+   text-align: center; 
+    color: #0EA6C5;
+    font-weight: 400;
+}
+.details .n1
+{
+    position:absolute;
+    left:122px;
+    width:auto;
+    font-size: 16px;
+    color:#999999;
+}
+.details .n2
+{
+    position:absolute;
+    left:175px;
+    width:auto;
+    font-size: 16px;
+    color:#999999;
+}
+.details .n3
+{
+    position:absolute;
+    left:218px;
+    width:auto;
+    font-size: 16px;
+    color:#999999;
+}
+.details .n4
+{
+    position:absolute;
+    left:259px;
+    width:auto;
+    font-size: 16px;
+    color:#999999;
+}
+.details .n5
+{
+    position:absolute;
+    left:310px;
+    width:auto;
+    font-size: 16px;
+    color:#999999;
+}
+
+
+.details .label2
+{
+    position:absolute;
+    left:340px;
+}
+
+.q1
+{
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+}
+
+.q2
+{
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    top:300px;
+}
+
+.q3
+{
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    top:500px;
+}
+
+.q4
+{
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    top:600px;
+}
+
+.q5
+{
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    top:800px;
+}
+
+.questiontext
+{
+    position:absolute;
+    left:475px;
+    top:200px;
+}
+
+
+#ques1
+{
+    left:575px;
+}
+#ques3
+{
+    left:385px;
+}
+
+.reason
+{
+    position:relative;
+    top:325px;
+    left:550px;
+    display:block;
+    color:#666666;
+    font-weight:300;
+    font-size: 16px;
+    width:300px;
+}
+
+.reason label
+{
+    display:block;
+    text-align: center;
+    left:70px;
+}
+
+.reason textarea
+{
+    position: absolute;
+    top:30px;
+    left:5px;
+    width: 300px;
+    height: 100px;
+    border-radius: 6px;
+    border: 1px solid #0EA6C5;
+    padding:15px;
+    font-size: 14px;
+}
+
+#grade
+{
+    position:absolute;
+    top:250px;
+    left:635px;
+    height:40px;
+    font-size: 16px;
+    color: #0EA6C5;
+    background-color: white;
+    border: 1.5px solid #999999;
+}
+
+#grade option
+{
+    position:absolute;
+    top:239px;
+    left:635px;
+    height:40px;
+    font-size: 16px;
+    color: #0EA6C5;
+    background-color: white;
+    border: 2px solid;
+}
+
+.test-submit{
+    position: absolute;
+    top: 1000px;
+    left: 33.5%;
+    width: 30%;
+    height: 60px;
+    padding: 10px 20px;
+    background-color: #45D0E2;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+    border-radius: 15px;
+    margin-bottom: 50px;
+}
+.test-submit:hover{
+    background-color: #0EA6C5;
+}
+
+
+
+
+
