@@ -635,6 +635,61 @@ var levelModule = (function() {
             },
         },
         //level 23
+        //Cu + S -> Cu2S
+         {
+            "reactants": {
+                "Cu":0,
+                "S": 0,
+            },
+            "products": {
+                "Cu2S": 0,
+            },
+            "svgmap": {
+                "Cu":      "svg-reactant-Cu.svg",
+                "S":      "svg-reactant-S.svg",
+                "Cu2S":        "svg-product-Cu2S.svg",
+                "aCu":        "svg-fe-atom.svg",
+                "aS":        "svg-Cl-atom.svg",
+                "Cu2SPlate":   "pink_plate.svg",
+                "chef":       "alien.png",
+            },
+            "names": {
+                "Cu": "1 Cu",
+                "S": "2 S",
+                "Cu2S":   "2 Cu and 1 S",
+            },
+        },
+        //level 24 
+        //SnO2 + 2 H2 → Sn + 2 H2O
+        {
+            "reactants": {
+                "SnO2":0,
+                "H2": 0,
+            },
+            "products": {
+                "Sn": 0,
+                "H2O": 0,
+            },
+            "svgmap": {
+                "SnO2":      "svg-reactant-SnO2.svg",
+                "H2":      "svg-reactant-H2text.svg",
+                "Sn":        "svg-product-Sn.svg",
+                "H2O":        "svg-product-H2Otext.svg",
+                "aSn":        "svg-Cl-atom.svg",
+                "aO":        "svg-c-atom.svg",
+                "aH":         "svg-N-atom.svg",
+                "SnPlate":   "pink_plate.svg",
+                "H2OPlate":   "pink_plate.svg",
+                "chef":       "alien.png",
+            },
+            "names": {
+                "SnO2": "1 Sn and O 2",
+                "H2": "2 H",
+                "Sn":   "1 Sn",
+                "H2O":   "H 2 and 1 O",
+            },
+        },
+        //level 25
         //AlCl3 + Ca3N2 -> AlN + CaCl2
         {
             "reactants": {
@@ -664,7 +719,7 @@ var levelModule = (function() {
                 "AlN":   "1 Al and 1 N",
                 "CaCl2": "1 Ca and 2 Cl"
             },
-        },
+		},
     ];
 	console.log("Levels: ");
 	console.log(module.levels);
