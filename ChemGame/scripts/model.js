@@ -13,6 +13,7 @@ var stateModule = (function(viewModule, levelModule) {
     var currentLevel = {};
 
     var callBacks = {
+        initializeLevel: initializeLevel,
         addReactant: addReactant,
         addProduct: addProduct,
         removeReactant: removeReactant,

@@ -76,7 +76,8 @@ var tutorialModule = (function() {
         var $overlayBubble = $("<div>", {
             id: "tutorial",
             class:"overlay-bubble shadow",
-            text:"Good job with the 'Bacon Twins'! Not everyone makes it this far, but I can tell you've got potential. For this next order, you'll need to use two ingredients to make a new dish, 'Bacon Twins w/ Broccoli', aka 'Healthy Bacon'."});
+            text:"Good job with the 'Bacon Twins'! Not everyone makes it this far, but I can tell you've got potential. For this next order, you'll need to use two ingredients to make a new dish, 'Bacon Twins w/ Broccoli', aka 'Healthy Bacon'."
+        });
         var $overlayContent = $("<div>", {
             class:"overlay-content",
         });
@@ -103,6 +104,10 @@ var tutorialModule = (function() {
         $("#tutorialOverlay1").height("65%");
         $(".overlay-content").append($("<div>", {class:"arrow", id:"arrow1"}));
         $("#tutorial").off("click");
+        $(".reactant-box-1").css("pointer-events", "none");
+        $(".reactant-box-2").css("pointer-events", "none");
+        $(".product-box-1").css("pointer-events", "none");
+        $("#Broccoli-minus").css("pointer-events", "all");
         
         // TODO: Prevent all buttons other than remove button from being clicked
         var nextLevelHandler = function(e) {
@@ -119,6 +124,9 @@ var tutorialModule = (function() {
         $(document).off("click.nextLevelHandler");
         $("#arrow1").remove();
         $("#tutorial").text("Great, let's get started then!");
+        $(".reactant-box-1").css("pointer-events", "all");
+        $(".reactant-box-2").css("pointer-events", "all");
+        $(".product-box-1").css("pointer-events", "all");
         $(".overlay").width("100%");
         $("#tutorialOverlay1").height("100%");
         $("#tutorial").click(function() {$(".overlay").width('0%');});
