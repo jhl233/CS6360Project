@@ -1,12 +1,20 @@
 
-<svg width="104px" height="98px" viewBox="676 289 116 115" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+<svg width="99px" height="97px" viewBox="675 290 99 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
     <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(676.000000, 290.000000)">
-        <rect id="Rectangle-8" fill="#656565" transform="translate(90.455844, 88.455844) rotate(45.000000) translate(-90.455844, -88.455844) " x="60.9558441" y="81.9558441" width="59" height="13" rx="6.5"></rect>
-        <path d="M25.4917642,24.1170094 L32.6170094,24.1170094 L32.6170094,16.6170094 C32.6170094,12.4833021 29.2579907,9.11700936 25.1144311,9.11700936 L8.11958762,9.11700936 C3.98108836,9.11700936 0.617009358,12.4748737 0.617009358,16.6170094 L0.617009358,24.1170094 L7.74270345,24.1170094 C7.66064891,23.7984364 7.61700936,23.4647237 7.61700936,23.1211831 L7.61700936,19.1128356 C7.61700936,16.9060017 9.40872498,15.1170094 11.6117928,15.1170094 L21.622226,15.1170094 C23.8284839,15.1170094 25.6170094,16.9135306 25.6170094,19.1128356 L25.6170094,23.1211831 C25.6170094,23.4649953 25.5735211,23.7986657 25.4917642,24.1170094 Z" id="Combined-Shape" fill="#656565" transform="translate(16.617009, 16.617009) rotate(-45.000000) translate(-16.617009, -16.617009) "></path>
-        <ellipse id="Oval-3" fill="#656565" cx="52.5" cy="58.5" rx="51.5" ry="51.5"></ellipse>
-        <ellipse id="Oval-4" fill="#7A7A7A" cx="52.5" cy="58.5" rx="25.5" ry="25.5"></ellipse>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="98" height="97"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="98" height="97" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="pot2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(676.000000, 290.000000)">
+        <g id="Group">
+            <rect id="Rectangle-8" fill="#656565" transform="translate(76.419592, 75.265060) rotate(45.000000) translate(-76.419592, -75.265060) " x="51.4971786" y="69.7343586" width="49.8448276" height="11.0614035" rx="5.53070175"></rect>
+            <path d="M21.5361458,20.5206129 L27.5557495,20.5206129 L27.5557495,14.139034 C27.5557495,10.6217567 24.7179578,7.75745501 21.2173643,7.75745501 L6.85965174,7.75745501 C3.3633334,7.75745501 0.52126666,10.6145852 0.52126666,14.139034 L0.52126666,20.5206129 L6.5412496,20.5206129 C6.47192766,20.2495464 6.43505976,19.9655979 6.43505976,19.6732871 L6.43505976,16.2626756 C6.43505976,14.3849309 7.94875055,12.8627182 9.80996302,12.8627182 L18.2670531,12.8627182 C20.1309607,12.8627182 21.6419564,14.3913371 21.6419564,16.2626756 L21.6419564,19.6732871 C21.6419564,19.965829 21.6052162,20.2497415 21.5361458,20.5206129 Z" id="Combined-Shape" fill="#656565" transform="translate(14.038508, 14.139034) rotate(-45.000000) translate(-14.038508, -14.139034) "></path>
+            <ellipse id="Oval-3" fill="#656565" cx="44.3534483" cy="49.7763158" rx="43.5086207" ry="43.8201754"></ellipse>
+            <ellipse id="Oval-4" fill="#7A7A7A" cx="44.3534483" cy="49.7763158" rx="21.5431034" ry="21.6973684"></ellipse>
+        </g>
+        <use id="Rectangle" stroke="#FFFFFF" mask="url(#mask-2)" stroke-width="2" fill-opacity="0.661713089" fill="#FFFFFF" xlink:href="#path-1"></use>
     </g>
 </svg>
