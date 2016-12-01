@@ -12,5 +12,31 @@
     <title>Chemistry Kitchen</title>
 </head>
 <body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://gdiac.cs.cornell.edu/cs6360/fall2016/page_load.php?game_id=2&current_timestamp=0", true);
+        xhr.onload = function() {
+            alert("hello " + xhr.responseText);
+        };
+
+        xhr.onerror = function() {
+            alert("woops");
+        }
+        xhr.send();
+
+        $.ajax({
+            type:"GET",
+            url:"http://gdiac.cs.cornell.edu/cs6360/fall2016/page_load.php?game_id=2&current_timestamp=0",
+            contentType: 'text/plain',
+
+            success: function() {
+                alert("yay!");
+            },
+            error: function() {
+                alert("noo");
+            },
+        });
+
+    </script>
 </body>
 </html>
