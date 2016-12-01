@@ -107,12 +107,16 @@ var stateModule = (function(viewModule, levelModule) {
         currentState["reactants"][reactant] += numTimes;
         var compound = nameToObj(reactant);
         //Add once for greater sense of responsiveness
-        for (var elem in compound) {
-            for (var i = 0; i < compound[elem]; i++) {
-                viewModule.addReactant(elem, reactant);
+        for (var k = 0; k < numTimes; k++) {
+            for (var elem in compound) {
+                for (var i = 0; i < compound[elem]; i++) {
+                    viewModule.addReactant(elem, reactant);
+                }
             }
         }
-        numTimes--;
+        checkWin();
+        //numTimes--;
+        /*
         var addRIntervalID = setInterval(function(){
             if (numTimes == 0) {
                 clearInterval(addRIntervalID);
@@ -126,13 +130,17 @@ var stateModule = (function(viewModule, levelModule) {
             }
             numTimes--;
         }, 1000);
+        */
     }
 
     function addProduct(product, numTimes) {
         currentState["products"][product] += numTimes;
-        viewModule.addProduct(product);
-        numTimes--;
-        var addPIntervalID = setInterval(function(){
+        for (var k = 0; k < numTimes; k++) {
+            viewModule.addProduct(product);
+        }
+        checkWin();
+        //numTimes--;
+        /*var addPIntervalID = setInterval(function(){
             if (numTimes == 0) {
                 clearInterval(addPIntervalID);
                 checkWin();
@@ -140,7 +148,7 @@ var stateModule = (function(viewModule, levelModule) {
             }
             viewModule.addProduct(product);
             numTimes--;
-        }, 1000);
+        }, 1000);*/
     }
     
     /* Precondition: It is possible to remove the reactant numTimes. */
@@ -156,7 +164,7 @@ var stateModule = (function(viewModule, levelModule) {
                     }
                 }
             }
-            //checkWin();
+            checkWin();
         }
     }
 
@@ -179,6 +187,7 @@ var stateModule = (function(viewModule, levelModule) {
                 numTimes--;
             }, 1000);
             */
+            checkWin();
         }
     }
     

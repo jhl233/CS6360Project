@@ -540,20 +540,21 @@ var viewModule = (function(tutorialModule) {
                      $("#" + reactant+"-action").width() / 2 - 
                      $("img#" + elemId).width() / 2;
             
-            var yi = $("#" + reactant+"-action").offset().top + 
-                     $("#" + reactant+"-action").height() / 2 - 
-                     $("img#" + elemId).height() / 2;
-            
-            $("img#" + elemId).css("z-index", "2");
-            
-            $("img#" + elemId).animate(
-                {left: xi, top: yi}, 
-                {
-                    duration: 300,
-                    complete: function() {
-                        $("img#" + elemId).remove();
-                    }
-                });
+        var yi = $("#" + reactant+"-action").offset().top + 
+                 $("#" + reactant+"-action").height() / 2 - 
+                 $("img#" + elemId).height() / 2;
+
+        $("img#" + elemId).css("z-index", "2");
+
+        $("img#" + elemId).animate(
+            {left: xi, top: yi}, 
+            {
+                duration: 300,
+                complete: function() {
+                    $("img#" + elemId).remove();
+                }
+            }
+        );
     }
     
     function removeReactantFromView(elem, reactant) {
@@ -707,6 +708,7 @@ var viewModule = (function(tutorialModule) {
     }
 
     function showCheck(callBacks) {
+        $("#checkbutton").css("opacity", 0);
         for (elem in reactantView) {
 
             var modifyReactant = callBacks["modifyReactant"];
@@ -717,6 +719,12 @@ var viewModule = (function(tutorialModule) {
             var modifyProduct = callBacks["modifyProduct"];
             modifyProduct(elem);
         }
+        
+        setTimeout(function() {
+            if (!$("#winOverlay").is(":visible")) {
+                $("#checkbutton").css("opacity", 1);
+            }
+        }, 2000);
     }
 
     function closeOverlay(overlayID) {

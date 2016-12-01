@@ -553,7 +553,7 @@ body{
     border: 10px solid #535353;
     border-radius: 30px;
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     top: 30%;
     left: 35%;
     width: 30%;
