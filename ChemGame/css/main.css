@@ -451,7 +451,10 @@ body{
     position: absolute;
     top: 15%;
     left: 15%;
-    width: 70%;
+    width: 80%;
+    height: 75%;
+    margin-top: 30px;
+    overflow: scroll;
 }
 /*Change the background-image url to pot2.svg if the level is locked*/
 .pot_box{

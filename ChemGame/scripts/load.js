@@ -80,7 +80,7 @@ function homeScreen() {
 
 function showLevels() {
     $(document.body).empty();
-    $(document.body).css("overflow", "scroll");
+    $(".level_box").css("overflow", "scroll");
     var $levelMain = $("<div>", {class: "level_main"});
     $levelMain.append("<p>Choose a level to start from!</p>");
 

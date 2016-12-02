@@ -51,8 +51,8 @@ var stateModule = (function(viewModule, levelModule) {
             case 21: msg = "F is great for strong, healthy teeth!"; break;
             case 22: msg = "Hey, we can balance the odd and even O's again!"; break;
             case 23: msg = "Mmm, time to make the comfort foods of home!"; break;
-            case 24: msg = ""; break;
-            case 25: msg = ""; break;
+            case 24: msg = "I think you humans know Sn as tin, you know, the stuff soup cans are made of."; break;
+            case 25: msg = "Ca stands for calcium, like in milk. Drink it for strong, healthy bones!"; break;
             default: msg = "Need a hint? Click here!"; break;
         }
         return msg;
