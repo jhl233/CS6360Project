@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     if (Cookies.get('user_id') === undefined) {
         $.ajax({
-            url:"http://gdiac.cs.cornell.edu/cs6360/fall2016/page_load.php",
+            url:"https://gdiac.cs.cornell.edu/cs6360/fall2016/page_load.php",
             data: {
                 "game_id": 2,
                 "client_timestamp": currentTimestamp,

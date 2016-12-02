@@ -47,7 +47,7 @@ $(document).ready(function() {
             "t6_4": Cookies.get('t6_4'),
         };
         $.ajax({
-            url:"http://gdiac.cs.cornell.edu/cs6360/fall2016/player_quest.php",
+            url:"https://gdiac.cs.cornell.edu/cs6360/fall2016/player_quest.php",
             data: {
                 "game_id": 2,
                 "client_timestamp": currentTimestamp,
