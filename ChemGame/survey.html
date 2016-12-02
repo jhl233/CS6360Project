@@ -1,23 +1,24 @@
 <html>
   <head>
+    <meta charset="utf-8"/>
     <link href="css/main.css" rel="stylesheet" type="text/css" />
     <script src="scripts/jquery-3.1.1.min.js"></script>
-		<script src="scripts/survey.js"></script>
+    <script src="scripts/js.cookie.js"></script>
+    <script src="scripts/survey.js"></script>
   </head>
   
-  <body >
-    <script type="text/javascript">
-    </script>
-		<img src="img/chef&alien.png" id="surveyChef">
-			<div class="survey-text1">Before you begin, help us out by telling us a bit about yourself!</div>
-    
-			<form id="surveyForm" action="index.html"> 
-				<div class="q1">
-					<div class="questiontext" id="ques1">
-						<label>Q1. What grade are you in?</label>
-					</div>
-					<select id="grade" onchange="" size="1">
-						<option value="6">6th</option>
+  <body>
+      <img src="img/chef&alien.png" id="surveyChef">
+      <div class="survey-text1">Before you begin, help us out by telling us a bit about yourself!</div>
+
+      <form id="surveyForm" action="pretest.html"> 
+        <div class="q1">
+          <div class="questiontext" id="ques1">
+            <label>Q1. What grade are you in?</label>
+          </div>
+          <select id="grade" onchange="" size="1">
+            <option disabled selected value> -- choose -- </option>
+            <option value="6">6th</option>
             <option value="7">7th</option>
             <option value="8">8th</option>
             <option value="9">9th</option>
@@ -28,7 +29,7 @@
           </select>
           <div class="reason">
             <label>If not applicable, specify why.</label>
-            <textarea></textarea>
+            <textarea id="gradeExp"></textarea>
           </div>
         </div>
 
@@ -37,11 +38,11 @@
             <label>Q2. How familiar are you with Chemistry?</label>
           </div>
           <div class="options">
-            <div class="test-submit o1" onclick="changeColor(this)"></div>
-            <div class="test-submit o2" onclick="changeColor(this)"></div>
-            <div class="test-submit o3" onclick="changeColor(this)"></div>
-            <div class="test-submit o4" onclick="changeColor(this)"></div>
-            <div class="test-submit o5" onclick="changeColor(this)"></div>
+            <div class="test-submit o1" onclick="changeColor(this, 2, 1)"></div>
+            <div class="test-submit o2" onclick="changeColor(this, 2, 2)"></div>
+            <div class="test-submit o3" onclick="changeColor(this, 2, 3)"></div>
+            <div class="test-submit o4" onclick="changeColor(this, 2, 4)"></div>
+            <div class="test-submit o5" onclick="changeColor(this, 2, 5)"></div>
           </div>
           <div class="details">
             <div class="label1">
@@ -73,11 +74,11 @@
             <label>Q3. How comfortable are you with balancing chemical equations?</label>
           </div>
           <div class="options">
-            <div class="test-submit o1" onclick="changeColor(this)"></div>
-            <div class="test-submit o2" onclick="changeColor(this)"></div>
-            <div class="test-submit o3" onclick="changeColor(this)"></div>
-            <div class="test-submit o4" onclick="changeColor(this)"></div>
-            <div class="test-submit o5" onclick="changeColor(this)"></div>
+            <div class="test-submit o1" onclick="changeColor(this, 3, 1)"></div>
+            <div class="test-submit o2" onclick="changeColor(this, 3, 2)"></div>
+            <div class="test-submit o3" onclick="changeColor(this, 3, 3)"></div>
+            <div class="test-submit o4" onclick="changeColor(this, 3, 4)"></div>
+            <div class="test-submit o5" onclick="changeColor(this, 3, 5)"></div>
           </div>
           <div class="details">
             <div class="label1">

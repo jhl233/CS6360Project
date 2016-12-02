@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <script src="scripts/jquery-3.1.1.min.js"></script>
+        <script src="scripts/js.cookie.js"></script>
+        <script src="scripts/pretest.js"></script>
+    </head>
+    <body>
+      <img src="img/chef&alien.png" id="surveyChef">
+      <p class="pretest-text1">One more thing before we start: try (to the best of your ability) to balance these 6 equations. <br>You don't need to spend too much time on this, so if you get stuck just leave your best guess and move on. <br>Note: If you've never done this before, you may skip any or all by simply leaving the boxes as 0.</p>
+        <form class="test pretest-test" action="index.html">
+            <fieldset>
+                <label> <input name="test1_1" value="0" type="number"> C +</label>
+                <label><input name="test1_2" value="0" type="number">CO<sub>2</sub> =</label>
+                
+                <label><input name="test1_3" value="0" type="number">CO</label>
+            </fieldset>
+            <fieldset>
+                <label><input name="test2_1" value="0" type="number">Zn +</label>
+                <label><input name="test2_2" value="0" type="number">HCl =</label>
+                <label><input name="test2_3" value="0" type="number">ZnCl<sub>2</sub> +</label>
+                <label><input name="test2_4" value="0" type="number">H<sub>2</sub></label>
+            </fieldset>
+            <fieldset>
+                <label><input name="test3_1" value="0" type="number" min="0">CH<sub>4</sub> +</label>
+                <label><input name="test3_2" value="0" type="number" min="0">O<sub>2</sub> =</label>
+                <label><input name="test3_3" value="0" type="number" min="0">CO<sub>2</sub> +</label>
+                <label><input name="test3_4" value="0" type="number" min="0">H<sub>2</sub>O</label>
+            </fieldset>
+            <fieldset>
+                <label><input name="test4_1" value="0" type="number" min="0">Fe<sub>2</sub>O<sub>3</sub> +</label>
+                <label><input name="test4_2" value="0" type="number" min="0">CO =</label>
+                <label><input name="test4_3" value="0" type="number" min="0">Fe +</label>
+                <label><input name="test4_4" value="0" type="number" min="0">CO<sub>2</sub></label>
+            </fieldset>
+            <fieldset>
+                <label><input name="test5_1" value="0" type="number" min="0">Al +</label>
+                <label><input name="test5_2" value="0" type="number" min="0">CuSO<sub>4</sub> =</label>
+                <label><input name="test5_3" value="0" type="number" min="0">Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub> +</label>
+                <label><input name="test5_4" value="0" type="number" min="0">Cu</label>
+            </fieldset>
+            <fieldset>
+                <label><input name="test6_1" value="0" type="number" min="0">CH<sub>3</sub>OH +</label>
+                <label><input name="test6_2" value="0" type="number" min="0">O<sub>2</sub> =</label>
+                <label><input name="test6_3" value="0" type="number" min="0">CO<sub>2</sub> +</label>
+                <label><input name="test6_4" value="0" type="number" min="0">H<sub>2</sub>O</label>
+            </fieldset>
+            <button class="test-submit" onclick="submitPretest()">Submit</button>
+        </form>
+    </body>
+</html>

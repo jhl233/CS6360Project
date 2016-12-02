@@ -1,61 +1,81 @@
 var session_id = "";
 var user_id = "";
 var unlocked = 1;
+var cookiesEnabled = true;
 
 $(document).ready(function() {
-    $.ajax({
-        url:"http://gdiac.cs.cornell.edu/cs6360/fall2016/page_load.php?game_id=2&client_timestamp=0",
-        dataType: "jsonp",
+    if ((Cookies.get('surveyed') === undefined) && cookiesEnabled) {
+        window.location.replace('survey.html');
+        return;
+    }
+    if (typeof Cookies.get('q1') !== undefined) {
 
-        success: function(data) {
-            session_id = data["session_id"];
-            user_id = data["user_id"];
-            console.log(session_id);
-        },
-        error: function() {
-            console.log("fix this");
-            alert("noo");
-        },
-    });
+        var currentTimestamp = Math.floor(Date.now() / 1000);
+        var questDetail = {
+            "q1": Cookies.get("q1"),
+            "q1expl": Cookies.get("q1Exp"),
+            "q2": Cookies.get("q2"),
+            "q3": Cookies.get("q3"),
+            // test 1
+            "t1_1": Cookies.get('t1_1'),
+            "t1_2": Cookies.get('t1_2'),
+            "t1_3": Cookies.get('t1_3'),
+            // test 2
+            "t2_1": Cookies.get('t2_1'),
+            "t2_2": Cookies.get('t2_2'),
+            "t2_3": Cookies.get('t2_3'),
+            "t2_4": Cookies.get('t2_4'),
+            // test 3
+            "t3_1": Cookies.get('t3_1'),
+            "t3_2": Cookies.get('t3_2'),
+            "t3_3": Cookies.get('t3_3'),
+            "t3_4": Cookies.get('t3_4'),
+            // test 4
+            "t4_1": Cookies.get('t4_1'),
+            "t4_2": Cookies.get('t4_2'),
+            "t4_3": Cookies.get('t4_3'),
+            "t4_4": Cookies.get('t4_4'),
+            // test 5
+            "t5_1": Cookies.get('t5_1'),
+            "t5_2": Cookies.get('t5_2'),
+            "t5_3": Cookies.get('t5_3'),
+            "t5_4": Cookies.get('t5_4'),
+            // test 6
+            "t6_1": Cookies.get('t6_1'),
+            "t6_2": Cookies.get('t6_2'),
+            "t6_3": Cookies.get('t6_3'),
+            "t6_4": Cookies.get('t6_4'),
+        };
+        $.ajax({
+            url:"http://gdiac.cs.cornell.edu/cs6360/fall2016/player_quest.php",
+            data: {
+                "game_id": 2,
+                "client_timestamp": currentTimestamp,
+                "quest_id": 0,
+                "user_id": Cookies.get('user_id'),
+                "version_id": 0,
+                "session_seq_id": 0,
+                "session_id": Cookies.get('session_id'),
+                "quest_detail": JSON.stringify(questDetail),
+            },
+            dataType: "jsonp",
+
+            success: function(data) {
+                console.log(data);
+                alert("Got stuff back!");
+            },
+            error: function() {
+                console.log("fix this");
+                alert("noo");
+            },
+        });
+        Cookies.remove('q1');
+        Cookies.remove('q1expl');
+        Cookies.remove('q2');
+        Cookies.remove('q3');
+    }
     homeScreen();
 });
-
-function submitSurvey() {
-    alert("no");
-    console.log("hayy");
-}
-
-function showSurvey() {
-    $(document.body).empty();
-
-    var $survey = $("<div>");
-    $survey.append("<img src='img/chef&alien.png' id='surveyChef'>");
-    $survey.append("<p id='surveyP' class='survey-text1'>Before we begin, help us out by telling us a bit about yourself.</p>");
-
-    var $q1 = $("<div>", {class:"q1"});
-    $q1.append("<div class='questiontext' id='ques1'><label>Q1. What grade are you in?</label></div>");
-    $q1.append(" <div class='questiontext' id='ques1'> \
-                    <label>Q1. What grade are you in?</label> \
-                </div> \
-                <select id='grade' onchange='' size='1'> \
-                    <option value='6'>6th</option> \
-                    <option value='7'>7th</option> \
-                    <option value='8'>8th</option> \
-                    <option value='9'>9th</option> \
-                    <option value='10'>10th</option> \
-                    <option value='11'>11th</option> \
-                    <option value='12'>12th</option> \
-                    <option value='NA'>Not Applicable</option> \
-                </select> \
-                 <div class='reason'> \
-                     <label>If not applicable, specify why.</label> \
-                     <textarea></textarea> \
-                 </div>");
-    $(document.body).append($q1);
-
-    $(document.body).append($survey);
-       
-}
 
 function homeScreen() {
     $(document.body).empty();

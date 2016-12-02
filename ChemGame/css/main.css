@@ -591,23 +591,33 @@ body{
     width: 30%;
 }
 
-.test{
-    margin-top: 11%;
-    margin-left: 30%;
-    font-size: 20px;
-    color: #333;
-    font-weight: 600;
-}
-.test-text{
+.pretest-text1{
     position: absolute;
     text-align: center;
-    left: 30%;
-    top: 9%;
-    font-size: 24px;
+    width: 70%;
+    left:15%;
+    min-width:500px;
+    top: 150px;
+    font-size: 18px;
     font-weight:600;
     color: #0EA6C5;
 }
 
+.test{
+    position: absolute;
+    top: 35%;
+    height: 60%;
+    width: 70%;
+    min-width:500px;
+    margin-left: 15%;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.pretest-test {
+    overflow-y: scroll;
+}
 
 .test input{
     background-color: #ddd;
@@ -624,11 +634,12 @@ body{
     border: none;
     display: block;
     height: 10%;
+    float: left;
 }
 
 .test .test-submit{
     position: absolute;
-    top: 85%;
+    top: 580px;
     left: 30%;
     width: 30%;
     height: 60px;
@@ -652,6 +663,8 @@ body{
     font-size: 24px;
     font-weight:600;
     color: #0EA6C5;
+    clear: both;
+    float: left;
 }
 
 .btn {
@@ -800,7 +813,6 @@ body{
     color: #333;
     font-weight: 600;
     top:280px;
-    /*width:100%;*/
 }
 
 .q3
@@ -816,7 +828,6 @@ body{
 {
     position:absolute;
     top:85px;
-    /*left:550px;*/
     display:block;
     color:#666666;
     font-weight:300;
@@ -892,6 +903,18 @@ body{
     padding-top: 10px;
     left: 42%;
     width:200px;
+    clear: both;
+    float:left;
+}
+
+#surveyChefWrap {
+    position: absolute;
+    float:left;
+    height:200px;
+}
+
+.wrapper {
+/*    display: inline-block;*/
 }
 
 #surveyForm {
@@ -907,3 +930,8 @@ body{
     padding: 30px;
 }
 
+fieldset {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    clear:both;
+}
