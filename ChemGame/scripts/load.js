@@ -17,7 +17,7 @@ $(document).ready(function() {
             alert("noo");
         },
     });
-    showSurvey();
+    homeScreen();
 });
 
 function submitSurvey() {

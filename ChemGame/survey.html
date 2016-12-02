@@ -1,23 +1,17 @@
 <html>
   <head>
     <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+		<script src="scripts/survey.js"></script>
   </head>
   
   <body >
     <script type="text/javascript">
-      function changeColor(btn)
-      {
-        var children=btn.parentNode.children;
-        for (var i = 0; i < children.length; i++) {
-          children[i].style.backgroundColor="#FFFFFF";
-        }     
-        btn.style.backgroundColor="#45D0E2";
-      }
     </script>
 		<img src="img/chef&alien.png" id="surveyChef">
 			<div class="survey-text1">Before you begin, help us out by telling us a bit about yourself!</div>
     
-			<form id="surveyForm"> 
+			<form id="surveyForm" action="index.html"> 
 				<div class="q1">
 					<div class="questiontext" id="ques1">
 						<label>Q1. What grade are you in?</label>
@@ -87,7 +81,7 @@
           </div>
           <div class="details">
             <div class="label1">
-              <label>What does that mean...?</label>
+              <label>What does that mean?</label>
             </div>
             <div class="n1">
               <label>1</label>
@@ -110,7 +104,7 @@
           </div>
         </div>
 
-        <button class="submit-survey" onClick="submitSurvey()">Next</button> 
+        <button class="submit-survey" onclick="submitSurvey()">Next</button> 
     </div>
   </form>
 </body>
