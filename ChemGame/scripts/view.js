@@ -64,19 +64,6 @@ var viewModule = (function(tutorialModule) {
         productView = {};
         svgMap = state["svgmap"];
 
-        /*<div id='home'>
-            <img src='svg/svg-home-icon.svg' alt='Home'>
-        </div>
-        <div id='reset'>
-            <img src='svg/svg-replay.svg' alt='Reset'>
-        </div>
-        <div id='output'>
-            <img id='chef' src='img/chef.png' alt='Chef'>
-            <label id='hint' onClick='viewModule.showHint()'>
-                Need a hint?
-            </label>
-            <label id='level'>Level
-        </div>*/
         $(document.body).css("overflow", "hidden");
 
         var $homeButton = $("<div>", {id:"home"});
@@ -85,8 +72,6 @@ var viewModule = (function(tutorialModule) {
 
         var $resetButton = $("<div>", {id:"reset"});
         $resetButton.append("<img src='svg/svg-replay.svg' alt='Reset'>");
-        //$resetButton.append("<img class='button-icon' src='svg/svg-replay.svg'>");
-        //$resetButton.append("<span class='button-text'>Reset</span>");
         $resetButton.click(function(){
             $("#worktable").empty();
             $(document.body).empty();
@@ -661,6 +646,8 @@ var viewModule = (function(tutorialModule) {
     function nextLevel(state, callBacks, initializeNext) {
         // Unlock the next level
         unlocked++;
+        if (unlocked > 25) unlocked = 25;
+        Cookies.set('unlocked', unlocked);
         
         $homeSpan = $("<span>", {class:"button-home"});
         $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon.svg'>");
@@ -672,7 +659,11 @@ var viewModule = (function(tutorialModule) {
 
         $nextSpan = $("<div>", {class:"overlay-bubble shadow"});
         
-        $nextSpan.append("<p>Click here to go to the next level!</p>");
+        if (state["level"] == 25) {
+            $nextSpan.append("<p>Congratulations! You finished the game!</p>");
+        } else {
+            $nextSpan.append("<p>Click here to go to the next level!</p>");
+        }
         
         showReactantsAndProductsBench(state, callBacks, $nextSpan, false, false);
 
@@ -687,6 +678,13 @@ var viewModule = (function(tutorialModule) {
             $overlay.remove();
             $("#worktable").empty();
             $(document.body).empty();
+            if (state['level'] == 25) {
+                if (cookiesEnabled && 
+                        (typeof Cookies.get('user_id') !== 'undefined'))
+                    window.location.replace('posttest.html');
+                else homeScreen();
+                return;
+            } 
             initializeNext();
         });
         $replaySpan.click(function(){
