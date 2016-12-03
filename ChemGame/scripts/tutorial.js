@@ -7,6 +7,7 @@ var tutorialModule = (function() {
         11: level11,
         12: level12,
         19: level19,
+        26: gameEnd,
     }
 
     function checkTutorials(levelNum) {

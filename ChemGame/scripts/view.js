@@ -653,7 +653,7 @@ var viewModule = (function(tutorialModule) {
         $nextSpan = $("<div>", {class:"overlay-bubble shadow"});
         
         if (state["level"] == 25) {
-            $nextSpan.append("<p>Congratulations! You finished the game!</p>");
+            $nextSpan.append("<p>CONGRATULATIONS, YOU FINISHED THE GAME! YOU ARE NOW A MASTER CHEF!</p>");
         } else {
             $nextSpan.append("<p>Click here to go to the next level!</p>");
         }
