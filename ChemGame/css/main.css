@@ -582,11 +582,13 @@ body{
     background-color: #F5B523;
 }
 .checktext{
+    position: absolute;
+    text-align: center;
     font-family: OpenSans-Extrabold;
-    font-size: 64px;
+    font-size: 48px;
     color: #FFFFFF;
     letter-spacing: 1.3px;
-    top: 30%;
+    top: 35%;
     left: 35%;
     width: 30%;
 }

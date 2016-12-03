@@ -13,6 +13,7 @@ var stateModule = (function(viewModule, levelModule) {
     var currentLevel = {};
 
     var callBacks = {
+        getCurrentLevel: getCurrentLevel,
         initializeLevel: initializeLevel,
         addReactant: addReactant,
         addProduct: addProduct,
@@ -107,60 +108,39 @@ var stateModule = (function(viewModule, levelModule) {
         currentState["reactants"][reactant] += numTimes;
         var compound = nameToObj(reactant);
         //Add once for greater sense of responsiveness
-        for (var k = 0; k < numTimes; k++) {
-            for (var elem in compound) {
-                for (var i = 0; i < compound[elem]; i++) {
-                    viewModule.addReactant(elem, reactant);
+        if (currentState["level"] < 23) {
+            for (var k = 0; k < numTimes; k++) {
+                for (var elem in compound) {
+                    for (var i = 0; i < compound[elem]; i++) {
+                        viewModule.addReactant(elem, reactant);
+                    }
                 }
             }
         }
         checkWin();
-        //numTimes--;
-        /*
-        var addRIntervalID = setInterval(function(){
-            if (numTimes == 0) {
-                clearInterval(addRIntervalID);
-                checkWin();
-                return;
-            }
-            for (var elem in compound) {
-                for (var i = 0; i < compound[elem]; i++) {
-                    viewModule.addReactant(elem, reactant);
-                }
-            }
-            numTimes--;
-        }, 1000);
-        */
     }
 
     function addProduct(product, numTimes) {
         currentState["products"][product] += numTimes;
-        for (var k = 0; k < numTimes; k++) {
-            viewModule.addProduct(product);
+        if (currentState["level"] < 23) {
+            for (var k = 0; k < numTimes; k++) {
+                viewModule.addProduct(product);
+            }
         }
         checkWin();
-        //numTimes--;
-        /*var addPIntervalID = setInterval(function(){
-            if (numTimes == 0) {
-                clearInterval(addPIntervalID);
-                checkWin();
-                return;
-            }
-            viewModule.addProduct(product);
-            numTimes--;
-        }, 1000);*/
     }
     
     /* Precondition: It is possible to remove the reactant numTimes. */
      function removeReactant(reactant, numTimes) {
         if (currentState["reactants"][reactant] - numTimes >= 0) {
-            //currentState["reactants"][reactant] -= numTimes;
-            var compound = nameToObj(reactant);
-            for (var k = 0; k < numTimes; k++) {
-                currentState["reactants"][reactant]--;
-                for (var elem in compound) {
-                    for (var i = 0; i < compound[elem]; i++) {
-                        viewModule.removeReactant(elem, reactant);
+            currentState["reactants"][reactant] -= numTimes;
+            if (currentState["level"] < 23) {
+                var compound = nameToObj(reactant);
+                for (var k = 0; k < numTimes; k++) {
+                    for (var elem in compound) {
+                        for (var i = 0; i < compound[elem]; i++) {
+                            viewModule.removeReactant(elem, reactant);
+                        }
                     }
                 }
             }
@@ -170,11 +150,13 @@ var stateModule = (function(viewModule, levelModule) {
 
     function removeProduct(product, numTimes) {
         if (currentState["products"][product] - numTimes >= 0) {
-           for (var k = 0; k < numTimes; k++) {
-                currentState["products"][product]--;
-                viewModule.removeProduct(product);
-            }
-            checkWin();
+           currentState["products"][product] -= numTimes;
+           if (currentState["level"] < 23) {
+               for (var k = 0; k < numTimes; k++) {
+                    viewModule.removeProduct(product);
+                }
+           }
+           checkWin();
         }
     }
     
@@ -230,8 +212,16 @@ var stateModule = (function(viewModule, levelModule) {
          for (var elem in reactantElements) {
              var elemDisp = elem.toLowerCase();
              if (productElements.hasOwnProperty(elem) && reactantElements[elem] !== productElements[elem]) {
-                 return "Try increasing or decreasing the amount of " + elemDisp + "!";
+                 //return "Try increasing or decreasing the amount of " + elemDisp + "!";
+                 return "Try working with the " + elemDisp + "now!";
              }
+             /*if (productElements.hasOwnProperty(elem)) {
+                 if (reactantElements[elem] < productElements[elem]) {
+                     
+                 } else if (reactantElements[elem] > productElements[elem]) {
+                     
+                 }
+             }*/
          }
     }
 
