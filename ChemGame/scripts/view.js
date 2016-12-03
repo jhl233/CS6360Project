@@ -713,6 +713,7 @@ var viewModule = (function(tutorialModule) {
         // When check button is clicked, hide the check button and show any hidden elements
         $("#checkbutton").css("opacity", 0);
         $("#worktable").children(":not('#checkbutton')").show(500);
+        
         for (elem in reactantView) {
 
             var modifyReactant = callBacks["modifyReactant"];
