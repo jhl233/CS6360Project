@@ -645,7 +645,18 @@ var levelModule = (function() {
                 "Cu2S": 0,
             },
             "svgmap": {
-
+                "Cu":      "svg-reactant-Cu.svg",                           
+                "S":      "svg-reactant-S.svg",                             
+                "Cu2S":        "svg-product-Cu2S.svg",                      
+                "aCu":        "svg-fe-atom.svg",                            
+                "aS":        "svg-Cl-atom.svg",                             
+                "Cu2SPlate":   "pink_plate.svg",                            
+                "chef":       "alien.png",
+            },
+            "names": {
+                "Cu": "1 Cu",
+                "S": "1 S",
+                "CuS":   "1 Cu and 1 S",
             },
         },
         //level 24 
