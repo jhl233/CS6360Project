@@ -582,18 +582,8 @@ var viewModule = (function(tutorialModule) {
                                 var element = elemId.substr(0, indexOfFirstDigit);
                                 var prevPosition = $("#" + elemId).position();
 
-                                //$("img#" + elemId).remove();
-                                // Check whether it was specifically elem that was removed
-                                //if (!elementRemoved && element === elem) {                              
-                                //    elementRemoved = true;
-                                //    addReactantBackToPlate(elemId, reactant);
-
-                                // If not, make it a free element on the left-hand side of the screen
-                               // } else {
-                                    // Delete the element from the screen
-                                    $("img#" + elemId).remove(); // remove from product plate
-                                    addReactantBackToWorktable(element, prevPosition);
-                                //}
+                                $("img#" + elemId).remove(); // remove from product plate
+                                addReactantBackToWorktable(element, prevPosition);
                             }
                         }
                         // Continue searching if we have not found a filled product

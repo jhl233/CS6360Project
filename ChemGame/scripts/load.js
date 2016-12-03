@@ -58,7 +58,8 @@ function showLevels() {
     var numLevels = 25;
     for (var i = unlocked+1; i <= numLevels; i++) {
         console.log(i);
-        $levelBox.append("<div class='pot_box'>Lv." + i + "</div>");
+        //$levelBox.append("<div class='pot_box'>Lv." + i + "</div>");
+        $levelBox.append("<div class='pot_box'>.</div>");
     }
 
     $(document.body).append($levelMain);

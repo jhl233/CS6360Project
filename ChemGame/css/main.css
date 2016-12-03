@@ -460,7 +460,7 @@ body{
 .pot_box{
     background-image: url(../svg/pot2.svg);
     background-repeat: no-repeat;
-    color: #45D0E2;
+    color: #EFD358;/*#45D0E2;*/
     font-size: 1.5em;
     text-align: center;
     line-height: 100px;
