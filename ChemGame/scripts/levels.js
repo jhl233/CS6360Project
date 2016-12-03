@@ -319,7 +319,7 @@ var levelModule = (function() {
                 "O2":              "svg-O2.svg",
                 "Broccoli2O":      "svg-broccoli2O.svg",
                 "aBroccoli":       "l2/svg-broccoli.svg",
-                "aO":              "svg-O-atom.svg",
+                "aO":              "svg-o-atom.svg",
                 "Broccoli2OPlate": "pink_plate.svg",
                 "chef":            "chef&alien.png",
             },
