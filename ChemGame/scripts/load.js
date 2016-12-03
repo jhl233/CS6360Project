@@ -15,7 +15,7 @@ $(document).ready(function() {
     if (Cookies.get('unlocked') === undefined) {
         Cookies.set('unlocked', unlocked);
     } else {
-        unlocked = Cookies.get('unlocked');
+        unlocked = parseInt(Cookies.get('unlocked'));
     }
     homeScreen();
 });
@@ -48,6 +48,7 @@ function showLevels() {
     $levelMain.append("<p>Choose a level to start from!</p>");
 
     var $levelBox = $("<div>", {class: "level_box"});
+    console.log("unlocked: " + unlocked);
     
     for (var i = 1; i <= unlocked; i++) {
         $levelBox.append("<div class='pot_box_unlocked shadow' onClick='stateModule.initializeLevel(" 
@@ -56,6 +57,7 @@ function showLevels() {
     
     var numLevels = 25;
     for (var i = unlocked+1; i <= numLevels; i++) {
+        console.log(i);
         $levelBox.append("<div class='pot_box'>Lv." + i + "</div>");
     }
 

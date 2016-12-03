@@ -346,7 +346,10 @@ var viewModule = (function(tutorialModule) {
         }
     }
 
-    function addReactantToView(elem, reactant = "") {
+    function addReactantToView(elem, reactant) {
+        if (reactant === undefined) {
+            reactant = "";
+        }
         var width = $("#worktable").width();
         var height = $("#worktable").height();
         var worktabley = $("#worktable").position().top + 30;
