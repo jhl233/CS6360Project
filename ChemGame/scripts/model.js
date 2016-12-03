@@ -23,8 +23,6 @@ var stateModule = (function(viewModule, levelModule) {
         modifyProduct: modifyProduct,
     };
     
-    var isTutorialLevel = false;
-
     function getCurrentLevel() {
         return currentState["level"];
     }
@@ -64,7 +62,7 @@ var stateModule = (function(viewModule, levelModule) {
      * initializeLevel
      * given [levelNum], populates currentState
      * */
-    function initializeLevel(levelNum, isTutorial = false) {
+    function initializeLevel(levelNum) {
         currentLevel = levelModule.levels[levelNum];
         currentState["reactants"] = {};
         currentState["products"] = {};
@@ -72,8 +70,6 @@ var stateModule = (function(viewModule, levelModule) {
         currentState["names"] = {};
         currentState["initMessage"] = getInitMessage(levelNum);
         
-        isTutorialLevel = isTutorial;
-
         var i = 1;
         for (var reactant in currentLevel["reactants"]) {
             currentState["reactants"][reactant] = currentLevel["reactants"][reactant];
@@ -95,7 +91,7 @@ var stateModule = (function(viewModule, levelModule) {
     }
     
     function checkWin() {
-        if (!isTutorialLevel && isBalanced(currentLevel, currentState) == 1) {
+        if (isBalanced(currentLevel, currentState) == 1) {
             setTimeout(function(){
                 viewModule.nextLevel(currentState, callBacks, function() {
                     initializeLevel(currentState["level"]+1);
