@@ -1,5 +1,5 @@
-var unlocked = 25;
-var cookiesEnabled = false; // Set this to false if locally
+var unlocked = 1;
+var cookiesEnabled = true; // Set this to false if locally
                            // developing on chrome
 
 $(document).ready(function() {
@@ -11,7 +11,12 @@ $(document).ready(function() {
         logPretestResults();
         cleanPretestCookies();
     }
-    Cookies.set('unlocked', unlocked);
+
+    if (Cookies.get('unlocked') === undefined) {
+        Cookies.set('unlocked', unlocked);
+    } else {
+        unlocked = Cookies.get('unlocked');
+    }
     homeScreen();
 });
 
