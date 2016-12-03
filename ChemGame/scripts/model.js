@@ -51,8 +51,8 @@ var stateModule = (function(viewModule, levelModule) {
             case 21: msg = "F is great for strong, healthy teeth!"; break;
             case 22: msg = "Hey, we can balance the odd and even O's again!"; break;
             case 23: msg = "Mmm, time to make the comfort foods of home!"; break;
-            case 24: msg = ""; break;
-            case 25: msg = ""; break;
+            case 24: msg = "I think you humans know Sn as tin, you know, the stuff soup cans are made of."; break;
+            case 25: msg = "Ca stands for calcium, like in milk. Drink it for strong, healthy bones!"; break;
             default: msg = "Need a hint? Click here!"; break;
         }
         return msg;
@@ -154,12 +154,12 @@ var stateModule = (function(viewModule, levelModule) {
     /* Precondition: It is possible to remove the reactant numTimes. */
      function removeReactant(reactant, numTimes) {
         if (currentState["reactants"][reactant] - numTimes >= 0) {
-            currentState["reactants"][reactant] -= numTimes;
+            //currentState["reactants"][reactant] -= numTimes;
             var compound = nameToObj(reactant);
             for (var k = 0; k < numTimes; k++) {
+                currentState["reactants"][reactant]--;
                 for (var elem in compound) {
                     for (var i = 0; i < compound[elem]; i++) {
-                        console.log("k: " + k + " i: " + i);
                         viewModule.removeReactant(elem, reactant);
                     }
                 }
@@ -172,21 +172,8 @@ var stateModule = (function(viewModule, levelModule) {
         if (currentState["products"][product] - numTimes >= 0) {
            for (var k = 0; k < numTimes; k++) {
                 currentState["products"][product]--;
-                console.log("amount of " + product + ": " + currentState["products"][product]);
                 viewModule.removeProduct(product);
             }
-            /*
-            var removePIntervalID = setInterval(function(){
-                if (numTimes == 0) {
-                    clearInterval(removePIntervalID);
-                    checkWin();
-                    return;
-                }
-                currentState["products"][product]--;
-                viewModule.removeProduct(product);
-                numTimes--;
-            }, 1000);
-            */
             checkWin();
         }
     }
@@ -243,8 +230,16 @@ var stateModule = (function(viewModule, levelModule) {
          for (var elem in reactantElements) {
              var elemDisp = elem.toLowerCase();
              if (productElements.hasOwnProperty(elem) && reactantElements[elem] !== productElements[elem]) {
-                 return "Try increasing or decreasing the amount of " + elemDisp + "!";
+                 //return "Try increasing or decreasing the amount of " + elemDisp + "!";
+                 return "Try working with the " + elemDisp + "now!";
              }
+             /*if (productElements.hasOwnProperty(elem)) {
+                 if (reactantElements[elem] < productElements[elem]) {
+                     
+                 } else if (reactantElements[elem] > productElements[elem]) {
+                     
+                 }
+             }*/
          }
     }
 

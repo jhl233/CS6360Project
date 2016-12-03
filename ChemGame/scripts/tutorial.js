@@ -6,6 +6,7 @@ var tutorialModule = (function() {
         3: level3,
         11: level11,
         12: level12,
+        19: level19,
     }
 
     function checkTutorials(levelNum) {
@@ -290,6 +291,48 @@ var tutorialModule = (function() {
         $overlay.append($overlayContent);
     
         $(document.body).append($overlay);
+    }
+    
+    function level19() {
+        $("#checkbutton").css("opacity", 0);
+        $("#checkbutton").css("pointer-events", "none");
+        
+        var $overlayBubble = $("<div>", {
+           id: "tutorial",
+           class: "overlay-bubble shadow",
+           text: "You know what? I think it's time for the next step of your cooking journey! All amazing chefs can eyeball the number of ingredients that they need."
+        });
+        var $overlayContent = $("<div>", {
+           class: "overlay-content", 
+        });
+        $overlayBubble.click(level19_2);
+        $overlayContent.append("<img id='chefPic' src='img/chef2.png' class='overlay-img'>");
+        $overlayContent.append($overlayBubble);
+    
+        $closeButton = $("<a id='closebtn'>&times;</a>");
+        $closeButton.click(homeScreen);
+    
+        var $overlay = $("<div>", {class: "overlay", id:"tutorialOverlay1"});
+        $overlay.append($closeButton);
+        $overlay.append($overlayContent);
+    
+        $(document.body).append($overlay);
+    }
+    
+    function level19_2() {
+        $("#chefPic").attr("src", "img/chef2.png");
+        $("#tutorial").text("So, I'm adding a Check button. When you click on it, you have five seconds to see your current results on the table before the check button reappears and blocks your view.");
+        $("#tutorial").click(level19_3);
+    }
+    
+    function level19_3() {
+        $("#chefPic").attr("src", "img/alien.png");
+        $("#tutorial").text("Oh boy, you got it!!!");
+        $("#tutorial").click(function() {
+            $(".overlay").width("0%");
+            $("#checkbutton").css("opacity", 1);
+            $("#checkbutton").css("pointer-events", "all");
+        });
     }
 
     return {

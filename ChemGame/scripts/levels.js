@@ -67,7 +67,7 @@ var levelModule = (function() {
                 "CarbonBacon2":      "l2/svg-product1-L2-incomplete-alien.svg",
                 "aCarbon":           "svg-c-atom.svg",
                 "aBacon":            "svg-bacon.svg",
-                "CarbonBacon2Plate": "grey_plate.svg",
+                "CarbonBacon2Plate": "pink_plate.svg",
                 "chef":              "alien&chef.png",
             },
             "names": {   
@@ -593,7 +593,7 @@ var levelModule = (function() {
                 "aN":         "svg-N-atom.svg",
                 "aH":         "svg-atom-H.svg",
                 "aF":         "svg-F-atom.svg",
-                "NH4F2Plate": "grey_plate.svg",
+                "NH4FPlate": "grey_plate.svg",
                 "NF3Plate":   "pink_plate.svg",
                 "chef":       "alien.png",
             }, 
@@ -645,18 +645,7 @@ var levelModule = (function() {
                 "Cu2S": 0,
             },
             "svgmap": {
-                "Cu":      "svg-reactant-Cu.svg",
-                "S":      "svg-reactant-S.svg",
-                "Cu2S":        "svg-product-Cu2S.svg",
-                "aCu":        "svg-fe-atom.svg",
-                "aS":        "svg-Cl-atom.svg",
-                "Cu2SPlate":   "pink_plate.svg",
-                "chef":       "alien.png",
-            },
-            "names": {
-                "Cu": "1 Cu",
-                "S": "2 S",
-                "Cu2S":   "2 Cu and 1 S",
+
             },
         },
         //level 24 
@@ -719,7 +708,7 @@ var levelModule = (function() {
                 "AlN":   "1 Al and 1 N",
                 "CaCl2": "1 Ca and 2 Cl"
             },
-        },
+		},
     ];
 	console.log("Levels: ");
 	console.log(module.levels);

@@ -77,7 +77,7 @@ var viewModule = (function(tutorialModule) {
             </label>
             <label id='level'>Level
         </div>*/
-        
+        $(document.body).css("overflow", "hidden");
 
         var $homeButton = $("<div>", {id:"home"});
         $homeButton.append("<img src='svg/svg-home-icon.svg' alt='Home'>");
@@ -659,7 +659,9 @@ var viewModule = (function(tutorialModule) {
     }
 
     function nextLevel(state, callBacks, initializeNext) {
-
+        // Unlock the next level
+        unlocked++;
+        
         $homeSpan = $("<span>", {class:"button-home"});
         $homeSpan.append("<img class='button-icon' src='svg/svg-home-icon.svg'>");
         $homeSpan.append("<span class='button-text'>Home</span>");
@@ -708,7 +710,9 @@ var viewModule = (function(tutorialModule) {
     }
 
     function showCheck(callBacks) {
+        // When check button is clicked, hide the check button and show any hidden elements
         $("#checkbutton").css("opacity", 0);
+        $("#worktable").children(":not('#checkbutton')").show(500);
         for (elem in reactantView) {
 
             var modifyReactant = callBacks["modifyReactant"];
@@ -720,9 +724,15 @@ var viewModule = (function(tutorialModule) {
             modifyProduct(elem);
         }
         
+        // Show the check button and hide all elements
         setTimeout(function() {
             if (!$("#winOverlay").is(":visible")) {
-                $("#checkbutton").css("opacity", 1);
+                $("#worktable").children(":not('#checkbutton')").hide(500);
+                $("#worktable").append("<div class='checktext'>Try Again!</div>");
+                setTimeout(function() {
+                    $(".checktext").remove();
+                    $("#checkbutton").css("opacity", 1);
+                }, 2000);
             }
         }, 2000);
     }
