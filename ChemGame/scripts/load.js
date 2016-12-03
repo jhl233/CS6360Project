@@ -1,7 +1,7 @@
 var session_id = "";
 var user_id = "";
-var unlocked = 1;
-var cookiesEnabled = true;
+var unlocked = 25;
+var cookiesEnabled = false;
 
 $(document).ready(function() {
     if ((Cookies.get('surveyed') === undefined) && cookiesEnabled) {

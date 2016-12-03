@@ -230,8 +230,16 @@ var stateModule = (function(viewModule, levelModule) {
          for (var elem in reactantElements) {
              var elemDisp = elem.toLowerCase();
              if (productElements.hasOwnProperty(elem) && reactantElements[elem] !== productElements[elem]) {
-                 return "Try increasing or decreasing the amount of " + elemDisp + "!";
+                 //return "Try increasing or decreasing the amount of " + elemDisp + "!";
+                 return "Try working with the " + elemDisp + "now!";
              }
+             /*if (productElements.hasOwnProperty(elem)) {
+                 if (reactantElements[elem] < productElements[elem]) {
+                     
+                 } else if (reactantElements[elem] > productElements[elem]) {
+                     
+                 }
+             }*/
          }
     }
 
