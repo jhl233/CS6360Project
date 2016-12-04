@@ -672,7 +672,8 @@ var viewModule = (function(tutorialModule) {
             $(document.body).empty();
             if (state['level'] == 25) {
                 if (cookiesEnabled && 
-                        (typeof Cookies.get('user_id') !== 'undefined'))
+                        (typeof Cookies.get('user_id') !== 'undefined') &&
+                        (Cookies.get('completed') !== 'true'))
                     window.location.replace('posttest.html');
                 else homeScreen();
                 return;

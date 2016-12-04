@@ -3,7 +3,11 @@ $(document).ready(function() {
 
     $('#posttestForm').submit(function() {
         console.log("submitted!");
+        Cookies.set('completed', 'true');
         logPosttestResults();
+        setTimeout(function() {
+            window.location.replace('index.html');
+        }, 2000);
         return false;
     });
 });
