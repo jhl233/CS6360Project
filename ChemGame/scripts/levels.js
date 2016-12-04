@@ -319,7 +319,7 @@ var levelModule = (function() {
                 "O2":              "svg-O2.svg",
                 "Broccoli2O":      "svg-broccoli2O.svg",
                 "aBroccoli":       "l2/svg-broccoli.svg",
-                "aO":              "svg-O-atom.svg",
+                "aO":              "svg-o-atom.svg",
                 "Broccoli2OPlate": "pink_plate.svg",
                 "chef":            "chef&alien.png",
             },
@@ -656,7 +656,7 @@ var levelModule = (function() {
             "names": {
                 "Cu": "1 Cu",
                 "S": "1 S",
-                "CuS":   "1 Cu and 1 S",
+                "Cu2S":   "2 Cu and 1 S",
             },
         },
         //level 24 
@@ -683,10 +683,10 @@ var levelModule = (function() {
                 "chef":       "alien.png",
             },
             "names": {
-                "SnO2": "1 Sn and O 2",
-                "H2": "2 H",
+                "SnO2": "1 Sn and 2 O",
+                "H2":   "2 H",
                 "Sn":   "1 Sn",
-                "H2O":   "H 2 and 1 O",
+                "H2O":  "2 H and 1 O",
             },
         },
         //level 25

@@ -7,6 +7,7 @@ var tutorialModule = (function() {
         11: level11,
         12: level12,
         19: level19,
+        26: gameEnd,
     }
 
     function checkTutorials(levelNum) {
@@ -333,6 +334,40 @@ var tutorialModule = (function() {
             $("#checkbutton").css("opacity", 1);
             $("#checkbutton").css("pointer-events", "all");
         });
+    }
+    
+    function gameEnd() {
+        var $overlayBubble = $("<div>", {
+           id: "tutorial",
+           class: "overlay-bubble shadow",
+           text: "Hooray! You are ready to go into the world as a master chef!" 
+        });
+        var $overlayContent = $("<div>", {
+           class: "overlay-content", 
+        });
+        $overlayBubble.click(gameEnd_2);
+        $overlayContent.append("<img id='chefPic' src='img/chef2.png' class='overlay-img'>");
+        $overlayContent.append($overlayBubble);
+    
+        $closeButton = $("<a id='closebtn'>&times;</a>");
+        $closeButton.click(homeScreen);
+    
+        var $overlay = $("<div>", {class: "overlay", id:"tutorialOverlay1"});
+        $overlay.append($closeButton);
+        $overlay.append($overlayContent);
+    
+        $(document.body).append($overlay);
+    }
+    
+    function gameEnd_2() {
+        $("#tutorial").text("I am so proud of you!");
+        $("#tutorial").click(gameEnd_3);
+    }
+    
+    function gameEnd_3() {
+        $("#chefPic").attr("src", "img/alien.png");
+        $("#tutorial").text("I'm so happy I could eat a seedless watermelon! Thanks for everything!");
+        $("#tutorial").click(function() {$(".overlay").width('0%');});
     }
 
     return {
