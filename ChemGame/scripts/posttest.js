@@ -1,5 +1,11 @@
 $(document).ready(function() {
     initiateSession();
+
+    $('#posttestForm').submit(function() {
+        console.log("submitted!");
+        logPosttestResults();
+        return false;
+    });
 });
 
 // ------------------------------------------------------
@@ -41,13 +47,8 @@ function endPosttest(){
             "dynamic_quest_id": dynamic_quest_id,
         },
         dataType: "jsonp",
-
-        success: function(data) {
-        },
-
-        error: function() {
-            console.log("Error ending posttest");
-        },
+    }).fail(function() {
+        console.log("Error ending posttest");
     });
 }
 
@@ -105,17 +106,13 @@ function logPosttestResults() {
             "action_detail": JSON.stringify(actionDetail),
         },
         dataType: "jsonp",
-
-        success: function() {
-            Cookies.set('session_seq_id', parseInt(Cookies.get('session_seq_id')) + 1);
-            endPosttest();
-            cleanPosttestCookies();
-        },
-
-        error: function() {
-            console.log("Error logging post test results");
-            cleanPosttestCookies();
-        },
+    }).done(function() {
+        Cookies.set('session_seq_id', parseInt(Cookies.get('session_seq_id')) + 1);
+        endPosttest();
+    }).fail(function(jqXHR, msg) {
+        console.log("Error logging post test results");
+    }).always(function() {
+        cleanPosttestCookies();
     });
 }
 

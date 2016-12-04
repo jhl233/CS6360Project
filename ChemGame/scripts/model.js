@@ -211,7 +211,7 @@ var stateModule = (function(viewModule, levelModule) {
              var elemDisp = elem.toLowerCase();
              if (productElements.hasOwnProperty(elem) && reactantElements[elem] !== productElements[elem]) {
                  //return "Try increasing or decreasing the amount of " + elemDisp + "!";
-                 return "Try working with the " + elemDisp + " items now!";
+                 return "Try working with the " + elemDisp + "now!";
              }
              /*if (productElements.hasOwnProperty(elem)) {
                  if (reactantElements[elem] < productElements[elem]) {
@@ -226,7 +226,7 @@ var stateModule = (function(viewModule, levelModule) {
     // -------------------------------------------------
     //  AJAX and logging
     // -------------------------------------------------
-    function logInitLevel(){
+    function logInitLevel(levelNum){
         
     }
 

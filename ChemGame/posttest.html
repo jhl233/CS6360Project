@@ -7,13 +7,13 @@
         <script src="scripts/posttest.js"></script>
     </head>
     <body>
-      <img src="img/chef&alien.png" id="surveyChef">
-      <p class="pretest-text1">Thank you so much for being a part of this journey with us! We hope that you enjoyed your experience. Before you leave, please take this post test to the best of your ability! If you get stuck, feel free to leave your best guess.</p>
-        <form class="test pretest-test" action="index.html">
+        <img src="img/chef&alien.png" id="surveyChef">
+        <p class="pretest-text1">Thank you so much for being a part of this journey with us! We hope that you enjoyed your experience. Before you leave, please take this post test to the best of your ability! If you get stuck, feel free to leave your best guess.</p>
+        <form id="posttestForm" class="test pretest-test">
             <fieldset>
                 <label><input name="test1_1" value="0" type="number" min="0"> C +</label>
                 <label><input name="test1_2" value="0" type="number" min="0">CO<sub>2</sub> =</label>
-                
+
                 <label><input name="test1_3" value="0" type="number" min="0">CO</label>
             </fieldset>
             <fieldset>
@@ -46,7 +46,7 @@
                 <label><input name="test6_3" value="0" type="number" min="0">CO<sub>2</sub> +</label>
                 <label><input name="test6_4" value="0" type="number" min="0">H<sub>2</sub>O</label>
             </fieldset>
-            <button class="test-submit" onclick="logPosttestResults()">Submit</button>
+            <input class="test-submit" type="submit" value="Submit"/>
         </form>
     </body>
 </html>
