@@ -69,6 +69,8 @@ var stateModule = (function(viewModule, levelModule) {
         currentState["svgmap"] = {};
         currentState["names"] = {};
         currentState["initMessage"] = getInitMessage(levelNum);
+
+        logInitLevel(levelNum);
         
         var i = 1;
         for (var reactant in currentLevel["reactants"]) {
@@ -219,6 +221,13 @@ var stateModule = (function(viewModule, levelModule) {
                  }
              }*/
          }
+    }
+    
+    // -------------------------------------------------
+    //  AJAX and logging
+    // -------------------------------------------------
+    function logInitLevel(){
+        
     }
 
     return {

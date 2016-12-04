@@ -472,7 +472,6 @@ var viewModule = (function(tutorialModule) {
 
             for (var elemReq in reqs) { // for each Chicken in Chicken-needs-3
                 for (var i = 0; i < reqs[elemReq]; i++) {
-                    console.log(elemReq + " " + reactantView[elemReq]["elems"]);
                     var freeElem = reactantView[elemReq]["elems"].pop();
                     var freeElemId = "#" + freeElem.id;
                     
