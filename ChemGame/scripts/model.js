@@ -97,6 +97,7 @@ var stateModule = (function(viewModule, levelModule) {
     function checkWin() {
         factor = isBalanced(currentLevel, currentState);
         if (factor == 1) {
+            completeLevel(currentState["level"]);
             setTimeout(function(){
                 viewModule.nextLevel(currentState, callBacks, function() {
                     initializeLevel(currentState["level"]+1);
@@ -256,9 +257,9 @@ var stateModule = (function(viewModule, levelModule) {
             },
             dataType: "jsonp",
         }).done(function(data) {
-            console.log("lololol");
             Cookies.set('session_seq_id', parseInt(Cookies.get('session_seq_id')) + 1);
             currentState['dynamic_quest_id'] = data["dynamic_quest_id"];
+            console.log("stated level " + currentState['dynamic_quest_id']);
         }).fail(function() {
             console.log("Error Initiating Level " + levelNum);
         });
