@@ -5,9 +5,9 @@ $(document).ready(function() {
         console.log("submitted!");
         Cookies.set('completed', 'true');
         logPosttestResults();
-        setTimeout(function() {
+        /*setTimeout(function() {
             window.location.replace('index.html');
-        }, 2000);
+        }, 2000);*/
         return false;
     });
 });
@@ -51,8 +51,11 @@ function endPosttest(){
             "dynamic_quest_id": dynamic_quest_id,
         },
         dataType: "jsonp",
+    }).done(function() {
+        window.location.replace('index.html');
     }).fail(function() {
         console.log("Error ending posttest");
+        window.location.replace('index.html');
     });
 }
 
@@ -115,6 +118,7 @@ function logPosttestResults() {
         endPosttest();
     }).fail(function(jqXHR, msg) {
         console.log("Error logging post test results");
+        window.location.replace('index.html');
     }).always(function() {
         cleanPosttestCookies();
     });
