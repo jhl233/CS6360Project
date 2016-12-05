@@ -94,6 +94,7 @@ var stateModule = (function(viewModule, levelModule) {
     
     function checkWin() {
         if (isBalanced(currentLevel, currentState) == 1) {
+            completeLevel(currentState["level"]);
             setTimeout(function(){
                 viewModule.nextLevel(currentState, callBacks, function() {
                     initializeLevel(currentState["level"]+1);
@@ -227,7 +228,40 @@ var stateModule = (function(viewModule, levelModule) {
     //  AJAX and logging
     // -------------------------------------------------
     function logInitLevel(levelNum){
-        
+        var currentTimestamp = Math.floor(Date.now() / 1000);
+        $.ajax({
+            url:"https://gdiac.cs.cornell.edu/cs6360/fall2016/player_quest.php",
+            data: {
+                "game_id": 2,
+                "client_timestamp": currentTimestamp,
+                "quest_id": levelNum,
+                "user_id": Cookies.get('user_id'),
+                "version_id": 0,
+                "session_seq_id": Cookies.get('session_seq_id'),
+                "session_id": Cookies.get('session_id'),
+                "quest_detail": "Level _ quest " + levelNum,
+            },
+            dataType: "jsonp",
+        }).done(function(data) {
+            console.log("lololol");
+            Cookies.set('session_seq_id', parseInt(Cookies.get('session_seq_id')) + 1);
+            currentState['dynamic_quest_id'] = data["dynamic_quest_id"];
+        }).fail(function() {
+            console.log("Error Initiating Level " + levelNum);
+        });
+    }
+
+    function completeLevel(levelNum) {
+        var currentTimestamp = Math.floor(Date.now() / 1000);
+        $.ajax({
+            url:"https://gdiac.cs.cornell.edu/cs6360/fall2016/player_quest_end.php",
+            data: {
+                "dynamic_quest_id": currentState['dynamic_quest_id'],
+            },
+            dataType: "jsonp",
+        }).fail(function() {
+            console.log("Error ending posttest");
+        });
     }
 
     return {

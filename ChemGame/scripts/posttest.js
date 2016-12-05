@@ -31,15 +31,11 @@ function initiateSession() {
             "quest_detail": "Posttest _ quest 26",
         },
         dataType: "jsonp",
-
-        success: function(data) {
-            Cookies.set('session_seq_id', parseInt(Cookies.get('session_seq_id')) + 1);
-            dynamic_quest_id = data["dynamic_quest_id"];
-        },
-
-        error: function() {
-            console.log("Error Initiating Post Test");
-        },
+    }).done(function(data) {
+        Cookies.set('session_seq_id', parseInt(Cookies.get('session_seq_id')) + 1);
+        dynamic_quest_id = data["dynamic_quest_id"];
+    }).fail(function() {
+        console.log("Error Initiating Post Test");
     });
 }
 
