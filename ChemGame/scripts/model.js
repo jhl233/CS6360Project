@@ -259,6 +259,8 @@ var stateModule = (function(viewModule, levelModule) {
                 "dynamic_quest_id": currentState['dynamic_quest_id'],
             },
             dataType: "jsonp",
+        }).done(function(data) {
+            console.log("finished level " + currentState['dynamic_quest_id']);
         }).fail(function() {
             console.log("Error ending posttest");
         });
