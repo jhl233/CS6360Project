@@ -23,6 +23,8 @@ var stateModule = (function(viewModule, levelModule) {
         modifyProduct: modifyProduct,
     };
     
+    var overrideUsualHintSettings = false;
+    
     function getCurrentLevel() {
         return currentState["level"];
     }
@@ -93,13 +95,18 @@ var stateModule = (function(viewModule, levelModule) {
     }
     
     function checkWin() {
-        if (isBalanced(currentLevel, currentState) == 1) {
+        factor = isBalanced(currentLevel, currentState);
+        if (factor == 1) {
             setTimeout(function(){
                 viewModule.nextLevel(currentState, callBacks, function() {
                     initializeLevel(currentState["level"]+1);
                 });
             } , 1000);
-        }    
+        } else if (factor > 1) {
+            // Override usual hint settings
+            overrideUsualHintSettings = true;
+           // $("#hint").html("You have " + factor + " times the amount of food needed! Try simplifying this.");
+        }
     }
     
     function addReactant(reactant, numTimes) {
@@ -211,7 +218,7 @@ var stateModule = (function(viewModule, levelModule) {
              var elemDisp = elem.toLowerCase();
              if (productElements.hasOwnProperty(elem) && reactantElements[elem] !== productElements[elem]) {
                  //return "Try increasing or decreasing the amount of " + elemDisp + "!";
-                 return "Try working with the " + elemDisp + "now!";
+                 return "Try working with the " + elemDisp + " now!";
              }
              /*if (productElements.hasOwnProperty(elem)) {
                  if (reactantElements[elem] < productElements[elem]) {
@@ -221,6 +228,14 @@ var stateModule = (function(viewModule, levelModule) {
                  }
              }*/
          }
+    }
+    
+    function getOverrideUsualHintSettings() {
+        return overrideUsualHintSettings;
+    }
+    
+    function setOverrideUsualHintSettings(override) {
+        overrideUsualHintSettings = override;
     }
     
     // -------------------------------------------------
@@ -233,6 +248,7 @@ var stateModule = (function(viewModule, levelModule) {
     return {
         getCurrentLevel: getCurrentLevel,
         initializeLevel: initializeLevel,
+        getInitMessage: getInitMessage,
         checkWin: checkWin,
         addReactant: addReactant,
         addProduct: addProduct,
@@ -240,5 +256,7 @@ var stateModule = (function(viewModule, levelModule) {
         removeProduct: removeProduct,
         modifyReactant: modifyReactant,
         specifyHint: specifyHint,
+        getOverrideUsualHintSettings: getOverrideUsualHintSettings,
+        setOverrideUsualHintSettings: setOverrideUsualHintSettings,
     };
 })(viewModule, levelModule);

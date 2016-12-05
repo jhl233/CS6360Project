@@ -756,9 +756,22 @@ var viewModule = (function(tutorialModule) {
     $(document).click(function(e) {
         var target = e.target;
         
+        // Only changes color if hint box is clicked or if a message needs to flash automatically
+        if ($(target).is("#hint") || stateModule.getOverrideUsualHintSettings()) {
+            // Background turns orange, text turns white
+            $("#hint").animate({backgroundColor: "#F09523", color: "white"}, 100);
+            
+            // Background fades back to white, text turns back to blue
+            $("#hint").animate({backgroundColor: "#FFF", color: "#00a1c2"}, 600);
+        }
+        
         // Show hints automatically for beginning levels
-        if (stateModule.getCurrentLevel() < 4) {
+        if (stateModule.getCurrentLevel() < 4 || stateModule.getOverrideUsualHintSettings()) {
             showHint();
+            stateModule.setOverrideUsualHintSettings(false);
+        // Show opening message after closing tutorial
+        } else if ($(target).is(".overlay-bubble")) {
+            stateModule.getInitMessage(stateModule.getCurrentLevel()); 
         // Otherwise, if not clicking on hint box, then reset it
         } else {
             if (!$(target).is("#hint")) {

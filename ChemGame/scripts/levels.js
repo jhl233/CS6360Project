@@ -654,9 +654,9 @@ var levelModule = (function() {
                 "chef":       "alien.png",
             },
             "names": {
-                "Cu": "1 Cu",
-                "S": "1 S",
-                "Cu2S":   "2 Cu and 1 S",
+                "Cu":   "Copper (1 Cu)",
+                "S":    "Sulfur (1 S)",
+                "Cu2S": "Copper (I) Sulfide (2 Cu and 1 S)",
             },
         },
         //level 24 
@@ -683,10 +683,10 @@ var levelModule = (function() {
                 "chef":       "alien.png",
             },
             "names": {
-                "SnO2": "1 Sn and 2 O",
-                "H2":   "2 H",
-                "Sn":   "1 Sn",
-                "H2O":  "2 H and 1 O",
+                "SnO2": "Tin (IV) Oxide (1 Sn and 2 O)",
+                "H2":   "Hydrogen (2 H)",
+                "Sn":   "Tin (1 Sn)",
+                "H2O":  "Dihydrogen Oxide, aka Water (2 H and 1 O)",
             },
         },
         //level 25
@@ -714,10 +714,10 @@ var levelModule = (function() {
                 "chef":       "alien.png",
             },
             "names": {
-                "AlCl3": "1 Al and 3 Cl",
-                "Ca3N2": "3 Ca and 2 N",
-                "AlN":   "1 Al and 1 N",
-                "CaCl2": "1 Ca and 2 Cl"
+                "AlCl3": "Aluminum Chloride (1 Al and 3 Cl)",
+                "Ca3N2": "Calcium Nitride (3 Ca and 2 N)",
+                "AlN":   "Aluminum Nitride (1 Al and 1 N)",
+                "CaCl2": "Calcium Chloride (1 Ca and 2 Cl)"
             },
 		},
     ];
