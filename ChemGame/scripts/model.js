@@ -259,7 +259,7 @@ var stateModule = (function(viewModule, levelModule) {
         }).done(function(data) {
             Cookies.set('session_seq_id', parseInt(Cookies.get('session_seq_id')) + 1);
             currentState['dynamic_quest_id'] = data["dynamic_quest_id"];
-            console.log("stated level " + currentState['dynamic_quest_id']);
+            console.log("started level " + currentState['dynamic_quest_id']);
         }).fail(function() {
             console.log("Error Initiating Level " + levelNum);
         });
