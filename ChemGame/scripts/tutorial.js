@@ -40,7 +40,7 @@ var tutorialModule = (function() {
     }
 
     function level1_2() {
-        $("#tutorial").text("They say a journey of a miles begins with a single step. Your first step is to create the very simple dish on the right called: 'Bacon Twins'");
+        $("#tutorial").text("They say a journey of many miles begins with a single step. Your first step is to create the very simple dish on the right called: 'Bacon Twins'");
         $("#tutorialOverlay1").height("65%");
         //$(".overlay-content").append($("<div>", {class:"arrow", id:"arrow3"}));
         $("#tutorial").off("click");
